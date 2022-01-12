@@ -36,10 +36,14 @@ Nebula is my internship project. It's an online platform for selling video games
 * Profile page.
 * Contact page.
 
+### Trello :
+* [https://trello.com/b/SOf59ge4/nebulaproject]
+
 ### Colors scheme :
 * [https://paletton.com/#uid=13r0u0ku6R9ijTVoiSrLIP8MctB]
 * [https://paletton.com/#uid=15j0u0kmUG-cxSSifMCrCANxmto]
 * [https://paletton.com/#uid=13n0u0k6tam4VmG5VgSc36KiZ6x]
+* [https://paletton.com/#uid=1000u0k008i0gl201eQ0J02a80s]
 
 ### References sites :
 * [https://store.steampowered.com/]
