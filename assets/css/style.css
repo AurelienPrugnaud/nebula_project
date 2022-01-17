@@ -1,18 +1,164 @@
+/* //////////////////// FONT START///////////////////////////////////*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* //////////////////// FONT END///////////////////////////////////*/
+
+/* //////////////////// BODY START///////////////////////////////////*/
+
 body {
     background-color: #424242;
     color: #7E7E7E;
+    font-family: "Roboto";
+    font-size: 18px;
 }
+
+/* //////////////////// BODY END///////////////////////////////////*/
+
+/* //////////////////// HEADER START///////////////////////////////////*/
 
 header {
     background-color: #292133;
     margin-bottom: 60px;
+    font-weight: 700;
+    font-size: 25px;
 }
 
 header a {
     text-decoration: none;
 }
 
-header a:hover {
-    color: white;
-    text-decoration: underline;
+header form {
+    margin-left: 122px;
 }
+
+header a.menu {
+    color: #7E7E7E;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+header a.menu:hover {
+    color: #FFFFFF;
+}
+  
+header a.menu:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to left, #17A6E2, #E84284);
+    border-radius: 2px;
+    color: #FFFFFF;
+}
+
+/* //////////////////// HEADER END///////////////////////////////////*/
+
+/* //////////////////// FOOTER START///////////////////////////////////*/
+
+footer {
+    background-color: #292133;
+    margin-top: 55px;
+}
+
+footer a.menu {
+    color: #7E7E7E;
+    position: relative;
+    padding-bottom: 2px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer a.menu:hover {
+    color: #FFFFFF;
+}
+
+footer a.menu:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to left, #17A6E2, #E84284);
+    border-radius: 2px;
+    color: #FFFFFF;
+}
+
+footer p {
+    width: 55%;
+    font-weight: 400;
+}
+
+/* //////////////////// FOOTER END///////////////////////////////////*/
+
+/* //////////////////// MAIN START///////////////////////////////////*/
+
+main div.section {
+    margin-bottom: 50px;
+}
+
+main img.carousel {
+    border-radius: 20px;
+    max-width: 100%;
+}
+
+main h1.t-section {
+    position: relative;
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+main h1.t-section:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to left, #17A6E2, #E84284);
+    border-radius: 2px;
+}
+
+/* //////////////////// DISCOVERIES START///////////////////////////////////*/
+main h2.t-discoveries {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+main img.img-discoveries {
+    border-radius: 20px;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+main div.border-discoveries-card:hover {
+    border-radius: 20px;
+    background: linear-gradient(43deg, #17A6E2, #E84284);
+    padding: 5px;
+    color: #FFFFFF;
+}
+
+main div.discoveries-card {
+    background-color: #424242;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* //////////////////// DISCOVERIES END///////////////////////////////////*/
+
+/* //////////////////// MIDSECTION START///////////////////////////////////*/
+
+main img.img-midsection {
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* //////////////////// MIDSECTION START///////////////////////////////////*/
+
+/* //////////////////// MAIN END///////////////////////////////////*/
