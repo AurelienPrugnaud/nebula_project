@@ -1,0 +1,18 @@
+body {
+    background-color: #424242;
+    color: #7E7E7E;
+}
+
+header {
+    background-color: #292133;
+    margin-bottom: 60px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a:hover {
+    color: white;
+    text-decoration: underline;
+}

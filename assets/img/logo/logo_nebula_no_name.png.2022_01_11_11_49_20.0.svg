@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 132.29166 132.29167"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="logo_nebula_no_name.png"
+   inkscape:export-filename="/home/aurelien/Documents/nebula_project/logo_nebula_name.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:dataloss="true"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:object-paths="true"
+     units="px"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:zoom="0.83014336"
+     inkscape:cx="533.64277"
+     inkscape:cy="271.63983"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="1024"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient3579"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:0.81999999;"
+         offset="0"
+         id="stop3577" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#nebuleuse"
+       id="linearGradient25699"
+       x1="46.756844"
+       y1="126.20881"
+       x2="85.497169"
+       y2="119.31676"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-1.0790547e-5)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="nebuleuse">
+      <stop
+         style="stop-color:#17a6e2;stop-opacity:1"
+         offset="0"
+         id="stop3655" />
+      <stop
+         style="stop-color:#e84284;stop-opacity:1"
+         offset="1"
+         id="stop3657" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#nebuleuse"
+       id="linearGradient1208"
+       x1="46.756844"
+       y1="126.20881"
+       x2="85.497169"
+       y2="119.31676"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-3.3797198e-6)" />
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="spiral"
+       style="fill:none;fill-rule:evenodd;stroke:#000000"
+       id="path5617"
+       sodipodi:cx="-588.02826"
+       sodipodi:cy="-70.342545"
+       sodipodi:expansion="1"
+       sodipodi:revolution="10"
+       sodipodi:radius="155.77881"
+       sodipodi:argument="-62.181793"
+       sodipodi:t0="0.99900001"
+       d="m -458.47531,15.881361 c -1.7635,2.743459 -3.61328,5.43145 -5.54561,8.058735"
+       transform="scale(0.26458333)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:url(#linearGradient25699);fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="45.559155"
+       y="111.21309"
+       id="text21851"><tspan
+         sodipodi:role="line"
+         id="tspan21849"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.5833px;font-family:Roboto;-inkscape-font-specification:'Roboto, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:url(#linearGradient25699);fill-opacity:1;stroke-width:0.264583"
+         x="45.559155"
+         y="111.21309">NEBULA</tspan></text>
+  </g>
+</svg>
