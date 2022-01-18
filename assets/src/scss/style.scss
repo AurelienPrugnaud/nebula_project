@@ -1,3 +1,5 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
 /* //////////////////// FONT START///////////////////////////////////*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
@@ -21,7 +23,7 @@ header {
     background-color: #292133;
     margin-bottom: 60px;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 header a {
@@ -152,6 +154,13 @@ main div.discoveries-card {
 
 /* //////////////////// MIDSECTION START///////////////////////////////////*/
 
+main div.border-midsection-card:hover {
+    border-radius: 20px;
+    background: linear-gradient(43deg, #17A6E2, #E84284);
+    padding: 5px;
+    color: #FFFFFF;
+}
+
 main img.img-midsection {
     border-radius: 10px;
     width: 150px;
@@ -159,6 +168,94 @@ main img.img-midsection {
     object-fit: cover;
 }
 
-/* //////////////////// MIDSECTION START///////////////////////////////////*/
+main div.midsection-card {
+    background-color: #424242;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+main div.vertical-line {
+    background: linear-gradient(#17A6E2, #E84284);
+    border-radius: 5px;
+    padding: 3px;
+}
+
+
+/* //////////////////// MIDSECTION END///////////////////////////////////*/
 
 /* //////////////////// MAIN END///////////////////////////////////*/
+
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  text-decoration: none;
+}
+
+.img-carousel {
+    border-radius: 20px;
+    width: 100%;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: #424242;
+  color: #FFFFFF;
+}
+
+/* Caption text */
+.text {
+  color: #FFFFFF;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/*Fading animation*/
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 0}
+  to {opacity: 100}
+}
+
+@keyframes fade {
+  from {opacity: 0}
+  to {opacity: 100}
+}
