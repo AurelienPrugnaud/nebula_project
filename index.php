@@ -74,19 +74,19 @@
                     <button class="btn btn-outline-primary">Voir plus</button>
                 </a>
             </div>
-            <div class="d-flex">
-                <div class="border-discoveries-card">
-                    <div class="discoveries-card">
+            <div class="row">
+                <div class="border-card col-lg-6 col-sm-12">
+                    <div class="card-game">
                         <img class="img-discoveries" src="/assets/img/games/final_fantasy_intergrade.jpeg" alt="Final Fantasy">
-                        <h2 class="t-discoveries">FINAL FANTASY® VII REMAKE INTERGRADE</h2>
+                        <h2 class="t-game">FINAL FANTASY® VII REMAKE INTERGRADE</h2>
                         <p class="">Le classique intemporel FINAL FANTASY® VII REMAKE INTERGRADE est de retour avec une aventure, des graphismes et un système de combat inédits.</p>
                         <p class="">79,99 €</p>
                     </div>
                 </div>
-                    <div class="border-discoveries-card">
-                        <div class="discoveries-card">
+                <div class="border-card col-lg-6 col-sm-12">
+                    <div class="card-game">
                         <img class="img-discoveries" src="/assets/img/games/Kena_BOS_GameArt.jpg" alt="Kena">
-                        <h2 class="t-discoveries">Kena: Bridge of Spirits</h2>
+                        <h2 class="t-game">Kena: Bridge of Spirits</h2>
                         <p class="">Incarnez Kena, partez à l’aventure et développez une équipe de compagnons-esprits charmants appelés les Rots. </p>
                         <p class="">39,99 €</p>
                     </div>
@@ -96,56 +96,56 @@
         <! -- //////////////////////////////DISCOVERIES END//////////////////////////////////////// -->
 
         <! -- //////////////////////////////MIDSECTION START//////////////////////////////////////// -->
-        <div class="section d-flex justify-content-between">
+        <div class="section row justify-content-between">
             <! -- //////////////////////////////NEW RELEASES START//////////////////////////////////////// -->
-            <div>
+            <div class="col-lg-3 col-sm-5">
                 <div class="d-flex align-items-center mb-3">
                     <h1 class="t-section me-3 ">Nouvelles sorties</h1>
                     <a href="">
                         <button class="btn btn-outline-primary">Voir plus</button>
                     </a>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>49,99 €</p>
                         </div>
                     </div>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>49,99 €</p>
                         </div>
                     </div>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>49,99 €</p>
                         </div>
                     </div>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>49,99 €</p>
                         </div>
                     </div>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>49,99 €</p>
                         </div>
                     </div>
@@ -153,57 +153,57 @@
             </div>
             <! -- //////////////////////////////NEW RELEASES END//////////////////////////////////////// -->
 
-            <div class="vertical-line"></div>
+            <div class=" vr vertical-line col-1 mx-auto"></div>
 
             <! -- //////////////////////////////BEST SELLS START//////////////////////////////////////// -->
-            <div>
+            <div class="col-lg-3">
                 <div class="d-flex align-items-center mb-3">
                     <h1 class="t-section me-3 ">Meilleures ventes</h1>
                     <a href="">
                         <button class="btn btn-outline-primary">Voir plus</button>
                     </a>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>49,99 €</p>
                         </div>
                     </div>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>49,99 €</p>
                         </div>
                     </div>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>49,99 €</p>
                         </div>
                     </div>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>49,99 €</p>
                         </div>
                     </div>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>49,99 €</p>
                         </div>
                     </div>
@@ -211,61 +211,61 @@
             </div>
             <! -- //////////////////////////////BEST SELLS END//////////////////////////////////////// -->
         
-            <div class="vertical-line"></div>
+            <div class=" vr vertical-line col-1 mx-auto"></div>
 
             <! -- //////////////////////////////FUTURE RELEASES START//////////////////////////////////////// -->
-            <div>
+            <div class="col-lg-3">
                 <div class="d-flex align-items-center mb-3">
                     <h1 class="t-section me-3 ">Prochaines sorties</h1>
                     <a href="">
                         <button class="btn btn-outline-primary">Voir plus</button>
                     </a>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>Disponible le 14/01/22</p>
                             <p>49,99 €</p>
                         </div>
                     </div>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>Disponible le 14/01/22</p>
                             <p>49,99 €</p>
                         </div>
                     </div>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>Disponible le 14/01/22</p>
                             <p>49,99 €</p>
                         </div>
                     </div>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>Disponible le 14/01/22</p>
                             <p>49,99 €</p>
                         </div>
                     </div>
                 </div>
-                <div class="border-midsection-card">
-                    <div class="d-flex align-items-center midsection-card">
+                <div class="border-card">
+                    <div class="d-flex align-items-center card-game">
                         <img class="img-midsection me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                         <div>
-                            <h2 class="t-discoveries">God of War</h2>
+                            <h2 class="t-game">God of War</h2>
                             <p>Disponible le 14/01/22</p>
                             <p>49,99 €</p>
                         </div>
@@ -285,21 +285,21 @@
                     <button class="btn btn-outline-primary">Voir plus</button>
                 </a>
             </div>
-            <div class="d-flex">
-                <div class="border-discoveries-card">
-                    <div class="discoveries-card">
+            <div class="row">
+                <div class="border-card col-lg-6 col-sm-12">
+                    <div class="card-game">
                         <img class="img-discoveries" src="/assets/img/games/final_fantasy_intergrade.jpeg" alt="Final Fantasy">
-                        <h2 class="t-discoveries">FINAL FANTASY® VII REMAKE INTERGRADE</h2>
-                        <p class="">Le classique intemporel FINAL FANTASY® VII REMAKE INTERGRADE est de retour avec une aventure, des graphismes et un système de combat inédits.</p>
-                        <p class="">79,99 €</p>
+                        <h2 class="t-game">FINAL FANTASY® VII REMAKE INTERGRADE</h2>
+                        <p>Le classique intemporel FINAL FANTASY® VII REMAKE INTERGRADE est de retour avec une aventure, des graphismes et un système de combat inédits.</p>
+                        <p>79,99 €</p>
                     </div>
                 </div>
-                    <div class="border-discoveries-card">
-                        <div class="discoveries-card">
+                <div class="border-card col-lg-6 col-sm-12">
+                    <div class="card-game">
                         <img class="img-discoveries" src="/assets/img/games/Kena_BOS_GameArt.jpg" alt="Kena">
-                        <h2 class="t-discoveries">Kena: Bridge of Spirits</h2>
-                        <p class="">Incarnez Kena, partez à l’aventure et développez une équipe de compagnons-esprits charmants appelés les Rots. </p>
-                        <p class="">39,99 €</p>
+                        <h2 class="t-game">Kena: Bridge of Spirits</h2>
+                        <p>Incarnez Kena, partez à l’aventure et développez une équipe de compagnons-esprits charmants appelés les Rots. </p>
+                        <p>39,99 €</p>
                     </div>
                 </div>
             </div>
