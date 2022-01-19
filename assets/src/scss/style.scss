@@ -1,261 +1,188 @@
-@import "../../../node_modules/bootstrap/scss/bootstrap";
-
 /* //////////////////// FONT START///////////////////////////////////*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /* //////////////////// FONT END///////////////////////////////////*/
 
-/* //////////////////// BODY START///////////////////////////////////*/
+/* //////////////////// IMPORT START///////////////////////////////////*/
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "variables.scss";
+@import "body.scss";
+@import "header.scss";
+@import "footer.scss";
 
-body {
-    background-color: #424242;
-    color: #7E7E7E;
-    font-family: "Roboto";
-    font-size: 18px;
-}
-
-/* //////////////////// BODY END///////////////////////////////////*/
-
-/* //////////////////// HEADER START///////////////////////////////////*/
-
-header {
-    background-color: #292133;
-    margin-bottom: 60px;
-    font-weight: 700;
-    font-size: 20px;
-}
-
-header a {
-    text-decoration: none;
-}
-
-header form {
-    margin-left: 122px;
-}
-
-header a.menu {
-    color: #7E7E7E;
-    position: relative;
-    padding-bottom: 2px;
-}
-
-header a.menu:hover {
-    color: #FFFFFF;
-}
-  
-header a.menu:hover::after {
-    content: "";
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background: linear-gradient(to left, #17A6E2, #E84284);
-    border-radius: 2px;
-    color: #FFFFFF;
-}
-
-/* //////////////////// HEADER END///////////////////////////////////*/
-
-/* //////////////////// FOOTER START///////////////////////////////////*/
-
-footer {
-    background-color: #292133;
-    margin-top: 55px;
-}
-
-footer a.menu {
-    color: #7E7E7E;
-    position: relative;
-    padding-bottom: 2px;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-footer a.menu:hover {
-    color: #FFFFFF;
-}
-
-footer a.menu:hover::after {
-    content: "";
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background: linear-gradient(to left, #17A6E2, #E84284);
-    border-radius: 2px;
-    color: #FFFFFF;
-}
-
-footer p {
-    width: 55%;
-    font-weight: 400;
-}
-
-/* //////////////////// FOOTER END///////////////////////////////////*/
+/* //////////////////// IMPORT END///////////////////////////////////*/
 
 /* //////////////////// MAIN START///////////////////////////////////*/
 
-main div.section {
-    margin-bottom: 50px;
+main {
+
+    /* Slideshow container */
+    .slideshow-container {
+        width: 100%;
+        position: relative;
+    }
+  
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+  
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: $white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        text-decoration: none;
+    }
+  
+    .img-carousel {
+        border-radius: 20px;
+        width: 100%;
+    }
+  
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+  
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: $background;
+        color: $white;
+    }
+  
+    /* Caption text */
+    .text {
+        color: $white;
+        font-size: 20px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+  
+    /*Fading animation*/
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    
+    @-webkit-keyframes fade {
+        from {opacity: 0}
+        to {opacity: 100}
+    }
+    
+    @keyframes fade {
+        from {opacity: 0}
+        to {opacity: 100}
+    }
+
+    img.carousel {
+        border-radius: 20px;
+        max-width: 100%;
+    }
+
+    div.section {
+        margin-bottom: 50px;
+    }
+
+    h1.t-section {
+        position: relative;
+        font-size: 22px;
+        font-weight: 700;
+        color: $white;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background: $gradient-tl;
+            border-radius: 2px;
+        }
+    }
+
+    /* //////////////////// DISCOVERIES START///////////////////////////////////*/
+
+    h2.t-discoveries {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    img.img-discoveries {
+        border-radius: 20px;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    div.discoveries-card {
+        background-color: $background;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    div.border-discoveries-card {
+        padding: 5px;
+
+        &:hover {
+            border-radius: 20px;
+            background: $gradient-43deg;
+            padding: 5px;
+            color: $white;
+        }
+    }
+
+    /* //////////////////// DISCOVERIES END///////////////////////////////////*/
+
+    /* //////////////////// MIDSECTION START///////////////////////////////////*/
+
+    div.border-midsection-card {
+        padding: 5px;
+
+        &:hover {
+            border-radius: 20px;
+            background: $gradient-43deg;
+            padding: 5px;
+            color: $white;
+        }
+    }
+
+    img.img-midsection {
+        border-radius: 10px;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+    
+    div.midsection-card {
+        background-color: $background;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    
+    div.vertical-line {
+        background: $gradient;
+        border-radius: 5px;
+        padding: 3px;
+    }
+
+    /* //////////////////// MIDSECTION END///////////////////////////////////*/
+
 }
-
-main img.carousel {
-    border-radius: 20px;
-    max-width: 100%;
-}
-
-main h1.t-section {
-    position: relative;
-    font-size: 22px;
-    font-weight: 700;
-    color: #FFFFFF;
-}
-
-main h1.t-section:after {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background: linear-gradient(to left, #17A6E2, #E84284);
-    border-radius: 2px;
-}
-
-/* //////////////////// DISCOVERIES START///////////////////////////////////*/
-main h2.t-discoveries {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-main img.img-discoveries {
-    border-radius: 20px;
-    max-width: 100%;
-    margin-bottom: 10px;
-}
-
-main div.border-discoveries-card:hover {
-    border-radius: 20px;
-    background: linear-gradient(43deg, #17A6E2, #E84284);
-    padding: 5px;
-    color: #FFFFFF;
-}
-
-main div.discoveries-card {
-    background-color: #424242;
-    border-radius: 20px;
-    padding: 10px;
-}
-
-/* //////////////////// DISCOVERIES END///////////////////////////////////*/
-
-/* //////////////////// MIDSECTION START///////////////////////////////////*/
-
-main div.border-midsection-card:hover {
-    border-radius: 20px;
-    background: linear-gradient(43deg, #17A6E2, #E84284);
-    padding: 5px;
-    color: #FFFFFF;
-}
-
-main img.img-midsection {
-    border-radius: 10px;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-}
-
-main div.midsection-card {
-    background-color: #424242;
-    border-radius: 20px;
-    padding: 10px;
-}
-
-main div.vertical-line {
-    background: linear-gradient(#17A6E2, #E84284);
-    border-radius: 5px;
-    padding: 3px;
-}
-
-
-/* //////////////////// MIDSECTION END///////////////////////////////////*/
-
 /* //////////////////// MAIN END///////////////////////////////////*/
-
-
-/* Slideshow container */
-.slideshow-container {
-  width: 100%;
-  position: relative;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: #FFFFFF;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  text-decoration: none;
-}
-
-.img-carousel {
-    border-radius: 20px;
-    width: 100%;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: #424242;
-  color: #FFFFFF;
-}
-
-/* Caption text */
-.text {
-  color: #FFFFFF;
-  font-size: 20px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/*Fading animation*/
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: 0}
-  to {opacity: 100}
-}
-
-@keyframes fade {
-  from {opacity: 0}
-  to {opacity: 100}
-}

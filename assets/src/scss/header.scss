@@ -1,0 +1,42 @@
+@import "variables.scss";
+
+/* //////////////////// HEADER START///////////////////////////////////*/
+header {
+    background-color: $background-hf;
+    margin-bottom: 60px;
+    font-weight: 700;
+    font-size: 20px;
+
+    form {
+        margin-left: 122px;
+    }
+
+    a {
+        text-decoration: none;
+
+        &.menu {
+            color: $text;
+            position: relative;
+            padding-bottom: 2px;
+
+            &:hover {
+                color: $white;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 2px;
+                    left: 0;
+                    height: 2px;
+                    width: 100%;
+                    background: $gradient-tl;
+                    border-radius: 2px;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+/* //////////////////// HEADER END///////////////////////////////////*/
+
