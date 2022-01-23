@@ -10,25 +10,8 @@
 <body>
 
     <! -- //////////////////////////////HEADER START//////////////////////////////////////// -->
-    <header class="sticky-top d-flex justify-content-between align-items-center p-3">
-        <div class="ms-2 d-flex">
-            <div>
-                <a href="">
-                    <img class="logo" src="/assets/img/logo/logo_nebula_no_name_55px.png" alt="logo nebula">
-                    <img class="logo" src="/assets/img/logo/logo_nebula_name_100px.png" alt="logo nebula">
-                </a>
-            </div>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Chercher" aria-label="Search">
-                <button class="btn btn-outline-primary" type="submit">Chercher</button>
-            </form>
-        </div>
-        <div class="me-2">
-                <a class="menu" href="">Boutique</a> 
-                <a class="menu" href="">Compte</a>
-                <a class="menu" href="">Connexion</a>
-        </div>
-    </header>
+    <?php include("includes/header.php") ?>
+
     <! -- //////////////////////////////HEADER END//////////////////////////////////////// -->
 
     <! -- //////////////////////////////MAIN START//////////////////////////////////////// -->
@@ -43,8 +26,10 @@
 
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade">
-                    <img class="img-carousel" src="/assets/img/games/god_of_war.jpg" alt="God of War">
-                    <div class="text">God of War</div>
+                    <a href="/views/gamePage.php">
+                        <img class="img-carousel" src="/assets/img/games/god_of_war.jpg" alt="God of War">
+                        <div class="text">God of War</div>
+                    </a>
                 </div>
 
                 <div class="mySlides fade">
@@ -310,28 +295,8 @@
     <! -- //////////////////////////////MAIN END//////////////////////////////////////// -->
 
     <! -- //////////////////////////////FOOTER START//////////////////////////////////////// -->
-    <footer class="pt-5 pb-5 ps-4 pe-4">
-        <div class="mb-3">
-            <span class="iconify me-3" data-icon="akar-icons:instagram-fill" style="color: white; font-size: 30px"></span>
-            <span class="iconify" data-icon="akar-icons:twitter-fill" style="color: white; font-size: 30px;"></span>
-        </div>
-        <div>
-            <p>
-            © 2022, Nebula. Tous droits réservés. Nebula et le logo Nebula sont des marques ou des marques déposées de Nebula en France et ailleurs. Les autres marques ou noms de produit appartiennent à leurs propriétaires respectifs. En dehors de la France, les transactions sont gérées par Nebula, S.à r.l.   
-            </p>
-        </div>
-        <div class="d-flex justify-content-between ">
-            <div>
-                <a class="menu me-2" href="">Contact</a>
-                <a class="menu me-2" href="">Conditions d'utilisations</a>
-                <a class="menu me-2" href="">Politique de confidentialité</a>
-            </div>
-            <div>
-                <img class="logo" src="/assets/img/logo/logo_nebula_no_name_55px.png" alt="logo nebula">
-                <img class="logo" src="/assets/img/logo/logo_nebula_name_100px.png" alt="logo nebula">  
-            </div>   
-        </div>
-    </footer>
+    <?php include("includes/footer.php") ?>
+
     <! -- //////////////////////////////FOOTER END//////////////////////////////////////// -->
 
 </body>
