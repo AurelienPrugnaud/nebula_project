@@ -12,7 +12,7 @@
             </form>
         </div>
         <div class="me-2">
-                <a class="menu" href="">Boutique</a> 
+                <a class="menu" href="../index.php">Boutique</a> 
                 <a class="menu" href="">Compte</a>
                 <a class="menu" href="">Connexion</a>
         </div>

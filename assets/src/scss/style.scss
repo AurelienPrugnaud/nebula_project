@@ -43,6 +43,24 @@ main {
             font-weight: 500;
         }
 
+        h2.t-gamePage {
+            position: relative;
+            font-size: 18px;
+            font-weight: 500;
+            color: $white;
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                background: $gradient-tl;
+                border-radius: 2px;
+            }
+        }
+
         img.img-discoveries {
             border-radius: 20px;
             max-width: 100%;
@@ -77,6 +95,16 @@ main {
             background: $gradient;
             border-radius: 5px;
             padding: 3px;
+        }
+
+        img.img-game {
+            border-radius: 20px;
+            max-width: 100%;
+        }
+
+        img.img-game-mini {
+            border-radius: 10px;
+            max-width: 18%;
         }
     }
 }
