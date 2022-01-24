@@ -255,7 +255,9 @@
                                         49,99 €
                                     </p>
                                     <div class="d-flex justify-content-center mb-3">
-                                        <button class="btn btn-outline-primary">Ajouter au panier</button>
+                                        <a href="cartPage.php">
+                                            <button class="btn btn-outline-primary">Ajouter au panier</button>
+                                        </a>
                                     </div>
                                     <div class="mb-3">
                                         <img class="logo-pegi" src="../assets/img/games/pegi18.png" alt="">

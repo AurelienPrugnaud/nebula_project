@@ -159,7 +159,7 @@
                                                 <! -- //////////////////////////////NEW RELEASES
                                                     END//////////////////////////////////////// -->
 
-                                                    <div class=" vr vertical-line col-1 mx-auto"></div>
+                                                    <div class="vr vertical-line col-1 mx-auto"></div>
 
                                                     <! -- //////////////////////////////BEST SELLS
                                                         START//////////////////////////////////////// -->

@@ -144,7 +144,7 @@ main.white-page {
         div.card-game {
             background-color: $background;
             border-radius: 20px;
-            padding: 10px;
+            padding: 20px;
             
             img.logo-game {
                 width: 100px;
@@ -222,5 +222,26 @@ a.connexion {
     }
 }
 
-/* //////////////////// CONNEXION/CONTACT PAGE END///////////////////////////////////*/
+h1.card-title {
+    font-size: 20px;
+    font-weight: 700;
+}
 
+/* //////////////////// CONNEXION/CONTACT/REGISTRATION PAGE END///////////////////////////////////*/
+
+/* //////////////////// CART PAGE START///////////////////////////////////*/
+
+
+img.img-cart {
+    border-radius: 10px;
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+}
+
+hr.horizontal-line {
+    background: $gradient-tl;
+    border-radius: 5px;
+    padding: 2px;
+}
+/* //////////////////// CART PAGE END///////////////////////////////////*/

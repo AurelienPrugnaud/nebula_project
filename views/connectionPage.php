@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nebula profile page</title>
+    <title>Nebula connection page</title>
     <link rel="stylesheet" href="/assets/public/css/style.min.css">
 </head>
 
@@ -21,6 +21,7 @@
                     <div class="row justify-content-center">
                         <div class="section border-card2 col-4">
                             <div class="card-game2">
+                                <h1 class="card-title text-center">Connexion</h1>
                                 <form class="mb-3">
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email</label>
@@ -41,7 +42,7 @@
                                 </form>
                                 <p class="text-center">
                                     Vous n'avez pas de compte Nebula ?<br>
-                                    <a class="connexion" href="">Créer un compte</a>
+                                    <a class="connexion" href="registrationPage.php">Créer un compte</a>
                                 </p>
                             </div>
                         </div>

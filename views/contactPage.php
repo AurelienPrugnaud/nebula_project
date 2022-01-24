@@ -20,6 +20,8 @@
                 <main class="container white-page">
                     <div class="section border-card2">
                         <div class="card-game2">
+                            <h1 class="card-title text-center">Contact</h1>
+
                             <form>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
@@ -37,7 +39,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Votre message</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" ></textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1"></textarea>
                                 </div>
                                 <div class="mb-3 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-outline-primary">Envoyer</button>
