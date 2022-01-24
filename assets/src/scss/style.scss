@@ -15,7 +15,6 @@
 /* //////////////////// IMPORT END///////////////////////////////////*/
 
 /* //////////////////// MAIN START///////////////////////////////////*/
-
 main {
     div.section {
         margin-bottom: 50px;
@@ -43,32 +42,15 @@ main {
             font-weight: 500;
         }
 
-        h2.t-gamePage {
-            position: relative;
-            font-size: 18px;
-            font-weight: 500;
-            color: $white;
-
-            &:after {
-                content: "";
-                position: absolute;
-                bottom: 0px;
-                left: 0;
-                height: 2px;
-                width: 100%;
-                background: $gradient-tl;
-                border-radius: 2px;
-            }
-        }
-
         img.img-discoveries {
             border-radius: 20px;
             max-width: 100%;
             margin-bottom: 10px;
         }
 
-        div.border-card {
+        div.border-card-hover {
             padding: 5px;
+            background-color: $background;
     
             &:hover {
                 border-radius: 20px;
@@ -76,12 +58,12 @@ main {
                 padding: 5px;
                 color: $white;
             }
-        }
 
-        div.card-game {
-            background-color: $background;
-            border-radius: 20px;
-            padding: 10px;
+            div.card-game {
+                background-color: $background;
+                border-radius: 20px;
+                padding: 10px;
+            }
         }
 
         img.img-midsection {
@@ -97,14 +79,148 @@ main {
             padding: 3px;
         }
 
-        img.img-game {
-            border-radius: 20px;
-            max-width: 100%;
-        }
+    }
+}
 
-        img.img-game-mini {
-            border-radius: 10px;
-            max-width: 18%;
+/* //////////////////// MAIN END///////////////////////////////////*/
+
+/* //////////////////// MAIN GAME PAGE START///////////////////////////////////*/
+
+main.white-page {
+    color: $white;
+
+    h1.t-game2 {
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    p.description {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    h2.t-gamePage {
+        position: relative;
+        font-size: 20px;
+        font-weight: 500;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background: $gradient-tl;
+            border-radius: 2px;
+        }
+    }
+
+    h3.t-description {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    p.description2 {
+        font-weight: 400;
+    }
+
+    img.img-game {
+        border-radius: 20px;
+        max-width: 100%;
+    }
+
+    img.img-game-mini {
+        border-radius: 10px;
+        max-width: 18%;
+    }
+
+    div.border-card {
+        border-radius: 20px;
+        background: $gradient-43deg;
+        padding: 5px;
+        position: fixed;
+        
+        div.card-game {
+            background-color: $background;
+            border-radius: 20px;
+            padding: 10px;
+            
+            img.logo-game {
+                width: 100px;
+            }
+        
+            img.logo-pegi {
+                width: 22px
+            }
+        
+            span.kind-game {
+                border-radius: 3px;
+                padding: 3px;
+                margin: 3px;
+                background: $gradient-43deg;
+                font-size: 16px;
+                font-weight: 700;
+            }
+        
+            span.left-card-game {
+                font-weight: 400;
+                font-size: 16px;
+            }
+        
+            span.right-card-game {
+                font-weight: 700;
+                font-size: 16px;
+            }
         }
     }
 }
+
+/* //////////////////// MAIN GAME PAGE END///////////////////////////////////*/
+
+/* //////////////////// MAIN PROFILE PAGE START///////////////////////////////////*/
+
+
+/* //////////////////// CONNEXION/CONTACT PAGE START///////////////////////////////////*/
+
+div.border-card2 {
+    border-radius: 20px;
+    background: $gradient-43deg;
+    padding: 5px;
+    
+    div.card-game2 {
+        background-color: $background;
+        border-radius: 20px;
+        padding: 20px;
+    }
+}
+
+textarea {
+    height: 300px;
+}
+
+a.connexion {
+    text-decoration: none;
+    color: $text;
+    position: relative;
+    padding-bottom: 2px;
+
+    &:hover {
+        color: $white;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background: $gradient-tl;
+            border-radius: 2px;
+            color: $white;
+        }
+    }
+}
+
+/* //////////////////// CONNEXION/CONTACT PAGE END///////////////////////////////////*/
+

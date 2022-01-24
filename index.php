@@ -66,7 +66,7 @@
                                         </a>
                                     </div>
                                     <div class="row">
-                                        <div class="border-card col-lg-6 col-sm-12">
+                                        <div class="border-card-hover col-lg-6 col-sm-12">
                                             <div class="card-game">
                                                 <img class="img-discoveries"
                                                     src="/assets/img/games/final_fantasy_intergrade.jpeg"
@@ -78,7 +78,7 @@
                                                 <p class="">79,99 €</p>
                                             </div>
                                         </div>
-                                        <div class="border-card col-lg-6 col-sm-12">
+                                        <div class="border-card-hover col-lg-6 col-sm-12">
                                             <div class="card-game">
                                                 <img class="img-discoveries"
                                                     src="/assets/img/games/Kena_BOS_GameArt.jpg" alt="Kena">
@@ -105,7 +105,7 @@
                                                             <button class="btn btn-outline-primary">Voir plus</button>
                                                         </a>
                                                     </div>
-                                                    <div class="border-card">
+                                                    <div class="border-card-hover">
                                                         <div class="d-flex align-items-center card-game">
                                                             <img class="img-midsection me-3"
                                                                 src="/assets/img/games/god_of_war.jpg" alt="god of war">
@@ -115,7 +115,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="border-card">
+                                                    <div class="border-card-hover">
                                                         <div class="d-flex align-items-center card-game">
                                                             <img class="img-midsection me-3"
                                                                 src="/assets/img/games/god_of_war.jpg" alt="god of war">
@@ -125,7 +125,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="border-card">
+                                                    <div class="border-card-hover">
                                                         <div class="d-flex align-items-center card-game">
                                                             <img class="img-midsection me-3"
                                                                 src="/assets/img/games/god_of_war.jpg" alt="god of war">
@@ -135,7 +135,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="border-card">
+                                                    <div class="border-card-hover">
                                                         <div class="d-flex align-items-center card-game">
                                                             <img class="img-midsection me-3"
                                                                 src="/assets/img/games/god_of_war.jpg" alt="god of war">
@@ -145,7 +145,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="border-card">
+                                                    <div class="border-card-hover">
                                                         <div class="d-flex align-items-center card-game">
                                                             <img class="img-midsection me-3"
                                                                 src="/assets/img/games/god_of_war.jpg" alt="god of war">
@@ -171,7 +171,7 @@
                                                                         plus</button>
                                                                 </a>
                                                             </div>
-                                                            <div class="border-card">
+                                                            <div class="border-card-hover">
                                                                 <div class="d-flex align-items-center card-game">
                                                                     <img class="img-midsection me-3"
                                                                         src="/assets/img/games/god_of_war.jpg"
@@ -182,7 +182,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="border-card">
+                                                            <div class="border-card-hover">
                                                                 <div class="d-flex align-items-center card-game">
                                                                     <img class="img-midsection me-3"
                                                                         src="/assets/img/games/god_of_war.jpg"
@@ -193,7 +193,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="border-card">
+                                                            <div class="border-card-hover">
                                                                 <div class="d-flex align-items-center card-game">
                                                                     <img class="img-midsection me-3"
                                                                         src="/assets/img/games/god_of_war.jpg"
@@ -204,7 +204,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="border-card">
+                                                            <div class="border-card-hover">
                                                                 <div class="d-flex align-items-center card-game">
                                                                     <img class="img-midsection me-3"
                                                                         src="/assets/img/games/god_of_war.jpg"
@@ -215,7 +215,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="border-card">
+                                                            <div class="border-card-hover">
                                                                 <div class="d-flex align-items-center card-game">
                                                                     <img class="img-midsection me-3"
                                                                         src="/assets/img/games/god_of_war.jpg"
@@ -243,7 +243,7 @@
                                                                                 plus</button>
                                                                         </a>
                                                                     </div>
-                                                                    <div class="border-card">
+                                                                    <div class="border-card-hover">
                                                                         <div
                                                                             class="d-flex align-items-center card-game">
                                                                             <img class="img-midsection me-3"
@@ -256,7 +256,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="border-card">
+                                                                    <div class="border-card-hover">
                                                                         <div
                                                                             class="d-flex align-items-center card-game">
                                                                             <img class="img-midsection me-3"
@@ -269,7 +269,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="border-card">
+                                                                    <div class="border-card-hover">
                                                                         <div
                                                                             class="d-flex align-items-center card-game">
                                                                             <img class="img-midsection me-3"
@@ -282,7 +282,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="border-card">
+                                                                    <div class="border-card-hover">
                                                                         <div
                                                                             class="d-flex align-items-center card-game">
                                                                             <img class="img-midsection me-3"
@@ -295,7 +295,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="border-card">
+                                                                    <div class="border-card-hover">
                                                                         <div
                                                                             class="d-flex align-items-center card-game">
                                                                             <img class="img-midsection me-3"
@@ -326,7 +326,7 @@
                                                         </a>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="border-card col-lg-6 col-sm-12">
+                                                        <div class="border-card-hover col-lg-6 col-sm-12">
                                                             <div class="card-game">
                                                                 <img class="img-discoveries"
                                                                     src="/assets/img/games/final_fantasy_intergrade.jpeg"
@@ -339,7 +339,7 @@
                                                                 <p>79,99 €</p>
                                                             </div>
                                                         </div>
-                                                        <div class="border-card col-lg-6 col-sm-12">
+                                                        <div class="border-card-hover col-lg-6 col-sm-12">
                                                             <div class="card-game">
                                                                 <img class="img-discoveries"
                                                                     src="/assets/img/games/Kena_BOS_GameArt.jpg"
