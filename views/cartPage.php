@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nebula connection page</title>
+    <title>Nebula cart page</title>
     <link rel="stylesheet" href="/assets/public/css/style.min.css">
 </head>
 
@@ -20,7 +20,7 @@
                 <main class="container white-page">
                     <div class="row">
                         <div class="col-lg-9">
-                            <div class="border-card2">
+                            <div class="border-card2 mb-3">
                                 <div class="card-game2">
                                     <div class="d-flex align-items">
                                         <div>
@@ -29,18 +29,43 @@
                                         <div class="d-flex justify-content-between">
                                             <div class="d-flex flex-column justify-content-between">
                                                 <div>
-                                                    <span>God Of War</span>
-                                                    <p>Disponible le 14/01/2022</p>
+                                                    <span class="right-card-game">God Of War</span>
+                                                    <p class="left-card-game">Disponible le 14/01/2022</p>
                                                 </div>
                                                 <div>
                                                     <img class="logo-pegi" src="../assets/img/games/pegi18.png" alt="">
-                                                    <span>PEGI 18</span><br>
+                                                    <span class="left-card-game">PEGI 18</span><br>
                                                     <span class="iconify" data-icon="ant-design:windows-filled" style="color: white;"></span>
                                                 </div>  
                                             </div>
+                                            <div class="d-flex flex-column justify-content-between text-end right-cart-card">
+                                                <p class="right-card-game">49,99 €</p>
+                                                <p class="left-card-game">Retirer du panier</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-card2 mb-3">
+                                <div class="card-game2">
+                                    <div class="d-flex align-items">
+                                        <div>
+                                            <img class="img-cart me-3" src="/assets/img/games/Kena_BOS_GameArt.jpg" alt="god of war">
+                                        </div>
+                                        <div class="d-flex justify-content-between">
                                             <div class="d-flex flex-column justify-content-between">
-                                                <p>49,99 €</p>
-                                                <p class="">Retirer du panier</p>
+                                                <div>
+                                                    <span class="right-card-game">Kena: Bridges of Spirit</span>
+                                                </div>
+                                                <div>
+                                                    <img class="logo-pegi" src="../assets/img/games/pegi12.png" alt="">
+                                                    <span class="left-card-game">PEGI 12</span><br>
+                                                    <span class="iconify" data-icon="ant-design:windows-filled" style="color: white;"></span>
+                                                </div>  
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-between text-end right-ml-cart-card">
+                                                <p class="right-card-game">39,99 €</p>
+                                                <p class="left-card-game">Retirer du panier</p>
                                             </div>
                                         </div>
                                     </div>

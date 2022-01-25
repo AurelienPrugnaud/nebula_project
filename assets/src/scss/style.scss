@@ -50,7 +50,6 @@ main {
 
         div.border-card-hover {
             padding: 5px;
-            background-color: $background;
     
             &:hover {
                 border-radius: 20px;
@@ -231,7 +230,6 @@ h1.card-title {
 
 /* //////////////////// CART PAGE START///////////////////////////////////*/
 
-
 img.img-cart {
     border-radius: 10px;
     width: 175px;
@@ -248,4 +246,48 @@ hr.horizontal-line {
 img.logo-pegi {
     width: 22px
 }
+
+.left-card-game {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.right-card-game {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.right-ml-cart-card {
+    margin-left: 420px;
+}
+
+
 /* //////////////////// CART PAGE END///////////////////////////////////*/
+
+/* //////////////////// CART LIBRARY START///////////////////////////////////*/
+
+img.img-library {
+    border-radius: 20px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+div.border-card-hover {
+    padding: 5px;
+
+    &:hover {
+        border-radius: 20px;
+        background: $gradient-43deg;
+        padding: 5px;
+        color: $white;
+    }
+
+    div.card-game {
+        background-color: $background;
+        border-radius: 20px;
+        padding: 10px;
+    }
+}
+
+/* //////////////////// CART LIBRARY END///////////////////////////////////*/
