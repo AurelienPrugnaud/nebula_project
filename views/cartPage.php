@@ -22,14 +22,26 @@
                         <div class="col-lg-9">
                             <div class="border-card2">
                                 <div class="card-game2">
-                                    <div class="row">
-                                        <div class="">
+                                    <div class="d-flex align-items">
+                                        <div>
                                             <img class="img-cart me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
                                         </div>
-                                        <div class="">
-                                            <h3 class="t-description">God of War</h3>
-
-
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-flex flex-column justify-content-between">
+                                                <div>
+                                                    <span>God Of War</span>
+                                                    <p>Disponible le 14/01/2022</p>
+                                                </div>
+                                                <div>
+                                                    <img class="logo-pegi" src="../assets/img/games/pegi18.png" alt="">
+                                                    <span>PEGI 18</span><br>
+                                                    <span class="iconify" data-icon="ant-design:windows-filled" style="color: white;"></span>
+                                                </div>  
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-between">
+                                                <p>49,99 €</p>
+                                                <p class="">Retirer du panier</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
