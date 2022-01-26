@@ -12,7 +12,7 @@
 <body>
 
     <! -- //////////////////////////////HEADER START//////////////////////////////////////// -->
-        <?php include("../includes/header.php") ?>
+        <?php include("../templates/header.php") ?>
 
         <! -- //////////////////////////////HEADER END//////////////////////////////////////// -->
 
@@ -38,7 +38,7 @@
                                                     <span class="iconify" data-icon="ant-design:windows-filled" style="color: white;"></span>
                                                 </div>  
                                             </div>
-                                            <div class="d-flex flex-column justify-content-between text-end right-cart-card">
+                                            <div class="d-flex flex-column justify-content-between text-end right-ml-cart-card">
                                                 <p class="right-card-game">49,99 €</p>
                                                 <p class="left-card-game">Retirer du panier</p>
                                             </div>
@@ -112,7 +112,7 @@
                 <! -- //////////////////////////////MAIN END//////////////////////////////////////// -->
 
                     <! -- //////////////////////////////FOOTER START//////////////////////////////////////// -->
-                        <?php include("../includes/footer.php") ?>
+                        <?php include("../templates/footer.php") ?>
 
                         <! -- //////////////////////////////FOOTER END//////////////////////////////////////// -->
 
