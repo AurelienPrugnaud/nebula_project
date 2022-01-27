@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd493acaa54d0922ef12bc831e44615d1
+class ComposerStaticInit514ffc6c86a02a29158d0db431310581
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -21,6 +21,10 @@ class ComposerStaticInitd493acaa54d0922ef12bc831e44615d1
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
+        'A' => 
+        array (
+            'Aurelien\\Nebula\\' => 16,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -36,6 +40,10 @@ class ComposerStaticInitd493acaa54d0922ef12bc831e44615d1
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Aurelien\\Nebula\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/models',
+        ),
     );
 
     public static $classMap = array (
@@ -45,9 +53,9 @@ class ComposerStaticInitd493acaa54d0922ef12bc831e44615d1
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd493acaa54d0922ef12bc831e44615d1::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd493acaa54d0922ef12bc831e44615d1::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd493acaa54d0922ef12bc831e44615d1::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit514ffc6c86a02a29158d0db431310581::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit514ffc6c86a02a29158d0db431310581::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit514ffc6c86a02a29158d0db431310581::$classMap;
 
         }, null, ClassLoader::class);
     }

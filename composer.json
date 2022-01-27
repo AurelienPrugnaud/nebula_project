@@ -1,5 +1,12 @@
 {
+    "name": "aurelien/nebula",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Aurelien\\Nebula\\": "models/"
+        }
+    },
     "require": {
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.3"
     }
 }

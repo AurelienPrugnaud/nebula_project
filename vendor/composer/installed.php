@@ -2,21 +2,21 @@
     'root' => array(
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'type' => 'library',
+        'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '157c9619620226a7205ca4011b8dc95632cc0509',
-        'name' => '__root__',
+        'reference' => '5c0c9dbcd3a509d755653665330fb819f7aef717',
+        'name' => 'aurelien/nebula',
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
+        'aurelien/nebula' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'type' => 'library',
+            'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '157c9619620226a7205ca4011b8dc95632cc0509',
+            'reference' => '5c0c9dbcd3a509d755653665330fb819f7aef717',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-ctype' => array(
