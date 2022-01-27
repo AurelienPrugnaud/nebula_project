@@ -1,14 +1,17 @@
-var slideIndex = 0;
-showSlides();
+const items = document.querySelectorAll('.cont-img');
+const nbSlides = items.length;
+let count = 0;
 
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+function nextSlide() {
+  items[count].classList.remove('active');
+  if(count < nbSlides - 1){
+    count++;
+  } else {
+    count = 0;
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 5000); // Change image every 5 seconds
-} 
+  items[count].classList.add('active');
+}
+
+setInterval(nextSlide, 10000)
+
+

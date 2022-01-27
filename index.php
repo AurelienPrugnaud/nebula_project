@@ -21,38 +21,65 @@
 
                     <! -- //////////////////////////////CAROUSEL START//////////////////////////////////////// -->
                         <div class="section">
-                            <!-- <img class="carousel" src="/assets/img/games/god_of_war.jpg" alt="god of war"> -->
-
-                            <!-- Slideshow container -->
-                            <div class="slideshow-container">
-
-                                <!-- Full-width images with number and caption text -->
-                                <div class="mySlides fade">
-                                    <a href="/views/gamePage.php">
-                                        <img class="img-carousel" src="/assets/img/games/god_of_war.jpg"
-                                            alt="God of War">
-                                        <div class="text">God of War</div>
-                                    </a>
+                            <div class="slides-container">
+                                <div class="slider">
+                                    <div class="active cont-img position-relative">
+                                        <a href="/views/gamePage.php">
+                                            <img class="img-carousel" src="/assets/img/games/god_of_war.jpg" alt="">
+                                            <div class="position-absolute ms-5 top-50 carousel-text">
+                                                <div class="d-flex justify-content-center mb-3">
+                                                    <img class="logo-game" src="/assets/img/games/god_war_logo.png"
+                                                        alt="">
+                                                </div>
+                                                <p class="date">
+                                                    Disponible le 14/01/2022
+                                                </p>
+                                                <p>
+                                                    Incarné de nouveau Kratos dans ce nouvel opus de la série
+                                                    mondialement connu: God of War.
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="cont-img position-relative">
+                                        <a href="/views/gamePage.php">
+                                            <img class="img-carousel" src="/assets/img/games/genshin_impact.jpg" alt="">
+                                            <div class="position-absolute ms-5 top-50 carousel-text">
+                                                <div class="d-flex justify-content-center mb-3">
+                                                    <img class="logo-game" src="/assets/img/games/god_war_logo.png"
+                                                        alt="">
+                                                </div>
+                                                <p class="date">
+                                                    Déja disponible
+                                                </p>
+                                                <p>
+                                                    Partez à l'aventure à travers Teyvat pour retrouver votre famille et
+                                                    obtenir des réponses auprès des Sept, les dieux de chaque élément.
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="cont-img position-relative">
+                                        <a href="/views/gamePage.php">
+                                            <img class="img-carousel" src="/assets/img/games/Kena_BOS_GameArt.jpg"
+                                                alt="">
+                                            <div class="position-absolute ms-5 top-50 carousel-text">
+                                                <div class="d-flex justify-content-center mb-3">
+                                                    <img class="logo-game" src="/assets/img/games/god_war_logo.png"
+                                                        alt="">
+                                                </div>
+                                                <p class="date">
+                                                    Déjà disponible
+                                                </p>
+                                                <p>
+                                                    Incarnez Kena, partez à l’aventure et développez une équipe de
+                                                    compagnons-esprits charmants appelés les Rots.
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
-
-                                <div class="mySlides fade">
-                                    <img class="img-carousel" src="/assets/img/games/genshin_impact.jpg"
-                                        alt="God of War">
-                                    <div class="text">Genshin Impact</div>
-                                </div>
-
-                                <div class="mySlides fade">
-                                    <img class="img-carousel" src="/assets/img/games/Kena_BOS_GameArt.jpg"
-                                        alt="God of War">
-                                    <div class="text">Kena: Bridges of Spirits</div>
-                                </div>
-
-                                <!-- Next and previous buttons -->
-                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
                             </div>
-
                         </div>
                         <! -- //////////////////////////////CAROUSEL END//////////////////////////////////////// -->
 
@@ -84,7 +111,7 @@
                                                     src="/assets/img/games/Kena_BOS_GameArt.jpg" alt="Kena">
                                                 <h2 class="t-game">Kena: Bridge of Spirits</h2>
                                                 <p class="">Incarnez Kena, partez à l’aventure et développez une équipe
-                                                    de compagnons-esprits charmants appelés les Rots. </p>
+                                                    de compagnons-esprits charmants appelés les Rots.</p>
                                                 <p class="">39,99 €</p>
                                             </div>
                                         </div>
