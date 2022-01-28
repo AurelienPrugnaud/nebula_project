@@ -22,17 +22,18 @@
                     <div class="row">
                         <div class="col-lg-9">
                             <div class="section">
+                                <iframe width="100%" height="530" src="https://www.youtube.com/embed/8O4uT214kak" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <img class="img-game mb-4" src="../assets/img/games/god_of_war.jpg" alt="god of war">
                                 <div class="d-flex align-items-center justify-content-between section">
-                                    <img class="img-game-mini" src="../assets/img/games/god_of_war_miniature1.jpg"
+                                    <img class="img-game-mini1" src="../assets/img/games/god_of_war_miniature1.jpg"
                                         alt="">
-                                    <img class="img-game-mini" src="../assets/img/games/god_of_war_miniature2.jpg"
+                                    <img class="img-game-mini2" src="../assets/img/games/god_of_war_miniature2.jpg"
                                         alt="">
-                                    <img class="img-game-mini" src="../assets/img/games/god_of_war_miniature3.jpg"
+                                    <img class="img-game-mini3" src="../assets/img/games/god_of_war_miniature3.jpg"
                                         alt="">
-                                    <img class="img-game-mini" src="../assets/img/games/god_of_war_miniature4.jpg"
+                                    <img class="img-game-mini4" src="../assets/img/games/god_of_war_miniature4.jpg"
                                         alt="">
-                                    <img class="img-game-mini" src="../assets/img/games/god_of_war_miniature5.jpg"
+                                    <img class="img-game-mini5" src="../assets/img/games/god_of_war_miniature5.jpg"
                                         alt="">
                                 </div>
                                 <div class="section">
