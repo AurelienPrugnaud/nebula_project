@@ -89,7 +89,9 @@
                                     <div class="d-flex align-items-center mb-3">
                                         <h1 class="t-section me-3 ">Découvertes</h1>
                                         <a href="">
-                                            <button class="btn btn-outline-primary">Voir plus</button>
+                                            <div class="border-button">
+                                                <button class="button ps-5 pe-5">Voir plus</button>
+                                            </div>
                                         </a>
                                     </div>
                                     <div class="row">
@@ -129,7 +131,9 @@
                                                     <div class="d-flex align-items-center mb-3">
                                                         <h1 class="t-section me-3 ">Nouvelles sorties</h1>
                                                         <a href="">
-                                                            <button class="btn btn-outline-primary">Voir plus</button>
+                                                            <div class="border-button">
+                                                                <button class="button ps-3 pe-3">Voir plus</button>
+                                                            </div>
                                                         </a>
                                                     </div>
                                                     <div class="border-card-hover">
@@ -194,8 +198,10 @@
                                                             <div class="d-flex align-items-center mb-3">
                                                                 <h1 class="t-section me-3 ">Meilleures ventes</h1>
                                                                 <a href="">
-                                                                    <button class="btn btn-outline-primary">Voir
-                                                                        plus</button>
+                                                                    <div class="border-button">
+                                                                        <button class="button ps-3 pe-3">Voir
+                                                                            plus</button>
+                                                                    </div>
                                                                 </a>
                                                             </div>
                                                             <div class="border-card-hover">
@@ -266,8 +272,10 @@
                                                                         <h1 class="t-section me-3 ">Prochaines sorties
                                                                         </h1>
                                                                         <a href="">
-                                                                            <button class="btn btn-outline-primary">Voir
-                                                                                plus</button>
+                                                                            <div class="border-button">
+                                                                                <button class="button ps-2 pe-2">Voir
+                                                                                    plus</button>
+                                                                            </div>
                                                                         </a>
                                                                     </div>
                                                                     <div class="border-card-hover">
@@ -349,7 +357,9 @@
                                                     <div class="d-flex align-items-center mb-3">
                                                         <h1 class="t-section me-3 ">Découvertes</h1>
                                                         <a href="">
-                                                            <button class="btn btn-outline-primary">Voir plus</button>
+                                                            <div class="border-button">
+                                                                <button class="button ps-5 pe-5">Voir plus</button>
+                                                            </div>
                                                         </a>
                                                     </div>
                                                     <div class="row">
@@ -387,7 +397,7 @@
                 <! -- //////////////////////////////MAIN END//////////////////////////////////////// -->
 
                     <! -- //////////////////////////////FOOTER START//////////////////////////////////////// -->
-                    <?php include("modules/footer.php") ?>
+                        <?php include("modules/footer.php") ?>
 
                         <! -- //////////////////////////////FOOTER END//////////////////////////////////////// -->
 

@@ -25,20 +25,28 @@
                                 <form class="mb-3">
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email"
-                                            aria-describedby="emailHelp">
+                                        <div class="border-button">
+                                            <input type="email" class="form-control" id="email"
+                                                aria-describedby="emailHelp">
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Mot de passe</label>
-                                        <input type="password" class="form-control" id="password">
+                                        <div class="border-button">
+                                            <input type="password" class="form-control" id="password">
+                                        </div>
                                     </div>
                                     <div class="mb-3 form-check">
                                         <input type="checkbox" class="form-check-input" id="session">
                                         <label class="form-check-label" for="session">Se souvenir de moi</label>
                                     </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-outline-primary">Se connecter</button>
-                                    </div>
+                                    <a href="cartPage.php">
+                                        <div class="border-button-game-page">
+                                            <button class="button-game-page ps-5 pe-5">
+                                                Se connecter
+                                            </button>
+                                        </div>
+                                    </a>
                                 </form>
                                 <p class="text-center">
                                     Vous n'avez pas de compte Nebula ?<br>

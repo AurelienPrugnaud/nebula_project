@@ -22,7 +22,10 @@
                     <div class="row">
                         <div class="col-lg-9">
                             <div class="section">
-                                <iframe width="100%" height="530" src="https://www.youtube.com/embed/8O4uT214kak" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="100%" height="530" src="https://www.youtube.com/embed/8O4uT214kak"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
                                 <img class="img-game mb-4" src="../assets/img/games/god_of_war.jpg" alt="god of war">
                                 <div class="d-flex align-items-center justify-content-between section">
                                     <img class="img-game-mini1" src="../assets/img/games/god_of_war_miniature1.jpg"
@@ -140,9 +143,11 @@
                                         jeu.
                                     </p>
                                     <div class="d-flex justify-content-center">
-                                        <button class="btn btn-outline-primary">
-                                            Voir moins
-                                        </button>
+                                        <div class="border-button-game-page">
+                                            <button class="button-game-page">
+                                                Voir moins
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -255,11 +260,13 @@
                                     <p>
                                         49,99 €
                                     </p>
-                                    <div class="d-flex justify-content-center mb-3">
-                                        <a href="cartPage.php">
-                                            <button class="btn btn-outline-primary">Ajouter au panier</button>
-                                        </a>
-                                    </div>
+                                    <a href="cartPage.php">
+                                        <div class="border-button-game-page mb-3">
+                                            <button class="button-game-page">
+                                                Ajouter au panier
+                                            </button>
+                                        </div>
+                                    </a>
                                     <div class="mb-3">
                                         <img class="logo-pegi" src="../assets/img/games/pegi18.png" alt="">
                                         <span>PEGI 18</span>

@@ -24,7 +24,8 @@
                                 <div class="card-game2">
                                     <div class="d-flex align-items">
                                         <div>
-                                            <img class="img-cart me-3" src="/assets/img/games/god_of_war.jpg" alt="god of war">
+                                            <img class="img-cart me-3" src="/assets/img/games/god_of_war.jpg"
+                                                alt="god of war">
                                         </div>
                                         <div class="d-flex justify-content-between">
                                             <div class="d-flex flex-column justify-content-between">
@@ -35,10 +36,12 @@
                                                 <div>
                                                     <img class="logo-pegi" src="../assets/img/games/pegi18.png" alt="">
                                                     <span class="left-card-game">PEGI 18</span><br>
-                                                    <span class="iconify" data-icon="ant-design:windows-filled" style="color: white;"></span>
-                                                </div>  
+                                                    <span class="iconify" data-icon="ant-design:windows-filled"
+                                                        style="color: white;"></span>
+                                                </div>
                                             </div>
-                                            <div class="d-flex flex-column justify-content-between text-end right-ml-cart-card">
+                                            <div
+                                                class="d-flex flex-column justify-content-between text-end right-ml-cart-card">
                                                 <p class="right-card-game">49,99 €</p>
                                                 <p class="left-card-game">Retirer du panier</p>
                                             </div>
@@ -50,7 +53,8 @@
                                 <div class="card-game2">
                                     <div class="d-flex align-items">
                                         <div>
-                                            <img class="img-cart me-3" src="/assets/img/games/Kena_BOS_GameArt.jpg" alt="god of war">
+                                            <img class="img-cart me-3" src="/assets/img/games/Kena_BOS_GameArt.jpg"
+                                                alt="god of war">
                                         </div>
                                         <div class="d-flex justify-content-between">
                                             <div class="d-flex flex-column justify-content-between">
@@ -60,10 +64,12 @@
                                                 <div>
                                                     <img class="logo-pegi" src="../assets/img/games/pegi12.png" alt="">
                                                     <span class="left-card-game">PEGI 12</span><br>
-                                                    <span class="iconify" data-icon="ant-design:windows-filled" style="color: white;"></span>
-                                                </div>  
+                                                    <span class="iconify" data-icon="ant-design:windows-filled"
+                                                        style="color: white;"></span>
+                                                </div>
                                             </div>
-                                            <div class="d-flex flex-column justify-content-between text-end right-ml-cart-card">
+                                            <div
+                                                class="d-flex flex-column justify-content-between text-end right-ml-cart-card">
                                                 <p class="right-card-game">39,99 €</p>
                                                 <p class="left-card-game">Retirer du panier</p>
                                             </div>
@@ -102,7 +108,13 @@
                                         </span>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button class="btn btn-outline-primary">Paiement</button>
+                                        <a href="cartPage.php">
+                                            <div class="border-button">
+                                                <button class="button ps-5 pe-5">
+                                                    Paiement
+                                                </button>
+                                            </div>
+                                        </a> 
                                     </div>
                                 </div>
                             </div>

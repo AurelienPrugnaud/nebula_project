@@ -25,25 +25,39 @@
                             <form>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                                    <div class="border-button">
+                                        <input type="email" class="form-control" id="email"
+                                            aria-describedby="emailHelp">
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="mb-3 col-6">
                                         <label for="firstname" class="form-label">Prénom</label>
-                                        <input type="text" class="form-control" id="firstname" placeholder="">
+                                        <div class="border-button">
+                                            <input type="text" class="form-control" id="firstname" placeholder="">
+                                        </div>
                                     </div>
                                     <div class="mb-3 col-6">
                                         <label for="name" class="form-label">Nom</label>
-                                        <input type="text" class="form-control" id="name" placeholder="">
+                                        <div class="border-button">
+                                            <input type="text" class="form-control" id="name" placeholder="">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Votre message</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1"></textarea>
+                                    <label for="textarea" class="form-label">Votre message</label>
+                                    <div class="border-button">
+                                        <textarea class="form-control" id="textarea"></textarea>
+                                    </div>
                                 </div>
                                 <div class="mb-3 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-outline-primary">Envoyer</button>
-                                </div>
+                                    <a href="">
+                                        <div class="border-button">
+                                            <button class="button ps-5 pe-5">
+                                                Envoyer
+                                            </button>
+                                        </div>
+                                    </a> </div>
                             </form>
                         </div>
                     </div>

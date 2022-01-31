@@ -34,8 +34,10 @@
                         <form>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Adresse mail</label>
-                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                                    placeholder="mail@mail.com">
+                                <div class="border-button">
+                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                                        placeholder="mail@mail.com">
+                                </div>
                             </div>
                             <div class="d-flex align-items-center mb-3">
                                 <h2 class="t-gamePage">Informations personnelles</h2>
@@ -44,11 +46,15 @@
                             <div class="row">
                                 <div class="mb-3 col-6">
                                     <label for="firstname" class="form-label">Prénom</label>
-                                    <input type="text" class="form-control" id="firstname" placeholder="Aurélien">
+                                    <div class="border-button">
+                                        <input type="text" class="form-control" id="firstname" placeholder="Aurélien">
+                                    </div>
                                 </div>
                                 <div class="mb-3 col-6">
                                     <label for="name" class="form-label">Nom</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Prugnaud">
+                                    <div class="border-button">
+                                        <input type="text" class="form-control" id="name" placeholder="Prugnaud">
+                                    </div>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center mb-3">
@@ -59,34 +65,49 @@
                                 <div class="mb-3 col-6">
                                     <div class="mb-3">
                                         <label for="adress1" class="form-label">Adresse (ligne 1)</label>
-                                        <input type="text" class="form-control" id="adress1"
-                                            placeholder="12 rue de nul part">
+                                        <div class="border-button">
+                                            <input type="text" class="form-control" id="adress1"
+                                                placeholder="12 rue de nul part">
+                                        </div>
                                     </div>
                                     <div>
                                         <label for="city" class="form-label">Ville</label>
-                                        <input type="text" class="form-control" id="city"
-                                            placeholder="Clermont-Ferrand">
+                                        <div class="border-button">
+                                            <input type="text" class="form-control" id="city"
+                                                placeholder="Clermont-Ferrand">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mb-3 col-6">
                                     <div class="mb-3">
                                         <label for="adress2" class="form-label">Adresse (ligne 2)</label>
-                                        <input type="text" class="form-control" id="adress2" placeholder="">
+                                        <div class="border-button">
+                                            <input type="text" class="form-control" id="adress2" placeholder="">
+                                        </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <div class="col-6">
                                             <label for="state" class="form-label">Région</label>
-                                            <input type="text" class="form-control" id="state" placeholder="Auvergne">
+                                            <div class="border-button">
+                                                <input type="text" class="form-control" id="state"
+                                                    placeholder="Auvergne">
+                                            </div>
                                         </div>
                                         <div class="col-6">
                                             <label for="cityCode" class="form-label">Code Postal</label>
-                                            <input type="text" class="form-control" id="cityCode" placeholder="63000">
+                                            <div class="border-button">
+                                                <input type="text" class="form-control" id="cityCode"
+                                                    placeholder="63000">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-outline-primary">Sauvegarder les
-                                            changements</button>
-                                    </div>
+                                    <a href="">
+                                        <div class="border-button-game-page">
+                                            <button class="button-game-page ps-5 pe-5">
+                                                Sauvegarder les changements
+                                            </button>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </form>
@@ -106,17 +127,24 @@
                                     <div class="mb-3">
                                         <p>Mot de passe actuel</p>
                                         <label for="password" class="form-label">Requis</label>
-                                        <input type="password" class="form-control" id="password" placeholder="">
+                                        <div class="border-button">
+                                            <input type="password" class="form-control" id="password" placeholder="">
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <p>Nouveau mot de passe</p>
                                         <label for="newPassword" class="form-label">Requis</label>
-                                        <input type="password" class="form-control" id="newPassword" placeholder="">
+                                        <div class="border-button">
+                                            <input type="password" class="form-control" id="newPassword" placeholder="">
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <p>Confirmer le nouveau mot de passe</p>
                                         <label for="newPassword2" class="form-label">Requis</label>
-                                        <input type="password" class="form-control" id="newPassword2" placeholder="">
+                                        <div class="border-button">
+                                            <input type="password" class="form-control" id="newPassword2"
+                                                placeholder="">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mb-3 col-6">
@@ -125,11 +153,13 @@
                                     <p>Votre mot de passe doit faire au moins 7 caractères.</p>
                                     <p>Votre mot de passe doit contenir au moins un chiffre.</p>
                                     <p>Votre mot de passe ne peut contenir aucun espace.</p>
-                                    <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-outline-primary">Sauvegarder les
-                                            changements
-                                        </button>
-                                    </div>
+                                    <a href="">
+                                        <div class="border-button-game-page">
+                                            <button class="button-game-page ps-5 pe-5">
+                                                Sauvegarder les changements
+                                            </button>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </form>
@@ -146,25 +176,34 @@
                         <form>
                             <div class="mb-3">
                                 <label for="card" class="form-label">Numro de la carte</label>
-                                <input type="test" class="form-control" id="card" aria-describedby="emailHelp"
-                                    placeholder="">
+                                <div class="border-button">
+                                    <input type="test" class="form-control" id="card" aria-describedby="emailHelp"
+                                        placeholder="">
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-6">
                                     <div class="mb-3">
                                         <label for="cardDate" class="form-label">Expiration</label>
-                                        <input type="text" class="form-control" id="cardDate" placeholder="">
+                                        <div class="border-button">
+                                            <input type="text" class="form-control" id="cardDate" placeholder="">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mb-3 col-6">
                                     <div class="mb-3">
                                         <label for="cvv" class="form-label">CVV</label>
-                                        <input type="text" class="form-control" id="cvv" placeholder="">
+                                        <div class="border-button">
+                                            <input type="text" class="form-control" id="cvv" placeholder="">
+                                        </div>
                                     </div>
-                                    <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-outline-primary">Sauvegarder les
-                                            changements</button>
-                                    </div>
+                                    <a href="">
+                                        <div class="border-button-game-page">
+                                            <button class="button-game-page ps-5 pe-5">
+                                                Sauvegarder les changements
+                                            </button>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </form>
@@ -181,11 +220,13 @@
                                         suppression de votre compte Nebula</p>
                                 </div>
                                 <div class="mb-3 col-6">
-                                    <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-outline-primary">
-                                            Demander la suppression de votre compte
-                                        </button>
-                                    </div>
+                                    <a href="">
+                                        <div class="border-button-game-page">
+                                            <button class="button-game-page ps-5 pe-5">
+                                                Demander la suppression de votre compte
+                                            </button>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </form>

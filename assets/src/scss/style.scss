@@ -81,6 +81,23 @@ main {
     }
 }
 
+div.border-button {
+    border-radius: 10px;
+    background: $gradient-43deg;
+    padding: 3px;
+
+    button.button {
+        color: white;
+        border: none;
+        background: $background;
+        border-radius: 10px;
+    
+        &:hover {
+            background: $gradient-43deg;
+        }
+    }
+}
+
 /* //////////////////// MAIN END///////////////////////////////////*/
 
 /* //////////////////// MAIN GAME PAGE START///////////////////////////////////*/
@@ -179,12 +196,28 @@ main.white-page {
     }
 }
 
+div.border-button-game-page {
+    width: 100%;
+    border-radius: 10px;
+    background: $gradient-43deg;
+    padding: 3px;
+
+    button.button-game-page {
+        width: 100%;
+        color: white;
+        border: none;
+        background: $background;
+        border-radius: 10px;
+    
+        &:hover {
+            background: $gradient-43deg;
+        }
+    }
+}
+
 /* //////////////////// MAIN GAME PAGE END///////////////////////////////////*/
 
-/* //////////////////// MAIN PROFILE PAGE START///////////////////////////////////*/
-
-
-/* //////////////////// CONNEXION/CONTACT PAGE START///////////////////////////////////*/
+/* //////////////////// CONNEXION/CONTACT/REGISTRATION/PROFILE PAGE START///////////////////////////////////*/
 
 div.border-card2 {
     border-radius: 20px;
@@ -230,7 +263,18 @@ h1.card-title {
     font-weight: 700;
 }
 
-/* //////////////////// CONNEXION/CONTACT/REGISTRATION PAGE END///////////////////////////////////*/
+input.form-control {
+    border-radius: 10px !important;
+}
+
+input.form-check-input {
+
+    &:checked {
+        background: $gradient-43deg !important;
+    }
+}
+
+/* //////////////////// CONNEXION/CONTACT/REGISTRATION/PROFILE PAGE END///////////////////////////////////*/
 
 /* //////////////////// CART PAGE START///////////////////////////////////*/
 

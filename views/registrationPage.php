@@ -25,20 +25,28 @@
                                 <form class="mb-3">
                                     <div class="mb-3">
                                         <label for="firstname" class="form-label">Prénom</label>
-                                        <input type="text" class="form-control" id="firstname">
+                                        <div class="border-button">
+                                            <input type="text" class="form-control" id="firstname">
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nom</label>
-                                        <input type="text" class="form-control" id="name">
+                                        <div class="border-button">
+                                            <input type="text" class="form-control" id="name">
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Adresse e-mail</label>
-                                        <input type="email" class="form-control" id="email"
-                                            aria-describedby="emailHelp">
+                                        <div class="border-button">
+                                            <input type="email" class="form-control" id="email"
+                                                aria-describedby="emailHelp">
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Mot de passe</label>
-                                        <input type="password" class="form-control" id="password">
+                                        <div class="border-button">
+                                            <input type="password" class="form-control" id="password">
+                                        </div>
                                     </div>
                                     <div class="mb-3 form-check">
                                         <input type="checkbox" class="form-check-input" id="cgu">
