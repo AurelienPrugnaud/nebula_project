@@ -108,7 +108,7 @@
                                         </span>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <a href="cartPage.php">
+                                        <a href="">
                                             <div class="border-button">
                                                 <button class="button ps-5 pe-5">
                                                     Paiement

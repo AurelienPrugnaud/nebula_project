@@ -22,7 +22,7 @@
                         <div class="section border-card2 col-4">
                             <div class="card-game2">
                                 <h1 class="card-title text-center">Créer un compte</h1>
-                                <form class="mb-3">
+                                <form>
                                     <div class="mb-3">
                                         <label for="firstname" class="form-label">Prénom</label>
                                         <div class="border-button">
@@ -50,13 +50,15 @@
                                     </div>
                                     <div class="mb-3 form-check">
                                         <input type="checkbox" class="form-check-input" id="cgu">
-                                        <label class="form-check-label" for="cgu">J'ai lu et j'accepte les conditions
-                                            d'utilisations</label>
+                                        <label class="form-check-label" for="cgu">J'ai lu et j'accepte les conditions d'utilisations</label>
                                     </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-outline-primary">Créer votre
-                                            compte</button>
-                                    </div>
+                                    <a href="">
+                                        <div class="border-button-game-page">
+                                            <button class="button-game-page ps-5 pe-5">
+                                                Créer votre compte
+                                            </button>
+                                        </div>
+                                    </a>
                                 </form>
                             </div>
                         </div>

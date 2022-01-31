@@ -144,7 +144,7 @@
                                     </p>
                                     <div class="d-flex justify-content-center">
                                         <div class="border-button-game-page">
-                                            <button class="button-game-page">
+                                            <button class="button-game-page collapsible">
                                                 Voir moins
                                             </button>
                                         </div>

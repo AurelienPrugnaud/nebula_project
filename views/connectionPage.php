@@ -40,7 +40,7 @@
                                         <input type="checkbox" class="form-check-input" id="session">
                                         <label class="form-check-label" for="session">Se souvenir de moi</label>
                                     </div>
-                                    <a href="cartPage.php">
+                                    <a href="">
                                         <div class="border-button-game-page">
                                             <button class="button-game-page ps-5 pe-5">
                                                 Se connecter

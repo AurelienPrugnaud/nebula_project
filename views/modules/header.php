@@ -6,9 +6,11 @@
                 <img class="logo" src="/assets/img/logo/logo_nebula_name_100px.png" alt="logo nebula">
             </a>
         </div>
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Chercher" aria-label="Search">
-            <button class="btn btn-outline-primary" type="submit">Chercher</button>
+        <form class="d-flex align-items-center">
+            <div class="border-button">
+                <input class="form-control" type="search" placeholder="Chercher" aria-label="Search">
+            </div>
+            <a class="menu ms-3" type="submit">Chercher</a>
         </form>
     </div>
     <div class="me-2">
