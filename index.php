@@ -53,11 +53,9 @@
         ],
     ];
 
-    /*foreach ($pages as $page) {
+    foreach ($pages as $page) {
         if ($_SERVER['REQUEST_URI'] == $page['url']) {
 
             $page = new \Aurelien\Nebula\Controller\PageController($page['template'] . ".html.twig", ['title' => $page['title']]);
         }
-    }*/
-
-    var_dump($_SERVER['REQUEST_URI']);
+    }

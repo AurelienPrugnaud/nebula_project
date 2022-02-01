@@ -1,10 +1,11 @@
 ////////////////CAROUSEL HOME PAGE START //////////////////////////
 
 function nextSlide() {
+
   const slide = document.querySelectorAll('.cont-img');
   const nbSlides = slide.length;
   let count = 0;
-  
+
   slide[count].classList.remove('active');
   if(count < nbSlides - 1){
     count++;
@@ -16,19 +17,19 @@ function nextSlide() {
 
 setInterval(nextSlide, 6000)
 
-
 ////////////////CAROUSEL HOME PAGE END //////////////////////////
 
 ////////////////CAROUSEL GAME PAGE START //////////////////////////
 
-const img = document.querySelector('.img-game');
-const imgMin1 = document.querySelector('.img-game-mini1');
-const imgMin2 = document.querySelector('.img-game-mini2');
-const imgMin3 = document.querySelector('.img-game-mini3');
-const imgMin4 = document.querySelector('.img-game-mini4');
-const imgMin5 = document.querySelector('.img-game-mini5');
-
 (function changeImg() {
+
+  const img = document.querySelector('.img-game');
+  const imgMin1 = document.querySelector('.img-game-mini1');
+  const imgMin2 = document.querySelector('.img-game-mini2');
+  const imgMin3 = document.querySelector('.img-game-mini3');
+  const imgMin4 = document.querySelector('.img-game-mini4');
+  const imgMin5 = document.querySelector('.img-game-mini5');
+
   imgMin1.addEventListener('click', function() {
     const imgSrc = document.querySelector('.img-game').src;
     img.src = imgMin1.src;
@@ -60,14 +61,15 @@ const imgMin5 = document.querySelector('.img-game-mini5');
   })
 })();
 
-
 ////////////////CAROUSEL GAME PAGE END //////////////////////////
 
 ////////////////COLLAPSE GAME PAGE START //////////////////////////
-const button = document.querySelector('.collapsible');
-const content = document.querySelector('.content');
 
 (function showCollapse() {
+
+  const button = document.querySelector('.collapsible');
+  const content = document.querySelector('.content');
+
   button.addEventListener('click', function() {
     if(content.style.display === 'block') {
       content.style.display = 'none';
