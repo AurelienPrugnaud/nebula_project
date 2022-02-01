@@ -42,7 +42,7 @@
                                         </a>
                                     </div>
                                     <div class="cont-img position-relative">
-                                        <a href="/views/gamePage.php">
+                                        <a href="/View/gamePage.php">
                                             <img class="img-carousel" src="/assets/img/games/genshin_impact.jpg" alt="">
                                             <div class="position-absolute ms-5 top-50 carousel-text">
                                                 <div class="d-flex justify-content-center mb-3">
@@ -60,7 +60,7 @@
                                         </a>
                                     </div>
                                     <div class="cont-img position-relative">
-                                        <a href="/views/gamePage.php">
+                                        <a href="/View/gamePage.php">
                                             <img class="img-carousel" src="/assets/img/games/Kena_BOS_GameArt.jpg"
                                                 alt="">
                                             <div class="position-absolute ms-5 top-50 carousel-text">

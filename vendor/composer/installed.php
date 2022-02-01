@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '5c0c9dbcd3a509d755653665330fb819f7aef717',
+        'reference' => '8bfc5fffb12bf72397ed4479eedee8732ed44578',
         'name' => 'aurelien/nebula',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '5c0c9dbcd3a509d755653665330fb819f7aef717',
+            'reference' => '8bfc5fffb12bf72397ed4479eedee8732ed44578',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-ctype' => array(

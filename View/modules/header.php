@@ -14,8 +14,8 @@
         </form>
     </div>
     <div class="me-2">
-        <a class="menu" href="../views/index.php">Boutique</a>
-        <a class="menu" href="../views/profilPage.php">Compte</a>
-        <a class="menu" href="../views/connectionPage.php">Connexion</a>
+        <a class="menu" href="../View/index.php">Boutique</a>
+        <a class="menu" href="../View/profilPage.php">Compte</a>
+        <a class="menu" href="../View/connectionPage.php">Connexion</a>
     </div>
 </header>

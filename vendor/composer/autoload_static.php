@@ -23,6 +23,7 @@ class ComposerStaticInit514ffc6c86a02a29158d0db431310581
         ),
         'A' => 
         array (
+            'Aurelien\\Nebula\\Controller\\' => 27,
             'Aurelien\\Nebula\\' => 16,
         ),
     );
@@ -40,9 +41,13 @@ class ComposerStaticInit514ffc6c86a02a29158d0db431310581
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Aurelien\\Nebula\\Controller\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Controller',
+        ),
         'Aurelien\\Nebula\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/models',
+            0 => __DIR__ . '/../..' . '/Model',
         ),
     );
 

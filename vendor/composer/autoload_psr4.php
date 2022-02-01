@@ -9,5 +9,6 @@ return array(
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
-    'Aurelien\\Nebula\\' => array($baseDir . '/models'),
+    'Aurelien\\Nebula\\Controller\\' => array($baseDir . '/Controller'),
+    'Aurelien\\Nebula\\' => array($baseDir . '/Model'),
 );

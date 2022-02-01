@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<! -- //////////////////////////////MAIN START//////////////////////////////////////// -->
+<main class="container white-page">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="border-card2 mb-3">
+                <div class="card-game2">
+                    <div class="d-flex align-items">
+                        <div>
+                            <img class="img-cart me-3" src="/assets/img/games/god_of_war.jpg"
+                                alt="god of war">
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-column justify-content-between">
+                                <div>
+                                    <span class="right-card-game">God Of War</span>
+                                    <p class="left-card-game">Disponible le 14/01/2022</p>
+                                </div>
+                                <div>
+                                    <img class="logo-pegi" src="../assets/img/games/pegi18.png" alt="">
+                                    <span class="left-card-game">PEGI 18</span><br>
+                                    <span class="iconify" data-icon="ant-design:windows-filled"
+                                        style="color: white;"></span>
+                                </div>
+                            </div>
+                            <div
+                                class="d-flex flex-column justify-content-between text-end right-ml-cart-card">
+                                <p class="right-card-game">49,99 €</p>
+                                <p class="left-card-game">Retirer du panier</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-card2 mb-3">
+                <div class="card-game2">
+                    <div class="d-flex align-items">
+                        <div>
+                            <img class="img-cart me-3" src="/assets/img/games/Kena_BOS_GameArt.jpg"
+                                alt="god of war">
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-column justify-content-between">
+                                <div>
+                                    <span class="right-card-game">Kena: Bridges of Spirit</span>
+                                </div>
+                                <div>
+                                    <img class="logo-pegi" src="../assets/img/games/pegi12.png" alt="">
+                                    <span class="left-card-game">PEGI 12</span><br>
+                                    <span class="iconify" data-icon="ant-design:windows-filled"
+                                        style="color: white;"></span>
+                                </div>
+                            </div>
+                            <div
+                                class="d-flex flex-column justify-content-between text-end right-ml-cart-card">
+                                <p class="right-card-game">39,99 €</p>
+                                <p class="left-card-game">Retirer du panier</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="border-card">
+                <div class="card-game">
+                    <h1 class="card-title text-center mb-3">Résumé des jeux</h1>
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="left-card-game">
+                            God of War
+                        </span>
+                        <span class="right-card-game">
+                            49,99 €
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="left-card-game">
+                            Kena: Bridges of Spirit
+                        </span>
+                        <span class="right-card-game">
+                            39,99 €
+                        </span>
+                    </div>
+                    <hr class="horizontal-line">
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="left-card-game">
+                            Sous-total
+                        </span>
+                        <span class="right-card-game">
+                            89,98 €
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="">
+                            <div class="border-button">
+                                <button class="button ps-5 pe-5">
+                                    Paiement
+                                </button>
+                            </div>
+                        </a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<! -- //////////////////////////////MAIN END//////////////////////////////////////// -->
+{% endblock  %}

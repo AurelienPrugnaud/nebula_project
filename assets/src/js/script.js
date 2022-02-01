@@ -1,10 +1,10 @@
 ////////////////CAROUSEL HOME PAGE START //////////////////////////
 
-const slide = document.querySelectorAll('.cont-img');
-const nbSlides = slide.length;
-let count = 0;
-
 function nextSlide() {
+  const slide = document.querySelectorAll('.cont-img');
+  const nbSlides = slide.length;
+  let count = 0;
+  
   slide[count].classList.remove('active');
   if(count < nbSlides - 1){
     count++;

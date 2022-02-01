@@ -3,7 +3,8 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Aurelien\\Nebula\\": "models/"
+            "Aurelien\\Nebula\\": "Model/",
+            "Aurelien\\Nebula\\Controller\\": "Controller/" 
         }
     },
     "require": {
