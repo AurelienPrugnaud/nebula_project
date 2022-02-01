@@ -22,7 +22,8 @@
                     <div class="row">
                         <div class="col-lg-9">
                             <div class="section">
-                                <iframe width="100%" height="530" src="https://www.youtube.com/embed/8O4uT214kak"
+                                <iframe width="100%" height="530"
+                                    src="https://www.youtube-nocookie.com/embed/8O4uT214kak?controls=0"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
@@ -82,70 +83,87 @@
                                         royaume possède un panthéon de créatures, monstres et dieux qui lui sont
                                         propres.
                                     </p>
-                                    <h3 class="t-description">Prenez part à des combats physiques et viscéraux</h3>
-                                    <p class="description2">
-                                        Grâce à une caméra libre à la troisième personne qui plonge le joueur encore
-                                        plus au
-                                        cœur de l'action, les combats de God of War™ sont à l'image du panthéon de
-                                        créatures
-                                        nordiques que Kratos affronte : grandioses, brutaux et ardus. La nouvelle arme
-                                        principale et les capacités inédites de Kratos conservent l'esprit de la série
-                                        God
-                                        of War, tout en proposant une vision inédite des conflits qui redéfinit le
-                                        genre.
-                                    </p>
-                                    <div class="d-flex align-items-center">
-                                        <h2 class="t-gamePage">Caractéristique PC</h2>
-                                        <span></span>
+                                    <div class="content">
+                                        <h3 class="t-description content-collapsible">Prenez part à des combats
+                                            physiques et viscéraux</h3>
+                                        <p class="description2">
+                                            Grâce à une caméra libre à la troisième personne qui plonge le joueur encore
+                                            plus au
+                                            cœur de l'action, les combats de God of War™ sont à l'image du panthéon de
+                                            créatures
+                                            nordiques que Kratos affronte : grandioses, brutaux et ardus. La nouvelle
+                                            arme
+                                            principale et les capacités inédites de Kratos conservent l'esprit de la
+                                            série
+                                            God
+                                            of War, tout en proposant une vision inédite des conflits qui redéfinit le
+                                            genre.
+                                        </p>
+                                        <div class="d-flex align-items-center">
+                                            <h2 class="t-gamePage">Caractéristique PC</h2>
+                                            <span></span>
+                                        </div>
+                                        <h3 class="t-description">Graphismes haute-fidélité</h3>
+                                        <p class="description2">
+                                            Des visuels saisissants améliorés sur PC. Profitez d'une véritable
+                                            résolution 4K
+                                            sur
+                                            les appareils compatibles, avec des fréquences d'image déverrouillées pour
+                                            une
+                                            performance inégalée. Gérez vos paramètres avec une vaste sélection
+                                            d'options et
+                                            de
+                                            réglages graphiques prédéfinis, dont des ombres à haute résolution, des
+                                            reflets
+                                            d'espace-écran améliorés, l'ajout des technologies de GTAO et SSDO, et bien
+                                            plus
+                                            encore !
+                                        </p>
+                                        <h3 class="t-description">Compatibilité avec NVIDIA® DLSS et NVIDIA® Reflex</h3>
+                                        <p class="description2">
+                                            Quand la qualité rencontre la performance. Mettez à profit la puissance de
+                                            l'IA
+                                            du
+                                            super-échantillonnage par Deep Learning (Deep Learning Super Sampling, DLSS)
+                                            de
+                                            NVIDIA, qui améliore la fréquence d'images et génère des images aussi belles
+                                            que
+                                            nettes sur les cartes graphiques NVIDIA compatibles. Utilisez la technologie
+                                            NVIDIA
+                                            Reflex de faible latence, qui vous permet de réagir plus rapidement et
+                                            d'enchaîner
+                                            des combos plus dévastateurs grâce au temps de réponse inégalé des cartes
+                                            graphiques
+                                            GeForce.
+                                        </p>
+                                        <h3 class="t-description">Personnalisation des commandes</h3>
+                                        <p class="description2">
+                                            Jouez à votre façon. Grâce à une compatibilité avec les manettes sans fil
+                                            DUALSHOCK®4 et DUALSENSE® et bien d'autres périphériques de jeu, ainsi que
+                                            des
+                                            commandes souris et clavier entièrement personnalisables, vous avez la
+                                            possibilité
+                                            d'ajuster la moindre de vos actions à votre style de jeu.
+                                        </p>
+                                        <h3 class="t-description">Compatibilité avec les écrans ultra-larges</h3>
+                                        <p class="description2">
+                                            Profitez d'un niveau d'immersion inédit. Voyagez à travers les royaumes du
+                                            nord
+                                            et
+                                            leurs paysages époustouflants en vue panoramique. Grâce à une compatibilité
+                                            avec
+                                            les
+                                            écrans ultra-larges en 21:9, God of War™ offre une expérience de qualité
+                                            cinématographique qui améliore encore davantage les visuels théâtraux et
+                                            fluides
+                                            du
+                                            jeu.
+                                        </p>
                                     </div>
-                                    <h3 class="t-description">Graphismes haute-fidélité</h3>
-                                    <p class="description2">
-                                        Des visuels saisissants améliorés sur PC. Profitez d'une véritable résolution 4K
-                                        sur
-                                        les appareils compatibles, avec des fréquences d'image déverrouillées pour une
-                                        performance inégalée. Gérez vos paramètres avec une vaste sélection d'options et
-                                        de
-                                        réglages graphiques prédéfinis, dont des ombres à haute résolution, des reflets
-                                        d'espace-écran améliorés, l'ajout des technologies de GTAO et SSDO, et bien plus
-                                        encore !
-                                    </p>
-                                    <h3 class="t-description">Compatibilité avec NVIDIA® DLSS et NVIDIA® Reflex</h3>
-                                    <p class="description2">
-                                        Quand la qualité rencontre la performance. Mettez à profit la puissance de l'IA
-                                        du
-                                        super-échantillonnage par Deep Learning (Deep Learning Super Sampling, DLSS) de
-                                        NVIDIA, qui améliore la fréquence d'images et génère des images aussi belles que
-                                        nettes sur les cartes graphiques NVIDIA compatibles. Utilisez la technologie
-                                        NVIDIA
-                                        Reflex de faible latence, qui vous permet de réagir plus rapidement et
-                                        d'enchaîner
-                                        des combos plus dévastateurs grâce au temps de réponse inégalé des cartes
-                                        graphiques
-                                        GeForce.
-                                    </p>
-                                    <h3 class="t-description">Personnalisation des commandes</h3>
-                                    <p class="description2">
-                                        Jouez à votre façon. Grâce à une compatibilité avec les manettes sans fil
-                                        DUALSHOCK®4 et DUALSENSE® et bien d'autres périphériques de jeu, ainsi que des
-                                        commandes souris et clavier entièrement personnalisables, vous avez la
-                                        possibilité
-                                        d'ajuster la moindre de vos actions à votre style de jeu.
-                                    </p>
-                                    <h3 class="t-description">Compatibilité avec les écrans ultra-larges</h3>
-                                    <p class="description2">
-                                        Profitez d'un niveau d'immersion inédit. Voyagez à travers les royaumes du nord
-                                        et
-                                        leurs paysages époustouflants en vue panoramique. Grâce à une compatibilité avec
-                                        les
-                                        écrans ultra-larges en 21:9, God of War™ offre une expérience de qualité
-                                        cinématographique qui améliore encore davantage les visuels théâtraux et fluides
-                                        du
-                                        jeu.
-                                    </p>
                                     <div class="d-flex justify-content-center">
                                         <div class="border-button-game-page">
                                             <button class="button-game-page collapsible">
-                                                Voir moins
+                                                Voir plus
                                             </button>
                                         </div>
                                     </div>

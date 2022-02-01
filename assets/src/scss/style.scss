@@ -215,6 +215,12 @@ div.border-button-game-page {
     }
 }
 
+div.content {
+    display: none;
+    overflow: hidden;
+    transition: ease-in-out;
+}
+
 /* //////////////////// MAIN GAME PAGE END///////////////////////////////////*/
 
 /* //////////////////// CONNEXION/CONTACT/REGISTRATION/PROFILE PAGE START///////////////////////////////////*/

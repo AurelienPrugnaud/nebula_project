@@ -28,7 +28,7 @@ const imgMin3 = document.querySelector('.img-game-mini3');
 const imgMin4 = document.querySelector('.img-game-mini4');
 const imgMin5 = document.querySelector('.img-game-mini5');
 
-function changeImg() {
+(function changeImg() {
   imgMin1.addEventListener('click', function() {
     const imgSrc = document.querySelector('.img-game').src;
     img.src = imgMin1.src;
@@ -58,8 +58,25 @@ function changeImg() {
     img.src = imgMin5.src;
     imgMin5.src = imgSrc;
   })
-}
+})();
 
-changeImg();
 
 ////////////////CAROUSEL GAME PAGE END //////////////////////////
+
+////////////////COLLAPSE GAME PAGE START //////////////////////////
+const button = document.querySelector('.collapsible');
+const content = document.querySelector('.content');
+
+(function showCollapse() {
+  button.addEventListener('click', function() {
+    if(content.style.display === 'block') {
+      content.style.display = 'none';
+      button.innerHTML = 'Voir plus';
+    } else {
+      content.style.display = 'block';
+      button.innerHTML = 'Voir moins';
+    }
+  });
+})();
+
+////////////////COLLAPSE GAME PAGE END //////////////////////////
