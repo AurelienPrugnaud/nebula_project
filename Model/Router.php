@@ -1,8 +1,8 @@
 <?php
     namespace Aurelien\Nebula;
 
-    require 'environment/environment.php';
-    require 'models/Database.php';
+    require '../Environment/environment.php';
+    require 'Database.php';
 
     class Router
     {

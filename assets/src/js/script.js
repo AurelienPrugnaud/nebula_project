@@ -5,7 +5,7 @@ function nextSlide() {
   const slide = document.querySelectorAll('.cont-img');
   const nbSlides = slide.length;
   let count = 0;
-
+  
   slide[count].classList.remove('active');
   if(count < nbSlides - 1){
     count++;
@@ -15,7 +15,7 @@ function nextSlide() {
   slide[count].classList.add('active');
 }
 
-setInterval(nextSlide, 6000)
+setInterval(nextSlide, 6000);
 
 ////////////////CAROUSEL HOME PAGE END //////////////////////////
 
@@ -60,6 +60,7 @@ setInterval(nextSlide, 6000)
     imgMin5.src = imgSrc;
   })
 })();
+
 
 ////////////////CAROUSEL GAME PAGE END //////////////////////////
 

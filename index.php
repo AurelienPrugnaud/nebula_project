@@ -2,7 +2,7 @@
     namespace Aurelien\Nebula;
 
     require 'vendor/autoload.php';
-    
+
     // PDO request
     $pages = [
         'home' => [
@@ -10,6 +10,7 @@
             'url' => '/',
             'template' => 'home/home',
         ],
+        
         'game' => [
             'title' => 'Jeu',
             'url' => '/game',

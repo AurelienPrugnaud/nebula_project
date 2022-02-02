@@ -35,7 +35,7 @@ class DataBase extends PDO {
 	 * @param $sqlQuery
 	 * @param array $array
 	 */
-	public function modifyOrDeleteOrAdd($sqlQuery, $array = array())
+	public function updateOrDeleteOrAdd($sqlQuery, $array = array())
 	{
 		$statement = $this->prepare($sqlQuery);
 		foreach ($array as $key => $value):
