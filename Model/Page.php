@@ -137,7 +137,7 @@ class Page {
      * @return false|string
      */
     public static function updatePage($dbc, $id, $title, $template, $url) {
-        $sqlQuery = 'INSERT INTO pages SET id = :id, title = :title, template = :template, url = :url';
+        $sqlQuery = 'UPDATE pages SET id = :id, title = :title, template = :template, url = :url';
         $bindParam = array('id' => $id, 'title' => $title, 'template' => $template, 'url' => $url);
         $page = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $pageJson = json_encode($page);

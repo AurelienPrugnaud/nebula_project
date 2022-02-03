@@ -286,7 +286,7 @@ class User {
      * @return false|string
      */
     public static function updateUser($dbc, $id, $mail, $firstname, $lastname, $adress1, $adress2, $city, $state, $cityCode, $password, $gameId) {
-        $sqlQuery = 'INSERT INTO users SET id = :id, mail = :mail, firstname = :firstname, lastname = :lastname, adress1 = :adress1, adress2 = :adress2, city = :city, state = :state, cityCode = :cityCode, password = :password, gameId = :gameId';
+        $sqlQuery = 'UPDATE users SET id = :id, mail = :mail, firstname = :firstname, lastname = :lastname, adress1 = :adress1, adress2 = :adress2, city = :city, state = :state, cityCode = :cityCode, password = :password, gameId = :gameId';
         $bindParam = array('id' => $id, 'mail' => $mail, 'firstname' => $firstname, 'lastname' => $lastname, 'adress1' => $adress1, 'adress2' => $adress2, 'city' => $city, 'state' => $state, 'cityCode' => $cityCode, 'password' => $password, 'gameId' => $gameId);
         $user = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $userJson = json_encode($user);

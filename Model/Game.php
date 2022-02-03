@@ -47,6 +47,10 @@ class User {
     /**
      * @var
      */
+    private $price;
+    /**
+     * @var
+     */
     private $image1;
     /**
      * @var
@@ -63,7 +67,7 @@ class User {
     /**
      * @var
      */
-    private $pegi;
+    private $pegiId;
     /**
      * @var
      */
@@ -103,171 +107,171 @@ class User {
     /**
      * @var
      */
-    private $osMin;
+    private $osMinId;
     /**
      * @var
      */
-    private $cpuMin;
+    private $cpuMinId;
     /**
      * @var
      */
-    private $ramMin;
+    private $ramMinId;
     /**
      * @var
      */
-    private $storageMin;
+    private $storageMinId;
     /**
      * @var
      */
-    private $directxMin;
+    private $directxMinId;
     /**
      * @var
      */
-    private $gpuMin;
+    private $gpuMinId;
     /**
      * @var
      */
-    private $osRec;
+    private $osRecId;
     /**
      * @var
      */
-    private $cpuRec;
+    private $cpuRecId;
     /**
      * @var
      */
-    private $ramRec;
+    private $ramRecId;
     /**
      * @var
      */
-    private $storageRec;
+    private $storageRecId;
     /**
      * @var
      */
-    private $directxRec;
+    private $directxRecId;
     /**
      * @var
      */
-    private $gpuRec;
+    private $gpuRecId;
     /**
      * @var
      */
-    private $languageAudio1;
+    private $languageAudioId1;
     /**
      * @var
      */
-    private $languageAudio2;
+    private $languageAudioId2;
     /**
      * @var
      */
-    private $languageAudio3;
+    private $languageAudioId3;
     /**
      * @var
      */
-    private $languageAudio4;
+    private $languageAudioId4;
     /**
      * @var
      */
-    private $languageAudio5;
+    private $languageAudioId5;
     /**
      * @var
      */
-    private $languageAudio6;
+    private $languageAudioId6;
     /**
      * @var
      */
-    private $languageAudio7;
+    private $languageAudioId7;
     /**
      * @var
      */
-    private $languageAudio8;
+    private $languageAudioId8;
     /**
      * @var
      */
-    private $languageAudio9;
+    private $languageAudioId9;
     /**
      * @var
      */
-    private $languageAudio10;
+    private $languageAudioId10;
     /**
      * @var
      */
-    private $languageText1;
+    private $languageTextId1;
     /**
      * @var
      */
-    private $languageText2;
+    private $languageTextId2;
     /**
      * @var
      */
-    private $languageText3;
+    private $languageTextId3;
     /**
      * @var
      */
-    private $languageText4;
+    private $languageTextId4;
     /**
      * @var
      */
-    private $languageText5;
+    private $languageTextId5;
     /**
      * @var
      */
-    private $languageText6;
+    private $languageTextId6;
     /**
      * @var
      */
-    private $languageText7;
+    private $languageTextId7;
     /**
      * @var
      */
-    private $languageText8;
+    private $languageTextId8;
     /**
      * @var
      */
-    private $languageText9;
+    private $languageTextId9;
     /**
      * @var
      */
-    private $languageText10;
+    private $languageTextId10;
     /**
      * @var
      */
-    private $languageText11;
+    private $languageTextId11;
     /**
      * @var
      */
-    private $languageText12;
+    private $languageTextId12;
     /**
      * @var
      */
-    private $languageText13;
+    private $languageTextId13;
     /**
      * @var
      */
-    private $languageText14;
+    private $languageTextId14;
     /**
      * @var
      */
-    private $languageText15;
+    private $languageTextId15;
     /**
      * @var
      */
-    private $languageText16;
+    private $languageTextId16;
     /**
      * @var
      */
-    private $languageText17;
+    private $languageTextId17;
     /**
      * @var
      */
-    private $languageText18;
+    private $languageTextId18;
     /**
      * @var
      */
-    private $languageText19;
+    private $languageTextId19;
     /**
      * @var
      */
-    private $languageText20;
+    private $languageTextId20;
     /**
      * @var
      */
@@ -284,11 +288,12 @@ class User {
      * @param string $editorId
      * @param string $platform
      * @param string $dateLaunch
+     * @param string $price
      * @param string $image1
      * @param string $image2
      * @param string $image3
      * @param string $image4
-     * @param string $pegi
+     * @param string $pegiId
      * @param string $description1
      * @param string $description2
      * @param string $description3
@@ -298,51 +303,51 @@ class User {
      * @param string $description7
      * @param string $description8
      * @param string $youtubeLink
-     * @param string $osMin
-     * @param string $cpuMin
-     * @param string $ramMin
-     * @param string $storageMin
-     * @param string $directxMin
-     * @param string $gpuMin
-     * @param string $osRec
-     * @param string $cpuRec
-     * @param string $ramRec
-     * @param string $storageRec
-     * @param string $directxRec
-     * @param string $gpuRec
-     * @param string $languageAudio1
-     * @param string $languageAudio2
-     * @param string $languageAudio3
-     * @param string $languageAudio4
-     * @param string $languageAudio5
-     * @param string $languageAudio6
-     * @param string $languageAudio7
-     * @param string $languageAudio8
-     * @param string $languageAudio9
-     * @param string $languageAudio10
-     * @param string $languageText1
-     * @param string $languageText2
-     * @param string $languageText3
-     * @param string $languageText4
-     * @param string $languageText5
-     * @param string $languageText6
-     * @param string $languageText7
-     * @param string $languageText8
-     * @param string $languageText9
-     * @param string $languageText10
-     * @param string $languageText11
-     * @param string $languageText12
-     * @param string $languageText13
-     * @param string $languageText14
-     * @param string $languageText15
-     * @param string $languageText16
-     * @param string $languageText17
-     * @param string $languageText18
-     * @param string $languageText19
-     * @param string $languageText20
+     * @param string $osMinId
+     * @param string $cpuMinId
+     * @param string $ramMinId
+     * @param string $storageMinId
+     * @param string $directxMinId
+     * @param string $gpuMinId
+     * @param string $osRecId
+     * @param string $cpuRecId
+     * @param string $ramRecId
+     * @param string $storageRecId
+     * @param string $directxRecId
+     * @param string $gpuRecId
+     * @param string $languageAudioId1
+     * @param string $languageAudioId2
+     * @param string $languageAudioId3
+     * @param string $languageAudioId4
+     * @param string $languageAudioId5
+     * @param string $languageAudioId6
+     * @param string $languageAudioId7
+     * @param string $languageAudioId8
+     * @param string $languageAudioId9
+     * @param string $languageAudioId10
+     * @param string $languageTextId1
+     * @param string $languageTextId2
+     * @param string $languageTextId3
+     * @param string $languageTextId4
+     * @param string $languageTextId5
+     * @param string $languageTextId6
+     * @param string $languageTextId7
+     * @param string $languageTextId8
+     * @param string $languageTextId9
+     * @param string $languageTextId10
+     * @param string $languageTextId11
+     * @param string $languageTextId12
+     * @param string $languageTextId13
+     * @param string $languageTextId14
+     * @param string $languageTextId15
+     * @param string $languageTextId16
+     * @param string $languageTextId17
+     * @param string $languageTextId18
+     * @param string $languageTextId19
+     * @param string $languageTextId20
      * @param string $dateAdd
      */
-    public function __construct($id = '', $name = '', $categoryId1 = '', $categoryId2 = '', $categoryId3 = '', $categoryId4 = '', $developperId = '', $editorId = '', $platform = '', $dateLaunch = '', $image1 = '', $image2 = '', $image3 = '', $image4 = '', $pegi = '', $description1 = '', $description2 = '', $description3 = '', $description4 = '', $description5 = '', $description6 = '', $description7 = '', $description8 = '', $youtubeLink = '', $osMin = '', $cpuMin = '', $ramMin = '', $storageMin = '', $directxMin = '', $gpuMin = '', $osRec = '', $cpuRec = '', $ramRec = '', $storageRec = '', $directxRec = '', $gpuRec = '', $languageAudio1 = '', $languageAudio2 = '', $languageAudio3 = '', $languageAudio4 = '', $languageAudio5 = '', $languageAudio6 = '', $languageAudio7 = '', $languageAudio8 = '', $languageAudio9 = '', $languageAudio10 = '', $languageText1 = '', $languageText2 = '', $languageText3 = '', $languageText4 = '', $languageText5 = '', $languageText6 = '', $languageText7 = '', $languageText8 = '', $languageText9 = '', $languageText10 = '', $languageText11 = '', $languageText12 = '', $languageText13 = '', $languageText14 = '', $languageText15 = '', $languageText16 = '', $languageText17 = '', $languageText18 = '', $languageText19 = '', $languageText20 = '', $dateAdd = '') {
+    public function __construct($id = '', $name = '', $categoryId1 = '', $categoryId2 = '', $categoryId3 = '', $categoryId4 = '', $developperId = '', $editorId = '', $platform = '', $dateLaunch = '', $price ='', $image1 = '', $image2 = '', $image3 = '', $image4 = '', $pegiId = '', $description1 = '', $description2 = '', $description3 = '', $description4 = '', $description5 = '', $description6 = '', $description7 = '', $description8 = '', $youtubeLink = '', $osMinId = '', $cpuMinId = '', $ramMinId = '', $storageMinId = '', $directxMinId = '', $gpuMinId = '', $osRecId = '', $cpuRecId = '', $ramRecId = '', $storageRecId = '', $directxRecId = '', $gpuRecId = '', $languageAudioId1 = '', $languageAudioId2 = '', $languageAudioId3 = '', $languageAudioId4 = '', $languageAudioId5 = '', $languageAudioId6 = '', $languageAudioId7 = '', $languageAudioId8 = '', $languageAudioId9 = '', $languageAudioId10 = '', $languageTextId1 = '', $languageTextId2 = '', $languageTextId3 = '', $languageTextId4 = '', $languageTextId5 = '', $languageTextId6 = '', $languageTextId7 = '', $languageTextId8 = '', $languageTextId9 = '', $languageTextId10 = '', $languageTextId11 = '', $languageTextId12 = '', $languageTextId13 = '', $languageTextId14 = '', $languageTextId15 = '', $languageTextId16 = '', $languageTextId17 = '', $languageTextId18 = '', $languageTextId19 = '', $languageTextId20 = '', $dateAdd = '') {
 
     }
 
@@ -489,6 +494,20 @@ class User {
     /**
      * @return mixed
      */
+    public function getPrice() {
+        return $this->price;
+    }
+
+    /**
+     * @param mixed $price
+     */
+    public function setPrice($price): void {
+        $this->price = $price;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getImage1() {
         return $this->image1;
     }
@@ -545,15 +564,15 @@ class User {
     /**
      * @return mixed
      */
-    public function getPegi() {
-        return $this->pegi;
+    public function getPegiId() {
+        return $this->pegiId;
     }
 
     /**
-     * @param mixed $pegi
+     * @param mixed $pegiId
      */
-    public function setPegi($pegi): void {
-        $this->pegi = $pegi;
+    public function setPegiId($pegiId): void {
+        $this->pegiId = $pegiId;
     }
 
     /**
@@ -685,589 +704,589 @@ class User {
     /**
      * @return mixed
      */
-    public function getOsMin() {
-        return $this->osMin;
+    public function getOsMinId() {
+        return $this->osMinId;
     }
 
     /**
-     * @param mixed $osMin
+     * @param mixed $osMinId
      */
-    public function setOsMin($osMin): void {
-        $this->osMin = $osMin;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCpuMin() {
-        return $this->cpuMin;
-    }
-
-    /**
-     * @param mixed $cpuMin
-     */
-    public function setCpuMin($cpuMin): void {
-        $this->cpuMin = $cpuMin;
+    public function setOsMinId($osMinId): void {
+        $this->osMinId = $osMinId;
     }
 
     /**
      * @return mixed
      */
-    public function getRamMin() {
-        return $this->ramMin;
+    public function getCpuMinId() {
+        return $this->cpuMinId;
     }
 
     /**
-     * @param mixed $ramMin
+     * @param mixed $cpuMinId
      */
-    public function setRamMin($ramMin): void {
-        $this->ramMin = $ramMin;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStorageMin() {
-        return $this->storageMin;
-    }
-
-    /**
-     * @param mixed $storageMin
-     */
-    public function setStorageMin($storageMin): void {
-        $this->storageMin = $storageMin;
+    public function setCpuMinId($cpuMinId): void {
+        $this->cpuMinId = $cpuMinId;
     }
 
     /**
      * @return mixed
      */
-    public function getDirectxMin() {
-        return $this->directxMin;
+    public function getRamMinId() {
+        return $this->ramMinId;
     }
 
     /**
-     * @param mixed $directxMin
+     * @param mixed $ramMinId
      */
-    public function setDirectxMin($directxMin): void {
-        $this->cpuMin = $directxMin;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getGpuMin() {
-        return $this->gpuMin;
-    }
-
-    /**
-     * @param mixed $gpuMin
-     */
-    public function setGpuMin($gpuMin): void {
-        $this->gpuMin = $gpuMin;
+    public function setRamMinId($ramMinId): void {
+        $this->ramMinId = $ramMinId;
     }
 
     /**
      * @return mixed
      */
-    public function getOsRec() {
-        return $this->osRec;
+    public function getStorageMinId() {
+        return $this->storageMinId;
     }
 
     /**
-     * @param mixed $osRec
+     * @param mixed $storageMinId
      */
-    public function setOsRec($osRec): void {
-        $this->osRec = $osRec;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCpuRec() {
-        return $this->cpuRec;
-    }
-
-    /**
-     * @param mixed $cpuRec
-     */
-    public function setCpuRec($cpuRec): void {
-        $this->cpuRec = $cpuRec;
+    public function setStorageMinId($storageMinId): void {
+        $this->storageMinId = $storageMinId;
     }
 
     /**
      * @return mixed
      */
-    public function getRamRec() {
-        return $this->cpuMin;
+    public function getDirectxMinId() {
+        return $this->directxMinId;
+    }
+
+    /**
+     * @param mixed $directxMinId
+     */
+    public function setDirectxMinId($directxMinId): void {
+        $this->directxMinId = $directxMinId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGpuMinId() {
+        return $this->gpuMinId;
+    }
+
+    /**
+     * @param mixed $gpuMinId
+     */
+    public function setGpuMinId($gpuMinId): void {
+        $this->gpuMinId = $gpuMinId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOsRecId() {
+        return $this->osRecId;
+    }
+
+    /**
+     * @param mixed $osRecId
+     */
+    public function setOsRec($osRecId): void {
+        $this->osRecId = $osRecId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCpuRecId() {
+        return $this->cpuRecId;
+    }
+
+    /**
+     * @param mixed $cpuRecId
+     */
+    public function setCpuRecId($cpuRecId): void {
+        $this->cpuRecId = $cpuRecId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRamRecId() {
+        return $this->ramRecId;
     }
 
     /**
      * @param mixed $ramRec
      */
-    public function setRamRec($ramRec): void {
-        $this->ramRec = $ramRec;
+    public function setRamRecId($ramRecId): void {
+        $this->ramRecId = $ramRecId;
     }
 
     /**
      * @return mixed
      */
-    public function getStorageRec() {
-        return $this->storageRec;
+    public function getStorageRecId() {
+        return $this->storageRecId;
     }
 
     /**
-     * @param mixed $storageRec
+     * @param mixed $storageRecId
      */
-    public function setStorageRec($storageRec): void {
-        $this->storageRec = $storageRec;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDirectxRec() {
-        return $this->directxRec;
-    }
-
-    /**
-     * @param mixed $directxRec
-     */
-    public function setDirectxRec($directxRec): void {
-        $this->directxRec = $directxRec;
+    public function setStorageRecId($storageRecId): void {
+        $this->storageRecId = $storageRecId;
     }
 
     /**
      * @return mixed
      */
-    public function getGpuRec() {
-        return $this->cpuMin;
+    public function getDirectxRecId() {
+        return $this->directxRecId;
     }
 
     /**
-     * @param mixed $gpuRec
+     * @param mixed $directxRecId
      */
-    public function setGpuRec($gpuRec): void {
-        $this->gpuRec = $gpuRec;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguageAudio1() {
-        return $this->languageAudio1;
-    }
-
-    /**
-     * @param mixed $languageAudio1
-     */
-    public function setLanguageAudio1($languageAudio1): void {
-        $this->languageAudio1 = $languageAudio1;
+    public function setDirectxRecId($directxRecId): void {
+        $this->directxRecId = $directxRecId;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguageAudio2() {
-        return $this->languageAudio2;
+    public function getGpuRecId() {
+        return $this->gpuRecId;
     }
 
     /**
-     * @param mixed $languageAudio2
+     * @param mixed $gpuRecId
      */
-    public function setLanguageAudio2($languageAudio2): void {
-        $this->languageAudio2 = $languageAudio2;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguageAudio3() {
-        return $this->languageAudio3;
-    }
-
-    /**
-     * @param mixed $languageAudio3
-     */
-    public function setLanguageAudio3($languageAudio3): void {
-        $this->languageAudio3 = $languageAudio3;
+    public function setGpuRec($gpuRecId): void {
+        $this->gpuRecId = $gpuRecId;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguageAudio4() {
-        return $this->languageAudio4;
+    public function getLanguageAudioId1() {
+        return $this->languageAudioId1;
     }
 
     /**
-     * @param mixed $languageAudio4
+     * @param mixed $languageAudioId1
      */
-    public function setLanguageAudio4($languageAudio4): void {
-        $this->languageAudio4 = $languageAudio4;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguageAudio5() {
-        return $this->languageAudio5;
-    }
-
-    /**
-     * @param mixed $languageAudio5
-     */
-    public function setLanguageAudio5($languageAudio5): void {
-        $this->languageAudio5 = $languageAudio5;
+    public function setLanguageAudioId1($languageAudioId1): void {
+        $this->languageAudioId1 = $languageAudioId1;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguageAudio6() {
-        return $this->languageAudio6;
+    public function getLanguageAudioId2() {
+        return $this->languageAudioId2;
     }
 
     /**
-     * @param mixed $languageAudio6
+     * @param mixed $languageAudioId2
      */
-    public function setLanguageAudio6($languageAudio6): void {
-        $this->languageAudio6 = $languageAudio6;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguageAudio7() {
-        return $this->languageAudio7;
-    }
-
-    /**
-     * @param mixed $languageAudio7
-     */
-    public function setLanguageAudio7($languageAudio7): void {
-        $this->languageAudio7 = $languageAudio7;
+    public function setLanguageAudioId2($languageAudioId2): void {
+        $this->languageAudioId2 = $languageAudioId2;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguageAudio8() {
-        return $this->languageAudio8;
+    public function getLanguageAudioId3() {
+        return $this->languageAudioId3;
     }
 
     /**
-     * @param mixed $languageAudio8
+     * @param mixed $languageAudioId3
      */
-    public function setLanguageAudio8($languageAudio8): void {
-        $this->languageAudio8 = $languageAudio8;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguageAudio9() {
-        return $this->languageAudio9;
-    }
-
-    /**
-     * @param mixed $languageAudio9
-     */
-    public function setLanguageAudio9($languageAudio9): void {
-        $this->languageAudio9 = $languageAudio9;
+    public function setLanguageAudioId3($languageAudioId3): void {
+        $this->languageAudioId3 = $languageAudioId3;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguageAudio10() {
-        return $this->languageAudio10;
+    public function getLanguageAudioId4() {
+        return $this->languageAudioId4;
     }
 
     /**
-     * @param mixed $languageAudio10
+     * @param mixed $languageAudioId4
      */
-    public function setLanguageAudio10($languageAudio10): void {
-        $this->languageAudio10 = $languageAudio10;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguagetext1() {
-        return $this->languageText1;
-    }
-
-    /**
-     * @param mixed $languageText1
-     */
-    public function setLanguagetext1($languageText1): void {
-        $this->languageText1 = $languageText1;
+    public function setLanguageAudioId4($languageAudioId4): void {
+        $this->languageAudioId4 = $languageAudioId4;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguagetext2() {
-        return $this->languageText2;
+    public function getLanguageAudioId5() {
+        return $this->languageAudioId5;
     }
 
     /**
-     * @param mixed $languageText2
+     * @param mixed $languageAudioId5
      */
-    public function setLanguagetext2($languageText2): void {
-        $this->languageText2 = $languageText2;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguagetext3() {
-        return $this->languageText3;
-    }
-
-    /**
-     * @param mixed $languageText3
-     */
-    public function setLanguagetext3($languageText3): void {
-        $this->languageText3 = $languageText3;
+    public function setLanguageAudioId5($languageAudioId5): void {
+        $this->languageAudioId5 = $languageAudioId5;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguagetext4() {
-        return $this->languageText4;
+    public function getLanguageAudioId6() {
+        return $this->languageAudioId6;
     }
 
     /**
-     * @param mixed $languageText4
+     * @param mixed $languageAudioId6
      */
-    public function setLanguagetext4($languageText4): void {
-        $this->languageText4 = $languageText4;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguagetext5() {
-        return $this->languageText5;
-    }
-
-    /**
-     * @param mixed $languageText5
-     */
-    public function setLanguagetext5($languageText5): void {
-        $this->languageText5 = $languageText5;
+    public function setLanguageAudioId6($languageAudioId6): void {
+        $this->languageAudioId6 = $languageAudioId6;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguagetext6() {
-        return $this->languageText6;
+    public function getLanguageAudioId7() {
+        return $this->languageAudioId7;
     }
 
     /**
-     * @param mixed $languageText6
+     * @param mixed $languageAudioId7
      */
-    public function setLanguagetext6($languageText6): void {
-        $this->languageText6 = $languageText6;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguagetext7() {
-        return $this->languageText7;
-    }
-
-    /**
-     * @param mixed $languageText7
-     */
-    public function setLanguagetext7($languageText7): void {
-        $this->languageText7 = $languageText7;
+    public function setLanguageAudioId7($languageAudioId7): void {
+        $this->languageAudioId7 = $languageAudioId7;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguagetext8() {
-        return $this->languageText8;
+    public function getLanguageAudioId8() {
+        return $this->languageAudioId8;
     }
 
     /**
-     * @param mixed $languageText8
+     * @param mixed $languageAudioId8
      */
-    public function setLanguagetext8($languageText8): void {
-        $this->languageText8 = $languageText8;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguagetext9() {
-        return $this->languageText9;
-    }
-
-    /**
-     * @param mixed $languageText9
-     */
-    public function setLanguagetext9($languageText9): void {
-        $this->languageText9 = $languageText9;
+    public function setLanguageAudioId8($languageAudioId8): void {
+        $this->languageAudioId8 = $languageAudioId8;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguagetext10() {
-        return $this->languageText10;
+    public function getLanguageAudioId9() {
+        return $this->languageAudioId9;
     }
 
     /**
-     * @param mixed $languageText10
+     * @param mixed $languageAudioId9
      */
-    public function setLanguagetext10($languageText10): void {
-        $this->languageText10 = $languageText10;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguagetext11() {
-        return $this->languageText11;
-    }
-
-    /**
-     * @param mixed $languageText11
-     */
-    public function setLanguagetext11($languageText11): void {
-        $this->languageText11 = $languageText11;
+    public function setLanguageAudioId9($languageAudioId9): void {
+        $this->languageAudioId9 = $languageAudioId9;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguagetext12() {
-        return $this->languageText12;
+    public function getLanguageAudioId10() {
+        return $this->languageAudioId10;
     }
 
     /**
-     * @param mixed $languageText12
+     * @param mixed $languageAudioId10
      */
-    public function setLanguagetext12($languageText12): void {
-        $this->languageText12 = $languageText12;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguagetext13() {
-        return $this->languageText13;
-    }
-
-    /**
-     * @param mixed $languageText13
-     */
-    public function setLanguagetext13($languageText13): void {
-        $this->languageText13 = $languageText13;
+    public function setLanguageAudioId10($languageAudioId10): void {
+        $this->languageAudioId10 = $languageAudioId10;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguagetext14() {
-        return $this->languageText1;
+    public function getLanguagetextId1() {
+        return $this->languageTextId1;
     }
 
     /**
-     * @param mixed $languageText14
+     * @param mixed $languageTextId1
      */
-    public function setLanguagetext14($languageText14): void {
-        $this->languageText14 = $languageText14;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguagetext15() {
-        return $this->languageText15;
-    }
-
-    /**
-     * @param mixed $languageText15
-     */
-    public function setLanguagetext15($languageText15): void {
-        $this->languageText15 = $languageText15;
+    public function setLanguagetext1($languageTextId1): void {
+        $this->languageTextId1 = $languageTextId1;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguagetext16() {
-        return $this->languageText16;
+    public function getLanguagetextId2() {
+        return $this->languageTextId2;
     }
 
     /**
-     * @param mixed $languageText16
+     * @param mixed $languageTextId2
      */
-    public function setLanguagetext16($languageText16): void {
-        $this->languageText16 = $languageText16;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguagetext17() {
-        return $this->languageText17;
-    }
-
-    /**
-     * @param mixed $languageText17
-     */
-    public function setLanguagetext17($languageText17): void {
-        $this->languageText17 = $languageText17;
+    public function setLanguagetextId2($languageTextId2): void {
+        $this->languageTextId2 = $languageTextId2;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguagetext18() {
-        return $this->languageText18;
+    public function getLanguagetextId3() {
+        return $this->languageTextId3;
     }
 
     /**
-     * @param mixed $languageText18
+     * @param mixed $languageTextId3
      */
-    public function setLanguagetext18($languageText18): void {
-        $this->languageText18 = $languageText18;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLanguagetext19() {
-        return $this->languageText19;
-    }
-
-    /**
-     * @param mixed $languageText19
-     */
-    public function setLanguagetext19($languageText19): void {
-        $this->languageText19 = $languageText19;
+    public function setLanguagetext3($languageTextId3): void {
+        $this->languageTextId3 = $languageTextId3;
     }
 
     /**
      * @return mixed
      */
-    public function getLanguagetext20() {
-        return $this->languageText20;
+    public function getLanguagetextId4() {
+        return $this->languageTextId4;
     }
 
     /**
-     * @param mixed $languageText20
+     * @param mixed $languageTextId4
      */
-    public function setLanguagetext20($languageText20): void {
-        $this->languageText20 = $languageText20;
+    public function setLanguagetext4($languageTextId4): void {
+        $this->languageTextId4 = $languageTextId4;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId5() {
+        return $this->languageTextId5;
+    }
+
+    /**
+     * @param mixed $languageTextId5
+     */
+    public function setLanguagetextId5($languageTextId5): void {
+        $this->languageTextId5 = $languageTextId5;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId6() {
+        return $this->languageTextId6;
+    }
+
+    /**
+     * @param mixed $languageTextId6
+     */
+    public function setLanguagetextId6($languageTextId6): void {
+        $this->languageTextId6 = $languageTextId6;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId7() {
+        return $this->languageTextId7;
+    }
+
+    /**
+     * @param mixed $languageTextId7
+     */
+    public function setLanguagetextId7($languageTextId7): void {
+        $this->languageTextId7 = $languageTextId7;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId8() {
+        return $this->languageTextId8;
+    }
+
+    /**
+     * @param mixed $languageTextId8
+     */
+    public function setLanguagetextId8($languageTextId8): void {
+        $this->languageTextId8 = $languageTextId8;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId9() {
+        return $this->languageTextId9;
+    }
+
+    /**
+     * @param mixed $languageTextId9
+     */
+    public function setLanguagetextId9($languageTextId9): void {
+        $this->languageTextId9 = $languageTextId9;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId10() {
+        return $this->languageTextId10;
+    }
+
+    /**
+     * @param mixed $languageTextId10
+     */
+    public function setLanguagetextId10($languageTextId10): void {
+        $this->languageTextId10 = $languageTextId10;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId11() {
+        return $this->languageTextId11;
+    }
+
+    /**
+     * @param mixed $languageTextId11
+     */
+    public function setLanguagetextId11($languageTextId11): void {
+        $this->languageTextId11 = $languageTextId11;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId12() {
+        return $this->languageTextId12;
+    }
+
+    /**
+     * @param mixed $languageTextId12
+     */
+    public function setLanguagetextId12($languageTextId12): void {
+        $this->languageTextId12 = $languageTextId12;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId13() {
+        return $this->languageTextId13;
+    }
+
+    /**
+     * @param mixed $languageTextId13
+     */
+    public function setLanguagetextId13($languageTextId13): void {
+        $this->languageTextId13 = $languageTextId13;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId14() {
+        return $this->languageTextId14;
+    }
+
+    /**
+     * @param mixed $languageTextId14
+     */
+    public function setLanguagetextId14($languageTextId14): void {
+        $this->languageTextId14 = $languageTextId14;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId15() {
+        return $this->languageTextId15;
+    }
+
+    /**
+     * @param mixed $languageTextId15
+     */
+    public function setLanguagetextId15($languageTextId15): void {
+        $this->languageTextId15 = $languageTextId15;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId16() {
+        return $this->languageTextId16;
+    }
+
+    /**
+     * @param mixed $languageTextId16
+     */
+    public function setLanguagetextId16($languageTextId16): void {
+        $this->languageTextId16 = $languageTextId16;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId17() {
+        return $this->languageTextId17;
+    }
+
+    /**
+     * @param mixed $languageTextId17
+     */
+    public function setLanguagetextId17($languageTextId17): void {
+        $this->languageTextId17 = $languageTextId17;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId18() {
+        return $this->languageTextId18;
+    }
+
+    /**
+     * @param mixed $languageTextId18
+     */
+    public function setLanguagetextId18($languageTextId18): void {
+        $this->languageTextId18 = $languageTextId18;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId19() {
+        return $this->languageTextId19;
+    }
+
+    /**
+     * @param mixed $languageTextId19
+     */
+    public function setLanguagetextId19($languageTextId19): void {
+        $this->languageTextId19 = $languageTextId19;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagetextId20() {
+        return $this->languageTextId20;
+    }
+
+    /**
+     * @param mixed $languageTextId20
+     */
+    public function setLanguagetextId20($languageTextId20): void {
+        $this->languageTextId20 = $languageTextId20;
     }
 
     /**
@@ -1309,4 +1328,172 @@ class User {
         return $gameByIdJson;
     }
 
+    /**
+     * @param int $id
+     * @param string $name
+     * @param int $categoryId1
+     * @param int $categoryId2
+     * @param int $categoryId3
+     * @param int $categoryId4
+     * @param string $developperId
+     * @param string $editorId
+     * @param string $platform
+     * @param string $dateLaunch
+     * @param string $price
+     * @param string $image1
+     * @param string $image2
+     * @param string $image3
+     * @param string $image4
+     * @param string $pegiId
+     * @param string $description1
+     * @param string $description2
+     * @param string $description3
+     * @param string $description4
+     * @param string $description5
+     * @param string $description6
+     * @param string $description7
+     * @param string $description8
+     * @param string $youtubeLink
+     * @param string $osMinId
+     * @param string $cpuMinId
+     * @param string $ramMinId
+     * @param string $storageMinId
+     * @param string $directxMinId
+     * @param string $gpuMinId
+     * @param string $osRecId
+     * @param string $cpuRecId
+     * @param string $ramRecId
+     * @param string $storageRecId
+     * @param string $directxRecId
+     * @param string $gpuRecId
+     * @param string $languageAudioId1
+     * @param string $languageAudioId2
+     * @param string $languageAudioId3
+     * @param string $languageAudioId4
+     * @param string $languageAudioId5
+     * @param string $languageAudioId6
+     * @param string $languageAudioId7
+     * @param string $languageAudioId8
+     * @param string $languageAudioId9
+     * @param string $languageAudioId10
+     * @param string $languageTextId1
+     * @param string $languageTextId2
+     * @param string $languageTextId3
+     * @param string $languageTextId4
+     * @param string $languageTextId5
+     * @param string $languageTextId6
+     * @param string $languageTextId7
+     * @param string $languageTextId8
+     * @param string $languageTextId9
+     * @param string $languageTextId10
+     * @param string $languageTextId11
+     * @param string $languageTextId12
+     * @param string $languageTextId13
+     * @param string $languageTextId14
+     * @param string $languageTextId15
+     * @param string $languageTextId16
+     * @param string $languageTextId17
+     * @param string $languageTextId18
+     * @param string $languageTextId19
+     * @param string $languageTextId20
+     * @param string $dateAdd
+     */
+    public static function addGame($dbc, $id, $name, $categoryId1, $categoryId2, $categoryId3, $categoryId4, $developperId, $editorId, $platform, $dateLaunch, $price, $image1, $image2, $image3, $image4, $pegiId, $description1, $description2, $description3, $description4, $description5, $description6, $description7, $description8, $youtubeLink, $osMinId, $cpuMinId, $ramMinId, $storageMinId, $directxMinId, $gpuMinId, $osRecId, $cpuRecId, $ramRecId, $storageRecId, $directxRecId, $gpuRecId, $languageAudioId1, $languageAudioId2, $languageAudioId3, $languageAudioId4, $languageAudioId5, $languageAudioId6, $languageAudioId7, $languageAudioId8, $languageAudioId9, $languageAudioId10, $languageTextId1, $languageTextId2, $languageTextId3, $languageTextId4, $languageTextId5, $languageTextId6, $languageTextId7, $languageTextId8, $languageTextId9, $languageTextId10, $languageTextId11, $languageTextId12, $languageTextId13, $languageTextId14, $languageTextId15, $languageTextId16, $languageTextId17, $languageTextId18, $languageTextId19, $languageTextId20, $dateAdd) {
+        $sqlQuery = 'INSERT INTO users SET id = :id, name = :name, categoryId1 = :categoryId1, categoryId2 = :categoryId2, categoryId3 = :categoryId3, categoryId4 = :categoryId4, developperId = :developperId, editorId = :editorId, platform = :platform, dateLaunch = :dateLaunch, price = :price, image1 = :image1, image2 = :image2, image2 = :image2, image3 = :image3, image4 = :image4, pegiId = :pegiId, description1 = :description1, description2 = :description2, description3 = :description3, description4 = :description4, description5 = :description5, description6 = :description6, description7 = :description7, description8 = :description8, youtubeLink = :youtubeLink, osMinId = :osMinId, cpuMinId = :cpuMinId, ramMinId = :ramMinId, storageMinId = :storageMinId, directxMinId = :directxMinId, gpuMinId = :gpuMinId, osRecId = :osRecId, cpuRecId = :cpuRecId, ramRecId = :ramRecId, storageRecId = :storageRecId, directxRecId = :directxRecId, gpuRecId = :gpuRecId, languageAudioId1 = :languageAudioId1, languageAudioId2 = :languageAudioId2, languageAudioId3 = :languageAudioId3, languageAudioId4 = :languageAudioId4, languageAudioId5 = :languageAudioId5, languageAudioId6 = :languageAudioId6, languageAudioId7 = :languageAudioId7, languageAudioId8 = :languageAudioId8, languageAudioId9 = :languageAudioId9, languageAudioId10 = :languageAudioId10, languageTextId1 = :languageTextId1, languageTextId2 = :languageTextId2, languageTextId3 = :languageTextId3, languageTextId4 = :languageTextId4, languageTextId5 = :languageTextId5, languageTextId6 = :languageTextId6, languageTextId7 = :languageTextId7, languageTextId8 = :languageTextId8, languageTextId9 = :languageTextId9, languageTextId10 = :languageTextId10, languageTextId11 = :languageTextId11, languageTextId12 = :languageTextId12, languageTextId13 = :languageTextId13, languageTextId14 = :languageTextId14, languageTextId15 = :languageTextId15, languageTextId16 = :languageTextId16, languageTextId17 = :languageTextId17, languageTextId18 = :languageTextId18, languageTextId19 = :languageTextId19, languageTextId20 = :languageTextId20, dateAdd = :dateAdd,';
+        $bindParam = array('id' => $id, 'name' => $name, 'categoryId1' => $categoryId1, 'categoryId2' => $categoryId2, 'categoryId3' => $categoryId3, 'categoryId4' => $categoryId4, 'developperId' => $developperId, 'editorId' => $editorId, 'platform' => $platform, 'dateLaunch' => $dateLaunch, 'price' => $price, 'image1' => $image1, 'image2' => $image2, 'image3' => $image3, 'image4' => $image4, 'pegiId' => $pegiId, 'description1' => $description1, 'description2' => $description2, 'description3' => $description3, 'description4' => $description4, 'description5' => $description5, 'description6' => $description8, 'youtubeLink' => $youtubeLink, 'osMinId' => $osMinId, 'cpuMinId' => $cpuMinId, 'ramMinId' => $ramMinId, 'storageMinId' => $storageMinId, 'directxMinId' => $directxMinId, 'gpuMinId' => $gpuMinId, 'osRecId' => $osRecId, 'cpuRecId' => $cpuRecId, 'ramRecId' => $ramRecId, 'storageRecId' => $storageRecId, 'directxRecId' => $directxRecId, 'gpuRecId' => $gpuRecId, 'languageAudioId1' => $languageAudioId1, 'languageAudioId2' => $languageAudioId2, 'languageAudioId3' => $languageAudioId3, 'languageAudioId4' => $languageAudioId4, 'languageAudioId5' => $languageAudioId5, 'languageAudioId6' => $languageAudioId6, 'languageAudioId7' => $languageAudioId7, 'languageAudioId8' => $languageAudioId8, 'languageAudioId9' => $languageAudioId9, 'languageAudioId10' => $languageAudioId10, 'languageTextId1' => $languageTextId1, 'languageTextId2' => $languageTextId2, 'languageTextId3' => $languageTextId3, 'languageTextId4' => $languageTextId4, 'languageTextId5' => $languageTextId5, 'languageTextId6' => $languageTextId6, 'languageTextId7' => $languageTextId7, 'languageTextId8' => $languageTextId8, 'languageTextId9' => $languageTextId9, 'languageTextId10' => $languageTextId10, 'languageTextId11' => $languageTextId11, 'languageTextId12' => $languageTextId2, 'languageTextId13' => $languageTextId13, 'languageTextId14' => $languageTextId14, 'languageTextId15' => $languageTextId15, 'languageTextId16' => $languageTextId16, 'languageTextId17' => $languageTextId17, 'languageTextId18' => $languageTextId18, 'languageTextId19' => $languageTextId19, 'languageTextId20' => $languageTextId20, 'dateAdd' => $dateAdd);
+        $game = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
+        $gameJson = json_encode($game);
+        return $gameJson;
+    }
+
+    /**
+     * @param int $id
+     * @param string $name
+     * @param int $categoryId1
+     * @param int $categoryId2
+     * @param int $categoryId3
+     * @param int $categoryId4
+     * @param string $developperId
+     * @param string $editorId
+     * @param string $platform
+     * @param string $dateLaunch
+     * @param string $price
+     * @param string $image1
+     * @param string $image2
+     * @param string $image3
+     * @param string $image4
+     * @param string $pegiId
+     * @param string $description1
+     * @param string $description2
+     * @param string $description3
+     * @param string $description4
+     * @param string $description5
+     * @param string $description6
+     * @param string $description7
+     * @param string $description8
+     * @param string $youtubeLink
+     * @param string $osMinId
+     * @param string $cpuMinId
+     * @param string $ramMinId
+     * @param string $storageMinId
+     * @param string $directxMinId
+     * @param string $gpuMinId
+     * @param string $osRecId
+     * @param string $cpuRecId
+     * @param string $ramRecId
+     * @param string $storageRecId
+     * @param string $directxRecId
+     * @param string $gpuRecId
+     * @param string $languageAudioId1
+     * @param string $languageAudioId2
+     * @param string $languageAudioId3
+     * @param string $languageAudioId4
+     * @param string $languageAudioId5
+     * @param string $languageAudioId6
+     * @param string $languageAudioId7
+     * @param string $languageAudioId8
+     * @param string $languageAudioId9
+     * @param string $languageAudioId10
+     * @param string $languageTextId1
+     * @param string $languageTextId2
+     * @param string $languageTextId3
+     * @param string $languageTextId4
+     * @param string $languageTextId5
+     * @param string $languageTextId6
+     * @param string $languageTextId7
+     * @param string $languageTextId8
+     * @param string $languageTextId9
+     * @param string $languageTextId10
+     * @param string $languageTextId11
+     * @param string $languageTextId12
+     * @param string $languageTextId13
+     * @param string $languageTextId14
+     * @param string $languageTextId15
+     * @param string $languageTextId16
+     * @param string $languageTextId17
+     * @param string $languageTextId18
+     * @param string $languageTextId19
+     * @param string $languageTextId20
+     * @param string $dateAdd
+     */
+    public static function updateGame($dbc, $id, $name, $categoryId1, $categoryId2, $categoryId3, $categoryId4, $developperId, $editorId, $platform, $dateLaunch, $price, $image1, $image2, $image3, $image4, $pegiId, $description1, $description2, $description3, $description4, $description5, $description6, $description7, $description8, $youtubeLink, $osMinId, $cpuMinId, $ramMinId, $storageMinId, $directxMinId, $gpuMinId, $osRecId, $cpuRecId, $ramRecId, $storageRecId, $directxRecId, $gpuRecId, $languageAudioId1, $languageAudioId2, $languageAudioId3, $languageAudioId4, $languageAudioId5, $languageAudioId6, $languageAudioId7, $languageAudioId8, $languageAudioId9, $languageAudioId10, $languageTextId1, $languageTextId2, $languageTextId3, $languageTextId4, $languageTextId5, $languageTextId6, $languageTextId7, $languageTextId8, $languageTextId9, $languageTextId10, $languageTextId11, $languageTextId12, $languageTextId13, $languageTextId14, $languageTextId15, $languageTextId16, $languageTextId17, $languageTextId18, $languageTextId19, $languageTextId20, $dateAdd) {
+        $sqlQuery = 'UPDATE users SET id = :id, name = :name, categoryId1 = :categoryId1, categoryId2 = :categoryId2, categoryId3 = :categoryId3, categoryId4 = :categoryId4, developperId = :developperId, editorId = :editorId, platform = :platform, dateLaunch = :dateLaunch, price = :price, image1 = :image1, image2 = :image2, image2 = :image2, image3 = :image3, image4 = :image4, pegiId = :pegiId, description1 = :description1, description2 = :description2, description3 = :description3, description4 = :description4, description5 = :description5, description6 = :description6, description7 = :description7, description8 = :description8, youtubeLink = :youtubeLink, osMinId = :osMinId, cpuMinId = :cpuMinId, ramMinId = :ramMinId, storageMinId = :storageMinId, directxMinId = :directxMinId, gpuMinId = :gpuMinId, osRecId = :osRecId, cpuRecId = :cpuRecId, ramRecId = :ramRecId, storageRecId = :storageRecId, directxRecId = :directxRecId, gpuRecId = :gpuRecId, languageAudioId1 = :languageAudioId1, languageAudioId2 = :languageAudioId2, languageAudioId3 = :languageAudioId3, languageAudioId4 = :languageAudioId4, languageAudioId5 = :languageAudioId5, languageAudioId6 = :languageAudioId6, languageAudioId7 = :languageAudioId7, languageAudioId8 = :languageAudioId8, languageAudioId9 = :languageAudioId9, languageAudioId10 = :languageAudioId10, languageTextId1 = :languageTextId1, languageTextId2 = :languageTextId2, languageTextId3 = :languageTextId3, languageTextId4 = :languageTextId4, languageTextId5 = :languageTextId5, languageTextId6 = :languageTextId6, languageTextId7 = :languageTextId7, languageTextId8 = :languageTextId8, languageTextId9 = :languageTextId9, languageTextId10 = :languageTextId10, languageTextId11 = :languageTextId11, languageTextId12 = :languageTextId12, languageTextId13 = :languageTextId13, languageTextId14 = :languageTextId14, languageTextId15 = :languageTextId15, languageTextId16 = :languageTextId16, languageTextId17 = :languageTextId17, languageTextId18 = :languageTextId18, languageTextId19 = :languageTextId19, languageTextId20 = :languageTextId20, dateAdd = :dateAdd,';
+        $bindParam = array('id' => $id, 'name' => $name, 'categoryId1' => $categoryId1, 'categoryId2' => $categoryId2, 'categoryId3' => $categoryId3, 'categoryId4' => $categoryId4, 'developperId' => $developperId, 'editorId' => $editorId, 'platform' => $platform, 'dateLaunch' => $dateLaunch, 'price' => $price, 'image1' => $image1, 'image2' => $image2, 'image3' => $image3, 'image4' => $image4, 'pegiId' => $pegiId, 'description1' => $description1, 'description2' => $description2, 'description3' => $description3, 'description4' => $description4, 'description5' => $description5, 'description6' => $description8, 'youtubeLink' => $youtubeLink, 'osMinId' => $osMinId, 'cpuMinId' => $cpuMinId, 'ramMinId' => $ramMinId, 'storageMinId' => $storageMinId, 'directxMinId' => $directxMinId, 'gpuMinId' => $gpuMinId, 'osRecId' => $osRecId, 'cpuRecId' => $cpuRecId, 'ramRecId' => $ramRecId, 'storageRecId' => $storageRecId, 'directxRecId' => $directxRecId, 'gpuRecId' => $gpuRecId, 'languageAudioId1' => $languageAudioId1, 'languageAudioId2' => $languageAudioId2, 'languageAudioId3' => $languageAudioId3, 'languageAudioId4' => $languageAudioId4, 'languageAudioId5' => $languageAudioId5, 'languageAudioId6' => $languageAudioId6, 'languageAudioId7' => $languageAudioId7, 'languageAudioId8' => $languageAudioId8, 'languageAudioId9' => $languageAudioId9, 'languageAudioId10' => $languageAudioId10, 'languageTextId1' => $languageTextId1, 'languageTextId2' => $languageTextId2, 'languageTextId3' => $languageTextId3, 'languageTextId4' => $languageTextId4, 'languageTextId5' => $languageTextId5, 'languageTextId6' => $languageTextId6, 'languageTextId7' => $languageTextId7, 'languageTextId8' => $languageTextId8, 'languageTextId9' => $languageTextId9, 'languageTextId10' => $languageTextId10, 'languageTextId11' => $languageTextId11, 'languageTextId12' => $languageTextId2, 'languageTextId13' => $languageTextId13, 'languageTextId14' => $languageTextId14, 'languageTextId15' => $languageTextId15, 'languageTextId16' => $languageTextId16, 'languageTextId17' => $languageTextId17, 'languageTextId18' => $languageTextId18, 'languageTextId19' => $languageTextId19, 'languageTextId20' => $languageTextId20, 'dateAdd' => $dateAdd);
+        $game = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
+        $gameJson = json_encode($game);
+        return $gameJson;
+    }
+
+    /**
+     * @param $dbc
+     * @param $id
+     * @return false|string
+     */
+    public static function deleteGame($dbc, $id) {
+        $sqlQuery = "DELETE FROM games WHERE games.id = $id";
+        $bindParam = array('id' => $id);
+        $game = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
+        $gameJson = json_encode($user);
+        return $gameJson;
+    }
 }

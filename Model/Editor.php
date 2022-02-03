@@ -95,7 +95,7 @@ class Editor {
      * @return false|string
      */
     public static function updateEditor($dbc, $id, $name) {
-        $sqlQuery = 'INSERT INTO editors SET id = :id, name = :name';
+        $sqlQuery = 'UPDATE editors SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
         $editor = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $editorJson = json_encode($editor);

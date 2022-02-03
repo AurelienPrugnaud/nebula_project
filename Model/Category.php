@@ -95,7 +95,7 @@ class Category {
      * @return false|string
      */
     public static function updateCategory($dbc, $id, $name) {
-        $sqlQuery = 'INSERT INTO categories SET id = :id, name = :name';
+        $sqlQuery = 'UPDATE categories SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
         $category = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $categoryJson = json_encode($category);

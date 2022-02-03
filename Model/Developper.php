@@ -95,7 +95,7 @@ class Developper {
      * @return false|string
      */
     public static function updateDevelopper($dbc, $id, $name) {
-        $sqlQuery = 'INSERT INTO developpers SET id = :id, name = :name';
+        $sqlQuery = 'UPDATE developpers SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
         $developper = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $developperJson = json_encode($developper);
