@@ -284,6 +284,7 @@ CREATE TABLE `pages` (
 
 LOCK TABLES `pages` WRITE;
 /*!40000 ALTER TABLE `pages` DISABLE KEYS */;
+INSERT INTO `pages` VALUES (0,'Acceuil','home/home','/'),(1,'Jeu','game/show','/game'),(2,'Connexion','security/login','/login'),(3,'Profil','user/user','/profil'),(4,'Création de compte','registration/registration','/register'),(5,'Panier','cart/cart','/cart'),(6,'Contact','contact/contact','/contact'),(7,'Bibliothèque','library/library','/library');
 /*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -426,4 +427,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-03 16:42:09
+-- Dump completed on 2022-02-04 13:35:41

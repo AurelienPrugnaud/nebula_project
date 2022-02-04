@@ -1,4 +1,7 @@
 <?php
+    namespace Aurelien\Nebula;
+
+    use \PDO;
 
 /**
  *
@@ -92,7 +95,7 @@ class Page {
      * @return false|string
      */
     public static function getPagesList($dbc) {
-        $sqlQuery = 'SELECT * FROM pages ORDER BY id';
+        $sqlQuery = 'SELECT * FROM pages ORDER BY id_page';
         $statement = $dbc->query($sqlQuery);
         $pages = $statement->fetchAll(PDO::FETCH_ASSOC);
         $pagesJson = json_encode($pages);
@@ -105,11 +108,11 @@ class Page {
      * @return false|string
      */
     public static function getPageById($dbc, $id) {
-        $sqlQuery = 'SELECT * FROM pages WHERE id = :id';
+        $sqlQuery = 'SELECT * FROM pages WHERE id_page = :id';
         $bindParam = array('id' => $id);
         $pageById = $dbc->select($sqlQuery, $bindParam);
         $pageByIdJson = json_encode($pageById);
-        return $pageByIdJson;
+        return $pageById;
     }
 
     /**
@@ -121,7 +124,7 @@ class Page {
      * @return false|string
      */
     public static function addPage($dbc, $id, $title, $template, $url) {
-        $sqlQuery = 'INSERT INTO pages SET id = :id, title = :title, template = :template, url = :url';
+        $sqlQuery = 'INSERT INTO pages SET id_page = :id, title = :title, template = :template, url = :url';
         $bindParam = array('id' => $id, 'title' => $title, 'template' => $template, 'url' => $url);
         $page = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $pageJson = json_encode($page);
@@ -137,7 +140,7 @@ class Page {
      * @return false|string
      */
     public static function updatePage($dbc, $id, $title, $template, $url) {
-        $sqlQuery = 'UPDATE pages SET id = :id, title = :title, template = :template, url = :url';
+        $sqlQuery = 'UPDATE pages SET id_page = :id, title = :title, template = :template, url = :url';
         $bindParam = array('id' => $id, 'title' => $title, 'template' => $template, 'url' => $url);
         $page = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $pageJson = json_encode($page);
@@ -150,7 +153,7 @@ class Page {
      * @return false|string
      */
     public static function deletePage($dbc, $id) {
-        $sqlQuery = "DELETE FROM pages WHERE pages.id = $id";
+        $sqlQuery = "DELETE FROM pages WHERE pages.id_page = $id";
         $bindParam = array('id' => $id);
         $page = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $pageJson = json_encode($page);
