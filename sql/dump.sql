@@ -56,11 +56,10 @@ DROP TABLE IF EXISTS `categories_games`;
 CREATE TABLE `categories_games` (
   `id_category` int(11) NOT NULL,
   `id_game` int(11) NOT NULL,
-  `category1` int(11) NOT NULL,
-  PRIMARY KEY (`id_category`,`id_game`,`category1`),
-  KEY `id_game` (`id_game`,`category1`),
+  PRIMARY KEY (`id_category`,`id_game`),
+  KEY `id_game` (`id_game`),
   CONSTRAINT `categories_games_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `categories` (`id_category`),
-  CONSTRAINT `categories_games_ibfk_2` FOREIGN KEY (`id_game`, `category1`) REFERENCES `games` (`id_game`, `category1`)
+  CONSTRAINT `categories_games_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `games` (`id_game`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -195,7 +194,7 @@ CREATE TABLE `games` (
   `id_pegi` int(11) DEFAULT NULL,
   `id_developper` int(11) DEFAULT NULL,
   `id_editor` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_game`,`category1`),
+  PRIMARY KEY (`id_game`),
   KEY `id_pegi` (`id_pegi`),
   KEY `id_developper` (`id_developper`),
   KEY `id_editor` (`id_editor`),
@@ -247,11 +246,10 @@ DROP TABLE IF EXISTS `languages_games`;
 CREATE TABLE `languages_games` (
   `id_language` int(11) NOT NULL,
   `id_game` int(11) NOT NULL,
-  `category1` int(11) NOT NULL,
-  PRIMARY KEY (`id_language`,`id_game`,`category1`),
-  KEY `id_game` (`id_game`,`category1`),
+  PRIMARY KEY (`id_language`,`id_game`),
+  KEY `id_game` (`id_game`),
   CONSTRAINT `languages_games_ibfk_1` FOREIGN KEY (`id_language`) REFERENCES `languages` (`id_language`),
-  CONSTRAINT `languages_games_ibfk_2` FOREIGN KEY (`id_game`, `category1`) REFERENCES `games` (`id_game`, `category1`)
+  CONSTRAINT `languages_games_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `games` (`id_game`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -346,11 +344,10 @@ DROP TABLE IF EXISTS `requirements_games`;
 CREATE TABLE `requirements_games` (
   `id_requirement` int(11) NOT NULL,
   `id_game` int(11) NOT NULL,
-  `category1` int(11) NOT NULL,
-  PRIMARY KEY (`id_requirement`,`id_game`,`category1`),
-  KEY `id_game` (`id_game`,`category1`),
+  PRIMARY KEY (`id_requirement`,`id_game`),
+  KEY `id_game` (`id_game`),
   CONSTRAINT `requirements_games_ibfk_1` FOREIGN KEY (`id_requirement`) REFERENCES `requirements` (`id_requirement`),
-  CONSTRAINT `requirements_games_ibfk_2` FOREIGN KEY (`id_game`, `category1`) REFERENCES `games` (`id_game`, `category1`)
+  CONSTRAINT `requirements_games_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `games` (`id_game`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -404,11 +401,10 @@ DROP TABLE IF EXISTS `users_games`;
 CREATE TABLE `users_games` (
   `id_user` int(11) NOT NULL,
   `id_game` int(11) NOT NULL,
-  `category1` int(11) NOT NULL,
-  PRIMARY KEY (`id_user`,`id_game`,`category1`),
-  KEY `id_game` (`id_game`,`category1`),
+  PRIMARY KEY (`id_user`,`id_game`),
+  KEY `id_game` (`id_game`),
   CONSTRAINT `users_games_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
-  CONSTRAINT `users_games_ibfk_2` FOREIGN KEY (`id_game`, `category1`) REFERENCES `games` (`id_game`, `category1`)
+  CONSTRAINT `users_games_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `games` (`id_game`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
