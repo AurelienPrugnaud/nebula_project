@@ -227,7 +227,7 @@ class User {
      * @return false|string
      */
     public static function getUsersList($dbc) {
-        $sqlQuery = 'SELECT * FROM users ORDER BY id';
+        $sqlQuery = 'SELECT * FROM users ORDER BY id_user';
         $statement = $dbc->query($sqlQuery);
         $users = $statement->fetchAll(PDO::FETCH_ASSOC);
         $usersJson = json_encode($users);
@@ -240,7 +240,7 @@ class User {
      * @return false|string
      */
     public static function getUserById($dbc, $id) {
-        $sqlQuery = 'SELECT * FROM users WHERE id = :id';
+        $sqlQuery = 'SELECT * FROM users WHERE id_user = :id';
         $bindParam = array('id' => $id);
         $userById = $dbc->select($sqlQuery, $bindParam);
         $userByIdJson = json_encode($userById);
@@ -263,7 +263,7 @@ class User {
      * @return false|string
      */
     public static function addUser($dbc, $id, $mail, $firstname, $lastname, $adress1, $adress2, $city, $state, $cityCode, $password, $gameId) {
-        $sqlQuery = 'INSERT INTO users SET id = :id, mail = :mail, firstname = :firstname, lastname = :lastname, adress1 = :adress1, adress2 = :adress2, city = :city, state = :state, cityCode = :cityCode, password = :password, gameId = :gameId';
+        $sqlQuery = 'INSERT INTO users SET id_user = :id, mail = :mail, firstname = :firstname, lastname = :lastname, adress1 = :adress1, adress2 = :adress2, city = :city, state = :state, cityCode = :cityCode, password = :password, gameId = :gameId';
         $bindParam = array('id' => $id, 'mail' => $mail, 'firstname' => $firstname, 'lastname' => $lastname, 'adress1' => $adress1, 'adress2' => $adress2, 'city' => $city, 'state' => $state, 'cityCode' => $cityCode, 'password' => $password, 'gameId' => $gameId);
         $user = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $userJson = json_encode($user);
@@ -286,7 +286,7 @@ class User {
      * @return false|string
      */
     public static function updateUser($dbc, $id, $mail, $firstname, $lastname, $adress1, $adress2, $city, $state, $cityCode, $password, $gameId) {
-        $sqlQuery = 'UPDATE users SET id = :id, mail = :mail, firstname = :firstname, lastname = :lastname, adress1 = :adress1, adress2 = :adress2, city = :city, state = :state, cityCode = :cityCode, password = :password, gameId = :gameId';
+        $sqlQuery = 'UPDATE users SET id_user = :id, mail = :mail, firstname = :firstname, lastname = :lastname, adress1 = :adress1, adress2 = :adress2, city = :city, state = :state, cityCode = :cityCode, password = :password, gameId = :gameId';
         $bindParam = array('id' => $id, 'mail' => $mail, 'firstname' => $firstname, 'lastname' => $lastname, 'adress1' => $adress1, 'adress2' => $adress2, 'city' => $city, 'state' => $state, 'cityCode' => $cityCode, 'password' => $password, 'gameId' => $gameId);
         $user = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $userJson = json_encode($user);
@@ -299,7 +299,7 @@ class User {
      * @return false|string
      */
     public static function deleteUser($dbc, $id) {
-        $sqlQuery = "DELETE FROM users WHERE users.id = $id";
+        $sqlQuery = "DELETE FROM users WHERE users.id_user = $id";
         $bindParam = array('id' => $id);
         $user = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $userJson = json_encode($user);

@@ -22,16 +22,16 @@
                     <div class="row">
                         <div class="col-lg-9">
                             <div class="section">
-                                <iframe width="100%" height="530"
+                                <iframe class="active mb-4" width="100%" height="543"
                                     src="https://www.youtube-nocookie.com/embed/8O4uT214kak?controls=0"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
-                                <img class="img-game mb-4" src="../assets/img/games/god_of_war.jpg" alt="god of war">
+                                <img class="img-game mb-4 disable" src="../assets/img/games/god_of_war.jpg" alt="god of war">
                                 <div class="d-flex align-items-center justify-content-between section">
-                                    <img class="img-game-mini1" src="../assets/img/games/god_of_war_miniature1.jpg"
+                                    <img class="img-game-mini1" src="../assets/img/games/god_of_war.jpg"
                                         alt="">
-                                    <img class="img-game-mini2" src="../assets/img/games/god_of_war_miniature2.jpg"
+                                    <img class="img-game-mini2" src="../assets/img/games/god_of_war.jpg"
                                         alt="">
                                     <img class="img-game-mini3" src="../assets/img/games/god_of_war_miniature3.jpg"
                                         alt="">

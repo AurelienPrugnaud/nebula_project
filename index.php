@@ -6,6 +6,8 @@
     //use Aurelien\Nebula\Page;
     use Aurelien\Nebula\Router;
 
+    $router = Router::getRoute();
+
     
 
     //$dbc = new DataBase(MYSQL_HOST, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD);
@@ -20,7 +22,6 @@
     // $page= Page::addPage($dbc, 7,'Bibliothèque', 'library/library', '/library');
 
 
-    $router = Router::getRoute();
     // PDO request
     // $pages = [
     //     'home' => [

@@ -5,9 +5,9 @@ function nextSlide() {
   const slide = document.querySelectorAll('.cont-img');
   const nbSlides = slide.length;
   let count = 0;
-  
+
   slide[count].classList.remove('active');
-  if(count < nbSlides - 1){
+  if (count < nbSlides - 1) {
     count++;
   } else {
     count = 0;
@@ -22,7 +22,7 @@ setInterval(nextSlide, 6000);
 ////////////////CAROUSEL GAME PAGE START //////////////////////////
 
 (function changeImg() {
-
+  const iframe = document.querySelector('iframe');
   const img = document.querySelector('.img-game');
   const imgMin1 = document.querySelector('.img-game-mini1');
   const imgMin2 = document.querySelector('.img-game-mini2');
@@ -30,37 +30,56 @@ setInterval(nextSlide, 6000);
   const imgMin4 = document.querySelector('.img-game-mini4');
   const imgMin5 = document.querySelector('.img-game-mini5');
 
-  imgMin1.addEventListener('click', function() {
-    const imgSrc = document.querySelector('.img-game').src;
-    img.src = imgMin1.src;
-    imgMin1.src = imgSrc;
+  console.log(iframe);
+
+  imgMin1.addEventListener('click', function () {
+    iframe.classList.remove('disable');
+    iframe.classList.add('active');
+
+    img.classList.remove('active');
+    img.classList.add('disable');
   })
-  
-  imgMin2.addEventListener('click', function() {
-    const imgSrc = document.querySelector('.img-game').src;
+
+  imgMin2.addEventListener('click', function () {
+    iframe.classList.remove('active');
+    iframe.classList.add('disable');
+
+    img.classList.remove('disable');
+    img.classList.add('active');
+
     img.src = imgMin2.src;
-    imgMin2.src = imgSrc;
   })
 
-  imgMin3.addEventListener('click', function() {
-    const imgSrc = document.querySelector('.img-game').src;
+  imgMin3.addEventListener('click', function () {
+    iframe.classList.remove('active');
+    iframe.classList.add('disable');
+
+    img.classList.remove('disable');
+    img.classList.add('active');
+
     img.src = imgMin3.src;
-    imgMin3.src = imgSrc;
   })
 
-  imgMin4.addEventListener('click', function() {
-    const imgSrc = document.querySelector('.img-game').src;
+  imgMin4.addEventListener('click', function () {
+    iframe.classList.remove('active');
+    iframe.classList.add('disable');
+
+    img.classList.remove('disable');
+    img.classList.add('active');
+
     img.src = imgMin4.src;
-    imgMin4.src = imgSrc;
   })
 
-  imgMin5.addEventListener('click', function() {
-    const imgSrc = document.querySelector('.img-game').src;
+  imgMin5.addEventListener('click', function () {
+    iframe.classList.remove('active');
+    iframe.classList.add('disable');
+
+    img.classList.remove('disable');
+    img.classList.add('active');
+
     img.src = imgMin5.src;
-    imgMin5.src = imgSrc;
   })
 })();
-
 
 ////////////////CAROUSEL GAME PAGE END //////////////////////////
 
@@ -71,8 +90,8 @@ setInterval(nextSlide, 6000);
   const button = document.querySelector('.collapsible');
   const content = document.querySelector('.content');
 
-  button.addEventListener('click', function() {
-    if(content.style.display === 'block') {
+  button.addEventListener('click', function () {
+    if (content.style.display === 'block') {
       content.style.display = 'none';
       button.innerHTML = 'Voir plus';
     } else {
