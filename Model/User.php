@@ -1,4 +1,6 @@
 <?php
+namespace Aurelien\Nebula;
+use Aurelien\Nebula\Controller\UserController;
 
 /**
  *
@@ -7,11 +9,7 @@ class User {
     /**
      * @var
      */
-    private $id;
-    /**
-     * @var
-     */
-    private $mail;
+    private $email;
     /**
      * @var
      */
@@ -44,15 +42,10 @@ class User {
      * @var
      */
     private $password;
-    /**
-     * @var
-     */
-    private $gameId;
 
 
     /**
-     * @param int $id
-     * @param string $mail
+     * @param string $email
      * @param string $firstname
      * @param string $lastname
      * @param string $adress1
@@ -61,38 +54,23 @@ class User {
      * @param string $state
      * @param int $cityCode
      * @param string $password
-     * @param int $gameId
      */
-    public function __construct($id = '', $mail = '', $firstname = '', $lastname = '', $adress1 = '', $adress2 = '', $city = '', $state = '', $cityCode = '', $password = '', $gameId = '') {
+    public function __construct($email = '', $firstname = '', $lastname = '', $adress1 = '', $adress2 = '', $city = '', $state = '', $cityCode = '', $password = '') {
 
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getId() {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void {
-        $this->id = $id;
     }
 
     /**
      * @return mixed
      */
     public function getMail() {
-        return $this->mail;
+        return $this->email;
     }
 
     /**
-     * @param mixed $mail
+     * @param mixed $email
      */
-    public function setMail($mail): void {
-        $this->mail = $mail;
+    public function setMail($email): void {
+        $this->email = $email;
     }
 
     /**
@@ -120,7 +98,7 @@ class User {
      * @param mixed $lastname
      */
     public function setLastname($lastname): void {
-        $this->lastname = $serialNumber;
+        $this->lastname = $lastname;
     }
 
     /**
@@ -208,26 +186,11 @@ class User {
     }
 
     /**
-     * @return mixed
-     */
-    public function getGameId() {
-        return $this->gameId;
-    }
-
-    /**
-     * @param mixed $gameId
-     */
-    public function setGameId($gameId): void {
-        $this->gameId = $gameId;
-    }
-
-
-    /**
      * @param $dbc
      * @return false|string
      */
     public static function getUsersList($dbc) {
-        $sqlQuery = 'SELECT * FROM users ORDER BY id_user';
+        $sqlQuery = 'SELECT * FROM user ORDER BY lastname';
         $statement = $dbc->query($sqlQuery);
         $users = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $users;
@@ -235,20 +198,20 @@ class User {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $lastname
      * @return false|string
      */
-    public static function getUserById($dbc, $id) {
-        $sqlQuery = 'SELECT * FROM users WHERE id_user = :id';
-        $bindParam = array('id' => $id);
-        $userById = $dbc->select($sqlQuery, $bindParam);
-        return $userById;
+    public static function getUserByLastname($dbc, $lastname) {
+        $sqlQuery = 'SELECT * FROM user WHERE lastname = :lastname';
+        $bindParam = array('lastname' => $lastname);
+        $userByLastname = $dbc->select($sqlQuery, $bindParam);
+        return $userByLastname;
     }
 
     /**
      * @param $dbc
-     * @param $id
-     * @param $mail
+     * @param $lastname
+     * @param $email
      * @param $firstname
      * @param $lastname
      * @param $adress1
@@ -257,20 +220,19 @@ class User {
      * @param $state
      * @param $cityCode
      * @param $password
-     * @param $gameId
      * @return false|string
      */
-    public static function addUser($dbc, $mail, $firstname, $lastname, $adress1, $adress2, $city, $state, $cityCode, $password, $gameId) {
-        $sqlQuery = 'INSERT INTO users SET mail = :mail, firstname = :firstname, lastname = :lastname, adress1 = :adress1, adress2 = :adress2, city = :city, state = :state, cityCode = :cityCode, password = :password, gameId = :gameId';
-        $bindParam = array('id' => $id, 'mail' => $mail, 'firstname' => $firstname, 'lastname' => $lastname, 'adress1' => $adress1, 'adress2' => $adress2, 'city' => $city, 'state' => $state, 'cityCode' => $cityCode, 'password' => $password, 'gameId' => $gameId);
+    public static function addUser($dbc, $email, $firstname, $lastname, $adress1, $adress2, $city, $state, $cityCode, $password) {
+        $sqlQuery = 'INSERT INTO user SET email = :email, firstname = :firstname, lastname = :lastname, adress1 = :adress1, adress2 = :adress2, city = :city, state = :state, cityCode = :cityCode, password = :password';
+        $bindParam = array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'adress1' => $adress1, 'adress2' => $adress2, 'city' => $city, 'state' => $state, 'cityCode' => $cityCode, 'password' => $password);
         $user = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         return $user;
     }
 
     /**
      * @param $dbc
-     * @param $id
-     * @param $mail
+     * @param $lastname
+     * @param $email
      * @param $firstname
      * @param $lastname
      * @param $adress1
@@ -279,24 +241,23 @@ class User {
      * @param $state
      * @param $cityCode
      * @param $password
-     * @param $gameId
      * @return false|string
      */
-    public static function updateUser($dbc, $id, $mail, $firstname, $lastname, $adress1, $adress2, $city, $state, $cityCode, $password, $gameId) {
-        $sqlQuery = 'UPDATE users SET id_user = :id, mail = :mail, firstname = :firstname, lastname = :lastname, adress1 = :adress1, adress2 = :adress2, city = :city, state = :state, cityCode = :cityCode, password = :password, gameId = :gameId';
-        $bindParam = array('id' => $id, 'mail' => $mail, 'firstname' => $firstname, 'lastname' => $lastname, 'adress1' => $adress1, 'adress2' => $adress2, 'city' => $city, 'state' => $state, 'cityCode' => $cityCode, 'password' => $password, 'gameId' => $gameId);
+    public static function updateUser($dbc, $email, $firstname, $lastname, $adress1, $adress2, $city, $state, $cityCode, $password) {
+        $sqlQuery = 'UPDATE user SET email = :email, firstname = :firstname, lastname = :lastname, adress1 = :adress1, adress2 = :adress2, city = :city, state = :state, cityCode = :cityCode, password = :password';
+        $bindParam = array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'adress1' => $adress1, 'adress2' => $adress2, 'city' => $city, 'state' => $state, 'cityCode' => $cityCode, 'password' => $password);
         $user = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         return $user;
     }
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $email
      * @return false|string
      */
-    public static function deleteUser($dbc, $id) {
-        $sqlQuery = "DELETE FROM users WHERE users.id_user = $id";
-        $bindParam = array('id' => $id);
+    public static function deleteUser($dbc, $email) {
+        $sqlQuery = "DELETE FROM user WHERE user.email = $email";
+        $bindParam = array('email' => $email);
         $user = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         return $user;
     }

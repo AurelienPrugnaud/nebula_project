@@ -15,7 +15,7 @@
     // $page= Page::addPage($dbc, 0,'Acceuil', 'home/home', '/');
     // $page= Page::addPage($dbc, 1,'Jeu', 'game/show', '/game');
     // $page= Page::addPage($dbc, 2,'Connexion', 'security/login', '/login');
-    // $page= Page::addPage($dbc, 3,'Profil', '/profil', '/cart');
+    // $page= Page::addPage($dbc, 3,'Profil', 'user/user', '/profil');
     // $page= Page::addPage($dbc, 4,'Création de compte', 'registration/registration', '/register');
     // $page= Page::addPage($dbc, 5,'Panier', 'cart/cart', '/cart');
     // $page= Page::addPage($dbc, 6,'Contact', 'contact/contact', '/contact');
