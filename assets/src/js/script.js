@@ -22,63 +22,77 @@ setInterval(nextSlide, 6000);
 ////////////////CAROUSEL GAME PAGE START //////////////////////////
 
 (function changeImg() {
-  const iframe = document.querySelector('iframe');
-  const img = document.querySelector('.img-game');
-  const imgMin1 = document.querySelector('.img-game-mini1');
-  const imgMin2 = document.querySelector('.img-game-mini2');
-  const imgMin3 = document.querySelector('.img-game-mini3');
-  const imgMin4 = document.querySelector('.img-game-mini4');
-  const imgMin5 = document.querySelector('.img-game-mini5');
+
+  const iframe = document.getElementsByTagName('iframe');
+  const img = document.getElementsByClassName('img-game');
+  var imgMin1 = document.getElementsByClassName('img-game-mini1');
+  const imgMin2 = document.getElementsByClassName('img-game-mini2');
+  const imgMin3 = document.getElementsByClassName('img-game-mini3');
+  const imgMin4 = document.getElementsByClassName('img-game-mini4');
+  const imgMin5 = document.getElementsByClassName('img-game-mini5');
 
   console.log(iframe);
+  console.log(img);
+  console.log(imgMin1);
+  console.log(imgMin2);
+  console.log(imgMin3);
+  console.log(imgMin4);
+  console.log(imgMin5);
 
-  imgMin1.addEventListener('click', function () {
-    iframe.classList.remove('disable');
-    iframe.classList.add('active');
+  /* setInterval(function () {
+    if (iframe.length === 1) { */
+      imgMin1.addEventListener('click', function() {
+        iframe.classList.remove('disable');
+        iframe.classList.add('active');
 
-    img.classList.remove('active');
-    img.classList.add('disable');
-  })
+        img.classList.remove('active');
+        img.classList.add('disable');
+      })
+      /* imgMin1.addEventListener('click', function () {
+        
+      }) */
 
-  imgMin2.addEventListener('click', function () {
-    iframe.classList.remove('active');
-    iframe.classList.add('disable');
+      imgMin2.addEventListener('click', function () {
+        iframe.classList.remove('active');
+        iframe.classList.add('disable');
 
-    img.classList.remove('disable');
-    img.classList.add('active');
+        img.classList.remove('disable');
+        img.classList.add('active');
 
-    img.src = imgMin2.src;
-  })
+        img.src = imgMin2.src;
+      })
 
-  imgMin3.addEventListener('click', function () {
-    iframe.classList.remove('active');
-    iframe.classList.add('disable');
+      imgMin3.addEventListener('click', function () {
+        iframe.classList.remove('active');
+        iframe.classList.add('disable');
 
-    img.classList.remove('disable');
-    img.classList.add('active');
+        img.classList.remove('disable');
+        img.classList.add('active');
 
-    img.src = imgMin3.src;
-  })
+        img.src = imgMin3.src;
+      })
 
-  imgMin4.addEventListener('click', function () {
-    iframe.classList.remove('active');
-    iframe.classList.add('disable');
+      imgMin4.addEventListener('click', function () {
+        iframe.classList.remove('active');
+        iframe.classList.add('disable');
 
-    img.classList.remove('disable');
-    img.classList.add('active');
+        img.classList.remove('disable');
+        img.classList.add('active');
 
-    img.src = imgMin4.src;
-  })
+        img.src = imgMin4.src;
+      })
 
-  imgMin5.addEventListener('click', function () {
-    iframe.classList.remove('active');
-    iframe.classList.add('disable');
+      imgMin5.addEventListener('click', function () {
+        iframe.classList.remove('active');
+        iframe.classList.add('disable');
 
-    img.classList.remove('disable');
-    img.classList.add('active');
+        img.classList.remove('disable');
+        img.classList.add('active');
 
-    img.src = imgMin5.src;
-  })
+        img.src = imgMin5.src;
+      })
+    /* }
+  }, 100) */
 })();
 
 ////////////////CAROUSEL GAME PAGE END //////////////////////////
@@ -87,8 +101,11 @@ setInterval(nextSlide, 6000);
 
 (function showCollapse() {
 
-  const button = document.querySelector('.collapsible');
-  const content = document.querySelector('.content');
+  const button = document.getElementsByClassName('collapsible');
+  const content = document.getElementsByClassName('content');
+
+  console.log(button);
+  console.log(content);
 
   button.addEventListener('click', function () {
     if (content.style.display === 'block') {
