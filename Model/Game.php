@@ -7,7 +7,7 @@ class User {
     /**
      * @var
      */
-    private $id;
+    private $id_game;
     /**
      * @var
      */

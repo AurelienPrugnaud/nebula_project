@@ -25,7 +25,7 @@ setInterval(nextSlide, 6000);
 
   const iframe = document.getElementsByTagName('iframe');
   const img = document.getElementsByClassName('img-game');
-  var imgMin1 = document.getElementsByClassName('img-game-mini1');
+  const imgMin1 = document.getElementsByClassName('img-game-mini1');
   const imgMin2 = document.getElementsByClassName('img-game-mini2');
   const imgMin3 = document.getElementsByClassName('img-game-mini3');
   const imgMin4 = document.getElementsByClassName('img-game-mini4');

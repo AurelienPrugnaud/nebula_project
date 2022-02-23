@@ -249,6 +249,7 @@ div.border-card2 {
 
 textarea {
     height: 300px;
+    border-radius: 10px !important;
 }
 
 a.connexion {
@@ -279,7 +280,7 @@ h1.card-title {
     font-weight: 700;
 }
 
-input.form-control {
+input.form-control, select.form-select {
     border-radius: 10px !important;
 }
 

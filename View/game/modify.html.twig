@@ -1,1 +1,744 @@
 {% extends 'base.html.twig' %}
+
+{% block content %}
+<! -- //////////////////////////////MAIN START//////////////////////////////////////// -->
+    <main class="container white-page">
+        <div class="section">
+            <div class="d-flex align-items-center mb-3">
+                <h1 class="t-section">Modification d'un jeu en base de donnée</h1>
+                <span></span>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+                <h2 class="t-gamePage">Information</h2>
+                <span></span>
+            </div>
+            <form>
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Titre</label>
+                                <div class="border-button">
+                                    <input type="email" class="form-control" id="name" aria-describedby=""
+                                        placeholder="Titre">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Genre</label>
+                                <div class="border-button">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Choisissez un genre</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Genre</label>
+                                <div class="border-button">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Choisissez un genre</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="developper" class="form-label">Développeur</label>
+                                <div class="border-button">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Choisissez un développeur</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="dateLaunch" class="form-label">Date de sortie</label>
+                                <div class="border-button mb-3">
+                                    <div class="border-button">
+                                        <input type="date" class="form-control" id="dateLaunch"
+                                            aria-describedby="emailHelp" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pegi" class="form-label">PEGI</label>
+                                <div class="border-button">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Choisissez un PEGI</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Prix</label>
+                                <div class="border-button">
+                                    <input type="email" class="form-control" id="name" aria-describedby=""
+                                        placeholder="Prix">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Genre</label>
+                                <div class="border-button">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Choisissez un genre</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Genre</label>
+                                <div class="border-button">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Choisissez un genre</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editor" class="form-label">Editeur</label>
+                                <div class="border-button">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Choisissez un éditeur</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editor" class="form-label">Plateforme</label>
+                                <div class="border-button mb-3">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Choisissez une plateforme</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pegiImg" class="form-label">Image du PEGI</label>
+                                <div class="border-button">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Choisissez une image de PEGI</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <h2 class="t-gamePage">Images et Vidéo</h2>
+                    <span></span>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="youtubeLink" class="form-label">Lien Youtube</label>
+                            <div class="border-button">
+                                <input type="email" class="form-control" id="youtubeLink" aria-describedby=""
+                                    placeholder="Lien Youtube">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image</label>
+                            <div class="border-button">
+                                <input class="form-control" type="file" id="image">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image</label>
+                            <div class="border-button">
+                                <input class="form-control" type="file" id="image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="logo" class="form-label">Logo</label>
+                            <div class="border-button">
+                                <input class="form-control" type="file" id="logo">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image</label>
+                            <div class="border-button">
+                                <input class="form-control" type="file" id="image">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image</label>
+                            <div class="border-button mb-3">
+                                <input class="form-control" type="file" id="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <h2 class="t-gamePage">Descriptions</h2>
+                    <span></span>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Titre</label>
+                            <div class="border-button">
+                                <input type="text" class="form-control" id="tile" placeholder="Titre">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="textarea" class="form-label">Texte descriptif</label>
+                            <div class="border-button">
+                                <textarea class="form-control" id="textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Titre</label>
+                            <div class="border-button">
+                                <input type="text" class="form-control" id="tile" placeholder="Titre">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="textarea" class="form-label">Texte descriptif</label>
+                            <div class="border-button">
+                                <textarea class="form-control" id="textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Titre</label>
+                            <div class="border-button">
+                                <input type="text" class="form-control" id="tile" placeholder="Titre">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="textarea" class="form-label">Texte descriptif</label>
+                            <div class="border-button">
+                                <textarea class="form-control" id="textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Titre</label>
+                            <div class="border-button">
+                                <input type="text" class="form-control" id="tile" placeholder="Titre">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="textarea" class="form-label">Texte descriptif</label>
+                            <div class="border-button">
+                                <textarea class="form-control" id="textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Titre</label>
+                            <div class="border-button">
+                                <input type="text" class="form-control" id="tile" placeholder="Titre">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="textarea" class="form-label">Texte descriptif</label>
+                            <div class="border-button">
+                                <textarea class="form-control" id="textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Titre</label>
+                            <div class="border-button">
+                                <input type="text" class="form-control" id="tile" placeholder="Titre">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="textarea" class="form-label">Texte descriptif</label>
+                            <div class="border-button">
+                                <textarea class="form-control" id="textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Titre</label>
+                            <div class="border-button">
+                                <input type="text" class="form-control" id="tile" placeholder="Titre">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="textarea" class="form-label">Texte descriptif</label>
+                            <div class="border-button">
+                                <textarea class="form-control" id="textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Titre</label>
+                            <div class="border-button">
+                                <input type="text" class="form-control" id="tile" placeholder="Titre">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="textarea" class="form-label">Texte descriptif</label>
+                            <div class="border-button">
+                                <textarea class="form-control" id="textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <h2 class="t-gamePage">Configuration</h2>
+                    <span></span>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Système d'xploitation minimum</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez un ystème d'xploitation minimum</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Processeur Intel minimum</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez un processeur minimum</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Processeur AMD minimum</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez un processeur minimum</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editor" class="form-label">Mémoire vive minimum</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une mémoire vive minimum</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editor" class="form-label">Stockage minimum</label>
+                            <div class="border-button mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez un stockage minimum</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pegiImg" class="form-label">DirectX minimum</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez un DirectX minimum</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pegiImg" class="form-label">Carte graphique NVIDIA minimum</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une carte graphique minimum</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pegiImg" class="form-label">Carte graphique AMD minimum</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une carte graphique minimum</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Système d'xploitation recommandé</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez un ystème d'xploitation recommandé</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Processeur Intel recommandé</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez un processeur recommandé</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Processeur AMD recommandé</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez un processeur recommandé</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editor" class="form-label">Mémoire vive recommandé</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une mémoire vive recommandé</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editor" class="form-label">Stockage recommandé</label>
+                            <div class="border-button mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez un stockage recommandé</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pegiImg" class="form-label">DirectX recommandé</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez un DirectX recommandé</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pegiImg" class="form-label">Carte graphique NVIDIA recommandé</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une carte graphique recommandé</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pegiImg" class="form-label">Carte graphique AMD recommandé</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une carte graphique recommandé</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <h2 class="t-gamePage">Langues</h2>
+                    <span></span>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue du Texte</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue du texte</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langues du Texte</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue du texte</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langues du Texte</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue du texte</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langues du Texte</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue du texte</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langues du Texte</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue du texte</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue du Texte</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue du texte</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langues du Texte</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue du texte</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langues du Texte</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue du texte</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langues du Texte</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue du texte</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langues du Texte</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue du texte</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Langue audio</label>
+                            <div class="border-button">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
+                                    <option value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <h2 class="t-gamePage">Date d'ajout à la base de donnée et validation</h2>
+                    <span></span>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="dateAdd" class="form-label">Date d'ajout à la base de donnée</label>
+                            <div class="border-button mb-3">
+                                <div class="border-button">
+                                    <input type="date" class="form-control" id="dateLaunch"
+                                        aria-describedby="emailHelp" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <label for="" class="form-label">Validation du formulaire de modification du jeu</label>
+                            <div class="border-button-game-page mt-3">
+                                <button class="button-game-page ps-5 pe-5">
+                                    Ajouter le jeu à la base de donnée
+                                </button>
+                            </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <! -- //////////////////////////////MAIN END//////////////////////////////////////// -->
+{% endblock %}

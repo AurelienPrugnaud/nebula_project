@@ -1,1 +1,46 @@
 {% extends 'base.html.twig' %}
+
+{% block content %}
+<main class="container white-page">
+    <div class="section">
+        <div class="d-flex align-items-center mb-3">
+            <h1 class="t-section">Liste des jeux en base de données</h1>
+            <span></span>
+        </div>
+        <table class="table text-white mb-3">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>blabla</td>
+                    <td>blabla</td>
+                    <td>
+                        <div class="d-flex justify-content-center">
+                            <div class="border-button-game-page me-3">
+                                <button class="button-game-page">
+                                    Afficher
+                                </button>
+                            </div>
+                            <div class="border-button-game-page me-3">
+                                <button class="button-game-page">
+                                    Modifier
+                                </button>
+                            </div>
+                            <div class="border-button-game-page me-3">
+                                <button class="button-game-page">
+                                    Supprimer
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}

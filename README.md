@@ -27,7 +27,7 @@ Nebula is my internship project. It's an online platform for selling video games
 
 ### V1 Objectives :
 * Dynamic carrousel.
-* Editor account.
+* User account.
 * Video/photo player.
 * CRUD for games.
 * Search engine.
