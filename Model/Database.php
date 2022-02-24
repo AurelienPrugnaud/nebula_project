@@ -1,7 +1,6 @@
 <?php 
 	namespace Aurelien\Nebula;
 	use \PDO;
-	
 
 class DataBase extends PDO {
 
