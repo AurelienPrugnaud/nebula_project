@@ -95,7 +95,7 @@ class Page {
      * @return false|string
      */
     public static function getPagesList($dbc) {
-        $sqlQuery = 'SELECT * FROM page ORDER BY id_page';
+        $sqlQuery = 'SELECT * FROM page ORDER BY id';
         $statement = $dbc->query($sqlQuery);
         $pages = $statement->fetchAll(PDO::FETCH_ASSOC);
         $pagesJson = json_encode($pages);
@@ -108,7 +108,7 @@ class Page {
      * @return false|string
      */
     public static function getPageById($dbc, $id) {
-        $sqlQuery = 'SELECT * FROM page WHERE id_page = :id';
+        $sqlQuery = 'SELECT * FROM page WHERE id = :id';
         $bindParam = array('id' => $id);
         $pageById = $dbc->select($sqlQuery, $bindParam);
         $pageByIdJson = json_encode($pageById);
@@ -124,7 +124,7 @@ class Page {
      * @return false|string
      */
     public static function addPage($dbc, $id, $title, $template, $url) {
-        $sqlQuery = 'INSERT INTO page SET id_page = :id, title = :title, template = :template, url = :url';
+        $sqlQuery = 'INSERT INTO page SET id = :id, title = :title, template = :template, url = :url';
         $bindParam = array('id' => $id, 'title' => $title, 'template' => $template, 'url' => $url);
         $page = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $pageJson = json_encode($page);
@@ -140,7 +140,7 @@ class Page {
      * @return false|string
      */
     public static function updatePage($dbc, $id, $title, $template, $url) {
-        $sqlQuery = 'UPDATE page SET id_page = :id, title = :title, template = :template, url = :url';
+        $sqlQuery = 'UPDATE page SET id = :id, title = :title, template = :template, url = :url';
         $bindParam = array('id' => $id, 'title' => $title, 'template' => $template, 'url' => $url);
         $page = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $pageJson = json_encode($page);
@@ -153,7 +153,7 @@ class Page {
      * @return false|string
      */
     public static function deletePage($dbc, $id) {
-        $sqlQuery = "DELETE FROM page WHERE page.id_page = $id";
+        $sqlQuery = "DELETE FROM page WHERE page.id = $id";
         $bindParam = array('id' => $id);
         $page = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $pageJson = json_encode($page);

@@ -7,17 +7,17 @@ class Category {
     /**
      * @var
      */
-    private $id;
+    private $id_category;
     /**
      * @var
      */
     private $name;
 
     /**
-     * @param int $id
+     * @param int $id_category
      * @param string $name
      */
-    public function __construct($id = '', $name = '') {
+    public function __construct($id_category = '', $name = '') {
 
     }
 
@@ -29,10 +29,10 @@ class Category {
     }
 
     /**
-     * @param mixed $id
+     * @param mixed $id_category
      */
-    public function setId($id): void {
-        $this->id = $id;
+    public function setId($id_category): void {
+        $this->id = $id_category;
     }
 
     /**
@@ -63,12 +63,12 @@ class Category {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $id_category
      * @return false|string
      */
-    public static function getCategoryById($dbc, $id) {
+    public static function getCategoryById($dbc, $id_category) {
         $sqlQuery = 'SELECT * FROM categories WHERE id = :id';
-        $bindParam = array('id' => $id);
+        $bindParam = array('id' => $id_category);
         $categoryById = $dbc->select($sqlQuery, $bindParam);
         $categoryByIdJson = json_encode($categoryById);
         return $categoryByIdJson;
@@ -76,13 +76,13 @@ class Category {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $id_category
      * @param $name
      * @return false|string
      */
-    public static function addCategory($dbc, $id, $name) {
+    public static function addCategory($dbc, $id_category, $name) {
         $sqlQuery = 'INSERT INTO categories SET id = :id, name = :name';
-        $bindParam = array('id' => $id, 'name' => $name);
+        $bindParam = array('id' => $id_category, 'name' => $name);
         $category = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $categoryJson = json_encode($category);
         return $categoryJson;
@@ -90,13 +90,13 @@ class Category {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $id_category
      * @param $name
      * @return false|string
      */
-    public static function updateCategory($dbc, $id, $name) {
+    public static function updateCategory($dbc, $id_category, $name) {
         $sqlQuery = 'UPDATE categories SET id = :id, name = :name';
-        $bindParam = array('id' => $id, 'name' => $name);
+        $bindParam = array('id' => $id_category, 'name' => $name);
         $category = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $categoryJson = json_encode($category);
         return $categoryJson;
@@ -104,12 +104,12 @@ class Category {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $id_category
      * @return false|string
      */
-    public static function deleteCategory($dbc, $id) {
-        $sqlQuery = "DELETE FROM categories WHERE categories.id = $id";
-        $bindParam = array('id' => $id);
+    public static function deleteCategory($dbc, $id_category) {
+        $sqlQuery = "DELETE FROM categories WHERE categories.id = $id_category";
+        $bindParam = array('id' => $id_category);
         $category = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $categoryJson = json_encode($category);
         return $categoryJson;

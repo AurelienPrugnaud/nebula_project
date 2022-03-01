@@ -12,14 +12,14 @@
                 <h2 class="t-gamePage">Information</h2>
                 <span></span>
             </div>
-            <form>
+            <form action="../../Controller/GameController.php" method="post">
                 <div class="mb-3">
                     <div class="row">
                         <div class="col-6">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Titre</label>
                                 <div class="border-button">
-                                    <input type="email" class="form-control" id="name" aria-describedby=""
+                                    <input name="title" type="text" class="form-control" id="name" aria-describedby=""
                                         placeholder="Titre">
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                             <div class="mb-3">
                                 <label for="developper" class="form-label">Développeur</label>
                                 <div class="border-button">
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select name="dev" class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez un développeur</option>
                                         <option value="1">One</option>
                                     </select>
@@ -54,15 +54,15 @@
                                 <label for="dateLaunch" class="form-label">Date de sortie</label>
                                 <div class="border-button mb-3">
                                     <div class="border-button">
-                                        <input type="date" class="form-control" id="dateLaunch"
-                                            aria-describedby="emailHelp" placeholder="">
+                                        <input name="releaseDate" type="date" class="form-control" id="dateLaunch"
+                                            aria-describedby="textHelp" placeholder="">
                                     </div>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="pegi" class="form-label">PEGI</label>
                                 <div class="border-button">
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select name="pegi" class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez un PEGI</option>
                                         <option value="1">One</option>
                                     </select>
@@ -73,7 +73,7 @@
                             <div class="mb-3">
                                 <label for="name" class="form-label">Prix</label>
                                 <div class="border-button">
-                                    <input type="email" class="form-control" id="name" aria-describedby=""
+                                    <input name="price" type="text" class="form-control" id="name" aria-describedby=""
                                         placeholder="Prix">
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                             <div class="mb-3">
                                 <label for="editor" class="form-label">Editeur</label>
                                 <div class="border-button">
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select name="editor" class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez un éditeur</option>
                                         <option value="1">One</option>
                                     </select>
@@ -134,7 +134,7 @@
                         <div class="mb-3">
                             <label for="youtubeLink" class="form-label">Lien Youtube</label>
                             <div class="border-button">
-                                <input type="email" class="form-control" id="youtubeLink" aria-describedby=""
+                                <input name="youtube" type="text" class="form-control" id="youtubeLink" aria-describedby=""
                                     placeholder="Lien Youtube">
                             </div>
                         </div>
@@ -729,7 +729,7 @@
                             <div class="border-button mb-3">
                                 <div class="border-button">
                                     <input type="date" class="form-control" id="dateLaunch"
-                                        aria-describedby="emailHelp" placeholder="">
+                                        aria-describedby="textHelp" placeholder="">
                                 </div>
                             </div>
                         </div>
@@ -737,7 +737,7 @@
                     <div class="col-6">
                         <label for="" class="form-label">Validation du formulaire d'ajout à la base de donnée</label>
                             <div class="border-button-game-page mt-3">
-                                <button class="button-game-page ps-5 pe-5">
+                                <button type="submit" class="button-game-page ps-5 pe-5">
                                     Ajouter le jeu à la base de donnée
                                 </button>
                             </div>

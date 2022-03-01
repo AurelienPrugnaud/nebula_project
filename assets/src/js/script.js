@@ -26,73 +26,67 @@ setInterval(nextSlide, 6000);
   const iframe = document.getElementsByTagName('iframe');
   const img = document.getElementsByClassName('img-game');
   const imgMin1 = document.getElementsByClassName('img-game-mini1');
+  // var imgMin1 = $('.img-game-mini1');
   const imgMin2 = document.getElementsByClassName('img-game-mini2');
   const imgMin3 = document.getElementsByClassName('img-game-mini3');
   const imgMin4 = document.getElementsByClassName('img-game-mini4');
   const imgMin5 = document.getElementsByClassName('img-game-mini5');
 
-  console.log(iframe);
-  console.log(img);
-  console.log(imgMin1);
-  console.log(imgMin2);
-  console.log(imgMin3);
-  console.log(imgMin4);
-  console.log(imgMin5);
+  console.log(iframe[0]);
+  console.log(img[0]);
+  console.log(imgMin1[0]);
+  console.log(imgMin2[0]);
+  console.log(imgMin3[0]);
+  console.log(imgMin4[0]);
+  console.log(imgMin5[0]);
 
-  /* setInterval(function () {
-    if (iframe.length === 1) { */
-      imgMin1.addEventListener('click', function() {
-        iframe.classList.remove('disable');
-        iframe.classList.add('active');
+      imgMin1[0].addEventListener('click', function() {
+        iframe[0].classList.remove('disable');
+        iframe[0].classList.add('active');
 
-        img.classList.remove('active');
-        img.classList.add('disable');
-      })
-      /* imgMin1.addEventListener('click', function () {
-        
-      }) */
-
-      imgMin2.addEventListener('click', function () {
-        iframe.classList.remove('active');
-        iframe.classList.add('disable');
-
-        img.classList.remove('disable');
-        img.classList.add('active');
-
-        img.src = imgMin2.src;
+        img[0].classList.remove('active');
+        img[0].classList.add('disable');
       })
 
-      imgMin3.addEventListener('click', function () {
-        iframe.classList.remove('active');
-        iframe.classList.add('disable');
+      imgMin2[0].addEventListener('click', function () {
+        iframe[0].classList.remove('active');
+        iframe[0].classList.add('disable');
 
-        img.classList.remove('disable');
-        img.classList.add('active');
+        img[0].classList.remove('disable');
+        img[0].classList.add('active');
 
-        img.src = imgMin3.src;
+        img[0].src = imgMin2[0].src;
       })
 
-      imgMin4.addEventListener('click', function () {
-        iframe.classList.remove('active');
-        iframe.classList.add('disable');
+      imgMin3[0].addEventListener('click', function () {
+        iframe[0].classList.remove('active');
+        iframe[0].classList.add('disable');
 
-        img.classList.remove('disable');
-        img.classList.add('active');
+        img[0].classList.remove('disable');
+        img[0].classList.add('active');
 
-        img.src = imgMin4.src;
+        img[0].src = imgMin3[0].src;
       })
 
-      imgMin5.addEventListener('click', function () {
-        iframe.classList.remove('active');
-        iframe.classList.add('disable');
+      imgMin4[0].addEventListener('click', function () {
+        iframe[0].classList.remove('active');
+        iframe[0].classList.add('disable');
 
-        img.classList.remove('disable');
-        img.classList.add('active');
+        img[0].classList.remove('disable');
+        img[0].classList.add('active');
 
-        img.src = imgMin5.src;
+        img[0].src = imgMin4[0].src;
       })
-    /* }
-  }, 100) */
+
+      imgMin5[0].addEventListener('click', function () {
+        iframe[0].classList.remove('active');
+        iframe[0].classList.add('disable');
+
+        img[0].classList.remove('disable');
+        img[0].classList.add('active');
+
+        img[0].src = imgMin5[0].src;
+      })
 })();
 
 ////////////////CAROUSEL GAME PAGE END //////////////////////////
@@ -104,16 +98,16 @@ setInterval(nextSlide, 6000);
   const button = document.getElementsByClassName('collapsible');
   const content = document.getElementsByClassName('content');
 
-  console.log(button);
-  console.log(content);
+  console.log(button[0]);
+  console.log(content[0]);
 
-  button.addEventListener('click', function () {
-    if (content.style.display === 'block') {
-      content.style.display = 'none';
-      button.innerHTML = 'Voir plus';
+  button[0].addEventListener('click', function () {
+    if (content[0].style.display === 'block') {
+      content[0].style.display = 'none';
+      button[0].innerHTML = 'Voir plus';
     } else {
-      content.style.display = 'block';
-      button.innerHTML = 'Voir moins';
+      content[0].style.display = 'block';
+      button[0].innerHTML = 'Voir moins';
     }
   });
 })();

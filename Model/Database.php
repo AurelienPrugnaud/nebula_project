@@ -45,4 +45,32 @@ class DataBase extends PDO {
 		endforeach;
 		$statement->execute();
 	}
+
+	public function insertGame($title, $releaseDate, $price, $youtube, $pegi, $editor, $dev) 
+	{
+		try {
+			$request = "
+				INSERT INTO game (
+					name, releaseDate, price, youtubeLink, addDate, id_pegi, id_editor, id_developper
+				) 
+				VALUES (
+					 :title, :releaseDate, :price, :youtube, :date, :pegi, :editor, :dev 
+				)";
+
+			$req = $this->prepare($request);
+			$req->execute([
+				":title" => $title,
+				":releaseDate" => $releaseDate,
+				":price" => $price,
+				":youtube" => $youtube,
+				":date" => $releaseDate,
+				":pegi" => $pegi,
+				":editor" => $editor,
+				":dev" => $dev
+			]);
+		}
+		catch(\Exception $e) {
+			throw new \Exception($e->getMessage());
+		}
+	}
 }

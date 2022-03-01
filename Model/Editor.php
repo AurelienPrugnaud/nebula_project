@@ -7,17 +7,17 @@ class Editor {
     /**
      * @var
      */
-    private $id;
+    private $id_editor;
     /**
      * @var
      */
     private $name;
 
     /**
-     * @param int $id
+     * @param int $id_editor
      * @param string $name
      */
-    public function __construct($id = '', $name = '') {
+    public function __construct($id_editor = '', $name = '') {
 
     }
 
@@ -29,10 +29,10 @@ class Editor {
     }
 
     /**
-     * @param mixed $id
+     * @param mixed $id_editor
      */
-    public function setId($id): void {
-        $this->id = $id;
+    public function setId($id_editor): void {
+        $this->id = $id_editor;
     }
 
     /**
@@ -63,12 +63,12 @@ class Editor {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $id_editor
      * @return false|string
      */
-    public static function getEditorById($dbc, $id) {
+    public static function getEditorById($dbc, $id_editor) {
         $sqlQuery = 'SELECT * FROM editors WHERE id = :id';
-        $bindParam = array('id' => $id);
+        $bindParam = array('id' => $id_editor);
         $editorById = $dbc->select($sqlQuery, $bindParam);
         $editorByIdJson = json_encode($editorById);
         return $editorByIdJson;
@@ -76,13 +76,13 @@ class Editor {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $id_editor
      * @param $name
      * @return false|string
      */
-    public static function addEditor($dbc, $id, $name) {
+    public static function addEditor($dbc, $id_editor, $name) {
         $sqlQuery = 'INSERT INTO editors SET id = :id, name = :name';
-        $bindParam = array('id' => $id, 'name' => $name);
+        $bindParam = array('id' => $id_editor, 'name' => $name);
         $editor = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $editorJson = json_encode($editor);
         return $editorJson;
@@ -90,13 +90,13 @@ class Editor {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $id_editor
      * @param $name
      * @return false|string
      */
-    public static function updateEditor($dbc, $id, $name) {
+    public static function updateEditor($dbc, $id_editor, $name) {
         $sqlQuery = 'UPDATE editors SET id = :id, name = :name';
-        $bindParam = array('id' => $id, 'name' => $name);
+        $bindParam = array('id' => $id_editor, 'name' => $name);
         $editor = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $editorJson = json_encode($editor);
         return $editorJson;
@@ -104,12 +104,12 @@ class Editor {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $id_editor
      * @return false|string
      */
-    public static function deleteEditor($dbc, $id) {
-        $sqlQuery = "DELETE FROM editors WHERE editors.id = $id";
-        $bindParam = array('id' => $id);
+    public static function deleteEditor($dbc, $id_editor) {
+        $sqlQuery = "DELETE FROM editors WHERE editors.id = $id_editor";
+        $bindParam = array('id' => $id_editor);
         $editor = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $editorJson = json_encode($editor);
         return $editorJson;

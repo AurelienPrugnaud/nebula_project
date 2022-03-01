@@ -7,17 +7,17 @@ class Developper {
     /**
      * @var
      */
-    private $id;
+    private $id_developper;
     /**
      * @var
      */
     private $name;
 
     /**
-     * @param int $id
+     * @param int $id_developper
      * @param string $name
      */
-    public function __construct($id = '', $name = '') {
+    public function __construct($id_developper = '', $name = '') {
 
     }
 
@@ -29,10 +29,10 @@ class Developper {
     }
 
     /**
-     * @param mixed $id
+     * @param mixed $id_developper
      */
-    public function setId($id): void {
-        $this->id = $id;
+    public function setId($id_developper): void {
+        $this->id = $id_developper;
     }
 
     /**
@@ -63,12 +63,12 @@ class Developper {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $id_developper
      * @return false|string
      */
-    public static function getDevelopperById($dbc, $id) {
+    public static function getDevelopperById($dbc, $id_developper) {
         $sqlQuery = 'SELECT * FROM developpers WHERE id = :id';
-        $bindParam = array('id' => $id);
+        $bindParam = array('id' => $id_developper);
         $developperById = $dbc->select($sqlQuery, $bindParam);
         $developperByIdJson = json_encode($developperById);
         return $developperByIdJson;
@@ -76,13 +76,13 @@ class Developper {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $id_developper
      * @param $name
      * @return false|string
      */
-    public static function addDevelopper($dbc, $id, $name) {
+    public static function addDevelopper($dbc, $id_developper, $name) {
         $sqlQuery = 'INSERT INTO developpers SET id = :id, name = :name';
-        $bindParam = array('id' => $id, 'name' => $name);
+        $bindParam = array('id' => $id_developper, 'name' => $name);
         $developper = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $developperJson = json_encode($developper);
         return $developperJson;
@@ -90,13 +90,13 @@ class Developper {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $id_developper
      * @param $name
      * @return false|string
      */
-    public static function updateDevelopper($dbc, $id, $name) {
+    public static function updateDevelopper($dbc, $id_developper, $name) {
         $sqlQuery = 'UPDATE developpers SET id = :id, name = :name';
-        $bindParam = array('id' => $id, 'name' => $name);
+        $bindParam = array('id' => $id_developper, 'name' => $name);
         $developper = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $developperJson = json_encode($developper);
         return $developperJson;
@@ -104,12 +104,12 @@ class Developper {
 
     /**
      * @param $dbc
-     * @param $id
+     * @param $id_developper
      * @return false|string
      */
-    public static function deleteDevelopper($dbc, $id) {
-        $sqlQuery = "DELETE FROM developpers WHERE developpers.id = $id";
-        $bindParam = array('id' => $id);
+    public static function deleteDevelopper($dbc, $id_developper) {
+        $sqlQuery = "DELETE FROM developpers WHERE developpers.id = $id_developper";
+        $bindParam = array('id' => $id_developper);
         $developper = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $developperJson = json_encode($developper);
         return $developperJson;

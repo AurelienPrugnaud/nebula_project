@@ -31,10 +31,10 @@ DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `category` (
-  `id_category` int(11) NOT NULL,
-  `name` varchar(25) NOT NULL,
-  PRIMARY KEY (`id_category`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (0,'Solo'),(1,'Multijoueur'),(2,'Action'),(3,'Jeu de rôle'),(4,'Aventure'),(5,'Tir'),(6,'Plateforme'),(7,'Indépendant'),(8,'Course'),(9,'Stratégie'),(10,'Rythme');
+INSERT INTO `category` VALUES (1,'Solo'),(2,'Multijoueur'),(3,'Action'),(4,'Jeu de rôle'),(5,'Aventure'),(6,'Tir'),(7,'Plateforme'),(8,'Indépendant'),(9,'Course'),(10,'Stratégie'),(11,'Rythme');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,9 +58,9 @@ CREATE TABLE `category_game` (
   `id_category` int(11) NOT NULL,
   `id_game` int(11) NOT NULL,
   PRIMARY KEY (`id_category`,`id_game`),
-  KEY `id_game` (`id_game`),
-  CONSTRAINT `category_game_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`),
-  CONSTRAINT `category_game_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `game` (`id_game`)
+  KEY `FOREIGN` (`id_game`,`id_category`) USING BTREE,
+  CONSTRAINT `category_game_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`),
+  CONSTRAINT `category_game_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -81,10 +81,10 @@ DROP TABLE IF EXISTS `developper`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `developper` (
-  `id_developper` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_developper`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +93,7 @@ CREATE TABLE `developper` (
 
 LOCK TABLES `developper` WRITE;
 /*!40000 ALTER TABLE `developper` DISABLE KEYS */;
-INSERT INTO `developper` VALUES (0,'Santa Monica Studio'),(1,'Ubisoft'),(2,'CD PROJEKT RED'),(3,'Crystal Dynamics'),(4,'Square Enix');
+INSERT INTO `developper` VALUES (1,'Santa Monica Studio'),(2,'Ubisoft'),(3,'CD PROJEKT RED'),(4,'Crystal Dynamics'),(5,'Square Enix');
 /*!40000 ALTER TABLE `developper` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,10 +105,10 @@ DROP TABLE IF EXISTS `editor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `editor` (
-  `id_editor` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_editor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,7 +117,7 @@ CREATE TABLE `editor` (
 
 LOCK TABLES `editor` WRITE;
 /*!40000 ALTER TABLE `editor` DISABLE KEYS */;
-INSERT INTO `editor` VALUES (0,'PlayStation PC LLC'),(1,'Ubisoft'),(2,'CD PROJEKT RED'),(3,'Square Enix');
+INSERT INTO `editor` VALUES (1,'PlayStation PC LLC'),(2,'Ubisoft'),(3,'CD PROJEKT RED'),(4,'Square Enix');
 /*!40000 ALTER TABLE `editor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,22 +129,22 @@ DROP TABLE IF EXISTS `game`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game` (
-  `id_game` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `dateLaunch` date NOT NULL,
-  `price` decimal(5,2) NOT NULL,
-  `youtubeLink` varchar(250) NOT NULL,
-  `dateAdd` date NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `releaseDate` date DEFAULT NULL,
+  `price` decimal(5,2) DEFAULT NULL,
+  `youtubeLink` varchar(250) DEFAULT NULL,
+  `addDate` date DEFAULT NULL,
   `id_pegi` int(11) DEFAULT NULL,
   `id_editor` int(11) DEFAULT NULL,
   `id_developper` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_game`),
+  PRIMARY KEY (`id`),
   KEY `id_pegi` (`id_pegi`),
   KEY `id_editor` (`id_editor`),
   KEY `id_developper` (`id_developper`),
-  CONSTRAINT `game_ibfk_1` FOREIGN KEY (`id_pegi`) REFERENCES `pegi` (`id_pegi`),
-  CONSTRAINT `game_ibfk_2` FOREIGN KEY (`id_editor`) REFERENCES `editor` (`id_editor`),
-  CONSTRAINT `game_ibfk_3` FOREIGN KEY (`id_developper`) REFERENCES `developper` (`id_developper`)
+  CONSTRAINT `game_ibfk_1` FOREIGN KEY (`id_pegi`) REFERENCES `pegi` (`id`),
+  CONSTRAINT `game_ibfk_2` FOREIGN KEY (`id_editor`) REFERENCES `editor` (`id`),
+  CONSTRAINT `game_ibfk_3` FOREIGN KEY (`id_developper`) REFERENCES `developper` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -165,12 +165,12 @@ DROP TABLE IF EXISTS `image`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `image` (
-  `id_image` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
   `id_game` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_image`),
+  PRIMARY KEY (`id`),
   KEY `id_game` (`id_game`),
-  CONSTRAINT `image_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `game` (`id_game`)
+  CONSTRAINT `image_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -191,10 +191,10 @@ DROP TABLE IF EXISTS `language`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `language` (
-  `id_language` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_language`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -203,7 +203,7 @@ CREATE TABLE `language` (
 
 LOCK TABLES `language` WRITE;
 /*!40000 ALTER TABLE `language` DISABLE KEYS */;
-INSERT INTO `language` VALUES (0,'anglais'),(1,'français'),(2,'allemand'),(3,'italien'),(4,'japonais'),(5,'polonais'),(6,'portugais'),(7,'portugais (Brésil)'),(8,'russe'),(9,'espagnol (Espagne)'),(10,'espagnol (Amérique latine)'),(11,'coréen'),(12,'turc'),(13,'chinois traditionnel'),(14,'chinois simplifié'),(15,'hongrois'),(16,'tchèque'),(17,'grec');
+INSERT INTO `language` VALUES (1,'anglais'),(2,'français'),(3,'allemand'),(4,'italien'),(5,'japonais'),(6,'polonais'),(7,'portugais'),(8,'portugais (Brésil)'),(9,'russe'),(10,'espagnol (Espagne)'),(11,'espagnol (Amérique latine)'),(12,'coréen'),(13,'turc'),(14,'chinois traditionnel'),(15,'chinois simplifié'),(16,'hongrois'),(17,'tchèque'),(18,'grec');
 /*!40000 ALTER TABLE `language` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,9 +219,9 @@ CREATE TABLE `language_game` (
   `id_game` int(11) NOT NULL,
   `isAudio` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_language`,`id_game`),
-  KEY `id_game` (`id_game`),
-  CONSTRAINT `language_game_ibfk_1` FOREIGN KEY (`id_language`) REFERENCES `language` (`id_language`),
-  CONSTRAINT `language_game_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `game` (`id_game`)
+  KEY `FOREIGN` (`id_game`,`id_language`) USING BTREE,
+  CONSTRAINT `language_game_ibfk_1` FOREIGN KEY (`id_language`) REFERENCES `language` (`id`),
+  CONSTRAINT `language_game_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -242,12 +242,12 @@ DROP TABLE IF EXISTS `page`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `page` (
-  `id_page` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(25) NOT NULL,
   `template` varchar(25) NOT NULL,
   `url` varchar(25) NOT NULL,
-  PRIMARY KEY (`id_page`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -256,7 +256,7 @@ CREATE TABLE `page` (
 
 LOCK TABLES `page` WRITE;
 /*!40000 ALTER TABLE `page` DISABLE KEYS */;
-INSERT INTO `page` VALUES (0,'Acceuil','home/home','/'),(1,'Jeu','game/show','/game'),(2,'Connexion','security/login','/login'),(3,'Profil','user/user','/profil'),(4,'Création de compte','registration/registration','/register'),(5,'Panier','cart/cart','/cart'),(6,'Contact','contact/contact','/contact'),(7,'Bibliothèque','library/library','/library'),(8,'Nouveau jeu','game/new','/new'),(9,'Modifier un jeu','game/modify','/modify'),(10,'Liste des jeux','game/index','/list'),(11,'Liste des utilisateurs','user/index','/users');
+INSERT INTO `page` VALUES (1,'Acceuil','home/home','/'),(2,'Jeu','game/show','/game'),(3,'Connexion','security/login','/login'),(4,'Profil','user/user','/profil'),(5,'CrÃ©ation de compte','registration/registration','/register'),(6,'Panier','cart/cart','/cart'),(7,'Contact','contact/contact','/contact'),(8,'BibliothÃ¨que','library/library','/library'),(9,'Nouveau jeu','game/new','/new'),(10,'Modifier un jeu','game/modify','/modify'),(11,'Liste des jeux','game/index','/list'),(12,'Liste des utilisateurs','user/index','/users');
 /*!40000 ALTER TABLE `page` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,13 +268,13 @@ DROP TABLE IF EXISTS `paragraph`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `paragraph` (
-  `id_paragraph` int(11) NOT NULL,
-  `title` varchar(50) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
   `paragraph` text DEFAULT NULL,
   `id_game` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_paragraph`),
+  PRIMARY KEY (`id`),
   KEY `id_game` (`id_game`),
-  CONSTRAINT `paragraph_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `game` (`id_game`)
+  CONSTRAINT `paragraph_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -295,11 +295,11 @@ DROP TABLE IF EXISTS `pegi`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pegi` (
-  `id_pegi` int(11) NOT NULL,
-  `name` varchar(10) NOT NULL,
-  `img` varchar(20) NOT NULL,
-  PRIMARY KEY (`id_pegi`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `img` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -308,7 +308,7 @@ CREATE TABLE `pegi` (
 
 LOCK TABLES `pegi` WRITE;
 /*!40000 ALTER TABLE `pegi` DISABLE KEYS */;
-INSERT INTO `pegi` VALUES (0,'PEGI 3','pegi3.png'),(1,'PEGI 7','pegi7.png'),(2,'PEGI 12','pegi12.png'),(3,'PEGI 16','pegi16.png'),(4,'PEGI 18','pegi18.png');
+INSERT INTO `pegi` VALUES (1,'PEGI 3','pegi3.png'),(2,'PEGI 7','pegi7.png'),(3,'PEGI 12','pegi12.png'),(4,'PEGI 16','pegi16.png'),(5,'PEGI 18','pegi18.png');
 /*!40000 ALTER TABLE `pegi` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -320,10 +320,10 @@ DROP TABLE IF EXISTS `platform`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `platform` (
-  `id_platform` int(11) NOT NULL,
-  `name` varchar(25) NOT NULL,
-  `img` varchar(25) NOT NULL,
-  PRIMARY KEY (`id_platform`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(25) DEFAULT NULL,
+  `img` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -333,7 +333,6 @@ CREATE TABLE `platform` (
 
 LOCK TABLES `platform` WRITE;
 /*!40000 ALTER TABLE `platform` DISABLE KEYS */;
-INSERT INTO `platform` VALUES (0,'Windows','windows.png'),(1,'MAC OS','mac.png'),(2,'Linux','linux.png');
 /*!40000 ALTER TABLE `platform` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -348,9 +347,9 @@ CREATE TABLE `platform_game` (
   `id_platform` int(11) NOT NULL,
   `id_game` int(11) NOT NULL,
   PRIMARY KEY (`id_platform`,`id_game`),
-  KEY `id_game` (`id_game`),
-  CONSTRAINT `platform_game_ibfk_1` FOREIGN KEY (`id_platform`) REFERENCES `platform` (`id_platform`),
-  CONSTRAINT `platform_game_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `game` (`id_game`)
+  KEY `FOREIGN` (`id_game`,`id_platform`) USING BTREE,
+  CONSTRAINT `platform_game_ibfk_1` FOREIGN KEY (`id_platform`) REFERENCES `platform` (`id`),
+  CONSTRAINT `platform_game_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -371,9 +370,9 @@ DROP TABLE IF EXISTS `requirement`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `requirement` (
-  `id_requirement` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_requirement`)
+  `id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -383,7 +382,7 @@ CREATE TABLE `requirement` (
 
 LOCK TABLES `requirement` WRITE;
 /*!40000 ALTER TABLE `requirement` DISABLE KEYS */;
-INSERT INTO `requirement` VALUES (0,'Windows 10 64 bits'),(1,'Intel i5-2500k (4 cœurs 3,3 GHz)'),(2,'AMD Ryzen 3 1200 (4 cœurs 3,1 GHz)'),(3,'8 Go DDR '),(4,'70 Go HDD'),(5,'DirectX 11 (niveau de fonctionnalité 11_1)'),(6,'NVIDIA GTX 960 (4 Go)'),(7,'AMD R9 290X (4 Go)'),(8,'Intel i5-6600k (4 cœurs 3,5 GHz)'),(9,'AMD Ryzen 5 2400 G (4 cœurs 3,6 GHz)'),(10,'70 Go SSD'),(11,'NVIDIA GTX 1060 (6 Go)'),(12,'AMD RX 570 (4 Go)');
+INSERT INTO `requirement` VALUES (1,'Windows 10 64 bits'),(2,'Intel i5-2500k (4 cœurs 3,3 GHz)'),(3,'AMD Ryzen 3 1200 (4 cœurs 3,1 GHz)'),(4,'8 Go DDR '),(5,'70 Go HDD'),(6,'DirectX 11 (niveau de fonctionnalité 11_1)'),(7,'NVIDIA GTX 960 (4 Go)'),(8,'AMD R9 290X (4 Go)'),(9,'Intel i5-6600k (4 cœurs 3,5 GHz)'),(10,'AMD Ryzen 5 2400 G (4 cœurs 3,6 GHz)'),(11,'70 Go SSD'),(12,'NVIDIA GTX 1060 (6 Go)'),(13,'AMD RX 570 (4 Go)');
 /*!40000 ALTER TABLE `requirement` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -395,10 +394,10 @@ DROP TABLE IF EXISTS `type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `type` (
-  `id_type` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -407,7 +406,7 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
-INSERT INTO `type` VALUES (0,'Système d\'exploitation'),(1,'Processeur'),(2,'Mémoire vive'),(3,'Stockage'),(4,'DirectX'),(5,'Carte Graphique');
+INSERT INTO `type` VALUES (1,'SystÃ¨me d\'exploitation'),(2,'Processeur'),(3,'MÃ©moire vive'),(4,'Stockage'),(5,'DirectX'),(6,'Carte Graphique');
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -425,11 +424,10 @@ CREATE TABLE `type_requirement_game` (
   `minimum` varchar(100) DEFAULT NULL,
   `recomandation` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_type`,`id_requirement`,`id_game`),
-  KEY `id_requirement` (`id_requirement`),
-  KEY `id_game` (`id_game`),
-  CONSTRAINT `type_requirement_game_ibfk_1` FOREIGN KEY (`id_type`) REFERENCES `type` (`id_type`),
-  CONSTRAINT `type_requirement_game_ibfk_2` FOREIGN KEY (`id_requirement`) REFERENCES `requirement` (`id_requirement`),
-  CONSTRAINT `type_requirement_game_ibfk_3` FOREIGN KEY (`id_game`) REFERENCES `game` (`id_game`)
+  KEY `FOREIGN` (`id_requirement`,`id_type`,`id_game`) USING BTREE,
+  CONSTRAINT `type_requirement_game_ibfk_1` FOREIGN KEY (`id_type`) REFERENCES `type` (`id`),
+  CONSTRAINT `type_requirement_game_ibfk_2` FOREIGN KEY (`id_requirement`) REFERENCES `requirement` (`id`),
+  CONSTRAINT `type_requirement_game_ibfk_3` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -450,17 +448,17 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `id_user` int(11) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `firstname` varchar(50) NOT NULL,
-  `lastname` varchar(50) NOT NULL,
+  `id` int(11) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `firstname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
   `adress1` varchar(100) DEFAULT NULL,
   `adress2` varchar(100) DEFAULT NULL,
   `city` varchar(50) DEFAULT NULL,
   `state` varchar(50) DEFAULT NULL,
   `cityCode` varchar(50) DEFAULT NULL,
-  `password` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_user`)
+  `password` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -484,9 +482,9 @@ CREATE TABLE `user_game` (
   `id_user` int(11) NOT NULL,
   `id_game` int(11) NOT NULL,
   PRIMARY KEY (`id_user`,`id_game`),
-  KEY `id_game` (`id_game`),
-  CONSTRAINT `user_game_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
-  CONSTRAINT `user_game_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `game` (`id_game`)
+  KEY `FOREIGN` (`id_game`,`id_user`) USING BTREE,
+  CONSTRAINT `user_game_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`),
+  CONSTRAINT `user_game_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -508,4 +506,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-23 14:28:21
+-- Dump completed on 2022-02-25 11:43:19
