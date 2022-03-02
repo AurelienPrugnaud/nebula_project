@@ -144,14 +144,14 @@
                         <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
                             <div class="border-button">
-                                <input class="form-control" type="file" id="image">
+                                <input name="image" class="form-control" type="file" id="image">
                             </div>
                         </div>
                         {% endfor %}
                         <div class="mb-3">
-                            <label for="logo" class="form-label">Logo</label>
+                            <label for="image" class="form-label">Logo</label>
                             <div class="border-button">
-                                <input class="form-control" type="file" id="logo">
+                                <input name="image" class="form-control" type="file" id="image">
                             </div>
                         </div>
                     </div>
@@ -159,14 +159,14 @@
                         <div class="mb-3">
                             <label for="image" class="form-label">Image miniature Youtube</label>
                             <div class="border-button mb-3">
-                                <input class="form-control" type="file" id="image">
+                                <input name="image" class="form-control" type="file" id="image">
                             </div>
                         </div>
                         {% for i in 0..1 %}
                         <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
                             <div class="border-button">
-                                <input class="form-control" type="file" id="image">
+                                <input name="image" class="form-control" type="file" id="image">
                             </div>
                         </div>
                         {% endfor %}
@@ -180,15 +180,15 @@
                     <div class="col-6">
                         {% for i in 0..3 %}
                         <div class="mb-3">
-                            <label for="title" class="form-label">Titre</label>
+                            <label for="paragraphTitle" class="form-label">Titre</label>
                             <div class="border-button">
-                                <input type="text" class="form-control" id="tile" placeholder="Titre">
+                                <input name="paragraphTitle" type="text" class="form-control" id="paragraphTitle" placeholder="Titre du paragraphe">
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="textarea" class="form-label">Texte descriptif</label>
+                            <label for="paragraph" class="form-label">Texte descriptif</label>
                             <div class="border-button">
-                                <textarea class="form-control" id="textarea"></textarea>
+                                <textarea name="paragraph" type="text" class="form-control" id="paragraph"></textarea>
                             </div>
                         </div>
                         {% endfor %}
@@ -196,15 +196,15 @@
                     <div class="col-6">
                         {% for i in 0..3 %}
                         <div class="mb-3">
-                            <label for="title" class="form-label">Titre</label>
+                            <label for="paragraphTitle" class="form-label">Titre</label>
                             <div class="border-button">
-                                <input type="text" class="form-control" id="tile" placeholder="Titre">
+                                <input name="paragraphTitle" type="text" class="form-control" id="paragraphTitle" placeholder="Titre du paragraphe">
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="textarea" class="form-label">Texte descriptif</label>
+                            <label for="paragraph" class="form-label">Texte descriptif</label>
                             <div class="border-button">
-                                <textarea class="form-control" id="textarea"></textarea>
+                                <textarea name="paragraph" type="text" class="form-control" id="paragraph"></textarea>
                             </div>
                         </div>
                         {% endfor %}

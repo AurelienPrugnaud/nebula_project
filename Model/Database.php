@@ -48,7 +48,7 @@ class DataBase extends PDO {
 		$statement->execute();
 	}
 
-	public function insertGame($title, $releaseDate, $price, $youtube, $addDate, $pegi, $editor, $dev) 
+	public function insertGame($title, $releaseDate, $price, $youtube, $addDate, $pegi, $editor, $dev, $image, $paragraphTitle, $paragraph) 
 	{
 		try {
 			$request = "
@@ -57,8 +57,87 @@ class DataBase extends PDO {
 				) 
 				VALUES (
 					 :title, :releaseDate, :price, :youtube, :addDate, :pegi, :editor, :dev 
+				);
+				INSERT INTO image (
+					name
+				)
+				VALUES (
+					:image
+				);
+				INSERT INTO image (
+					name
+				)
+				VALUES (
+					:image
+				);
+				INSERT INTO image (
+					name
+				)
+				VALUES (
+					:image
+				);
+				INSERT INTO image (
+					name
+				)
+				VALUES (
+					:image
+				);
+				INSERT INTO image (
+					name
+				)
+				VALUES (
+					:image
+				);
+				INSERT INTO paragraph (
+					title, paragraph
+				)
+				VALUES (
+					:paragraphTitle, :paragraph
+				);
+				INSERT INTO paragraph (
+					title, paragraph
+				)
+				VALUES (
+					:paragraphTitle, :paragraph
+				);
+				INSERT INTO paragraph (
+					title, paragraph
+				)
+				VALUES (
+					:paragraphTitle, :paragraph
+				);
+				INSERT INTO paragraph (
+					title, paragraph
+				)
+				VALUES (
+					:paragraphTitle, :paragraph
+				);
+				INSERT INTO paragraph (
+					title, paragraph
+				)
+				VALUES (
+					:paragraphTitle, :paragraph
+				);
+				INSERT INTO paragraph (
+					title, paragraph
+				)
+				VALUES (
+					:paragraphTitle, :paragraph
+				);
+				INSERT INTO paragraph (
+					title, paragraph
+				)
+				VALUES (
+					:paragraphTitle, :paragraph
+				);
+				INSERT INTO paragraph (
+					title, paragraph
+				)
+				VALUES (
+					:paragraphTitle, :paragraph
 				)";
 
+			
 			$req = $this->prepare($request);
 			$req->execute([
 				":title" => $title,
@@ -68,7 +147,10 @@ class DataBase extends PDO {
 				":addDate" => $addDate,
 				":pegi" => $pegi,
 				":editor" => $editor,
-				":dev" => $dev
+				":dev" => $dev,
+				":image" => $image,
+				":paragraphTitle" => $paragraphTitle,
+				":paragraph" => $paragraph
 			]);
 		}
 		catch(\Exception $e) {
