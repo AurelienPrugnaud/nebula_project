@@ -2,10 +2,12 @@
 	namespace Aurelien\Nebula;
 	use \PDO;
 
+
 class DataBase extends PDO {
 
-    public function __construct($MYSQL_HOST, $MYSQL_DATABASE, $MYSQL_USER, $MYSQL_PASSWORD){
-		parent::__construct('mysql:host='.$MYSQL_HOST.';dbname='.$MYSQL_DATABASE.';charset=utf8', $MYSQL_USER, $MYSQL_PASSWORD);
+    public function __construct(){
+		require_once($_SERVER['DOCUMENT_ROOT'].'/Environment/environment.php');
+		return parent::__construct('mysql:host='.MYSQL_HOST.';dbname='.MYSQL_DATABASE.';charset=utf8', MYSQL_USER, MYSQL_PASSWORD);
 	}
 
 	public function select($sqlQuery, $array = array(), $fetchMode = PDO::FETCH_ASSOC)
@@ -46,7 +48,7 @@ class DataBase extends PDO {
 		$statement->execute();
 	}
 
-	public function insertGame($title, $releaseDate, $price, $youtube, $pegi, $editor, $dev) 
+	public function insertGame($title, $releaseDate, $price, $youtube, $addDate, $pegi, $editor, $dev) 
 	{
 		try {
 			$request = "
@@ -54,7 +56,7 @@ class DataBase extends PDO {
 					name, releaseDate, price, youtubeLink, addDate, id_pegi, id_editor, id_developper
 				) 
 				VALUES (
-					 :title, :releaseDate, :price, :youtube, :date, :pegi, :editor, :dev 
+					 :title, :releaseDate, :price, :youtube, :addDate, :pegi, :editor, :dev 
 				)";
 
 			$req = $this->prepare($request);
@@ -63,7 +65,7 @@ class DataBase extends PDO {
 				":releaseDate" => $releaseDate,
 				":price" => $price,
 				":youtube" => $youtube,
-				":date" => $releaseDate,
+				":addDate" => $addDate,
 				":pegi" => $pegi,
 				":editor" => $editor,
 				":dev" => $dev

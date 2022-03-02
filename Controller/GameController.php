@@ -11,30 +11,30 @@
     try {
         if ($_SERVER["REQUEST_METHOD"] === "POST"):
             if(empty($_POST["title"])) {
-                throw new \Exception("title est vide", 1);
+                throw new \Exception("Le champ du titre est vide", 1);
             }
             if(empty($_POST["releaseDate"])) {
-                throw new \Exception("releaseDate est vide", 1);
+                throw new \Exception("Le champ de la date de sortie est vide", 1);
             }
             if(empty($_POST["price"])) {
-                throw new \Exception("price est vide", 1);
+                throw new \Exception("Le champ du prix est vide", 1);
             }
             if(empty($_POST["youtube"])) {
-                throw new \Exception("youtube est vide", 1);
+                throw new \Exception("Le champ du lien Youtube est vide", 1);
             }
+            $addDate = date("Y-m-d");
             if(empty($_POST["pegi"])) {
-                throw new \Exception("pegi est vide", 1);
+                throw new \Exception("Le champ du pegi est vide", 1);
             }
-            
             if(empty($_POST["editor"])) {
-                throw new \Exception("editor est vide", 1);
+                throw new \Exception("Le champ de l'éditeur est vide", 1);
             }
             if(empty($_POST["dev"])) {
-                throw new \Exception("dev est vide", 1);
+                throw new \Exception("Le champ du développeur est vide", 1);
             }
 
             $db = new DataBase(MYSQL_HOST, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD);
-            $db->insertGame($_POST["title"], $_POST["releaseDate"], $_POST["price"], $_POST["youtube"], $_POST["pegi"], $_POST["editor"], $_POST["dev"]);
+            $db->insertGame($_POST["title"], $_POST["releaseDate"], $_POST["price"], $_POST["youtube"], $addDate, $_POST["pegi"], $_POST["editor"], $_POST["dev"]);
         else :
             echo "coucou";
         endif;

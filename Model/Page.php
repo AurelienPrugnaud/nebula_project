@@ -1,6 +1,5 @@
 <?php
     namespace Aurelien\Nebula;
-
     use \PDO;
 
 /**

@@ -145,7 +145,7 @@ CREATE TABLE `game` (
   CONSTRAINT `game_ibfk_1` FOREIGN KEY (`id_pegi`) REFERENCES `pegi` (`id`),
   CONSTRAINT `game_ibfk_2` FOREIGN KEY (`id_editor`) REFERENCES `editor` (`id`),
   CONSTRAINT `game_ibfk_3` FOREIGN KEY (`id_developper`) REFERENCES `developper` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,6 +154,7 @@ CREATE TABLE `game` (
 
 LOCK TABLES `game` WRITE;
 /*!40000 ALTER TABLE `game` DISABLE KEYS */;
+INSERT INTO `game` VALUES (1,'blabla','2022-02-26',2.00,'https://youtube.com','2022-02-26',1,1,1),(2,'blabla','2022-02-19',2.00,'blabla','2022-02-19',1,1,1),(3,'test','2022-03-24',2.00,'https://www.youtube.com','2022-03-24',1,1,1),(4,'test','2022-03-24',2.00,'https://www.youtube.com','2022-03-01',1,1,1);
 /*!40000 ALTER TABLE `game` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -333,6 +334,7 @@ CREATE TABLE `platform` (
 
 LOCK TABLES `platform` WRITE;
 /*!40000 ALTER TABLE `platform` DISABLE KEYS */;
+INSERT INTO `platform` VALUES (1, 'Windows', 'windows.png'), (2, 'Mac', 'mac.png'), (3, 'linux', 'linux.png'), (4, 'Playstation 5', 'playstation.png'), (5, 'Xbox Series', 'xbox.png'), (6, 'Nintendo Switch', 'switch.png');
 /*!40000 ALTER TABLE `platform` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -425,6 +427,7 @@ CREATE TABLE `type_requirement_game` (
   `recomandation` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_type`,`id_requirement`,`id_game`),
   KEY `FOREIGN` (`id_requirement`,`id_type`,`id_game`) USING BTREE,
+  KEY `type_requirement_game_ibfk_3` (`id_game`),
   CONSTRAINT `type_requirement_game_ibfk_1` FOREIGN KEY (`id_type`) REFERENCES `type` (`id`),
   CONSTRAINT `type_requirement_game_ibfk_2` FOREIGN KEY (`id_requirement`) REFERENCES `requirement` (`id`),
   CONSTRAINT `type_requirement_game_ibfk_3` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
@@ -506,4 +509,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-25 11:43:19
+-- Dump completed on 2022-03-02  9:54:49

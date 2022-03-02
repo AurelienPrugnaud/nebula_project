@@ -7,7 +7,7 @@ use Aurelien\Nebula\Database;
 /**
  *
  */
-class Category {
+class Platform {
     /**
      * @var
      */
@@ -54,19 +54,19 @@ class Category {
     }
 
     /**
-     * @param $this->dbc
+     * @param
      * @return false|string
      */
-    public function getCategoriesList() {
-        $sqlQuery = 'SELECT * FROM category ORDER BY id';
+    public function getPlatformsList() {
+        $sqlQuery = 'SELECT * FROM platform ORDER BY id';
         try {
-            $categories = $this->dbc->selectAll($sqlQuery);
+            $platforms = $this->dbc->selectAll($sqlQuery);
 
         } catch(\Exception $e) {
             throw new \Exception($e);
         };
         
-        return $categories;
+        return $platforms;
     }
 
     /**
@@ -74,12 +74,12 @@ class Category {
      * @param $id
      * @return false|string
      */
-    public function getCategoryById($id) {
-        $sqlQuery = 'SELECT * FROM category WHERE id = :id';
+    public function getPlatformById($id) {
+        $sqlQuery = 'SELECT * FROM platform WHERE id = :id';
         $bindParam = array('id' => $id);
-        $categoryById = $this->dbc->select($sqlQuery, $bindParam);
-        $categoryByIdJson = json_encode($categoryById);
-        return $category;
+        $platformById = $this->dbc->select($sqlQuery, $bindParam);
+        $platformByIdJson = json_encode($platformById);
+        return $platform;
     }
 
     /**
@@ -89,11 +89,11 @@ class Category {
      * @return false|string
      */
     public function addCategory($id, $name) {
-        $sqlQuery = 'INSERT INTO category SET id = :id, name = :name';
+        $sqlQuery = 'INSERT INTO platform SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
-        $category = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $categoryJson = json_encode($category);
-        return $category;
+        $platform = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
+        $platformJson = json_encode($platform);
+        return $platform;
     }
 
     /**
@@ -103,11 +103,11 @@ class Category {
      * @return false|string
      */
     public function updateCategory($id, $name) {
-        $sqlQuery = 'UPDATE category SET id = :id, name = :name';
+        $sqlQuery = 'UPDATE platform SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
-        $category = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $categoryJson = json_encode($category);
-        return $category;
+        $platform = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
+        $platformJson = json_encode($platform);
+        return $platform;
     }
 
     /**
@@ -116,11 +116,11 @@ class Category {
      * @return false|string
      */
     public function deleteCategory($id) {
-        $sqlQuery = "DELETE FROM category WHERE category.id = $id";
+        $sqlQuery = "DELETE FROM platform WHERE platform.id = $id";
         $bindParam = array('id' => $id);
-        $category = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $categoryJson = json_encode($category);
-        return $category;
+        $platform = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
+        $platformJson = json_encode($platform);
+        return $platform;
     }
 
 }

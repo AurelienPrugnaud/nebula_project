@@ -1,5 +1,9 @@
 <?php
 
+namespace Aurelien\Nebula;
+
+use Aurelien\Nebula\Database;
+
 /**
  *
  */
@@ -7,18 +11,18 @@ class Editor {
     /**
      * @var
      */
-    private $id_editor;
+    public $id;
     /**
      * @var
      */
-    private $name;
+    public $name;
 
     /**
-     * @param int $id_editor
+     * @param int $id
      * @param string $name
      */
-    public function __construct($id_editor = '', $name = '') {
-
+    public function __construct() {
+        $this->dbc = new Database();
     }
 
     /**
@@ -29,10 +33,10 @@ class Editor {
     }
 
     /**
-     * @param mixed $id_editor
+     * @param mixed $id
      */
-    public function setId($id_editor): void {
-        $this->id = $id_editor;
+    public function setId($id): void {
+        $this->id = $id;
     }
 
     /**
@@ -53,22 +57,26 @@ class Editor {
      * @param $dbc
      * @return false|string
      */
-    public static function getEditorsList($dbc) {
-        $sqlQuery = 'SELECT * FROM editors ORDER BY id';
-        $statement = $dbc->query($sqlQuery);
-        $editors = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $editorsJson = json_encode($editors);
-        return $editorsJson;
+    public function getEditorsList() {
+        $sqlQuery = 'SELECT * FROM editor ORDER BY id';
+        try {
+            $editors = $this->dbc->selectAll($sqlQuery);
+
+        } catch(\Exception $e) {
+            throw new \Exception($e);
+        };
+        
+        return $editors;
     }
 
     /**
      * @param $dbc
-     * @param $id_editor
+     * @param $id
      * @return false|string
      */
-    public static function getEditorById($dbc, $id_editor) {
-        $sqlQuery = 'SELECT * FROM editors WHERE id = :id';
-        $bindParam = array('id' => $id_editor);
+    public function getEditorById($dbc, $id) {
+        $sqlQuery = 'SELECT * FROM editor WHERE id = :id';
+        $bindParam = array('id' => $id);
         $editorById = $dbc->select($sqlQuery, $bindParam);
         $editorByIdJson = json_encode($editorById);
         return $editorByIdJson;
@@ -76,13 +84,13 @@ class Editor {
 
     /**
      * @param $dbc
-     * @param $id_editor
+     * @param $id
      * @param $name
      * @return false|string
      */
-    public static function addEditor($dbc, $id_editor, $name) {
-        $sqlQuery = 'INSERT INTO editors SET id = :id, name = :name';
-        $bindParam = array('id' => $id_editor, 'name' => $name);
+    public function addEditor($dbc, $id, $name) {
+        $sqlQuery = 'INSERT INTO editor SET id = :id, name = :name';
+        $bindParam = array('id' => $id, 'name' => $name);
         $editor = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $editorJson = json_encode($editor);
         return $editorJson;
@@ -90,13 +98,13 @@ class Editor {
 
     /**
      * @param $dbc
-     * @param $id_editor
+     * @param $id
      * @param $name
      * @return false|string
      */
-    public static function updateEditor($dbc, $id_editor, $name) {
-        $sqlQuery = 'UPDATE editors SET id = :id, name = :name';
-        $bindParam = array('id' => $id_editor, 'name' => $name);
+    public function updateEditor($dbc, $id, $name) {
+        $sqlQuery = 'UPDATE editor SET id = :id, name = :name';
+        $bindParam = array('id' => $id, 'name' => $name);
         $editor = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $editorJson = json_encode($editor);
         return $editorJson;
@@ -104,12 +112,12 @@ class Editor {
 
     /**
      * @param $dbc
-     * @param $id_editor
+     * @param $id
      * @return false|string
      */
-    public static function deleteEditor($dbc, $id_editor) {
-        $sqlQuery = "DELETE FROM editors WHERE editors.id = $id_editor";
-        $bindParam = array('id' => $id_editor);
+    public function deleteEditor($dbc, $id) {
+        $sqlQuery = "DELETE FROM editor WHERE editor.id = $id";
+        $bindParam = array('id' => $id);
         $editor = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $editorJson = json_encode($editor);
         return $editorJson;

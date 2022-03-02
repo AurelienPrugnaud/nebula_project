@@ -1,5 +1,9 @@
 <?php
 
+namespace Aurelien\Nebula;
+
+use Aurelien\Nebula\Database;
+
 /**
  *
  */
@@ -7,11 +11,11 @@ class Pegi {
     /**
      * @var
      */
-    private $id;
+    public $id;
     /**
      * @var
      */
-    private $name;
+    public $name;
     /**
      * @var
      */
@@ -22,8 +26,8 @@ class Pegi {
      * @param string $name
      * @param string $img
      */
-    public function __construct($id = '', $name = '', $img = '') {
-
+    public function __construct() {
+        $this->dbc = new Database();
     }
 
     /**
@@ -69,15 +73,19 @@ class Pegi {
     }
 
     /**
-     * @param $dbc
+     * @param 
      * @return false|string
      */
-    public static function getPegiList($dbc) {
-        $sqlQuery = 'SELECT * FROM pegis ORDER BY id';
-        $statement = $dbc->query($sqlQuery);
-        $pegis = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $pegisJson = json_encode($pegis);
-        return $pegisJson;
+    public function getPegisList() {
+        $sqlQuery = 'SELECT * FROM pegi ORDER BY id';
+        try {
+            $pegis = $this->dbc->selectAll($sqlQuery);
+
+        } catch(\Exception $e) {
+            throw new \Exception($e);
+        };
+        
+        return $pegis;
     }
 
     /**
@@ -85,8 +93,8 @@ class Pegi {
      * @param $id
      * @return false|string
      */
-    public static function getPegiById($dbc, $id) {
-        $sqlQuery = 'SELECT * FROM pegis WHERE id = :id';
+    public function getPegiById($dbc, $id) {
+        $sqlQuery = 'SELECT * FROM pegi WHERE id = :id';
         $bindParam = array('id' => $id);
         $pegiById = $dbc->select($sqlQuery, $bindParam);
         $pegiByIdJson = json_encode($pegiById);
@@ -100,8 +108,8 @@ class Pegi {
      * @param $img
      * @return false|string
      */
-    public static function addPegi($dbc, $id, $name, $img) {
-        $sqlQuery = 'INSERT INTO pegis SET id = :id, name = :name, img = :img';
+    public function addPegi($dbc, $id, $name, $img) {
+        $sqlQuery = 'INSERT INTO pegi SET id = :id, name = :name, img = :img';
         $bindParam = array('id' => $id, 'name' => $name, 'img' => $img);
         $pegi = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $pegiJson = json_encode($pegi);
@@ -115,8 +123,8 @@ class Pegi {
      * @param $img
      * @return false|string
      */
-    public static function updatePegi($dbc, $id, $name, $img) {
-        $sqlQuery = 'UPDATE pegis SET id = :id, name = :name, img = :img';
+    public function updatePegi($dbc, $id, $name, $img) {
+        $sqlQuery = 'UPDATE pegi SET id = :id, name = :name, img = :img';
         $bindParam = array('id' => $id, 'name' => $name, 'img' => $img);
         $pegi = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $pegiJson = json_encode($pegi);
@@ -128,8 +136,8 @@ class Pegi {
      * @param $id
      * @return false|string
      */
-    public static function deletePegi($dbc, $id) {
-        $sqlQuery = "DELETE FROM pegis WHERE pegis.id = $id";
+    public function deletePegi($dbc, $id) {
+        $sqlQuery = "DELETE FROM pegi WHERE pegi.id = $id";
         $bindParam = array('id' => $id);
         $pegi = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $pegiJson = json_encode($pegi);

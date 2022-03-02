@@ -1,5 +1,8 @@
 <?php
 
+namespace Aurelien\Nebula;
+
+use Aurelien\Nebula\Database;
 /**
  *
  */
@@ -7,18 +10,18 @@ class Developper {
     /**
      * @var
      */
-    private $id_developper;
+    public $id;
     /**
      * @var
      */
-    private $name;
+    public $name;
 
     /**
-     * @param int $id_developper
+     * @param int $id
      * @param string $name
      */
-    public function __construct($id_developper = '', $name = '') {
-
+    public function __construct() {
+        $this->dbc = new Database();
     }
 
     /**
@@ -29,10 +32,10 @@ class Developper {
     }
 
     /**
-     * @param mixed $id_developper
+     * @param mixed $id
      */
-    public function setId($id_developper): void {
-        $this->id = $id_developper;
+    public function setId($id): void {
+        $this->id = $id;
     }
 
     /**
@@ -53,22 +56,26 @@ class Developper {
      * @param $dbc
      * @return false|string
      */
-    public static function getDeveloppersList($dbc) {
-        $sqlQuery = 'SELECT * FROM developpers ORDER BY id';
-        $statement = $dbc->query($sqlQuery);
-        $developpers = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $developpersJson = json_encode($developpers);
-        return $developpersJson;
+    public function getDeveloppersList() {
+        $sqlQuery = 'SELECT * FROM developper ORDER BY id';
+        try {
+            $developpers = $this->dbc->selectAll($sqlQuery);
+
+        } catch(\Exception $e) {
+            throw new \Exception($e);
+        };
+
+        return $developpers;
     }
 
     /**
      * @param $dbc
-     * @param $id_developper
+     * @param $id
      * @return false|string
      */
-    public static function getDevelopperById($dbc, $id_developper) {
-        $sqlQuery = 'SELECT * FROM developpers WHERE id = :id';
-        $bindParam = array('id' => $id_developper);
+    public function getDevelopperById($dbc, $id) {
+        $sqlQuery = 'SELECT * FROM developper WHERE id = :id';
+        $bindParam = array('id' => $id);
         $developperById = $dbc->select($sqlQuery, $bindParam);
         $developperByIdJson = json_encode($developperById);
         return $developperByIdJson;
@@ -76,13 +83,13 @@ class Developper {
 
     /**
      * @param $dbc
-     * @param $id_developper
+     * @param $id
      * @param $name
      * @return false|string
      */
-    public static function addDevelopper($dbc, $id_developper, $name) {
-        $sqlQuery = 'INSERT INTO developpers SET id = :id, name = :name';
-        $bindParam = array('id' => $id_developper, 'name' => $name);
+    public function addDevelopper($dbc, $id, $name) {
+        $sqlQuery = 'INSERT INTO developper SET id = :id, name = :name';
+        $bindParam = array('id' => $id, 'name' => $name);
         $developper = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $developperJson = json_encode($developper);
         return $developperJson;
@@ -90,13 +97,13 @@ class Developper {
 
     /**
      * @param $dbc
-     * @param $id_developper
+     * @param $id
      * @param $name
      * @return false|string
      */
-    public static function updateDevelopper($dbc, $id_developper, $name) {
-        $sqlQuery = 'UPDATE developpers SET id = :id, name = :name';
-        $bindParam = array('id' => $id_developper, 'name' => $name);
+    public function updateDevelopper($dbc, $id, $name) {
+        $sqlQuery = 'UPDATE developper SET id = :id, name = :name';
+        $bindParam = array('id' => $id, 'name' => $name);
         $developper = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $developperJson = json_encode($developper);
         return $developperJson;
@@ -104,12 +111,12 @@ class Developper {
 
     /**
      * @param $dbc
-     * @param $id_developper
+     * @param $id
      * @return false|string
      */
-    public static function deleteDevelopper($dbc, $id_developper) {
-        $sqlQuery = "DELETE FROM developpers WHERE developpers.id = $id_developper";
-        $bindParam = array('id' => $id_developper);
+    public function deleteDevelopper($dbc, $id) {
+        $sqlQuery = "DELETE FROM developper WHERE developper.id = $id";
+        $bindParam = array('id' => $id);
         $developper = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $developperJson = json_encode($developper);
         return $developperJson;

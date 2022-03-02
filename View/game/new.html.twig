@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
+
 <! -- //////////////////////////////MAIN START//////////////////////////////////////// -->
     <main class="container white-page">
         <div class="section">
@@ -23,30 +24,31 @@
                                         placeholder="Titre">
                                 </div>
                             </div>
+                            {% for i in 0..1 %}
                             <div class="mb-3">
                                 <label for="category" class="form-label">Genre</label>
                                 <div class="border-button">
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez un genre</option>
-                                        <option value="1">One</option>
+                                        {% for category in categories %}
+                                        <option value="{{ category.id }}">{{ category.name }}</option>
+                                        {% else %}
+                                        <option>Pas de genres trouver en base de donnée</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="category" class="form-label">Genre</label>
-                                <div class="border-button">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Choisissez un genre</option>
-                                        <option value="1">One</option>
-                                    </select>
-                                </div>
-                            </div>
+                            {% endfor %}
                             <div class="mb-3">
                                 <label for="developper" class="form-label">Développeur</label>
                                 <div class="border-button">
                                     <select name="dev" class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez un développeur</option>
-                                        <option value="1">One</option>
+                                        {% for developper in developpers %}
+                                        <option value="{{ developper.id }}">{{ developper.name }}</option>
+                                        {% else %}
+                                        <option>Pas de développeur trouver en base de donnée</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
@@ -64,7 +66,11 @@
                                 <div class="border-button">
                                     <select name="pegi" class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez un PEGI</option>
-                                        <option value="1">One</option>
+                                        {% for pegi in pegis %}
+                                        <option value="{{ pegi.id }}">{{ pegi.name }}</option>
+                                        {% else %}
+                                        <option>Pas de PEGI trouver en base de donnée</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
@@ -77,30 +83,31 @@
                                         placeholder="Prix">
                                 </div>
                             </div>
+                            {% for i in 0..1 %}
                             <div class="mb-3">
                                 <label for="category" class="form-label">Genre</label>
                                 <div class="border-button">
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez un genre</option>
-                                        <option value="1">One</option>
+                                        {% for category in categories %}
+                                        <option value="{{ category.id }}">{{ category.name }}</option>
+                                        {% else %}
+                                        <option>Pas de genres trouver en base de donnée</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="category" class="form-label">Genre</label>
-                                <div class="border-button">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Choisissez un genre</option>
-                                        <option value="1">One</option>
-                                    </select>
-                                </div>
-                            </div>
+                            {% endfor %}
                             <div class="mb-3">
                                 <label for="editor" class="form-label">Editeur</label>
                                 <div class="border-button">
                                     <select name="editor" class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez un éditeur</option>
-                                        <option value="1">One</option>
+                                        {% for editor in editors %}
+                                        <option value="{{ editor.id }}">{{ editor.name }}</option>
+                                        {% else %}
+                                        <option>Pas d'éditeur trouver en base de donnée</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
@@ -109,16 +116,11 @@
                                 <div class="border-button mb-3">
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez une plateforme</option>
-                                        <option value="1">One</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="pegiImg" class="form-label">Image du PEGI</label>
-                                <div class="border-button">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Choisissez une image de PEGI</option>
-                                        <option value="1">One</option>
+                                        {% for platform in platforms %}
+                                        <option value="{{ platform.id }}">{{ platform.name }}</option>
+                                        {% else %}
+                                        <option>Pas de plateforme trouver en base de donnée</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
@@ -134,22 +136,18 @@
                         <div class="mb-3">
                             <label for="youtubeLink" class="form-label">Lien Youtube</label>
                             <div class="border-button">
-                                <input name="youtube" type="text" class="form-control" id="youtubeLink" aria-describedby=""
-                                    placeholder="Lien Youtube">
+                                <input name="youtube" type="text" class="form-control" id="youtubeLink"
+                                    aria-describedby="" placeholder="Lien Youtube">
                             </div>
                         </div>
+                        {% for i in 0..1 %}
                         <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
                             <div class="border-button">
                                 <input class="form-control" type="file" id="image">
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="image" class="form-label">Image</label>
-                            <div class="border-button">
-                                <input class="form-control" type="file" id="image">
-                            </div>
-                        </div> 
+                        {% endfor %}
                         <div class="mb-3">
                             <label for="logo" class="form-label">Logo</label>
                             <div class="border-button">
@@ -164,18 +162,14 @@
                                 <input class="form-control" type="file" id="image">
                             </div>
                         </div>
+                        {% for i in 0..1 %}
                         <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
                             <div class="border-button">
                                 <input class="form-control" type="file" id="image">
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="image" class="form-label">Image</label>
-                            <div class="border-button mb-3">
-                                <input class="form-control" type="file" id="image">
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="d-flex align-items-center mb-3">
@@ -184,6 +178,7 @@
                 </div>
                 <div class="row">
                     <div class="col-6">
+                        {% for i in 0..3 %}
                         <div class="mb-3">
                             <label for="title" class="form-label">Titre</label>
                             <div class="border-button">
@@ -196,44 +191,10 @@
                                 <textarea class="form-control" id="textarea"></textarea>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Titre</label>
-                            <div class="border-button">
-                                <input type="text" class="form-control" id="tile" placeholder="Titre">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="textarea" class="form-label">Texte descriptif</label>
-                            <div class="border-button">
-                                <textarea class="form-control" id="textarea"></textarea>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Titre</label>
-                            <div class="border-button">
-                                <input type="text" class="form-control" id="tile" placeholder="Titre">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="textarea" class="form-label">Texte descriptif</label>
-                            <div class="border-button">
-                                <textarea class="form-control" id="textarea"></textarea>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Titre</label>
-                            <div class="border-button">
-                                <input type="text" class="form-control" id="tile" placeholder="Titre">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="textarea" class="form-label">Texte descriptif</label>
-                            <div class="border-button">
-                                <textarea class="form-control" id="textarea"></textarea>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                     <div class="col-6">
+                        {% for i in 0..3 %}
                         <div class="mb-3">
                             <label for="title" class="form-label">Titre</label>
                             <div class="border-button">
@@ -246,42 +207,7 @@
                                 <textarea class="form-control" id="textarea"></textarea>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Titre</label>
-                            <div class="border-button">
-                                <input type="text" class="form-control" id="tile" placeholder="Titre">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="textarea" class="form-label">Texte descriptif</label>
-                            <div class="border-button">
-                                <textarea class="form-control" id="textarea"></textarea>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Titre</label>
-                            <div class="border-button">
-                                <input type="text" class="form-control" id="tile" placeholder="Titre">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="textarea" class="form-label">Texte descriptif</label>
-                            <div class="border-button">
-                                <textarea class="form-control" id="textarea"></textarea>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Titre</label>
-                            <div class="border-button">
-                                <input type="text" class="form-control" id="tile" placeholder="Titre">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="textarea" class="form-label">Texte descriptif</label>
-                            <div class="border-button">
-                                <textarea class="form-control" id="textarea"></textarea>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="d-flex align-items-center mb-3">
@@ -295,7 +221,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un ystème d'xploitation minimum</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -304,7 +234,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un processeur minimum</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -313,7 +247,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un processeur minimum</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -322,7 +260,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une mémoire vive minimum</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -331,7 +273,11 @@
                             <div class="border-button mb-3">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un stockage minimum</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -340,7 +286,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un DirectX minimum</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -349,7 +299,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une carte graphique minimum</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -358,7 +312,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une carte graphique minimum</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -369,7 +327,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un ystème d'xploitation recommandé</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -378,7 +340,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un processeur recommandé</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -387,7 +353,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un processeur recommandé</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -396,7 +366,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une mémoire vive recommandé</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -405,7 +379,11 @@
                             <div class="border-button mb-3">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un stockage recommandé</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -414,7 +392,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un DirectX recommandé</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -423,7 +405,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une carte graphique recommandé</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -432,7 +418,11 @@
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une carte graphique recommandé</option>
-                                    <option value="1">One</option>
+                                    {% for requirement in requirements %}
+                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
+                                    {% else %}
+                                    <option>Aucune configuration trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -444,307 +434,77 @@
                 </div>
                 <div class="row">
                     <div class="col-6">
+                        {% for i in 0..4 %}
                         <div class="mb-3">
                             <label for="category" class="form-label">Langue du Texte</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une langue du texte</option>
-                                    <option value="1">One</option>
+                                    {% for language in languages %}
+                                    <option value="{{ language.id }}">{{ language.name }}</option>
+                                    {% else %}
+                                    <option>Pas de langue trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langues du Texte</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue du texte</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langues du Texte</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue du texte</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langues du Texte</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue du texte</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langues du Texte</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue du texte</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
+                        {% endfor %}
+                        {% for i in 0..9 %}
                         <div class="mb-3">
                             <label for="category" class="form-label">Langue audio</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
+                                    {% for language in languages %}
+                                    <option value="{{ language.id }}">{{ language.name }}</option>
+                                    {% else %}
+                                    <option>Pas de langue trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                     <div class="col-6">
+                        {% for i in 0..4 %}
                         <div class="mb-3">
                             <label for="category" class="form-label">Langue du Texte</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une langue du texte</option>
-                                    <option value="1">One</option>
+                                    {% for language in languages %}
+                                    <option value="{{ language.id }}">{{ language.name }}</option>
+                                    {% else %}
+                                    <option>Pas de langue trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langues du Texte</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue du texte</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langues du Texte</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue du texte</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langues du Texte</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue du texte</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langues du Texte</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue du texte</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
+                        {% endfor %}
+                        {% for i in 0..9 %}
                         <div class="mb-3">
                             <label for="category" class="form-label">Langue audio</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
+                                    {% for language in languages %}
+                                    <option value="{{ language.id }}">{{ language.name }}</option>
+                                    {% else %}
+                                    <option>Pas de langue trouver en base de donnée</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
+                        {% endfor %}
+                        <div class="border-button-game-page">
+                            <button type="submit" class="button-game-page ps-5 pe-5">
+                                Ajouter le jeu à la base de donnée
+                            </button>
                         </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
-                                    <option value="1">One</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                    <h2 class="t-gamePage">Date d'ajout à la base de donnée et validation</h2>
-                    <span></span>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="mb-3">
-                            <label for="dateAdd" class="form-label">Date d'ajout à la base de donnée</label>
-                            <div class="border-button mb-3">
-                                <div class="border-button">
-                                    <input type="date" class="form-control" id="dateLaunch"
-                                        aria-describedby="textHelp" placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <label for="" class="form-label">Validation du formulaire d'ajout à la base de donnée</label>
-                            <div class="border-button-game-page mt-3">
-                                <button type="submit" class="button-game-page ps-5 pe-5">
-                                    Ajouter le jeu à la base de donnée
-                                </button>
-                            </div>
                     </div>
                 </div>
             </form>
         </div>
     </main>
     <! -- //////////////////////////////MAIN END//////////////////////////////////////// -->
-{% endblock %}
+        {% endblock %}
