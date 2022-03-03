@@ -18,8 +18,7 @@ class Editor {
     public $name;
 
     /**
-     * @param int $id
-     * @param string $name
+     * 
      */
     public function __construct() {
         $this->dbc = new Database();

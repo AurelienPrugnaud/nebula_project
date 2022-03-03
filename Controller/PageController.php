@@ -2,6 +2,7 @@
     namespace Aurelien\Nebula\Controller;
 
     use \Aurelien\Nebula\Template;
+    use \Aurelien\Nebula\Game;
     use \Aurelien\Nebula\Category;
     use \Aurelien\Nebula\Developper;
     use \Aurelien\Nebula\Editor;
@@ -15,6 +16,8 @@
         public function __construct(string $file, array $data) {
             $this->file = $file;
             $this->template = new Template();
+            $this->game = new Game();
+            $this->games = $this->game->getGamesList();
             $this->category = new Category();
             $this->categories = $this->category->getCategoriesList();
             $this->developper = new Developper();
@@ -40,6 +43,7 @@
 
         private function get_data() {
             $this->data = [
+                'games' => $this->games,
                 'categories' => $this->categories,
                 'developpers' => $this->developpers,
                 'editors' => $this->editors,

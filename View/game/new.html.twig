@@ -26,7 +26,7 @@
                             </div>
                             {% for i in 0..1 %}
                             <div class="mb-3">
-                                <label for="category" class="form-label">Genre</label>
+                                <label for="{{ "category"~i }}" class="form-label">Genre</label>
                                 <div class="border-button">
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez un genre</option>
@@ -83,9 +83,9 @@
                                         placeholder="Prix">
                                 </div>
                             </div>
-                            {% for i in 0..1 %}
+                            {% for i in 2..3 %}
                             <div class="mb-3">
-                                <label for="category" class="form-label">Genre</label>
+                                <label for="{{ "category"~i }}" class="form-label">Genre</label>
                                 <div class="border-button">
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez un genre</option>
@@ -180,31 +180,31 @@
                     <div class="col-6">
                         {% for i in 0..3 %}
                         <div class="mb-3">
-                            <label for="paragraphTitle" class="form-label">Titre</label>
+                            <label for="{{"paragraphTitle"~i}}" class="form-label">Titre</label>
                             <div class="border-button">
-                                <input name="paragraphTitle" type="text" class="form-control" id="paragraphTitle" placeholder="Titre du paragraphe">
+                                <input name="{{"paragraphTitle"~i}}" type="text" class="form-control" id="{{"paragraphTitle"~i}}" placeholder="Titre du paragraphe">
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="paragraph" class="form-label">Texte descriptif</label>
+                            <label for="{{"paragraph"~i}}" class="form-label">Texte descriptif</label>
                             <div class="border-button">
-                                <textarea name="paragraph" type="text" class="form-control" id="paragraph"></textarea>
+                                <textarea name="{{"paragraph"~i}}" type="text" class="form-control" id="{{"paragraph"~i}}"></textarea>
                             </div>
                         </div>
                         {% endfor %}
                     </div>
                     <div class="col-6">
-                        {% for i in 0..3 %}
+                        {% for i in 4..7 %}
                         <div class="mb-3">
-                            <label for="paragraphTitle" class="form-label">Titre</label>
+                            <label for="{{"paragraphTitle"~i}}" class="form-label">Titre</label>
                             <div class="border-button">
-                                <input name="paragraphTitle" type="text" class="form-control" id="paragraphTitle" placeholder="Titre du paragraphe">
+                                <input name="{{"paragraphTitle"~i}}" type="text" class="form-control" id="{{"paragraphTitle"~i}}" placeholder="Titre du paragraphe">
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="paragraph" class="form-label">Texte descriptif</label>
+                            <label for="{{"paragraph"~i}}" class="form-label">Texte descriptif</label>
                             <div class="border-button">
-                                <textarea name="paragraph" type="text" class="form-control" id="paragraph"></textarea>
+                                <textarea name="{{"paragraph"~i}}" type="text" class="form-control" id="{{"paragraph"~i}}"></textarea>
                             </div>
                         </div>
                         {% endfor %}
@@ -217,7 +217,7 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="mb-3">
-                            <label for="category" class="form-label">Système d'xploitation minimum</label>
+                            <label for="requirement0" class="form-label">Système d'xploitation minimum</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un ystème d'xploitation minimum</option>
@@ -230,7 +230,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="category" class="form-label">Processeur Intel minimum</label>
+                            <label for="requirement1" class="form-label">Processeur Intel minimum</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un processeur minimum</option>
@@ -243,7 +243,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="category" class="form-label">Processeur AMD minimum</label>
+                            <label for="requirement2" class="form-label">Processeur AMD minimum</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un processeur minimum</option>
@@ -256,7 +256,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="editor" class="form-label">Mémoire vive minimum</label>
+                            <label for="requirement3" class="form-label">Mémoire vive minimum</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une mémoire vive minimum</option>
@@ -269,7 +269,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="editor" class="form-label">Stockage minimum</label>
+                            <label for="requirement4" class="form-label">Stockage minimum</label>
                             <div class="border-button mb-3">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un stockage minimum</option>
@@ -282,7 +282,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="pegiImg" class="form-label">DirectX minimum</label>
+                            <label for="requirement5" class="form-label">DirectX minimum</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un DirectX minimum</option>
@@ -295,7 +295,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="pegiImg" class="form-label">Carte graphique NVIDIA minimum</label>
+                            <label for="requirement6" class="form-label">Carte graphique NVIDIA minimum</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une carte graphique minimum</option>
@@ -308,7 +308,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="pegiImg" class="form-label">Carte graphique AMD minimum</label>
+                            <label for="requirement7" class="form-label">Carte graphique AMD minimum</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une carte graphique minimum</option>
@@ -323,7 +323,7 @@
                     </div>
                     <div class="col-6">
                         <div class="mb-3">
-                            <label for="category" class="form-label">Système d'xploitation recommandé</label>
+                            <label for="requirement8" class="form-label">Système d'xploitation recommandé</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un ystème d'xploitation recommandé</option>
@@ -336,7 +336,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="category" class="form-label">Processeur Intel recommandé</label>
+                            <label for="requirement9" class="form-label">Processeur Intel recommandé</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un processeur recommandé</option>
@@ -349,7 +349,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="category" class="form-label">Processeur AMD recommandé</label>
+                            <label for="requirement10" class="form-label">Processeur AMD recommandé</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un processeur recommandé</option>
@@ -362,7 +362,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="editor" class="form-label">Mémoire vive recommandé</label>
+                            <label for="requirement11" class="form-label">Mémoire vive recommandé</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une mémoire vive recommandé</option>
@@ -375,7 +375,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="editor" class="form-label">Stockage recommandé</label>
+                            <label for="requirement12" class="form-label">Stockage recommandé</label>
                             <div class="border-button mb-3">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un stockage recommandé</option>
@@ -388,7 +388,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="pegiImg" class="form-label">DirectX recommandé</label>
+                            <label for="requirement13" class="form-label">DirectX recommandé</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez un DirectX recommandé</option>
@@ -401,7 +401,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="pegiImg" class="form-label">Carte graphique NVIDIA recommandé</label>
+                            <label for="requirement14" class="form-label">Carte graphique NVIDIA recommandé</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une carte graphique recommandé</option>
@@ -414,7 +414,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="pegiImg" class="form-label">Carte graphique AMD recommandé</label>
+                            <label for="requirement15" class="form-label">Carte graphique AMD recommandé</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une carte graphique recommandé</option>
@@ -436,7 +436,7 @@
                     <div class="col-6">
                         {% for i in 0..4 %}
                         <div class="mb-3">
-                            <label for="category" class="form-label">Langue du Texte</label>
+                            <label for="{{"languageText~i"}}" class="form-label">Langue du Texte</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une langue du texte</option>
@@ -451,7 +451,7 @@
                         {% endfor %}
                         {% for i in 0..9 %}
                         <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
+                            <label for="{{"languageAudio~i"}}" class="form-label">Langue audio</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une langue audio</option>
@@ -466,9 +466,9 @@
                         {% endfor %}
                     </div>
                     <div class="col-6">
-                        {% for i in 0..4 %}
+                        {% for i in 5..9 %}
                         <div class="mb-3">
-                            <label for="category" class="form-label">Langue du Texte</label>
+                            <label for="{{"languageText~i"}}" class="form-label">Langue du Texte</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une langue du texte</option>
@@ -481,9 +481,9 @@
                             </div>
                         </div>
                         {% endfor %}
-                        {% for i in 0..9 %}
+                        {% for i in 10..19 %}
                         <div class="mb-3">
-                            <label for="category" class="form-label">Langue audio</label>
+                            <label for="{{"languageAudio~i"}}" class="form-label">Langue audio</label>
                             <div class="border-button">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Choisissez une langue audio</option>

@@ -51,52 +51,52 @@
             if(empty($_FILES["image5"])) {
                 throw new \Exception("Le sizième champ image est vide", 1);
             }
-            if(empty($_POST["paragraphTitle"])) {
+            if(empty($_POST["paragraphTitle0"])) {
                 throw new \Exception("Le premier champ titre du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraph"])) {
+            if(empty($_POST["paragraph0"])) {
                 throw new \Exception("Le premier champ du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraphTitle"])) {
+            if(empty($_POST["paragraphTitle1"])) {
                 throw new \Exception("Le deuxième champ titre du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraph"])) {
+            if(empty($_POST["paragraph1"])) {
                 throw new \Exception("Le deuxième champ du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraphTitle"])) {
+            if(empty($_POST["paragraphTitle2"])) {
                 throw new \Exception("Le troisième champ titre du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraph"])) {
+            if(empty($_POST["paragraph2"])) {
                 throw new \Exception("Le champ troisième du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraphTitle"])) {
+            if(empty($_POST["paragraphTitle3"])) {
                 throw new \Exception("Le quatrième champ titre du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraph"])) {
+            if(empty($_POST["paragraph3"])) {
                 throw new \Exception("Le quatrième champ du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraphTitle"])) {
+            if(empty($_POST["paragraphTitle4"])) {
                 throw new \Exception("Le cinquième champ titre du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraph"])) {
+            if(empty($_POST["paragraph4"])) {
                 throw new \Exception("Le cinquième champ du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraphTitle"])) {
+            if(empty($_POST["paragraphTitle5"])) {
                 throw new \Exception("Le sizième champ titre du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraph"])) {
+            if(empty($_POST["paragraph5"])) {
                 throw new \Exception("Le sizième champ du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraphTitle"])) {
+            if(empty($_POST["paragraphTitle6"])) {
                 throw new \Exception("Le septième champ titre du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraph"])) {
+            if(empty($_POST["paragraph6"])) {
                 throw new \Exception("Le septième champ du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraphTitle"])) {
+            if(empty($_POST["paragraphTitle7"])) {
                 throw new \Exception("Le huitième champ titre du paragraphe est vide", 1);
             }
-            if(empty($_POST["paragraph"])) {
+            if(empty($_POST["paragraph7"])) {
                 throw new \Exception("Le huitième champ du paragraphe est vide", 1);
             }
 
@@ -105,25 +105,9 @@
             foreach($_FILES as $images) {
                 move_uploaded_file($images["tmp_name"], $uploaddir.$images["name"]);
             }
-                
-
-
-            echo '<pre>';
-            /* if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-                echo "Le fichier est valide, et a été téléchargé
-                    avec succès. Voici plus d'informations :\n";
-            } else {
-                echo "Attaque potentielle par téléchargement de fichiers.
-                    Voici plus d'informations :\n";
-            } */
-
-            echo 'Voici quelques informations de débogage :';
-            print_r($_FILES);
-
-            echo '</pre>';
 
             $db = new DataBase(MYSQL_HOST, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD);
-            $db->insertGame($_POST["title"], $_POST["releaseDate"], $_POST["price"], $_POST["youtube"], $addDate, $_POST["pegi"], $_POST["editor"], $_POST["dev"], $_FILES["image0"], $_FILES["image1"], $_FILES["image2"], $_FILES["image3"], $_FILES["image4"], $_FILES["image5"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"]);
+            $db->insertGame($_POST["title"], $_POST["releaseDate"], $_POST["price"], $_POST["youtube"], $addDate, $_POST["pegi"], $_POST["editor"], $_POST["dev"], $_FILES["image0"], $_FILES["image1"], $_FILES["image2"], $_FILES["image3"], $_FILES["image4"], $_FILES["image5"], $_POST["paragraphTitle0"], $_POST["paragraph0"], $_POST["paragraphTitle1"], $_POST["paragraph1"], $_POST["paragraphTitle2"], $_POST["paragraph2"], $_POST["paragraphTitle3"], $_POST["paragraph3"], $_POST["paragraphTitle4"], $_POST["paragraph4"], $_POST["paragraphTitle5"], $_POST["paragraph5"], $_POST["paragraphTitle6"], $_POST["paragraph6"], $_POST["paragraphTitle7"], $_POST["paragraph7"]);
             
         else :
             echo "coucou";

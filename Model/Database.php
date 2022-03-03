@@ -48,7 +48,7 @@ class DataBase extends PDO {
 		$statement->execute();
 	}
 
-	public function insertGame($title, $releaseDate, $price, $youtube, $addDate, $pegi, $editor, $dev, $image, $paragraphTitle, $paragraph) 
+	public function insertGame($title, $releaseDate, $price, $youtube, $addDate, $pegi, $editor, $dev, $image0, $image1, $image2, $image3, $image4, $image5, $paragraphTitle0, $paragraph0, $paragraphTitle1, $paragraph1, $paragraphTitle2, $paragraph2, $paragraphTitle3, $paragraph3, $paragraphTitle4, $paragraph4, $paragraphTitle5, $paragraph5, $paragraphTitle6, $paragraph6, $paragraphTitle7, $paragraph7) 
 	{
 		try {
 			$request = "
@@ -62,79 +62,85 @@ class DataBase extends PDO {
 					name
 				)
 				VALUES (
-					:image
+					:image0
 				);
 				INSERT INTO image (
 					name
 				)
 				VALUES (
-					:image
+					:image1
 				);
 				INSERT INTO image (
 					name
 				)
 				VALUES (
-					:image
+					:image2
 				);
 				INSERT INTO image (
 					name
 				)
 				VALUES (
-					:image
+					:image3
 				);
 				INSERT INTO image (
 					name
 				)
 				VALUES (
-					:image
+					:image4
+				);
+				INSERT INTO image (
+					name
+				)
+				VALUES (
+					:image5
 				);
 				INSERT INTO paragraph (
 					title, paragraph
 				)
 				VALUES (
-					:paragraphTitle, :paragraph
+					:paragraphTitle0, :paragraph0
 				);
 				INSERT INTO paragraph (
 					title, paragraph
 				)
 				VALUES (
-					:paragraphTitle, :paragraph
+					:paragraphTitle1, :paragraph1
 				);
 				INSERT INTO paragraph (
 					title, paragraph
 				)
 				VALUES (
-					:paragraphTitle, :paragraph
+					:paragraphTitle2, :paragraph2
 				);
 				INSERT INTO paragraph (
 					title, paragraph
 				)
 				VALUES (
-					:paragraphTitle, :paragraph
+					:paragraphTitle3, :paragraph3
 				);
 				INSERT INTO paragraph (
 					title, paragraph
 				)
 				VALUES (
-					:paragraphTitle, :paragraph
+					:paragraphTitle4, :paragraph4
 				);
 				INSERT INTO paragraph (
 					title, paragraph
 				)
 				VALUES (
-					:paragraphTitle, :paragraph
+					:paragraphTitle5, :paragraph5
 				);
 				INSERT INTO paragraph (
 					title, paragraph
 				)
 				VALUES (
-					:paragraphTitle, :paragraph
+					:paragraphTitle6, :paragraph6
 				);
 				INSERT INTO paragraph (
 					title, paragraph
 				)
 				VALUES (
-					:paragraphTitle, :paragraph
+					:paragraphTitle7, :paragraph7
 				)";
 
 			
@@ -148,13 +154,64 @@ class DataBase extends PDO {
 				":pegi" => $pegi,
 				":editor" => $editor,
 				":dev" => $dev,
-				":image" => $image,
-				":paragraphTitle" => $paragraphTitle,
-				":paragraph" => $paragraph
+				":image0" => $image0["name"],
+				":image1" => $image1["name"],
+				":image2" => $image2["name"],
+				":image3" => $image3["name"],
+				":image4" => $image4["name"],
+				":image5" => $image5["name"],
+				":paragraphTitle0" => $paragraphTitle0,
+				":paragraph0" => $paragraph0,
+				":paragraphTitle1" => $paragraphTitle1,
+				":paragraph1" => $paragraph1,
+				":paragraphTitle2" => $paragraphTitle2,
+				":paragraph2" => $paragraph2,
+				":paragraphTitle3" => $paragraphTitle3,
+				":paragraph3" => $paragraph3,
+				":paragraphTitle4" => $paragraphTitle4,
+				":paragraph4" => $paragraph4,
+				":paragraphTitle5" => $paragraphTitle5,
+				":paragraph5" => $paragraph5,
+				":paragraphTitle6" => $paragraphTitle6,
+				":paragraph6" => $paragraph6,
+				":paragraphTitle7" => $paragraphTitle7,
+				":paragraph7" => $paragraph7,
+				
 			]);
 		}
 		catch(\Exception $e) {
 			throw new \Exception($e->getMessage());
 		}
+		/* var_dump($title);
+		var_dump($releaseDate);
+		var_dump($price);
+		var_dump($youtube);
+		var_dump($addDate);
+		var_dump($pegi);
+		var_dump($editor);
+		var_dump($dev);
+		var_dump($image0);
+		var_dump($image1);
+		var_dump($image2);
+		var_dump($image3);
+		var_dump($image4);
+		var_dump($image5);
+		var_dump($paragraph0);
+		var_dump($paragraphTitle0);
+		var_dump($paragraph1);
+		var_dump($paragraphTitle1);
+		var_dump($paragraph2);
+		var_dump($paragraphTitle2);
+		var_dump($paragraph3);
+		var_dump($paragraphTitle3);
+		var_dump($paragraph4);
+		var_dump($paragraphTitle4);
+		var_dump($paragraph5);
+		var_dump($paragraphTitle5);
+		var_dump($paragraph6);
+		var_dump($paragraphTitle6);
+		var_dump($paragraph7);
+		var_dump($paragraphTitle7); */
+
 	}
 }

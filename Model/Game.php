@@ -1,9 +1,14 @@
 <?php
 
+namespace Aurelien\Nebula;
+
+use Aurelien\Nebula\Database;
+
+
 /**
  *
  */
-class User {
+class Game {
     /**
      * @var
      */
@@ -37,7 +42,8 @@ class User {
      * @param string $youtubeLink
      * @param string $addDate
      */
-    public function __construct($id = '', $name = '', $releaseDate = '', $price ='', $youtubeLink= '', $addDate = '') {
+    public function __construct() {
+        $this->dbc = new Database();
 
     }
 
@@ -128,12 +134,16 @@ class User {
      * @param $dbc
      * @return false|string
      */
-    public static function getGamesList($dbc) {
-        $sqlQuery = 'SELECT id, name FROM game ORDER BY id';
-        $statement = $dbc->query($sqlQuery);
-        $games = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $gamesJson = json_encode($games);
-        return $users;
+    public static function getGamesList() {
+        $sqlQuery = 'SELECT * FROM game ORDER BY id';
+        try {
+            $games = $this->dbc->selectAll($sqlQuery);
+
+        } catch(\Exception $e) {
+            throw new \Exception($e);
+        };
+        
+        return $games;
     }
 
     /**
@@ -141,7 +151,7 @@ class User {
      * @param $id
      * @return false|string
      */
-    public static function getUserById($dbc, $id) {
+    public static function getGameById($dbc, $id) {
         $sqlQuery = 'SELECT id, name FROM game WHERE id = :id';
         $bindParam = array('id' => $id);
         $gameById = $dbc->select($sqlQuery, $bindParam);
