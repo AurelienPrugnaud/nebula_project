@@ -33,22 +33,22 @@
             if(empty($_POST["dev"])) {
                 throw new \Exception("Le champ du développeur est vide", 1);
             }
-            if(empty($_POST["image"])) {
+            if(empty($_FILES["image0"])) {
                 throw new \Exception("Le premier champ image est vide", 1);
             }
-            if(empty($_POST["image"])) {
+            if(empty($_FILES["image1"])) {
                 throw new \Exception("Le deuxième champ image est vide", 1);
             }
-            if(empty($_POST["image"])) {
+            if(empty($_FILES["image2"])) {
                 throw new \Exception("Le troisième champ image est vide", 1);
             }
-            if(empty($_POST["image"])) {
+            if(empty($_FILES["image3"])) {
                 throw new \Exception("Le quatrième champ image est vide", 1);
             }
-            if(empty($_POST["image"])) {
+            if(empty($_FILES["image4"])) {
                 throw new \Exception("Le cinquième champ image est vide", 1);
             }
-            if(empty($_POST["image"])) {
+            if(empty($_FILES["image5"])) {
                 throw new \Exception("Le sizième champ image est vide", 1);
             }
             if(empty($_POST["paragraphTitle"])) {
@@ -101,25 +101,29 @@
             }
 
 
-            /* $uploaddir = '../assets/img';
-            $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+            $uploaddir = '../assets/img/';
+            foreach($_FILES as $images) {
+                move_uploaded_file($images["tmp_name"], $uploaddir.$images["name"]);
+            }
+                
+
 
             echo '<pre>';
-            if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+            /* if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
                 echo "Le fichier est valide, et a été téléchargé
                     avec succès. Voici plus d'informations :\n";
             } else {
                 echo "Attaque potentielle par téléchargement de fichiers.
                     Voici plus d'informations :\n";
-            }
+            } */
 
             echo 'Voici quelques informations de débogage :';
             print_r($_FILES);
 
-            echo '</pre>'; */
+            echo '</pre>';
 
             $db = new DataBase(MYSQL_HOST, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD);
-            $db->insertGame($_POST["title"], $_POST["releaseDate"], $_POST["price"], $_POST["youtube"], $addDate, $_POST["pegi"], $_POST["editor"], $_POST["dev"], $_POST["image"], $_POST["image"], $_POST["image"], $_POST["image"], $_POST["image"], $_POST["image"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"]);
+            $db->insertGame($_POST["title"], $_POST["releaseDate"], $_POST["price"], $_POST["youtube"], $addDate, $_POST["pegi"], $_POST["editor"], $_POST["dev"], $_FILES["image0"], $_FILES["image1"], $_FILES["image2"], $_FILES["image3"], $_FILES["image4"], $_FILES["image5"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"], $_POST["paragraphTitle"], $_POST["paragraph"]);
             
         else :
             echo "coucou";
