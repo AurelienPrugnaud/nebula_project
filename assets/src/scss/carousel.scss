@@ -47,3 +47,53 @@ p.date {
     font-size: 16px;
     font-weight: 400;
 }
+
+@media screen and (max-width: 1400px) {
+    div.carousel-text {
+        max-width: 40%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    div.carousel-text {
+        max-width: 80%;
+        
+        img.logo-game {
+            width: 80px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    div.carousel-text {
+        max-width: 80%;
+        font-size: 12px;
+
+        p.date{
+            font-size: 12px;
+            margin-bottom: 0px;
+        }
+        
+        img.logo-game {
+            width: 60px;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 475px) {
+    div.carousel-text {
+        max-width: 90%;
+        font-size: 9px;
+
+        p.date{
+            font-size: 9px;
+            margin-bottom: 0px;
+        }
+        
+        img.logo-game {
+            width: 40px;
+            margin-bottom: 0px;
+        }
+    }
+}

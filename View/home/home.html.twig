@@ -2,7 +2,6 @@
 {% block content %}
 <! -- //////////////////////////////MAIN START//////////////////////////////////////// -->
 <main class="container">
-
     <! -- //////////////////////////////CAROUSEL START//////////////////////////////////////// -->
         <div class="section">
             <div class="slides-container">
@@ -11,7 +10,7 @@
                         <a href="/game">
                             <img class="img-carousel" src="/assets/img/games/god_of_war.jpg" alt="">
                             <div class="position-absolute ms-5 top-50 carousel-text">
-                                <div class="d-flex justify-content-center mb-3">
+                                <div class="d-flex justify-content-start mb-lg-3 mb-md-1">
                                     <img class="logo-game" src="/assets/img/games/god_war_logo.png"
                                         alt="">
                                 </div>
@@ -29,7 +28,7 @@
                         <a href="/game">
                             <img class="img-carousel" src="/assets/img/games/genshin_impact.jpg" alt="">
                             <div class="position-absolute ms-5 top-50 carousel-text">
-                                <div class="d-flex justify-content-center mb-3">
+                                <div class="d-flex justify-content-start mb-lg-3 mb-md-1">
                                     <img class="logo-game" src="/assets/img/games/god_war_logo.png"
                                         alt="">
                                 </div>
@@ -78,7 +77,8 @@
                         </a>
                     </div>
                     <div class="row">
-                        <div class="border-card-hover col-lg-6 col-sm-12">
+                        {% for game in games %}
+                        <div class="border-card-hover col-lg-6 col-md-12">
                             <div class="card-game">
                                 <img class="img-discoveries"
                                     src="/assets/img/games/final_fantasy_intergrade.jpeg"
@@ -87,10 +87,12 @@
                                 <p class="">Le classique intemporel FINAL FANTASY® VII REMAKE INTERGRADE
                                     est de retour avec une aventure, des graphismes et un système de
                                     combat inédits.</p>
-                                <p class="">79,99 €</p>
+                                <p class="">{{game.price}} €</p>
                             </div>
                         </div>
-                        <div class="border-card-hover col-lg-6 col-sm-12">
+                        {% endfor %}
+                        
+                        <div class="border-card-hover col-lg-6 col-md-12">
                             <div class="card-game">
                                 <img class="img-discoveries"
                                     src="/assets/img/games/Kena_BOS_GameArt.jpg" alt="Kena">
@@ -110,7 +112,7 @@
                         <div class="section row justify-content-between">
                             <! -- //////////////////////////////NEW RELEASES
                                 START//////////////////////////////////////// -->
-                                <div class="col-lg-3 col-sm-5">
+                                <div class="col-xl-3 col-lg-5 col-md-5 col-sm-12">
                                     <div class="d-flex align-items-center mb-3">
                                         <h1 class="t-section me-3 ">Nouvelles sorties</h1>
                                         <a href="">
@@ -173,11 +175,11 @@
                                 <! -- //////////////////////////////NEW RELEASES
                                     END//////////////////////////////////////// -->
 
-                                    <div class="vr vertical-line col-1 mx-auto d-sm-none"></div>
+                                    <div class="vr vertical-line col-1 mx-auto"></div>
 
                                     <! -- //////////////////////////////BEST SELLS
                                         START//////////////////////////////////////// -->
-                                        <div class="col-lg-3">
+                                        <div class="col-xl-3 col-lg-5 col-md-5 col-sm-12">
                                             <div class="d-flex align-items-center mb-3">
                                                 <h1 class="t-section me-3 ">Meilleures ventes</h1>
                                                 <a href="">
@@ -246,11 +248,11 @@
                                         <! -- //////////////////////////////BEST SELLS
                                             END//////////////////////////////////////// -->
 
-                                            <div class=" vr vertical-line col-1 mx-auto d-sm-none"></div>
+                                            <div class=" vr vertical-line col-1 mx-auto"></div>
 
                                             <! -- //////////////////////////////FUTURE RELEASES
                                                 START//////////////////////////////////////// -->
-                                                <div class="col-lg-3">
+                                                <div class="col-xl-4 col-lg-12">
                                                     <div class="d-flex align-items-center mb-3">
                                                         <h1 class="t-section me-3 ">Prochaines sorties
                                                         </h1>

@@ -5,7 +5,7 @@
 /* //////////////////// FONT END///////////////////////////////////*/
 
 /* //////////////////// IMPORT START///////////////////////////////////*/
-@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "variables.scss";
 @import "body.scss";
 @import "header.scss";
@@ -65,6 +65,45 @@ main {
             }
         }
 
+        @media screen and (max-width: 1399px) {
+            h1.t-section {
+                position: relative;
+                font-size: 16px;
+                font-weight: 700;
+                color: $white;
+        
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0;
+                    height: 2px;
+                    width: 100%;
+                    background: $gradient-tl;
+                    border-radius: 2px;
+                }
+            }
+
+            div.border-card-hover {
+                padding: 5px;
+        
+                &:hover {
+                    border-radius: 20px;
+                    background: $gradient-43deg;
+                    padding: 5px;
+                    color: $white;
+                }
+    
+                div.card-game {
+                    background-color: $background;
+                    border-radius: 20px;
+                    padding: 10px;
+                    font-size: 15px;
+                }
+            }
+
+        }
+
         img.img-midsection {
             border-radius: 10px;
             width: 150px;
@@ -76,6 +115,12 @@ main {
             background: $gradient;
             border-radius: 5px;
             padding: 3px;
+        }
+
+        @media screen and (max-width: 767px){
+            div.vertical-line {
+                display: none;
+            }
         }
 
     }

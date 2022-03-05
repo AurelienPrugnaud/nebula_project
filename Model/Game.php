@@ -4,7 +4,6 @@ namespace Aurelien\Nebula;
 
 use Aurelien\Nebula\Database;
 
-
 /**
  *
  */
@@ -12,27 +11,27 @@ class Game {
     /**
      * @var
      */
-    private $id;
+    public $id;
     /**
      * @var
      */
-    private $name;   
+    public $name;   
     /**
      * @var
      */
-    private $releaseDate;
+    public $releaseDate;
     /**
      * @var
      */
-    private $price;
+    public $price;
     /**
      * @var
      */
-    private $youtubeLink;
+    public $youtubeLink;
     /**
      * @var
      */
-    private $addDate;
+    public $addDate;
     
     /**
      * @param int $id
@@ -134,7 +133,7 @@ class Game {
      * @param $dbc
      * @return false|string
      */
-    public static function getGamesList() {
+    public function getGamesList() {
         $sqlQuery = 'SELECT * FROM game ORDER BY id';
         try {
             $games = $this->dbc->selectAll($sqlQuery);
@@ -151,7 +150,7 @@ class Game {
      * @param $id
      * @return false|string
      */
-    public static function getGameById($dbc, $id) {
+    public function getGameById($dbc, $id) {
         $sqlQuery = 'SELECT id, name FROM game WHERE id = :id';
         $bindParam = array('id' => $id);
         $gameById = $dbc->select($sqlQuery, $bindParam);
@@ -167,7 +166,7 @@ class Game {
      * @param string $youtubeLink
      * @param string $addDate
      */
-    public static function addGame($dbc, $id, $name, $releaseDate, $price, $youtubeLink ,$addDate) {
+    public function addGame($dbc, $id, $name, $releaseDate, $price, $youtubeLink ,$addDate) {
         $sqlQuery = 'INSERT INTO game SET id = :id, name = :name, releaseDate = :releaseDate, price = :price, youtubeLink = :youtubeLink,addDate = :addDate,';
         $bindParam = array('id' => $id, 'name' => $name, 'releaseDate' => $releaseDate, 'price' => $price, 'youtubeLink' => $youtubeLink,'addDate' => $addDate);
         $game = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
@@ -196,7 +195,7 @@ class Game {
      * @param $id
      * @return false|string
      */
-    public static function deleteGame($dbc, $id) {
+    public function deleteGame($dbc, $id) {
         $sqlQuery = "DELETE FROM game WHERE game.id = $id";
         $bindParam = array('id' => $id);
         $game = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
