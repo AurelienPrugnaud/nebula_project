@@ -3,22 +3,25 @@
 {% block content %}
 <! -- //////////////////////////////MAIN START//////////////////////////////////////// -->
     <main class="container white-page">
-        <h1 class="t-game2">God of War</h1>
+        {% for game in games|slice(0, 1) %}
+        
+
+        <h1 class="t-game2">{{game.name}}</h1>
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-9"> 
                 <div class="section">
                     <iframe class="active mb-4"  width="100%" height="543"
-                        src="https://www.youtube-nocookie.com/embed/8O4uT214kak?controls=0" title="YouTube video player"
+                        src="{{game.youtubeLink}}" title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
-                    <img class="img-game mb-4 disable" src="../assets/img/games/god_of_war.jpg" alt="god of war">
+                    <img class="img-game mb-4 disable" src="../assets/img/games/god_of_war/god_of_war.png" alt="god of war">
                     <div class="d-flex align-items-center justify-content-between section">
-                        <img class="img-game-mini1" src="../assets/img/games/god_of_war.jpg" alt="">
-                        <img class="img-game-mini2" src="../assets/img/games/god_of_war.jpg" alt="">
-                        <img class="img-game-mini3" src="../assets/img/games/god_of_war_miniature3.jpg" alt="">
-                        <img class="img-game-mini4" src="../assets/img/games/god_of_war_miniature4.jpg" alt="">
-                        <img class="img-game-mini5" src="../assets/img/games/god_of_war_miniature5.jpg" alt="">
+                        <img class="img-game-mini1" src="../assets/img/games/god_of_war/godofwarYoutube.png" alt="">
+                        <img class="img-game-mini2" src="../assets/img/games/god_of_war/god_of_war.png" alt="">
+                        <img class="img-game-mini3" src="../assets/img/games/god_of_war/god_of_war_miniature1.png" alt="">
+                        <img class="img-game-mini4" src="../assets/img/games/god_of_war/god_of_war_miniature2.png" alt="">
+                        <img class="img-game-mini5" src="../assets/img/games/god_of_war/god_of_war_miniature3.png" alt="">
                     </div>
                     <div class="section">
                         <p class="description">
@@ -236,7 +239,7 @@
                 <div class="border-card">
                     <div class="card-game">
                         <div class="d-flex justify-content-center mb-3">
-                            <img class="logo-game" src="../assets/img/games/god_war_logo.png" alt="">
+                            <img class="logo-game" src="../assets/img/games/god_of_war/god_war_logo.png" alt="">
                         </div>
                         <span class="mb-3">
                             Genre
@@ -266,15 +269,15 @@
                             </div>
                         </a>
                         <div class="mb-3">
-                            <img class="logo-pegi" src="../assets/img/games/pegi18.png" alt="">
-                            <span>PEGI 18</span>
+                            <img class="logo-pegi" src="../assets/img/pegis/pegi18.png" alt="">
+                            <span>{{game.id_pegi}}</span>
                         </div>
                         <div class="d-flex justify-content-between">
                             <span class="left-card-game">
                                 Développeur
                             </span>
                             <span class="right-card-game">
-                                Santa Monica Studio
+                                {{game.id_developper}}
                             </span>
                         </div>
                         <div class="d-flex justify-content-between">
@@ -282,7 +285,7 @@
                                 Éditeur
                             </span>
                             <span class="right-card-game">
-                                Playstation PC LLC
+                                {{game.id_editor}}
                             </span>
                         </div>
                         <div class="d-flex justify-content-between">
@@ -290,7 +293,7 @@
                                 Disponible
                             </span>
                             <span class="right-card-game">
-                                14/01/2022
+                                {{game.releaseDate|date('d/m/Y')}}
                             </span>
                         </div>
                         <div class="d-flex justify-content-between">
@@ -304,6 +307,7 @@
                 </div>
             </div>
         </div>
+        {% endfor  %}
 
     </main>
 

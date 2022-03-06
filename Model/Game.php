@@ -31,6 +31,10 @@ class Game {
     /**
      * @var
      */
+    public $hook;
+    /**
+     * @var
+     */
     public $addDate;
     
     /**
@@ -101,6 +105,20 @@ class Game {
         $this->price = $price;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getHook() {
+        return $this->hook;
+    }
+
+    /**
+     * @param mixed $price
+     */
+    public function setHook($hook): void {
+        $this->hook = $hook;
+    }
+
         /**
      * @return mixed
      */
@@ -166,9 +184,9 @@ class Game {
      * @param string $youtubeLink
      * @param string $addDate
      */
-    public function addGame($dbc, $id, $name, $releaseDate, $price, $youtubeLink ,$addDate) {
-        $sqlQuery = 'INSERT INTO game SET id = :id, name = :name, releaseDate = :releaseDate, price = :price, youtubeLink = :youtubeLink,addDate = :addDate,';
-        $bindParam = array('id' => $id, 'name' => $name, 'releaseDate' => $releaseDate, 'price' => $price, 'youtubeLink' => $youtubeLink,'addDate' => $addDate);
+    public function addGame($dbc, $id, $name, $releaseDate, $price, $hook, $youtubeLink ,$addDate) {
+        $sqlQuery = 'INSERT INTO game SET id = :id, name = :name, releaseDate = :releaseDate, price = :price, hook = :hook, youtubeLink = :youtubeLink,addDate = :addDate,';
+        $bindParam = array('id' => $id, 'name' => $name, 'releaseDate' => $releaseDate, 'price' => $price, 'hook' => $hook, 'youtubeLink' => $youtubeLink,'addDate' => $addDate);
         $game = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $gameJson = json_encode($game);
         return $gameJson;
@@ -182,9 +200,9 @@ class Game {
      * @param string $youtubeLink
      * @param string $addDate
      */
-    public static function updateGame($dbc, $id, $name, $releaseDate, $price, $youtubeLink, $addDate) {
-        $sqlQuery = 'UPDATE game SET id = :id, name = :name, releaseDate = :releaseDate, price = :price, youtubeLink = :youtubeLink, addDate = :addDate,';
-        $bindParam = array('id' => $id, 'name' => $name, 'releaseDate' => $releaseDate, 'price' => $price, 'youtubeLink' => $youtubeLink, 'addDate' => $addDate);
+    public static function updateGame($dbc, $id, $name, $releaseDate, $price, $hook, $youtubeLink, $addDate) {
+        $sqlQuery = 'UPDATE game SET id = :id, name = :name, releaseDate = :releaseDate, price = :price, hook = :hook, youtubeLink = :youtubeLink, addDate = :addDate,';
+        $bindParam = array('id' => $id, 'name' => $name, 'releaseDate' => $releaseDate, 'price' => $price, 'hook' => $hook, 'youtubeLink' => $youtubeLink, 'addDate' => $addDate);
         $game = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $gameJson = json_encode($game);
         return $gameJson;

@@ -133,6 +133,7 @@ CREATE TABLE `game` (
   `name` varchar(100) DEFAULT NULL,
   `releaseDate` date DEFAULT NULL,
   `price` decimal(5,2) DEFAULT NULL,
+  `hook` text DEFAULT NULL,
   `youtubeLink` varchar(250) DEFAULT NULL,
   `addDate` date DEFAULT NULL,
   `id_pegi` int(11) DEFAULT NULL,
@@ -145,7 +146,7 @@ CREATE TABLE `game` (
   CONSTRAINT `game_ibfk_1` FOREIGN KEY (`id_pegi`) REFERENCES `pegi` (`id`),
   CONSTRAINT `game_ibfk_2` FOREIGN KEY (`id_editor`) REFERENCES `editor` (`id`),
   CONSTRAINT `game_ibfk_3` FOREIGN KEY (`id_developper`) REFERENCES `developper` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,6 +155,7 @@ CREATE TABLE `game` (
 
 LOCK TABLES `game` WRITE;
 /*!40000 ALTER TABLE `game` DISABLE KEYS */;
+INSERT INTO `game` VALUES (1,'God of War','2022-01-14',49.99,'Incarné de nouveau Kratos dans ce nouvel opus de la série mondialement connu: God of War.','https://www.youtube-nocookie.com/embed/8O4uT214kak?controls=0','2022-03-06',5,1,5);
 /*!40000 ALTER TABLE `game` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,7 +173,7 @@ CREATE TABLE `image` (
   PRIMARY KEY (`id`),
   KEY `id_game` (`id_game`),
   CONSTRAINT `image_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,6 +182,7 @@ CREATE TABLE `image` (
 
 LOCK TABLES `image` WRITE;
 /*!40000 ALTER TABLE `image` DISABLE KEYS */;
+INSERT INTO `image` VALUES (1,'god_of_war.png',1),(2,'god_of_war_miniature1.png',1),(3,'god_war_logo.png',1),(4,'godofwarYoutube.png',1),(5,'god_of_war_miniature2.png',1),(6,'god_of_war_miniature3.png',1);
 /*!40000 ALTER TABLE `image` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -256,7 +259,7 @@ CREATE TABLE `page` (
 
 LOCK TABLES `page` WRITE;
 /*!40000 ALTER TABLE `page` DISABLE KEYS */;
-INSERT INTO `page` VALUES (1,'Acceuil','home/home','/'),(2,'Jeu','game/show','/game'),(3,'Connexion','security/login','/login'),(4,'Profil','user/user','/profil'),(5,'CrÃ©ation de compte','registration/registration','/register'),(6,'Panier','cart/cart','/cart'),(7,'Contact','contact/contact','/contact'),(8,'BibliothÃ¨que','library/library','/library'),(9,'Nouveau jeu','game/new','/new'),(10,'Modifier un jeu','game/modify','/modify'),(11,'Liste des jeux','game/index','/list'),(12,'Liste des utilisateurs','user/index','/users');
+INSERT INTO `page` VALUES (1,'Acceuil','home/home','/'),(2,'Jeu','game/show','/game'),(3,'Connexion','security/login','/login'),(4,'Profil','user/user','/profil'),(5,'Création de compte','registration/registration','/register'),(6,'Panier','cart/cart','/cart'),(7,'Contact','contact/contact','/contact'),(8,'Bibliothèque','library/library','/library'),(9,'Nouveau jeu','game/new','/new'),(10,'Modifier un jeu','game/modify','/modify'),(11,'Liste des jeux','game/index','/list'),(12,'Liste des utilisateurs','user/index','/users');
 /*!40000 ALTER TABLE `page` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -275,7 +278,7 @@ CREATE TABLE `paragraph` (
   PRIMARY KEY (`id`),
   KEY `id_game` (`id_game`),
   CONSTRAINT `paragraph_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -284,6 +287,7 @@ CREATE TABLE `paragraph` (
 
 LOCK TABLES `paragraph` WRITE;
 /*!40000 ALTER TABLE `paragraph` DISABLE KEYS */;
+INSERT INTO `paragraph` VALUES (1,'Pénétrez dans le royaume du nord','Sa vengeance contre les dieux de l\'Olympe étant bien derrière lui, Kratos vit désormais comme un simple habitant du royaume des dieux (et des monstres) nordiques. C\'est dans ce monde inhospitalier et cruel qu\'il doit combattre pour sa survie... et apprendre à son fils à en faire de même.\r\n',1),(2,'Profitez de votre deuxième chance','Kratos est à nouveau père. En tant que mentor et protecteur d\'Atreus, un fils prêt à tout pour gagner son respect, Kratos se retrouve contraint de dominer la rage qui l\'a défini pendant si longtemps alors qu\'il explore avec son fils un monde rempli de dangers. ',1);
 /*!40000 ALTER TABLE `paragraph` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -407,7 +411,7 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
-INSERT INTO `type` VALUES (1,'SystÃ¨me d\'exploitation'),(2,'Processeur'),(3,'MÃ©moire vive'),(4,'Stockage'),(5,'DirectX'),(6,'Carte Graphique');
+INSERT INTO `type` VALUES (1,'Système d\'exploitation'),(2,'Processeur'),(3,'Mémoire vive'),(4,'Stockage'),(5,'DirectX'),(6,'Carte Graphique');
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -508,4 +512,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-03 12:50:05
+-- Dump completed on 2022-03-06 18:02:49

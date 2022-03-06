@@ -1,8 +1,8 @@
 ////////////////CAROUSEL HOME PAGE START //////////////////////////
-
+const slide = document.querySelectorAll('.cont-img');
+slide[0].classList.add('active');
 function nextSlide() {
 
-  const slide = document.querySelectorAll('.cont-img');
   const nbSlides = slide.length;
   let count = 0;
 
@@ -32,14 +32,13 @@ setInterval(nextSlide, 6000);
   const imgMin4 = document.getElementsByClassName('img-game-mini4');
   const imgMin5 = document.getElementsByClassName('img-game-mini5');
 
-  console.log(iframe[0]);
+/*   console.log(iframe[0]);
   console.log(img[0]);
   console.log(imgMin1[0]);
   console.log(imgMin2[0]);
   console.log(imgMin3[0]);
   console.log(imgMin4[0]);
-  console.log(imgMin5[0]);
-
+  console.log(imgMin5[0]); */
       imgMin1[0].addEventListener('click', function() {
         iframe[0].classList.remove('disable');
         iframe[0].classList.add('active');

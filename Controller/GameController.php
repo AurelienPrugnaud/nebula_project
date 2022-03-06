@@ -17,8 +17,23 @@
             if(empty($_POST["releaseDate"])) {
                 throw new \Exception("Le champ de la date de sortie est vide", 1);
             }
+            if(empty($_POST["hook"])) {
+                throw new \Exception("Le champs de l'accroche est vide", 1);
+            }
             if(empty($_POST["price"])) {
                 throw new \Exception("Le champ du prix est vide", 1);
+            }
+            if(empty($_POST["category0"])) {
+                throw new \Exception("Le premier champs des catégories est vide", 1);
+            }
+            if(empty($_POST["category1"])) {
+                throw new \Exception("Le deuxième champs des catégories est vide", 1);
+            }
+            if(empty($_POST["category2"])) {
+                throw new \Exception("Le troisième champs des catégories est vide", 1);
+            }
+            if(empty($_POST["category3"])) {
+                throw new \Exception("Le quatrième champs des catégories est vide", 1);
             }
             if(empty($_POST["youtube"])) {
                 throw new \Exception("Le champ du lien Youtube est vide", 1);
@@ -100,14 +115,22 @@
                 throw new \Exception("Le huitième champ du paragraphe est vide", 1);
             }
 
+            $gameDirectory = preg_replace('/\s+/', '_' ,strtolower($_POST["title"]));
 
-            $uploaddir = '../assets/img/';
+            if (!is_dir('../assets/img/games/'.$gameDirectory)) {
+                mkdir('../assets/img/games/'.$gameDirectory, 0777, true);
+            } else {
+                throw new \Exception("Le dossier du jeu est déjà créer.");
+                
+            }
+
+            $uploaddir = '../assets/img/games/'.$gameDirectory.'/';
             foreach($_FILES as $images) {
                 move_uploaded_file($images["tmp_name"], $uploaddir.$images["name"]);
             }
 
             $db = new DataBase(MYSQL_HOST, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD);
-            $db->insertGame($_POST["title"], $_POST["releaseDate"], $_POST["price"], $_POST["youtube"], $addDate, $_POST["pegi"], $_POST["editor"], $_POST["dev"], $_FILES["image0"], $_FILES["image1"], $_FILES["image2"], $_FILES["image3"], $_FILES["image4"], $_FILES["image5"], $_POST["paragraphTitle0"], $_POST["paragraph0"], $_POST["paragraphTitle1"], $_POST["paragraph1"], $_POST["paragraphTitle2"], $_POST["paragraph2"], $_POST["paragraphTitle3"], $_POST["paragraph3"], $_POST["paragraphTitle4"], $_POST["paragraph4"], $_POST["paragraphTitle5"], $_POST["paragraph5"], $_POST["paragraphTitle6"], $_POST["paragraph6"], $_POST["paragraphTitle7"], $_POST["paragraph7"]);
+            $db->insertGame($_POST["title"], $_POST["releaseDate"], $_POST["price"], $_POST["hook"], $_POST["youtube"], $addDate, $_POST["pegi"], $_POST["editor"], $_POST["dev"], $_POST["category0"], $_POST["category1"], $_POST["category2"], $_POST["category3"], $_FILES["image0"], $_FILES["image1"], $_FILES["image2"], $_FILES["image3"], $_FILES["image4"], $_FILES["image5"], $_POST["paragraphTitle0"], $_POST["paragraph0"], $_POST["paragraphTitle1"], $_POST["paragraph1"], $_POST["paragraphTitle2"], $_POST["paragraph2"], $_POST["paragraphTitle3"], $_POST["paragraph3"], $_POST["paragraphTitle4"], $_POST["paragraph4"], $_POST["paragraphTitle5"], $_POST["paragraph5"], $_POST["paragraphTitle6"], $_POST["paragraph6"], $_POST["paragraphTitle7"], $_POST["paragraph7"]);
             
         else :
             echo "coucou";

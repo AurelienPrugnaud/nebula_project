@@ -28,7 +28,7 @@
                             <div class="mb-3">
                                 <label for="{{ "category"~i }}" class="form-label">Genre</label>
                                 <div class="border-button">
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select name="{{ "category"~i }}" class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez un genre</option>
                                         {% for category in categories %}
                                             <option value="{{ category.id }}">{{ category.name }}</option>
@@ -62,18 +62,12 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="pegi" class="form-label">PEGI</label>
+                                <label for="hook" class="form-label">Accroche</label>
                                 <div class="border-button">
-                                    <select name="pegi" class="form-select" aria-label="Default select example">
-                                        <option selected>Choisissez un PEGI</option>
-                                        {% for pegi in pegis %}
-                                        <option value="{{ pegi.id }}">{{ pegi.name }}</option>
-                                        {% else %}
-                                        <option>Pas de PEGI trouver en base de donnée</option>
-                                        {% endfor %}
-                                    </select>
+                                    <input name="hook" type="text" class="form-control" id="hook" aria-describedby="" placeholder="Accroche">
                                 </div>
-                            </div>
+                        </div>
+                            
                         </div>
                         <div class="col-6">
                             <div class="mb-3">
@@ -87,7 +81,7 @@
                             <div class="mb-3">
                                 <label for="{{ "category"~i }}" class="form-label">Genre</label>
                                 <div class="border-button">
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select name="{{ "category"~i }}" class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez un genre</option>
                                         {% for category in categories %}
                                         <option value="{{ category.id }}">{{ category.name }}</option>
@@ -112,6 +106,19 @@
                                 </div>
                             </div>
                             <div class="mb-3">
+                                <label for="pegi" class="form-label">PEGI</label>
+                                <div class="border-button">
+                                    <select name="pegi" class="form-select" aria-label="Default select example">
+                                        <option selected>Choisissez un PEGI</option>
+                                        {% for pegi in pegis %}
+                                        <option value="{{ pegi.id }}">{{ pegi.name }}</option>
+                                        {% else %}
+                                        <option>Pas de PEGI trouver en base de donnée</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
                                 <label for="editor" class="form-label">Plateforme</label>
                                 <div class="border-button mb-3">
                                     <select class="form-select" aria-label="Default select example">
@@ -124,6 +131,7 @@
                                     </select>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -136,8 +144,7 @@
                         <div class="mb-3">
                             <label for="youtubeLink" class="form-label">Lien Youtube</label>
                             <div class="border-button">
-                                <input name="youtube" type="text" class="form-control" id="youtubeLink"
-                                    aria-describedby="" placeholder="Lien Youtube">
+                                <input name="youtube" type="text" class="form-control" id="youtubeLink" aria-describedby="" placeholder="Lien Youtube">
                             </div>
                         </div>
                         {% for i in 0..1 %}

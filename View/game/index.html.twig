@@ -16,10 +16,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>blabla</td>
-                    <td>blabla</td>
+                {% for game in games %}
+                <tr> 
+                    <td>{{game.id}}</td>
+                    <td>{{game.name}}</td>
                     <td>
+
                         <div class="d-flex justify-content-center">
                             <div class="border-button-game-page me-3">
                                 <button class="button-game-page">
@@ -39,6 +41,7 @@
                         </div>
                     </td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
