@@ -68,9 +68,10 @@ main {
         @media screen and (max-width: 1399px) {
             h1.t-section {
                 position: relative;
-                font-size: 16px;
+                font-size: 22px;
                 font-weight: 700;
                 color: $white;
+                margin-top: 20px;
         
                 &:after {
                     content: "";
@@ -83,6 +84,7 @@ main {
                     border-radius: 2px;
                 }
             }
+
 
             div.border-card-hover {
                 padding: 5px;

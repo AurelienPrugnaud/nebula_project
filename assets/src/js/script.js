@@ -26,19 +26,11 @@ setInterval(nextSlide, 6000);
   const iframe = document.getElementsByTagName('iframe');
   const img = document.getElementsByClassName('img-game');
   const imgMin1 = document.getElementsByClassName('img-game-mini1');
-  // var imgMin1 = $('.img-game-mini1');
   const imgMin2 = document.getElementsByClassName('img-game-mini2');
   const imgMin3 = document.getElementsByClassName('img-game-mini3');
   const imgMin4 = document.getElementsByClassName('img-game-mini4');
   const imgMin5 = document.getElementsByClassName('img-game-mini5');
 
-/*   console.log(iframe[0]);
-  console.log(img[0]);
-  console.log(imgMin1[0]);
-  console.log(imgMin2[0]);
-  console.log(imgMin3[0]);
-  console.log(imgMin4[0]);
-  console.log(imgMin5[0]); */
       imgMin1[0].addEventListener('click', function() {
         iframe[0].classList.remove('disable');
         iframe[0].classList.add('active');

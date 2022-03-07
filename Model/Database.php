@@ -212,12 +212,11 @@ class DataBase extends PDO {
 		catch(\Exception $e) {
 			throw new \Exception($e->getMessage());
 		}
+		/* 
 		var_dump($category0);
 		var_dump($category1);
 		var_dump($category2);
 		var_dump($category3);
-
-		/* 
 		var_dump($title);
 		var_dump($releaseDate);
 		var_dump($price);

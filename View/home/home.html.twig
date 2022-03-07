@@ -9,10 +9,10 @@
                         {% for game in games %}
                         <div class="cont-img position-relative">
                             <a href="/game">
-                                <img class="img-carousel" src="/assets/img/games/god_of_war/god_of_war.png" alt="">
+                                <img class="img-carousel" src="/assets/public/img/games/god_of_war.png" alt="">
                                 <div class="position-absolute ms-5 top-50 carousel-text">
                                     <div class="d-flex justify-content-start mb-lg-3 mb-md-1">
-                                        <img class="logo-game" src="/assets/img/games/god_of_war/god_war_logo.png" alt="">
+                                        <img class="logo-game" src="/assets/public/img/games/god_war_logo.png" alt="">
                                     </div>
                                     <p class="date">
                                         Disponible le {{ game.releaseDate|date('d/m/Y') }}
@@ -23,58 +23,7 @@
                                 </div>
                             </a>
                         </div>
-                        {% endfor %}{# 
-                        <div class="active cont-img position-relative">
-                            <a href="/game">
-                                <img class="img-carousel" src="/assets/img/games/god_of_war/god_of_war.png" alt="">
-                                <div class="position-absolute ms-5 top-50 carousel-text">
-                                    <div class="d-flex justify-content-start mb-lg-3 mb-md-1">
-                                        <img class="logo-game" src="/assets/img/games/god_of_war/god_war_logo.png" alt="">
-                                    </div>
-                                    <p class="date">
-                                        Disponible le 14/01/2022
-                                    </p>
-                                    <p>
-                                        Incarné de nouveau Kratos dans ce nouvel opus de la série
-                                        mondialement connu: God of War.
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cont-img position-relative">
-                            <a href="/game">
-                                <img class="img-carousel" src="/assets/img/games/god_of_war/god_of_war_miniature1.png" alt="">
-                                <div class="position-absolute ms-5 top-50 carousel-text">
-                                    <div class="d-flex justify-content-start mb-lg-3 mb-md-1">
-                                        <img class="logo-game" src="/assets/img/games/god_of_war/god_war_logo.png" alt="">
-                                    </div>
-                                    <p class="date">
-                                        Déja disponible
-                                    </p>
-                                    <p>
-                                        Partez à l'aventure à travers Teyvat pour retrouver votre famille et
-                                        obtenir des réponses auprès des Sept, les dieux de chaque élément.
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cont-img position-relative">
-                            <a href="/game">
-                                <img class="img-carousel" src="/assets/img/games/god_of_war/god_of_war_miniature2.png" alt="">
-                                <div class="position-absolute ms-5 top-50 carousel-text">
-                                    <div class="d-flex justify-content-center mb-3">
-                                        <img class="logo-game" src="/assets/img/games/god_of_war/god_war_logo.png" alt="">
-                                    </div>
-                                    <p class="date">
-                                        Déjà disponible
-                                    </p>
-                                    <p>
-                                        Incarnez Kena, partez à l’aventure et développez une équipe de
-                                        compagnons-esprits charmants appelés les Rots.
-                                    </p>
-                                </div>
-                            </a>
-                        </div> #}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -91,16 +40,21 @@
                             </a>
                         </div>
                         <div class="row">
-                            {% for game in games|slice(0, 1) %}
+                            {% for game in games|slice(0, 2) %}
+                            {% for image in images|slice(0, 1) %}                             
+                            {% if image.id_game in game.id %}
+                                
                             <div class="border-card-hover col-lg-6 col-md-12">
                                 <div class="card-game">
-                                    <img class="img-discoveries" src="/assets/img/games/god_of_war/god_of_war.png"
-                                        alt="Final Fantasy">
+                                    <img class="img-discoveries" src={{'/assets/public/img/games/'~image.name}}
+                                        alt="blabla">
                                     <h2 class="t-game">{{game.name}}</h2>
                                     <p class="">{{game.hook}}</p>
                                     <p class="">{{game.price}} €</p>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% endfor %}
                             {% endfor %}
                         </div>
                     </div>
@@ -122,11 +76,11 @@
                                         {% for game in games %}
                                         <div class="border-card-hover">
                                             <div class="d-flex align-items-center card-game">
-                                                <img class="img-midsection me-3" src="/assets/img/games/god_of_war/god_of_war.png"
+                                                <img class="img-midsection me-3" src="/assets/public/img/games/god_of_war.png"
                                                     alt="god of war">
                                                 <div>
                                                     <h2 class="t-game">{{game.name}}</h2>
-                                                    <p>{{game.price}}</p>
+                                                    <p>{{game.price}} €</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,11 +109,11 @@
                                                 <div class="border-card-hover">
                                                     <div class="d-flex align-items-center card-game">
                                                         <img class="img-midsection me-3"
-                                                            src="/assets/img/games/god_of_war/god_of_war.png"
+                                                            src="/assets/public/img/games/god_of_war.png"
                                                             alt="god of war">
                                                         <div>
                                                             <h2 class="t-game">{{game.name}}</h2>
-                                                            <p>{{game.price}}</p>
+                                                            <p>{{game.price}} €</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -188,12 +142,12 @@
                                                         <div class="border-card-hover">
                                                             <div class="d-flex align-items-center card-game">
                                                                 <img class="img-midsection me-3"
-                                                                    src="/assets/img/games/god_of_war/god_of_war.png"
+                                                                    src="/assets/public/img/games/god_of_war.png"
                                                                     alt="god of war">
                                                                 <div>
                                                                     <h2 class="t-game">{{game.name}}</h2>
                                                                     <p>Disponible le {{ game.releaseDate|date('d/m/Y') }}</p>
-                                                                    <p>{{game.price}}</p>
+                                                                    <p>{{game.price}} €</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -219,11 +173,11 @@
                                             </a>
                                         </div>
                                         <div class="row">
-                                            {% for game in games %}
+                                            {% for game in games|slice(0, 2) %}
                                             <div class="border-card-hover col-lg-6 col-md-12">
                                                 <div class="card-game">
                                                     <img class="img-discoveries"
-                                                        src="/assets/img/games/god_of_war/god_of_war.png"
+                                                        src="/assets/public/img/games/god_of_war.png"
                                                         alt="Final Fantasy">
                                                     <h2 class="t-game">{{game.name}}</h2>
                                                     <p class="">{{game.hook}}</p>

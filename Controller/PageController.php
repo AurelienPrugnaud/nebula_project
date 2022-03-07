@@ -10,6 +10,8 @@
     use \Aurelien\Nebula\Pegi;
     use \Aurelien\Nebula\Requirement;
     use \Aurelien\Nebula\Language;
+    use \Aurelien\Nebula\Image;
+    use \Aurelien\Nebula\Paragraph;
 
     class PageController {
 
@@ -32,6 +34,10 @@
             $this->requirements = $this->requirement->getRequirementsList();
             $this->language = new Language;
             $this->languages = $this->language->getLanguagesList();
+            $this->image = new Image;
+            $this->images = $this->image->getImagesList();
+            $this->paragraph = new Paragraph;
+            $this->paragraphs = $this->paragraph->getParagraphsList();
             $this->get_data();
             $this->data = array_merge($this->data, $data);
             $this->render($file, $this->data);
@@ -51,9 +57,12 @@
                 'pegis' => $this->pegis,
                 'requirements' => $this->requirements,
                 'languages' => $this->languages,
+                'images' => $this->images,
+                'paragraphs' => $this->paragraphs
             ];
 
             return $this->data;
         }
+
 
     }

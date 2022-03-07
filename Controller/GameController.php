@@ -115,16 +115,21 @@
                 throw new \Exception("Le huitième champ du paragraphe est vide", 1);
             }
 
-            $gameDirectory = preg_replace('/\s+/', '_' ,strtolower($_POST["title"]));
+            /* $gameDirectory = preg_replace('/\s+/', '_' ,strtolower($_POST["title"]));
 
-            if (!is_dir('../assets/img/games/'.$gameDirectory)) {
-                mkdir('../assets/img/games/'.$gameDirectory, 0777, true);
+            if (!is_dir('../assets/public/img/games/'.$gameDirectory)) {
+                mkdir('../assets/public/img/games/'.$gameDirectory, 0777, true);
             } else {
                 throw new \Exception("Le dossier du jeu est déjà créer.");
                 
             }
 
-            $uploaddir = '../assets/img/games/'.$gameDirectory.'/';
+            $uploaddir = '../assets/public/img/games/'.$gameDirectory.'/';
+            foreach($_FILES as $images) {
+                move_uploaded_file($images["tmp_name"], $uploaddir.$images["name"]);
+            } */
+
+            $uploaddir = '../assets/public/img/games/';
             foreach($_FILES as $images) {
                 move_uploaded_file($images["tmp_name"], $uploaddir.$images["name"]);
             }

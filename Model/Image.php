@@ -16,6 +16,10 @@ class Image {
      * @var
      */
     public $name;
+    /**
+    * @var
+    */
+   public $idGame;
 
     /**
      * @param int $id
@@ -54,6 +58,20 @@ class Image {
     }
 
     /**
+     * @return mixed
+     */
+    public function getIdgame() {
+        return $this->idGame;
+    }
+
+    /**
+     * @param mixed $idGame
+     */
+    public function setIdgame($idGame): void {
+        $this->idGame = $idGame;
+    }
+
+    /**
      * @param $dbc
      * @return false|string
      */
@@ -89,8 +107,8 @@ class Image {
      * @return false|string
      */
     public function addImage($dbc, $id, $name) {
-        $sqlQuery = 'INSERT INTO image SET id = :id, name = :name';
-        $bindParam = array('id' => $id, 'name' => $name);
+        $sqlQuery = 'INSERT INTO image SET id = :id, name = :name, id_game = :idGame';
+        $bindParam = array('id' => $id, 'name' => $name, 'idGame' => $idGame);
         $Image = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
         $ImageJson = json_encode($Image);
         return $ImageJson;
