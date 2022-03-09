@@ -26,7 +26,7 @@
             if(empty($_POST["category0"])) {
                 throw new \Exception("Le premier champs des catégories est vide", 1);
             }
-            if(empty($_POST["category1"])) {
+            /* if(empty($_POST["category1"])) {
                 throw new \Exception("Le deuxième champs des catégories est vide", 1);
             }
             if(empty($_POST["category2"])) {
@@ -34,7 +34,7 @@
             }
             if(empty($_POST["category3"])) {
                 throw new \Exception("Le quatrième champs des catégories est vide", 1);
-            }
+            } */
             if(empty($_POST["youtube"])) {
                 throw new \Exception("Le champ du lien Youtube est vide", 1);
             }
@@ -166,8 +166,8 @@
             if(empty($_POST["requireRec7"])) {
                 throw new \Exception("Le champ du processeur AMD minimum est vide");
             }
-
-            /* $gameDirectory = preg_replace('/\s+/', '_' ,strtolower($_POST["title"]));
+            
+            $gameDirectory = preg_replace('/\s+/', '_' ,strtolower($_POST["title"]));
 
             if (!is_dir('../assets/public/img/games/'.$gameDirectory)) {
                 mkdir('../assets/public/img/games/'.$gameDirectory, 0777, true);
@@ -179,9 +179,8 @@
             $uploaddir = '../assets/public/img/games/'.$gameDirectory.'/';
             foreach($_FILES as $images) {
                 move_uploaded_file($images["tmp_name"], $uploaddir.$images["name"]);
-            } */
+            }
 
-            $uploaddir = '../assets/public/img/games/';
             foreach($_FILES as $images) {
                 move_uploaded_file($images["tmp_name"], $uploaddir.$images["name"]);
             }
@@ -202,29 +201,42 @@
                 $_POST["category1"], 
                 $_POST["category2"], 
                 $_POST["category3"], 
+                $_POST["orderImg0"],
                 $_FILES["image0"], 
+                $_POST["orderImg1"],
                 $_FILES["image1"], 
+                $_POST["orderImg2"],
                 $_FILES["image2"], 
+                $_POST["orderImg3"],
                 $_FILES["image3"], 
+                $_POST["orderImg4"],
                 $_FILES["image4"], 
+                $_POST["orderImg5"],
                 $_FILES["image5"], 
+                $_POST["orderParagraph0"],
                 $_POST["paragraphTitle0"], 
                 $_POST["paragraph0"], 
+                $_POST["orderParagraph1"],
                 $_POST["paragraphTitle1"], 
                 $_POST["paragraph1"], 
+                $_POST["orderParagraph2"],
                 $_POST["paragraphTitle2"], 
                 $_POST["paragraph2"], 
+                $_POST["orderParagraph3"],
                 $_POST["paragraphTitle3"], 
                 $_POST["paragraph3"], 
+                $_POST["orderParagraph4"],
                 $_POST["paragraphTitle4"], 
                 $_POST["paragraph4"], 
+                $_POST["orderParagraph5"],
                 $_POST["paragraphTitle5"], 
                 $_POST["paragraph5"], 
+                $_POST["orderParagraph6"],
                 $_POST["paragraphTitle6"], 
                 $_POST["paragraph6"], 
+                $_POST["orderParagraph7"],
                 $_POST["paragraphTitle7"], 
                 $_POST["paragraph7"],
-
                 $_POST["typeIdMin0"],
                 $_POST["requireMin0"],
                 $_POST["typeIdMin1"],
@@ -241,7 +253,6 @@
                 $_POST["requireMin6"],
                 $_POST["typeIdMin7"],
                 $_POST["requireMin7"],
-                
                 $_POST["typeIdRec0"],
                 $_POST["requireRec0"],
                 $_POST["typeIdRec1"],
@@ -258,8 +269,36 @@
                 $_POST["requireRec6"],
                 $_POST["typeIdRec7"],
                 $_POST["requireRec7"],
-
-
+                $_POST["languageAudio0"],
+                $_POST["languageAudio1"],
+                $_POST["languageAudio2"],
+                $_POST["languageAudio3"],
+                $_POST["languageAudio4"],
+                $_POST["languageText0"],
+                $_POST["languageText1"],
+                $_POST["languageText2"],
+                $_POST["languageText3"],
+                $_POST["languageText4"],
+                $_POST["languageText5"],
+                $_POST["languageText6"],
+                $_POST["languageText7"],
+                $_POST["languageText8"],
+                $_POST["languageText9"],
+                $_POST["languageAudio5"],
+                $_POST["languageAudio6"],
+                $_POST["languageAudio7"],
+                $_POST["languageAudio8"],
+                $_POST["languageAudio9"],
+                $_POST["languageText10"],
+                $_POST["languageText11"],
+                $_POST["languageText12"],
+                $_POST["languageText13"],
+                $_POST["languageText14"],
+                $_POST["languageText15"],
+                $_POST["languageText16"],
+                $_POST["languageText17"],
+                $_POST["languageText18"],
+                $_POST["languageText19"],
             );
             
         else :

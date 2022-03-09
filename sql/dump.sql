@@ -63,7 +63,7 @@ CREATE TABLE `category_game` (
   KEY `category_game_ibfk_1` (`id_category`),
   CONSTRAINT `category_game_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`),
   CONSTRAINT `category_game_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,7 @@ CREATE TABLE `category_game` (
 
 LOCK TABLES `category_game` WRITE;
 /*!40000 ALTER TABLE `category_game` DISABLE KEYS */;
-INSERT INTO `category_game` VALUES (1,1,1),(2,3,1),(3,4,1),(4,5,1),(5,1,2),(6,3,2),(7,4,2),(8,5,2),(9,1,3),(10,2,3),(11,3,3),(12,4,3);
+INSERT INTO `category_game` VALUES (1,1,1),(2,3,1),(3,4,1),(4,5,1),(5,1,2),(6,2,2),(7,3,2),(8,4,2);
 /*!40000 ALTER TABLE `category_game` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +149,7 @@ CREATE TABLE `game` (
   CONSTRAINT `game_ibfk_1` FOREIGN KEY (`id_pegi`) REFERENCES `pegi` (`id`),
   CONSTRAINT `game_ibfk_2` FOREIGN KEY (`id_editor`) REFERENCES `editor` (`id`),
   CONSTRAINT `game_ibfk_3` FOREIGN KEY (`id_developper`) REFERENCES `developper` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,7 +158,7 @@ CREATE TABLE `game` (
 
 LOCK TABLES `game` WRITE;
 /*!40000 ALTER TABLE `game` DISABLE KEYS */;
-INSERT INTO `game` VALUES (1,'God of War','2022-01-14',49.99,'Incarnez Kratos, et partez à l\'aventure dans le dernier opus de la série de jeux mondialement connue : God of War ','https://www.youtube-nocookie.com/embed/8O4uT214kak?controls=0','2022-03-08',5,1,1),(2,'FINAL FANTASY VII REMAKE INTERGRADE','2021-12-16',79.99,'Le classique intemporel FINAL FANTASY VII REMAKE INTERGRADE est de retour avec une aventure, des graphismes et un système de combat inédits.','https://www.youtube-nocookie.com/embed/FxTWyAmDqJI?controls=0','2022-03-08',4,4,5),(3,'Elden ring','2022-02-25',59.99,'UNE NOUVELLE AVENTURE GRANDIOSE VOUS ATTEND Levez-vous, Sans-éclat, et puisse la grâce guider vos pas.','https://www.youtube-nocookie.com/embed/M2EZDQ6_jfA?controls=0','2022-03-08',4,5,4);
+INSERT INTO `game` VALUES (1,'God of War','2022-01-14',49.99,'Incarné de nouveau Kratos dans ce nouvel opus de la série mondialement connu: God of War.','https://www.youtube.com/embed/8O4uT214kak','2022-03-09',5,1,1),(2,'Elden ring','2022-02-25',59.99,'UNE NOUVELLE AVENTURE GRANDIOSE VOUS ATTEND Levez-vous, Sans-éclat, et puisse la grâce guider vos pas. ','https://www.youtube-nocookie.com/embed/FxTWyAmDqJI?controls=0','2022-03-09',4,5,6);
 /*!40000 ALTER TABLE `game` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,11 +172,12 @@ DROP TABLE IF EXISTS `image`;
 CREATE TABLE `image` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
+  `orderImg` int(11) DEFAULT NULL,
   `id_game` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_game` (`id_game`),
   CONSTRAINT `image_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,7 +186,7 @@ CREATE TABLE `image` (
 
 LOCK TABLES `image` WRITE;
 /*!40000 ALTER TABLE `image` DISABLE KEYS */;
-INSERT INTO `image` VALUES (1,'god_of_war.png',1),(2,'god_of_war_miniature1.png',1),(3,'god_war_logo.png',1),(4,'godofwarYoutube.png',1),(5,'god_of_war_miniature2.png',1),(6,'god_of_war_miniature3.png',1),(7,'final_fantasy_intergrade.png',2),(8,'final_fantasy_intergrade1.png',2),(9,'FF7R_INTERGRADE_Logo_W.png',2),(10,'miniatureff.png',2),(11,'ff2.png',2),(12,'ff3.png',2),(13,'er0.png',3),(14,'er1.png',3),(15,'ER_LOGO_TM_RGB_DARK_BKG.png',3),(16,'eldenRingYt.png',3),(17,'er2.png',3),(18,'er3.png',3);
+INSERT INTO `image` VALUES (1,'gow0.png',0,1),(2,'gow1.png',1,1),(3,'gow2.png',2,1),(4,'gow3.png',3,1),(5,'gowYt.png',4,1),(6,'gowLogo.png',5,1),(7,'er0.png',0,2),(8,'er1.png',1,2),(9,'er2.png',2,2),(10,'er3.png',3,2),(11,'erYt.png',4,2),(12,'erLogo.png',5,2);
 /*!40000 ALTER TABLE `image` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,7 +201,7 @@ CREATE TABLE `language` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -209,7 +210,7 @@ CREATE TABLE `language` (
 
 LOCK TABLES `language` WRITE;
 /*!40000 ALTER TABLE `language` DISABLE KEYS */;
-INSERT INTO `language` VALUES (1,'anglais'),(2,'français'),(3,'allemand'),(4,'italien'),(5,'japonais'),(6,'polonais'),(7,'portugais'),(8,'portugais (Brésil)'),(9,'russe'),(10,'espagnol (Espagne)'),(11,'espagnol (Amérique latine)'),(12,'coréen'),(13,'turc'),(14,'chinois traditionnel'),(15,'chinois simplifié'),(16,'hongrois'),(17,'tchèque'),(18,'grec');
+INSERT INTO `language` VALUES (1,'anglais'),(2,'français'),(3,'allemand'),(4,'italien'),(5,'japonais'),(6,'polonais'),(7,'portugais'),(8,'portugais (Brésil)'),(9,'russe'),(10,'espagnol (Espagne)'),(11,'espagnol (Amérique latine)'),(12,'coréen'),(13,'turc'),(14,'chinois traditionnel'),(15,'chinois simplifié'),(16,'hongrois'),(17,'tchèque'),(18,'grec'),(19,'arabe'),(20,'thaï'),(21,'hindi');
 /*!40000 ALTER TABLE `language` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -230,7 +231,7 @@ CREATE TABLE `language_game` (
   KEY `language_game_ibfk_1` (`id_language`),
   CONSTRAINT `language_game_ibfk_1` FOREIGN KEY (`id_language`) REFERENCES `language` (`id`),
   CONSTRAINT `language_game_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -239,6 +240,7 @@ CREATE TABLE `language_game` (
 
 LOCK TABLES `language_game` WRITE;
 /*!40000 ALTER TABLE `language_game` DISABLE KEYS */;
+INSERT INTO `language_game` VALUES (1,1,1,1),(2,2,1,1),(3,3,1,1),(4,4,1,1),(5,5,1,1),(6,1,1,0),(7,2,1,0),(8,3,1,0),(9,4,1,0),(10,5,1,0),(11,6,1,0),(12,7,1,0),(13,8,1,0),(14,9,1,0),(15,10,1,0),(16,6,1,1),(17,7,1,1),(18,8,1,1),(19,9,1,1),(20,10,1,1),(21,11,1,0),(22,12,1,0),(23,13,1,0),(24,14,1,0),(25,15,1,0),(26,16,1,0),(27,17,1,0),(28,18,1,0),(29,19,1,0),(30,20,1,0),(31,1,2,1),(32,2,2,1),(33,3,2,1),(34,6,2,1),(35,9,2,1),(36,10,2,0),(37,13,2,0),(38,10,2,0),(39,11,2,0),(40,13,2,0),(41,10,2,0),(42,12,2,0),(43,4,2,0),(44,8,2,0),(45,9,2,0),(46,3,2,1),(47,11,2,1),(48,15,2,1),(49,12,2,1),(50,9,2,1),(51,13,2,0),(52,14,2,0),(53,13,2,0),(54,11,2,0),(55,13,2,0),(56,15,2,0),(57,5,2,0),(58,4,2,0),(59,6,2,0),(60,9,2,0);
 /*!40000 ALTER TABLE `language_game` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -279,11 +281,12 @@ CREATE TABLE `paragraph` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(150) DEFAULT NULL,
   `paragraph` text DEFAULT NULL,
+  `orderParagraph` int(11) DEFAULT NULL,
   `id_game` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_game` (`id_game`),
   CONSTRAINT `paragraph_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -292,7 +295,7 @@ CREATE TABLE `paragraph` (
 
 LOCK TABLES `paragraph` WRITE;
 /*!40000 ALTER TABLE `paragraph` DISABLE KEYS */;
-INSERT INTO `paragraph` VALUES (1,'Pénétrez dans le royaume du nord','Sa vengeance contre les dieux de l\'Olympe étant bien derrière lui, Kratos vit désormais comme un simple habitant du royaume des dieux (et des monstres) nordiques. C\'est dans ce monde inhospitalier et cruel qu\'il doit combattre pour sa survie... et apprendre à son fils à en faire de même.',1),(2,'Profitez de votre deuxième chance','Kratos est à nouveau père. En tant que mentor et protecteur d\'Atreus, un fils prêt à tout pour gagner son respect, Kratos se retrouve contraint de dominer la rage qui l\'a défini pendant si longtemps alors qu\'il explore avec son fils un monde rempli de dangers.',1),(3,'Voyagez dans un monde sombre peuplé de terribles créatures','Du marbre et des colonnes d\'une Olympe resplendissante aux environnements bruts des forêts, montagnes et cavernes de la mythologie nordique pré-viking, ce nouveau royaume possède un panthéon de créatures, monstres et dieux qui lui sont propres.',1),(4,'Prenez part à des combats physiques et viscéraux','Grâce à une caméra libre à la troisième personne qui plonge le joueur encore plus au cœur de l\'action, les combats de God of War™ sont à l\'image du panthéon de créatures nordiques que Kratos affronte : grandioses, brutaux et ardus. La nouvelle arme principale et les capacités inédites de Kratos conservent l\'esprit de la série God of War, tout en proposant une vision inédite des conflits qui redéfinit le genre.',1),(5,'Graphismes haute-fidélité','Des visuels saisissants améliorés sur PC. Profitez d\'une véritable résolution 4K sur les appareils compatibles, avec des fréquences d\'image déverrouillées pour une performance inégalée. Gérez vos paramètres avec une vaste sélection d\'options et de réglages graphiques prédéfinis, dont des ombres à haute résolution, des reflets d\'espace-écran améliorés, l\'ajout des technologies de GTAO et SSDO, et bien plus encore !',1),(6,'Compatibilité avec NVIDIA® DLSS et NVIDIA® Reflex','Quand la qualité rencontre la performance. Mettez à profit la puissance de l\'IA du super-échantillonnage par Deep Learning (Deep Learning Super Sampling, DLSS) de NVIDIA, qui améliore la fréquence d\'images et génère des images aussi belles que nettes sur les cartes graphiques NVIDIA compatibles. Utilisez la technologie NVIDIA Reflex de faible latence, qui vous permet de réagir plus rapidement et d\'enchaîner des combos plus dévastateurs grâce au temps de réponse inégalé des cartes graphiques GeForce.',1),(7,'Personnalisation des commandes','Jouez à votre façon. Grâce à une compatibilité avec les manettes sans fil DUALSHOCK®4 et DUALSENSE® et bien d\'autres périphériques de jeu, ainsi que des commandes souris et clavier entièrement personnalisables, vous avez la possibilité d\'ajuster la moindre de vos actions à votre style de jeu.',1),(8,'Compatibilité avec les écrans ultra-larges','Profitez d\'un niveau d\'immersion inédit. Voyagez à travers les royaumes du nord et leurs paysages époustouflants en vue panoramique. Grâce à une compatibilité avec les écrans ultra-larges en 21:9, God of War™ offre une expérience de qualité cinématographique qui améliore encore davantage les visuels théâtraux et fluides du jeu.',1),(9,NULL,'Vivez l\'histoire passionnante de Cloud Strife à Midgar dans cette renaissance de l\'emblématique FINAL FANTASY VII à travers des graphismes de pointe, des combats épiques mêlant action et commandes classiques, et un épisode bonus consacré à Yuffie Kisaragi.',2),(10,'SYNOPSIS','Le monde est contrôlé par la compagnie Shinra qui exploite la mako, l\'énergie vitale de la planète. Dans la mégalopole de Midgar, un groupe de hors-la-loi idéalistes connu sous le nom d\'Avalanche consistue l\'un des derniers bastions de la résistance.\r\nCloud, un ex-membre des troupes d\'élite de la Shinra, accompagne Avalanche lors d\'une opération de destruction du réacteur mako nº 1. L\'explosion plonge la ville dans un brasier chaotique et Cloud est tourmenté par des visions d\'un ennemi qu\'il pensait mort depuis longtemps.\r\nEmbarquez dans une grande aventure qui décidera du sort de la planète !\r\nCe jeu est une réinterprétation en plusieurs volets de FINAL FANTASY VII, initialement sorti en 1997.\r\nL\'histoire de ce premier volet retrace la fuite des héros hors de Midgar et nous fait vivre les événements qui secouent la ville avec une profondeur nouvelle.',2),(11,'FF7R EPISODE INTERmission (Épisode de Yuffie)','Cet épisode est constitué de deux chapitres séparés de l\'histoire principale de FINAL FANTASY VII REMAKE. Jouez Yuffie, une shinobi du Wutai qui s\'infiltre à Midgar avec son partenaire grâce à l\'aide de la branche principale d\'Avalanche afin de dérober une matéria ultime créée par la Shinra.',2),(12,'Contenu','FINAL FANTASY VII REMAKE INTERGRADE contient :\r\n\r\n    FINAL FANTASY VII REMAKE\r\n    FF7R EPISODE INTERmission (Épisode de Yuffie)\r\n    Arme : Shuricac (pour Yuffie)\r\n    Protection : Bracelet Midgar\r\n    Protection : Bracelet Shinra\r\n    Protection : Bracelet Don Cornéo\r\n    Accessoire : Ceinture de superstar\r\n    Accessoire : Cristal de mako\r\n    Accessoire : Boucles d\'oreilles séraphiques\r\n    Matéria d\'invocation : Carbuncle\r\n    Matéria d\'invocation : Poussin chocobo\r\n    Matéria d\'invocation : Pampa\r\n\r\nL\'arme, les protections, les accessoires et les matérias d\'invocation peuvent être obtenus dans la \"Boîte à cadeaux\" depuis le menu principal.\r\nL\'arme Shuricac ne peut utilisée que dans FF7R EPISODE INTERmission (Épisode de Yuffie).',2),(17,NULL,'UNE NOUVELLE AVENTURE GRANDIOSE VOUS ATTEND\r\nLevez-vous, Sans-éclat, et puisse la grâce guider vos pas. Brandissez la puissance du Cercle d\'Elden. Devenez Seigneur de l\'Entre-terre.',3),(18,'Un vaste monde à explorer','Un monde immense aux environnements riches et variés, parsemé d\'obscurs et tortueux donjons tous reliés naturellement entre eux, vous attend. Au fil de votre exploration, goûtez à l\'inconnu, bravez les menaces permanentes et accomplissez votre destinée.',3),(19,'Créez votre propre personnage','En plus de l\'apparence de votre personnage, vous êtes libre de personnaliser votre arsenal d\'armes, d\'armures et de sorts. Construisez un personnage qui correspond à votre style de jeu, et devenez un guerrier surpuissant, ou encore un maître de la magie.',3),(20,'Un scénario épique né d\'un mythe','Plusieurs histoires se mêlent dans un récit narré par fragments. Vous rencontrerez des personnages complexes au fil de votre découverte épique de l\'Entre-terre.',3),(21,'Connectez-vous librement à d\'autres joueurs grâce au mode en ligne','En plus du mode multijoueur, vous permettant de vous connecter directement à d\'autres joueurs et de voyager ensemble, le jeu propose un système en ligne asynchrone unique vous permettant de ressentir la présence des autres Sans-éclat. ',3),(22,'Description du contenu pour adultes','Voici la description de l\'équipe de développement à propos du contenu du produit :\r\n\r\nCe jeu peut inclure du contenu qui n\'est pas approprié pour tous les âges ou pour la consultation au travail : Violence fréquente ou gore, Contenu générique destiné aux adultes ',3);
+INSERT INTO `paragraph` VALUES (1,'Pénétrez dans le royaume du nord','Sa vengeance contre les dieux de l\'Olympe étant bien derrière lui, Kratos vit désormais comme un simple habitant du royaume des dieux (et des monstres) nordiques. C\'est dans ce monde inhospitalier et cruel qu\'il doit combattre pour sa survie... et apprendre à son fils à en faire de même. ',0,1),(2,'Profitez de votre deuxième chance','Kratos est à nouveau père. En tant que mentor et protecteur d\'Atreus, un fils prêt à tout pour gagner son respect, Kratos se retrouve contraint de dominer la rage qui l\'a défini pendant si longtemps alors qu\'il explore avec son fils un monde rempli de dangers. ',1,1),(3,'Voyagez dans un monde sombre peuplé de terribles créatures','Du marbre et des colonnes d\'une Olympe resplendissante aux environnements bruts des forêts, montagnes et cavernes de la mythologie nordique pré-viking, ce nouveau royaume possède un panthéon de créatures, monstres et dieux qui lui sont propres. ',2,1),(4,'Prenez part à des combats physiques et viscéraux','Grâce à une caméra libre à la troisième personne qui plonge le joueur encore plus au cœur de l\'action, les combats de God of War™ sont à l\'image du panthéon de créatures nordiques que Kratos affronte : grandioses, brutaux et ardus. La nouvelle arme principale et les capacités inédites de Kratos conservent l\'esprit de la série God of War, tout en proposant une vision inédite des conflits qui redéfinit le genre. ',3,1),(5,'Graphismes haute-fidélité','Des visuels saisissants améliorés sur PC. Profitez d\'une véritable résolution 4K sur les appareils compatibles, avec des fréquences d\'image déverrouillées pour une performance inégalée. Gérez vos paramètres avec une vaste sélection d\'options et de réglages graphiques prédéfinis, dont des ombres à haute résolution, des reflets d\'espace-écran améliorés, l\'ajout des technologies de GTAO et SSDO, et bien plus encore !',4,1),(6,'Compatibilité avec NVIDIA® DLSS et NVIDIA® Reflex','Quand la qualité rencontre la performance. Mettez à profit la puissance de l\'IA du super-échantillonnage par Deep Learning (Deep Learning Super Sampling, DLSS) de NVIDIA, qui améliore la fréquence d\'images et génère des images aussi belles que nettes sur les cartes graphiques NVIDIA compatibles. Utilisez la technologie NVIDIA Reflex de faible latence, qui vous permet de réagir plus rapidement et d\'enchaîner des combos plus dévastateurs grâce au temps de réponse inégalé des cartes graphiques GeForce.',5,1),(7,'Personnalisation des commandes','Jouez à votre façon. Grâce à une compatibilité avec les manettes sans fil DUALSHOCK®4 et DUALSENSE® et bien d\'autres périphériques de jeu, ainsi que des commandes souris et clavier entièrement personnalisables, vous avez la possibilité d\'ajuster la moindre de vos actions à votre style de jeu.',6,1),(8,'Compatibilité avec les écrans ultra-larges','Profitez d\'un niveau d\'immersion inédit. Voyagez à travers les royaumes du nord et leurs paysages époustouflants en vue panoramique. Grâce à une compatibilité avec les écrans ultra-larges en 21:9, God of War™ offre une expérience de qualité cinématographique qui améliore encore davantage les visuels théâtraux et fluides du jeu.',7,1),(9,'Une nouvelle aventure grandiose vous attend','Levez-vous, Sans-éclat, et puisse la grâce guider vos pas. Brandissez la puissance du Cercle d\'Elden. Devenez Seigneur de l\'Entre-terre.',0,2),(10,'Un vaste monde à explorer','Un monde immense aux environnements riches et variés, parsemé d\'obscurs et tortueux donjons tous reliés naturellement entre eux, vous attend. Au fil de votre exploration, goûtez à l\'inconnu, bravez les menaces permanentes et accomplissez votre destinée.',1,2),(11,'Créez votre propre personnage','En plus de l\'apparence de votre personnage, vous êtes libre de personnaliser votre arsenal d\'armes, d\'armures et de sorts. Construisez un personnage qui correspond à votre style de jeu, et devenez un guerrier surpuissant, ou encore un maître de la magie.',2,2),(12,'Un scénario épique né d\'un mythe','Plusieurs histoires se mêlent dans un récit narré par fragments. Vous rencontrerez des personnages complexes au fil de votre découverte épique de l\'Entre-terre.',3,2),(13,'Connectez-vous librement à d\'autres joueurs grâce au mode en ligne','En plus du mode multijoueur, vous permettant de vous connecter directement à d\'autres joueurs et de voyager ensemble, le jeu propose un système en ligne asynchrone unique vous permettant de ressentir la présence des autres Sans-éclat. ',4,2),(14,'Description du contenu pour adultes','Voici la description de l\'équipe de développement à propos du contenu du produit :\r\n\r\nCe jeu peut inclure du contenu qui n\'est pas approprié pour tous les âges ou pour la consultation au travail : Violence fréquente ou gore, Contenu générique destiné aux adultes ',5,2),(15,'','',6,2),(16,'','',7,2);
 /*!40000 ALTER TABLE `paragraph` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -362,7 +365,7 @@ CREATE TABLE `platform_game` (
   KEY `platform_game_ibfk_1` (`id_platform`),
   CONSTRAINT `platform_game_ibfk_1` FOREIGN KEY (`id_platform`) REFERENCES `platform` (`id`),
   CONSTRAINT `platform_game_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -371,6 +374,7 @@ CREATE TABLE `platform_game` (
 
 LOCK TABLES `platform_game` WRITE;
 /*!40000 ALTER TABLE `platform_game` DISABLE KEYS */;
+INSERT INTO `platform_game` VALUES (1,1,1),(2,1,2);
 /*!40000 ALTER TABLE `platform_game` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -443,7 +447,7 @@ CREATE TABLE `type_requirement_game` (
   CONSTRAINT `type_requirement_game_ibfk_1` FOREIGN KEY (`id_type`) REFERENCES `type` (`id`),
   CONSTRAINT `type_requirement_game_ibfk_2` FOREIGN KEY (`id_requirement`) REFERENCES `requirement` (`id`),
   CONSTRAINT `type_requirement_game_ibfk_3` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -452,6 +456,7 @@ CREATE TABLE `type_requirement_game` (
 
 LOCK TABLES `type_requirement_game` WRITE;
 /*!40000 ALTER TABLE `type_requirement_game` DISABLE KEYS */;
+INSERT INTO `type_requirement_game` VALUES (1,1,1,1,'1','0'),(2,2,2,1,'1','0'),(3,3,3,1,'1','0'),(4,4,4,1,'1','0'),(5,5,5,1,'1','0'),(6,6,6,1,'1','0'),(7,7,7,1,'1','0'),(8,8,8,1,'1','0'),(9,1,1,1,'0','1'),(10,2,9,1,'0','1'),(11,3,10,1,'0','1'),(12,4,4,1,'0','1'),(13,5,11,1,'0','1'),(14,6,6,1,'0','1'),(15,7,12,1,'0','1'),(16,8,13,1,'0','1'),(17,1,1,2,'1','0'),(18,2,5,2,'1','0'),(19,3,9,2,'1','0'),(20,4,8,2,'1','0'),(21,5,5,2,'1','0'),(22,6,4,2,'1','0'),(23,7,9,2,'1','0'),(24,8,4,2,'1','0'),(25,1,1,2,'0','1'),(26,2,9,2,'0','1'),(27,3,11,2,'0','1'),(28,4,6,2,'0','1'),(29,5,6,2,'0','1'),(30,6,9,2,'0','1'),(31,7,9,2,'0','1'),(32,8,8,2,'0','1');
 /*!40000 ALTER TABLE `type_requirement_game` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -523,4 +528,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-09  1:54:45
+-- Dump completed on 2022-03-09 22:55:17

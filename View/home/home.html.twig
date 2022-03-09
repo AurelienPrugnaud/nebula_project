@@ -9,10 +9,10 @@
                         {% for game in games %}
                         <div class="cont-img position-relative">
                             <a href="/game">
-                                <img class="img-carousel" src="/assets/public/img/games/god_of_war.png" alt="">
+                                <img class="img-carousel" src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image0}}" alt="{{game.name}}">
                                 <div class="position-absolute ms-5 top-50 carousel-text">
                                     <div class="d-flex justify-content-start mb-lg-3 mb-md-1">
-                                        <img class="logo-game" src="/assets/public/img/games/god_war_logo.png" alt="">
+                                        <img class="logo-game" src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image5}}" alt="{{game.name}}">
                                     </div>
                                     {% if date(game.releaseDate) > date() %}
                                     <p class="date">
@@ -46,8 +46,7 @@
                                 
                             <div class="border-card-hover col-lg-6 col-md-12">
                                 <div class="card-game">
-                                    <img class="img-discoveries" src={{'/assets/public/img/games/'~game.name}}
-                                        alt="blabla">
+                                    <img class="img-discoveries" src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image0}}" alt="{{game.name}}">
                                     <h2 class="t-game">{{game.name}}</h2>
                                     <p class="">{{game.hook}}</p>
                                     <p class="">{{ game.price|replace({'.' : ','}) }} €</p>
@@ -75,7 +74,7 @@
                                         {% for game in games %}
                                         <div class="border-card-hover">
                                             <div class="d-flex align-items-center card-game">
-                                                <img class="img-midsection me-3" src="/assets/public/img/games/god_of_war.png"
+                                                <img class="img-midsection me-3" src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image0}}" alt="{{game.name}}"
                                                     alt="god of war">
                                                 <div>
                                                     <h2 class="t-game">{{game.name}}</h2>
@@ -108,7 +107,7 @@
                                                 <div class="border-card-hover">
                                                     <div class="d-flex align-items-center card-game">
                                                         <img class="img-midsection me-3"
-                                                            src="/assets/public/img/games/god_of_war.png"
+                                                            src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image0}}" alt="{{game.name}}"
                                                             alt="god of war">
                                                         <div>
                                                             <h2 class="t-game">{{game.name}}</h2>
@@ -142,7 +141,7 @@
                                                         <div class="border-card-hover">
                                                             <div class="d-flex align-items-center card-game">
                                                                 <img class="img-midsection me-3"
-                                                                    src="/assets/public/img/games/god_of_war.png"
+                                                                    src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image0}}" alt="{{game.name}}"
                                                                     alt="god of war">
                                                                 <div>
                                                                     <h2 class="t-game">{{game.name}}</h2>
@@ -178,7 +177,7 @@
                                             <div class="border-card-hover col-lg-6 col-md-12">
                                                 <div class="card-game">
                                                     <img class="img-discoveries"
-                                                        src="/assets/public/img/games/god_of_war.png"
+                                                        src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image0}}" alt="{{game.name}}"
                                                         alt="Final Fantasy">
                                                     <h2 class="t-game">{{game.name}}</h2>
                                                     <p class="">{{game.hook}}</p>

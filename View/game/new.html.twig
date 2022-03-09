@@ -148,19 +148,22 @@
                             </div>
                         </div>
                         <div class="mb-3">
+                            <input name="orderImg4" type="hidden" value="4">
                             <label for="image4" class="form-label">Image miniature Youtube</label>
                             <div class="border-button mb-3">
-                                <input name="image4" class="form-control" type="file" id="image3">
+                                <input name="image4" class="form-control" type="file" id="image4">
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="image2" class="form-label">Logo</label>
+                            <input name="orderImg5" type="hidden" value="5">
+                            <label for="image5" class="form-label">Logo</label>
                             <div class="border-button">
-                                <input name="image5" class="form-control" type="file" id="image2">
+                                <input name="image5" class="form-control" type="file" id="image5">
                             </div>
                         </div>                 
                         {% for i in 0..0 %}
                         <div class="mb-3">
+                            <input name="{{"orderImg"~i}}" type="hidden" value="{{i}}">
                             {% if (i == 0) %}
                             <label for="{{ "image"~i }}" class="form-label">Image principale</label>
                             {% endif %}
@@ -176,6 +179,7 @@
                     <div class="col-6">
                         {% for i in 1..3 %}
                         <div class="mb-3">
+                            <input name="{{"orderImg"~i}}" type="hidden" value="{{i}}">
                             {% if (i == 0) %}
                             <label for="{{ "image"~i }}" class="form-label">Image principale</label>
                             {% endif %}
@@ -197,6 +201,7 @@
                     <div class="col-6">
                         {% for i in 0..3 %}
                         <div class="mb-3">
+                            <input name="{{"orderParagraph"~i}}" type="hidden" value="{{i}}">
                             <label for="{{"paragraphTitle"~i}}" class="form-label">Titre</label>
                             <div class="border-button">
                                 <input name="{{"paragraphTitle"~i}}" type="text" class="form-control" id="{{"paragraphTitle"~i}}" placeholder="Titre du paragraphe">
@@ -213,6 +218,7 @@
                     <div class="col-6">
                         {% for i in 4..7 %}
                         <div class="mb-3">
+                            <input name="{{"orderParagraph"~i}}" type="hidden" value="{{i}}">
                             <label for="{{"paragraphTitle"~i}}" class="form-label">Titre</label>
                             <div class="border-button">
                                 <input name="{{"paragraphTitle"~i}}" type="text" class="form-control" id="{{"paragraphTitle"~i}}" placeholder="Titre du paragraphe">
@@ -277,10 +283,10 @@
                     <div class="col-6">
                         {% for i in 0..4 %}
                         <div class="mb-3">
-                            <label for="{{"languageText~i"}}" class="form-label">Langue du Texte</label>
+                            <label for="{{"languageAudio"~i}}" class="form-label">Langue Audio</label>
                             <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue du texte</option>
+                                <select name="{{"languageAudio"~i}}" class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
                                     {% for language in languages %}
                                     <option value="{{ language.id }}">{{ language.name }}</option>
                                     {% else %}
@@ -292,10 +298,10 @@
                         {% endfor %}
                         {% for i in 0..9 %}
                         <div class="mb-3">
-                            <label for="{{"languageAudio~i"}}" class="form-label">Langue audio</label>
+                            <label for="{{"languageText"~i}}" class="form-label">Langue texte</label>
                             <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
+                                <select name="{{"languageText"~i}}" class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue du texte</option>
                                     {% for language in languages %}
                                     <option value="{{ language.id }}">{{ language.name }}</option>
                                     {% else %}
@@ -309,10 +315,10 @@
                     <div class="col-6">
                         {% for i in 5..9 %}
                         <div class="mb-3">
-                            <label for="{{"languageText~i"}}" class="form-label">Langue du Texte</label>
+                            <label for="{{"languageAudio"~i}}" class="form-label">Langue Audio</label>
                             <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue du texte</option>
+                                <select name="{{"languageAudio"~i}}" class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue audio</option>
                                     {% for language in languages %}
                                     <option value="{{ language.id }}">{{ language.name }}</option>
                                     {% else %}
@@ -324,10 +330,10 @@
                         {% endfor %}
                         {% for i in 10..19 %}
                         <div class="mb-3">
-                            <label for="{{"languageAudio~i"}}" class="form-label">Langue audio</label>
+                            <label for="{{"languageText"~i}}" class="form-label">Langue Texte</label>
                             <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une langue audio</option>
+                                <select name="{{"languageText"~i}}" class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez une langue du texte</option>
                                     {% for language in languages %}
                                     <option value="{{ language.id }}">{{ language.name }}</option>
                                     {% else %}
@@ -337,11 +343,13 @@
                             </div>
                         </div>
                         {% endfor %}
+                        <a href="/list">
                         <div class="border-button-game-page">
                             <button type="submit" class="button-game-page ps-5 pe-5">
                                 Ajouter le jeu à la base de donnée
                             </button>
                         </div>
+                        </a>
                     </div>
                 </div>
             </form>

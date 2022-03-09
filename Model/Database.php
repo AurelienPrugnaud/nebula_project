@@ -49,7 +49,7 @@ class DataBase extends PDO {
 	}
 
 	public function insertGame(
-		$title, $releaseDate, $price, $hook, $youtube, $addDate, $pegi, $editor, $dev, $platform, $category0, $category1, $category2, $category3,  $image0, $image1, $image2, $image3, $image4, $image5, $paragraphTitle0, $paragraph0, $paragraphTitle1, $paragraph1, $paragraphTitle2, $paragraph2, $paragraphTitle3, $paragraph3, $paragraphTitle4, $paragraph4, $paragraphTitle5, $paragraph5, $paragraphTitle6, $paragraph6, $paragraphTitle7, $paragraph7, $typeIdMin0, $requireMin0, $typeIdMin1, $requireMin1, $typeIdMin2, $requireMin2, $typeIdMin3, $requireMin3, $typeIdMin4, $requireMin4, $typeIdMin5, $requireMin5, $typeIdMin6, $requireMin6, $typeIdMin7, $requireMin7, $typeIdRec0, $requireRec0, $typeIdRec1, $requireRec1, $typeIdRec2, $requireRec2, $typeIdRec3, $requireRec3, $typeIdRec4, $requireRec4, $typeIdRec5, $requireRec5, $typeIdRec6, $requireRec6, $typeIdRec7, $requireRec7) 
+		$title, $releaseDate, $price, $hook, $youtube, $addDate, $pegi, $editor, $dev, $platform, $category0, $category1, $category2, $category3,$orderImg0, $image0, $orderImg1, $image1, $orderImg2, $image2, $orderImg3, $image3, $orderImg4, $image4, $orderImg5, $image5, $orderParagraph0, $paragraphTitle0, $paragraph0, $orderParagraph1, $paragraphTitle1, $paragraph1, $orderParagraph2, $paragraphTitle2, $paragraph2, $orderParagraph3, $paragraphTitle3, $paragraph3, $orderParagraph4, $paragraphTitle4, $paragraph4, $orderParagraph5, $paragraphTitle5, $paragraph5, $orderParagraph6, $paragraphTitle6, $paragraph6, $orderParagraph7, $paragraphTitle7, $paragraph7, $typeIdMin0, $requireMin0, $typeIdMin1, $requireMin1, $typeIdMin2, $requireMin2, $typeIdMin3, $requireMin3, $typeIdMin4, $requireMin4, $typeIdMin5, $requireMin5, $typeIdMin6, $requireMin6, $typeIdMin7, $requireMin7, $typeIdRec0, $requireRec0, $typeIdRec1, $requireRec1, $typeIdRec2, $requireRec2, $typeIdRec3, $requireRec3, $typeIdRec4, $requireRec4, $typeIdRec5, $requireRec5, $typeIdRec6, $requireRec6, $typeIdRec7, $requireRec7, $languageAudio0, $languageAudio1, $languageAudio2, $languageAudio3, $languageAudio4, $languageText0, $languageText1, $languageText2, $languageText3, $languageText4, $languageText5, $languageText6, $languageText7, $languageText8, $languageText9, $languageAudio5, $languageAudio6, $languageAudio7, $languageAudio8, $languageAudio9, $languageText10, $languageText11, $languageText12, $languageText13, $languageText14, $languageText15, $languageText16, $languageText17, $languageText18, $languageText19) 
 	{
 		try {
 			$request = "
@@ -60,88 +60,88 @@ class DataBase extends PDO {
 					 :title, :releaseDate, :price, :hook, :youtube, :addDate, :pegi, :editor, :dev 
 				);
 				INSERT INTO image (
-					name, id_game
+					name, orderImg, id_game
 				)
 				VALUES (
-					:image0, ( SELECT MAX(id) FROM game )
+					:image0, :orderImg0, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO image (
-					name, id_game
+					name, orderImg, id_game
 				)
 				VALUES (
-					:image1, ( SELECT MAX(id) FROM game )
+					:image1, :orderImg1, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO image (
-					name, id_game
+					name, orderImg, id_game
 				)
 				VALUES (
-					:image2, ( SELECT MAX(id) FROM game )
+					:image2, :orderImg2, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO image (
-					name, id_game
+					name, orderImg, id_game
 				)
 				VALUES (
-					:image3, ( SELECT MAX(id) FROM game )
+					:image3, :orderImg3, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO image (
-					name, id_game
+					name, orderImg, id_game
 				)
 				VALUES (
-					:image4, ( SELECT MAX(id) FROM game )
+					:image4, :orderImg4, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO image (
-					name, id_game
+					name, orderImg, id_game
 				)
 				VALUES (
-					:image5, ( SELECT MAX(id) FROM game )
+					:image5, :orderImg5, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO paragraph (
-					title, paragraph, id_game
+					title, paragraph, orderParagraph, id_game
 				)
 				VALUES (
-					:paragraphTitle0, :paragraph0, ( SELECT MAX(id) FROM game )
+					:paragraphTitle0, :paragraph0, :orderParagraph0, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO paragraph (
-					title, paragraph, id_game
+					title, paragraph, orderParagraph, id_game
 				)
 				VALUES (
-					:paragraphTitle1, :paragraph1, ( SELECT MAX(id) FROM game )
+					:paragraphTitle1, :paragraph1, :orderParagraph1, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO paragraph (
-					title, paragraph, id_game
+					title, paragraph, orderParagraph, id_game
 				)
 				VALUES (
-					:paragraphTitle2, :paragraph2, ( SELECT MAX(id) FROM game )
+					:paragraphTitle2, :paragraph2, :orderParagraph2, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO paragraph (
-					title, paragraph, id_game
+					title, paragraph, orderParagraph, id_game
 				)
 				VALUES (
-					:paragraphTitle3, :paragraph3, ( SELECT MAX(id) FROM game )
+					:paragraphTitle3, :paragraph3, :orderParagraph3, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO paragraph (
-					title, paragraph, id_game
+					title, paragraph, orderParagraph, id_game
 				)
 				VALUES (
-					:paragraphTitle4, :paragraph4, ( SELECT MAX(id) FROM game )
+					:paragraphTitle4, :paragraph4, :orderParagraph4, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO paragraph (
-					title, paragraph, id_game
+					title, paragraph, orderParagraph, id_game
 				)
 				VALUES (
-					:paragraphTitle5, :paragraph5, ( SELECT MAX(id) FROM game )
+					:paragraphTitle5, :paragraph5, :orderParagraph5, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO paragraph (
-					title, paragraph, id_game
+					title, paragraph, orderParagraph, id_game
 				)
 				VALUES (
-					:paragraphTitle6, :paragraph6, ( SELECT MAX(id) FROM game )
+					:paragraphTitle6, :paragraph6, :orderParagraph6, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO paragraph (
-					title, paragraph, id_game
+					title, paragraph, orderParagraph, id_game
 				)
 				VALUES (
-					:paragraphTitle7, :paragraph7, ( SELECT MAX(id) FROM game )
+					:paragraphTitle7, :paragraph7, :orderParagraph7, ( SELECT MAX(id) FROM game )
 				);
 				INSERT INTO category_game (
 					id_category, id_game
@@ -173,8 +173,6 @@ class DataBase extends PDO {
 				VALUES (
 					:platform, ( SELECT MAX(id) FROM game)
 				);
-
-
 				INSERT INTO type_requirement_game (
 					id_type, id_requirement, id_game, minimum, recomandation
 				)
@@ -269,9 +267,189 @@ class DataBase extends PDO {
 					id_type, id_requirement, id_game, minimum, recomandation
 				)
 				VALUES (
-					:typeIdRec8, :requireRec8, (SELECT MAX(id) FROM game), false, true
+					:typeIdRec7, :requireRec7, (SELECT MAX(id) FROM game), false, true
 				);
-
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageAudio0, (SELECT MAX(id) FROM game), true
+				);	
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageAudio1, (SELECT MAX(id) FROM game), true
+				);	
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageAudio2, (SELECT MAX(id) FROM game), true
+				);	
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageAudio3, (SELECT MAX(id) FROM game), true
+				);	
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageAudio4, (SELECT MAX(id) FROM game), true
+				);	
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText0, (SELECT MAX(id) FROM game), false
+				);	
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText1, (SELECT MAX(id) FROM game), false
+				);	
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText2, (SELECT MAX(id) FROM game), false
+				);	
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText3, (SELECT MAX(id) FROM game), false
+				);	
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText4, (SELECT MAX(id) FROM game), false
+				);	
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText5, (SELECT MAX(id) FROM game), false
+				);
+					
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText6, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText7, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText8, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText9, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageAudio5, (SELECT MAX(id) FROM game), true
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageAudio6, (SELECT MAX(id) FROM game), true
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageAudio7, (SELECT MAX(id) FROM game), true
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageAudio8, (SELECT MAX(id) FROM game), true
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageAudio9, (SELECT MAX(id) FROM game), true
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText10, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText11, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText12, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText13, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText14, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText15, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText16, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText17, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText18, (SELECT MAX(id) FROM game), false
+				);
+				INSERT INTO language_game (
+					id_language, id_game, isAudio
+				)
+				VALUES (
+					:languageText19, (SELECT MAX(id) FROM game), false
+				);
 				";
 
 			
@@ -286,26 +464,40 @@ class DataBase extends PDO {
 				":pegi" => $pegi,
 				":editor" => $editor,
 				":dev" => $dev,
+				":orderImg0" => $orderImg0,
 				":image0" => $image0["name"],
+				":orderImg1" => $orderImg1,
 				":image1" => $image1["name"],
+				":orderImg2" => $orderImg2,
 				":image2" => $image2["name"],
+				":orderImg3" => $orderImg3,
 				":image3" => $image3["name"],
+				":orderImg4" => $orderImg4,
 				":image4" => $image4["name"],
+				":orderImg5" => $orderImg5,
 				":image5" => $image5["name"],
+				":orderParagraph0" => $orderParagraph0,
 				":paragraphTitle0" => $paragraphTitle0,
 				":paragraph0" => $paragraph0,
+				":orderParagraph1" => $orderParagraph1,
 				":paragraphTitle1" => $paragraphTitle1,
 				":paragraph1" => $paragraph1,
+				":orderParagraph2" => $orderParagraph2,
 				":paragraphTitle2" => $paragraphTitle2,
 				":paragraph2" => $paragraph2,
+				":orderParagraph3" => $orderParagraph3,
 				":paragraphTitle3" => $paragraphTitle3,
 				":paragraph3" => $paragraph3,
+				":orderParagraph4" => $orderParagraph4,
 				":paragraphTitle4" => $paragraphTitle4,
 				":paragraph4" => $paragraph4,
+				":orderParagraph5" => $orderParagraph5,
 				":paragraphTitle5" => $paragraphTitle5,
 				":paragraph5" => $paragraph5,
+				":orderParagraph6" => $orderParagraph6,
 				":paragraphTitle6" => $paragraphTitle6,
 				":paragraph6" => $paragraph6,
+				":orderParagraph7" => $orderParagraph7,
 				":paragraphTitle7" => $paragraphTitle7,
 				":paragraph7" => $paragraph7,
 				":category0" => $category0,
@@ -313,7 +505,6 @@ class DataBase extends PDO {
 				":category2" => $category2,
 				":category3" => $category3,
 				":platform" => $platform,
-
 				":typeIdMin0" => $typeIdMin0,
 				":requireMin0" => $requireMin0,
 				":typeIdMin1" => $typeIdMin1,
@@ -336,7 +527,7 @@ class DataBase extends PDO {
 				":requireRec1" => $requireRec1,
 				":typeIdRec2" => $typeIdRec2,
 				":requireRec2" => $requireRec2,
-				":typeIdRec3" => $typeIdMin3,
+				":typeIdRec3" => $typeIdRec3,
 				":requireRec3" => $requireRec3,
 				":typeIdRec4" => $typeIdRec4,
 				":requireRec4" => $requireRec4,
@@ -346,13 +537,42 @@ class DataBase extends PDO {
 				":requireRec6" => $requireRec6,
 				":typeIdRec7" => $typeIdRec7,
 				":requireRec7" => $requireRec7,
-				
-				
+				":languageAudio0" => $languageAudio0,
+				":languageAudio1" => $languageAudio1,
+				":languageAudio2" => $languageAudio2,
+				":languageAudio3" => $languageAudio3,
+				":languageAudio4" => $languageAudio4,
+				":languageText0" => $languageText0,
+				":languageText1" => $languageText1,
+				":languageText2" => $languageText2,
+				":languageText3" => $languageText3,
+				":languageText4" => $languageText4,
+				":languageText5" => $languageText5,
+				":languageText6" => $languageText6,
+				":languageText7" => $languageText7,
+				":languageText8" => $languageText8,
+				":languageText9" => $languageText9,
+				":languageAudio5" => $languageAudio5,
+				":languageAudio6" => $languageAudio6,
+				":languageAudio7" => $languageAudio7,
+				":languageAudio8" => $languageAudio8,
+				":languageAudio9" => $languageAudio9,
+				":languageText10" => $languageText10,
+				":languageText11" => $languageText11,
+				":languageText12" => $languageText12,
+				":languageText13" => $languageText13,
+				":languageText14" => $languageText14,
+				":languageText15" => $languageText15,
+				":languageText16" => $languageText16,
+				":languageText17" => $languageText17,
+				":languageText18" => $languageText18,
+				":languageText19" => $languageText19,
 			]);
 		}
 		catch(\Exception $e) {
 			throw new \Exception($e->getMessage());
 		}
+
 		/* 
 		var_dump($category0);
 		var_dump($category1);
