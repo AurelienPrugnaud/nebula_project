@@ -1,8 +1,8 @@
 ////////////////CAROUSEL HOME PAGE START //////////////////////////
-const slide = document.querySelectorAll('.cont-img');
-slide[0].classList.add('active');
 function nextSlide() {
-
+  const slide = document.querySelectorAll('.cont-img');
+  slide[0].classList.add('active');
+  
   const nbSlides = slide.length;
   let count = 0;
 
@@ -16,69 +16,76 @@ function nextSlide() {
 }
 
 setInterval(nextSlide, 6000);
-
 ////////////////CAROUSEL HOME PAGE END //////////////////////////
 
 ////////////////CAROUSEL GAME PAGE START //////////////////////////
 
+const iframe = document.getElementById('iframe');
+const img = document.querySelector('.img-game');
+const imgMin1 = document.getElementById('img-game-mini1');
+const imgMin2 = document.getElementById('img-game-mini2');
+const imgMin3 = document.getElementById('img-game-mini3');
+const imgMin4 = document.getElementById('img-game-mini4');
+const imgMin5 = document.getElementById('img-game-mini5');
+
 (function changeImg() {
 
-  const iframe = document.getElementsByTagName('iframe');
-  const img = document.getElementsByClassName('img-game');
-  const imgMin1 = document.getElementsByClassName('img-game-mini1');
-  const imgMin2 = document.getElementsByClassName('img-game-mini2');
-  const imgMin3 = document.getElementsByClassName('img-game-mini3');
-  const imgMin4 = document.getElementsByClassName('img-game-mini4');
-  const imgMin5 = document.getElementsByClassName('img-game-mini5');
+      imgMin1.addEventListener('click', function() {
+        iframe.classList.remove('disable');
+        iframe.classList.add('active');
 
-      imgMin1[0].addEventListener('click', function() {
-        iframe[0].classList.remove('disable');
-        iframe[0].classList.add('active');
-
-        img[0].classList.remove('active');
-        img[0].classList.add('disable');
+        img.classList.remove('active');
+        img.classList.add('disable');
       })
 
-      imgMin2[0].addEventListener('click', function () {
-        iframe[0].classList.remove('active');
-        iframe[0].classList.add('disable');
+      imgMin2.addEventListener('click', function () {
+        iframe.classList.remove('active');
+        iframe.classList.add('disable');
 
-        img[0].classList.remove('disable');
-        img[0].classList.add('active');
+        img.classList.remove('disable');
+        img.classList.add('active');
 
-        img[0].src = imgMin2[0].src;
+        img.src = imgMin2.src;
       })
 
-      imgMin3[0].addEventListener('click', function () {
-        iframe[0].classList.remove('active');
-        iframe[0].classList.add('disable');
+      imgMin3.addEventListener('click', function () {
+        iframe.classList.remove('active');
+        iframe.classList.add('disable');
 
-        img[0].classList.remove('disable');
-        img[0].classList.add('active');
+        img.classList.remove('disable');
+        img.classList.add('active');
 
-        img[0].src = imgMin3[0].src;
+        img.src = imgMin3.src;
       })
 
-      imgMin4[0].addEventListener('click', function () {
-        iframe[0].classList.remove('active');
-        iframe[0].classList.add('disable');
+      imgMin4.addEventListener('click', function () {
+        iframe.classList.remove('active');
+        iframe.classList.add('disable');
 
-        img[0].classList.remove('disable');
-        img[0].classList.add('active');
+        img.classList.remove('disable');
+        img.classList.add('active');
 
-        img[0].src = imgMin4[0].src;
+        img.src = imgMin4.src;
       })
 
-      imgMin5[0].addEventListener('click', function () {
-        iframe[0].classList.remove('active');
-        iframe[0].classList.add('disable');
+      imgMin5.addEventListener('click', function () {
+        iframe.classList.remove('active');
+        iframe.classList.add('disable');
 
-        img[0].classList.remove('disable');
-        img[0].classList.add('active');
+        img.classList.remove('disable');
+        img.classList.add('active');
 
-        img[0].src = imgMin5[0].src;
+        img.src = imgMin5.src;
       })
 })();
+
+console.log(iframe);
+console.log(img);
+console.log(imgMin1);
+console.log(imgMin2);
+console.log(imgMin3);
+console.log(imgMin4);
+console.log(imgMin5);
 
 ////////////////CAROUSEL GAME PAGE END //////////////////////////
 
@@ -86,19 +93,19 @@ setInterval(nextSlide, 6000);
 
 (function showCollapse() {
 
-  const button = document.getElementsByClassName('collapsible');
-  const content = document.getElementsByClassName('content');
+  const button = document.getElementById('buttonCollapse');
+  const content = document.getElementById('content');
 
-  console.log(button[0]);
-  console.log(content[0]);
+  console.log(button);
+  console.log(content);
 
-  button[0].addEventListener('click', function () {
-    if (content[0].style.display === 'block') {
-      content[0].style.display = 'none';
-      button[0].innerHTML = 'Voir plus';
+  button.addEventListener('click', function () {
+    if (content.style.display === 'block') {
+      content.style.display = 'none';
+      button.innerHTML = 'Voir plus';
     } else {
-      content[0].style.display = 'block';
-      button[0].innerHTML = 'Voir moins';
+      content.style.display = 'block';
+      button.innerHTML = 'Voir moins';
     }
   });
 })();

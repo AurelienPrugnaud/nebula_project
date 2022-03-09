@@ -152,7 +152,7 @@ class Game {
      * @return false|string
      */
     public function getGamesList() {
-        $sqlQuery = 'SELECT * FROM game ORDER BY id';
+        $sqlQuery = 'SELECT * FROM game INNER JOIN image on game.id = image.id_game;';
         try {
             $games = $this->dbc->selectAll($sqlQuery);
 

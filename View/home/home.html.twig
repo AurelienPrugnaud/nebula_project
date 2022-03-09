@@ -14,9 +14,11 @@
                                     <div class="d-flex justify-content-start mb-lg-3 mb-md-1">
                                         <img class="logo-game" src="/assets/public/img/games/god_war_logo.png" alt="">
                                     </div>
+                                    {% if date(game.releaseDate) > date() %}
                                     <p class="date">
                                         Disponible le {{ game.releaseDate|date('d/m/Y') }}
                                     </p>
+                                    {% endif %}
                                     <p>
                                         {{game.hook}}
                                     </p>
@@ -40,21 +42,18 @@
                             </a>
                         </div>
                         <div class="row">
-                            {% for game in games|slice(0, 2) %}
-                            {% for image in images|slice(0, 1) %}                             
-                            {% if image.id_game in game.id %}
+                            {% for game in games %}
                                 
                             <div class="border-card-hover col-lg-6 col-md-12">
                                 <div class="card-game">
-                                    <img class="img-discoveries" src={{'/assets/public/img/games/'~image.name}}
+                                    <img class="img-discoveries" src={{'/assets/public/img/games/'~game.name}}
                                         alt="blabla">
                                     <h2 class="t-game">{{game.name}}</h2>
                                     <p class="">{{game.hook}}</p>
-                                    <p class="">{{game.price}} €</p>
+                                    <p class="">{{ game.price|replace({'.' : ','}) }} €</p>
                                 </div>
                             </div>
-                            {% endif %}
-                            {% endfor %}
+                            
                             {% endfor %}
                         </div>
                     </div>
@@ -80,7 +79,7 @@
                                                     alt="god of war">
                                                 <div>
                                                     <h2 class="t-game">{{game.name}}</h2>
-                                                    <p>{{game.price}} €</p>
+                                                    <p>{{ game.price|replace({'.' : ','}) }} €</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -113,7 +112,7 @@
                                                             alt="god of war">
                                                         <div>
                                                             <h2 class="t-game">{{game.name}}</h2>
-                                                            <p>{{game.price}} €</p>
+                                                            <p>{{ game.price|replace({'.' : ','}) }} €</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -139,6 +138,7 @@
                                                             </a>
                                                         </div>
                                                         {% for game in games %}
+                                                        {% if date(game.releaseDate) > date() %}
                                                         <div class="border-card-hover">
                                                             <div class="d-flex align-items-center card-game">
                                                                 <img class="img-midsection me-3"
@@ -147,10 +147,11 @@
                                                                 <div>
                                                                     <h2 class="t-game">{{game.name}}</h2>
                                                                     <p>Disponible le {{ game.releaseDate|date('d/m/Y') }}</p>
-                                                                    <p>{{game.price}} €</p>
+                                                                    <p>{{ game.price|replace({'.' : ','}) }} €</p>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        {% endif %}
                                                         {% endfor %}
 
                                                     </div>
@@ -181,7 +182,7 @@
                                                         alt="Final Fantasy">
                                                     <h2 class="t-game">{{game.name}}</h2>
                                                     <p class="">{{game.hook}}</p>
-                                                    <p class="">{{game.price}} €</p>
+                                                    <p class="">{{ game.price|replace({'.' : ','}) }} €</p>
                                                 </div>
                                             </div>
                                             {% endfor %}

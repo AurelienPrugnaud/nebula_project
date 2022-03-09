@@ -3,34 +3,37 @@
 {% block content %}
 <! -- //////////////////////////////MAIN START//////////////////////////////////////// -->
     <main class="container white-page">
-        {% for game in games|slice(0, 1) %}
+        {% for game in games|slice(0,1) %}
         
 
         <h1 class="t-game2">{{game.name}}</h1>
         <div class="row">
             <div class="col-lg-9"> 
                 <div class="section">
-                    <iframe class="active mb-4"  width="100%" height="543"
+                    <iframe id="iframe" class="active mb-4"  width="100%" height="543"
                         src="{{game.youtubeLink}}" title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                    <img class="img-game mb-4 disable" src="../assets/img/games/god_of_war/god_of_war.png" alt="god of war">
+                        allowfullscreen>
+                    </iframe>
+                    <img id="img-game" class="img-game mb-4 disable" src="../assets/public/img/games/god_of_war.png" alt="god of war">
                     <div class="d-flex align-items-center justify-content-between section">
-                        <img class="img-game-mini1" src="../assets/img/games/godofwarYoutube.png" alt="">
-                        <img class="img-game-mini2" src="../assets/img/games/god_of_war.png" alt="">
-                        <img class="img-game-mini3" src="../assets/img/games/god_of_war_miniature1.png" alt="">
-                        <img class="img-game-mini4" src="../assets/img/games/god_of_war_miniature2.png" alt="">
-                        <img class="img-game-mini5" src="../assets/img/games/god_of_war_miniature3.png" alt="">
+                        <img id="img-game-mini1" class="img-game-mini1" src="../assets/public/img/games/godofwarYoutube.png" alt="">
+                        <img id="img-game-mini2" class="img-game-mini2" src="../assets/public/img/games/god_of_war.png" alt="">
+                        <img id="img-game-mini3" class="img-game-mini3" src="../assets/public/img/games/god_of_war_miniature1.png" alt="">
+                        <img id="img-game-mini4" class="img-game-mini4" src="../assets/public/img/games/god_of_war_miniature2.png" alt="">
+                        <img id="img-game-mini5" class="img-game-mini5" src="../assets/public/img/games/god_of_war_miniature3.png" alt="">
                     </div>
 
                     <div class="section">
-                        {% for paragraph in paragraphs|slice(0, 1) %}                             
+                        {% for paragraph in paragraphs|slice(0, 1) %}
+                        {% if paragraph.id_game in game.id %}
 
                         <p class="description">
-                            {{paragraph.paragraph}}
+                            {{ paragraph.paragraph }}
                         </p>
 
+                        {% endif %}
                         {% endfor %}
                     </div>
                     <div class="section">
@@ -50,9 +53,9 @@
                         {% endif %}
                         {% endfor %}
 
-                        <div class="content">
+                        <div id="content" class="content">
                             {% for paragraph in paragraphs|slice(3, 5) %}                             
-                            {% if condition %}
+                            {% if paragraph.id_game in game.id %}
                                 <h3 class="t-description">{{ paragraph.title}}</h3>
                                 <p class="description2">
                                     {{ paragraph.paragraph }}
@@ -63,11 +66,11 @@
 
                         <div class="d-flex justify-content-center">
                             <div class="border-button-game-page">
-                                <button class="button-game-page collapsible">
+                                <button id="buttonCollapse" class="button-game-page collapsible">
                                     Voir plus
                                 </button>
                             </div>
-                        </div> #}
+                        </div>
                     </div>
                 </div>
                 <div class="section">
@@ -157,7 +160,7 @@
                 <div class="border-card">
                     <div class="card-game">
                         <div class="d-flex justify-content-center mb-3">
-                            <img class="logo-game" src="../assets/img/games/god_of_war/god_war_logo.png" alt="">
+                            <img class="logo-game" src="../assets/public/img/games/god_war_logo.png" alt="">
                         </div>
                         <span class="mb-3">
                             Genre
@@ -177,7 +180,7 @@
                             </span>
                         </div>
                         <p>
-                            49,99 €
+                            {{ game.price|replace({'.' : ','}) }} €
                         </p>
                         <a href="/cart">
                             <div class="border-button-game-page mb-3">
@@ -186,25 +189,37 @@
                                 </button>
                             </div>
                         </a>
-                        <div class="mb-3">
-                            <img class="logo-pegi" src="../assets/img/pegis/pegi18.png" alt="">
-                            <span>{{game.id_pegi}}</span>
-                        </div>
+                        {% for pegi in pegis %}
+                            {% if pegi.id in game.id_pegi %}
+                            <div class="mb-3">
+                                <img class="logo-pegi" src="{{'../assets/public/img/pegis/'~pegi.img}}" alt="">
+                                <span>{{pegi.name}}</span>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
                         <div class="d-flex justify-content-between">
                             <span class="left-card-game">
                                 Développeur
                             </span>
-                            <span class="right-card-game">
-                                {{game.id_developper}}
-                            </span>
+                            {% for developper in developpers %}
+                                {% if developper.id in game.id_developper %}
+                                <span class="right-card-game">
+                                    {{developper.name}}
+                                </span>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                         <div class="d-flex justify-content-between">
                             <span class="left-card-game">
-                                Éditeur
+                                Editeur
                             </span>
-                            <span class="right-card-game">
-                                {{game.id_editor}}
-                            </span>
+                            {% for editor in editors %}
+                                {% if editor.id in game.id_editor %}
+                                <span class="right-card-game">
+                                    {{editor.name}}
+                                </span>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                         <div class="d-flex justify-content-between">
                             <span class="left-card-game">

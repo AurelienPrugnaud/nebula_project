@@ -12,6 +12,7 @@
     use \Aurelien\Nebula\Language;
     use \Aurelien\Nebula\Image;
     use \Aurelien\Nebula\Paragraph;
+    use \Aurelien\Nebula\Type;
 
     class PageController {
 
@@ -38,6 +39,8 @@
             $this->images = $this->image->getImagesList();
             $this->paragraph = new Paragraph;
             $this->paragraphs = $this->paragraph->getParagraphsList();
+            $this->type = new Type;
+            $this->types = $this->type->getTypesList();
             $this->get_data();
             $this->data = array_merge($this->data, $data);
             $this->render($file, $this->data);
@@ -58,7 +61,8 @@
                 'requirements' => $this->requirements,
                 'languages' => $this->languages,
                 'images' => $this->images,
-                'paragraphs' => $this->paragraphs
+                'paragraphs' => $this->paragraphs,
+                'types' => $this->types
             ];
 
             return $this->data;

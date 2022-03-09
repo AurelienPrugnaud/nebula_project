@@ -48,7 +48,8 @@ class DataBase extends PDO {
 		$statement->execute();
 	}
 
-	public function insertGame($title, $releaseDate, $price, $hook, $youtube, $addDate, $pegi, $editor, $category0, $category1, $category2, $category3, $dev, $image0, $image1, $image2, $image3, $image4, $image5, $paragraphTitle0, $paragraph0, $paragraphTitle1, $paragraph1, $paragraphTitle2, $paragraph2, $paragraphTitle3, $paragraph3, $paragraphTitle4, $paragraph4, $paragraphTitle5, $paragraph5, $paragraphTitle6, $paragraph6, $paragraphTitle7, $paragraph7) 
+	public function insertGame(
+		$title, $releaseDate, $price, $hook, $youtube, $addDate, $pegi, $editor, $dev, $platform, $category0, $category1, $category2, $category3,  $image0, $image1, $image2, $image3, $image4, $image5, $paragraphTitle0, $paragraph0, $paragraphTitle1, $paragraph1, $paragraphTitle2, $paragraph2, $paragraphTitle3, $paragraph3, $paragraphTitle4, $paragraph4, $paragraphTitle5, $paragraph5, $paragraphTitle6, $paragraph6, $paragraphTitle7, $paragraph7, $typeIdMin0, $requireMin0, $typeIdMin1, $requireMin1, $typeIdMin2, $requireMin2, $typeIdMin3, $requireMin3, $typeIdMin4, $requireMin4, $typeIdMin5, $requireMin5, $typeIdMin6, $requireMin6, $typeIdMin7, $requireMin7, $typeIdRec0, $requireRec0, $typeIdRec1, $requireRec1, $typeIdRec2, $requireRec2, $typeIdRec3, $requireRec3, $typeIdRec4, $requireRec4, $typeIdRec5, $requireRec5, $typeIdRec6, $requireRec6, $typeIdRec7, $requireRec7) 
 	{
 		try {
 			$request = "
@@ -166,6 +167,111 @@ class DataBase extends PDO {
 				VALUES (
 					:category3, ( SELECT MAX(id) FROM game )
 				);
+				INSERT INTO platform_game (
+					id_platform, id_game
+				)
+				VALUES (
+					:platform, ( SELECT MAX(id) FROM game)
+				);
+
+
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdMin0, :requireMin0, (SELECT MAX(id) FROM game), true, false
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdMin1, :requireMin1, (SELECT MAX(id) FROM game), true, false
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdMin2, :requireMin2, (SELECT MAX(id) FROM game), true, false
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdMin3, :requireMin3, (SELECT MAX(id) FROM game), true, false
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdMin4, :requireMin4, (SELECT MAX(id) FROM game), true, false
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdMin5, :requireMin5, (SELECT MAX(id) FROM game), true, false
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdMin6, :requireMin6, (SELECT MAX(id) FROM game), true, false
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdMin7, :requireMin7, (SELECT MAX(id) FROM game), true, false
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdRec0, :requireRec0, (SELECT MAX(id) FROM game), false, true
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdRec1, :requireRec1, (SELECT MAX(id) FROM game), false, true
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdRec2, :requireRec2, (SELECT MAX(id) FROM game), false, true
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdRec3, :requireRec3, (SELECT MAX(id) FROM game), false, true
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdRec4, :requireRec4, (SELECT MAX(id) FROM game), false, true
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdRec5, :requireRec5, (SELECT MAX(id) FROM game), false, true
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdRec6, :requireRec6, (SELECT MAX(id) FROM game), false, true
+				);
+				INSERT INTO type_requirement_game (
+					id_type, id_requirement, id_game, minimum, recomandation
+				)
+				VALUES (
+					:typeIdRec8, :requireRec8, (SELECT MAX(id) FROM game), false, true
+				);
+
 				";
 
 			
@@ -206,6 +312,41 @@ class DataBase extends PDO {
 				":category1" => $category1,
 				":category2" => $category2,
 				":category3" => $category3,
+				":platform" => $platform,
+
+				":typeIdMin0" => $typeIdMin0,
+				":requireMin0" => $requireMin0,
+				":typeIdMin1" => $typeIdMin1,
+				":requireMin1" => $requireMin1,
+				":typeIdMin2" => $typeIdMin2,
+				":requireMin2" => $requireMin2,
+				":typeIdMin3" => $typeIdMin3,
+				":requireMin3" => $requireMin3,
+				":typeIdMin4" => $typeIdMin4,
+				":requireMin4" => $requireMin4,
+				":typeIdMin5" => $typeIdMin5,
+				":requireMin5" => $requireMin5,
+				":typeIdMin6" => $typeIdMin6,
+				":requireMin6" => $requireMin6,
+				":typeIdMin7" => $typeIdMin7,
+				":requireMin7" => $requireMin7,
+				":typeIdRec0" => $typeIdRec0,
+				":requireRec0" => $requireRec0,
+				":typeIdRec1" => $typeIdRec1,
+				":requireRec1" => $requireRec1,
+				":typeIdRec2" => $typeIdRec2,
+				":requireRec2" => $requireRec2,
+				":typeIdRec3" => $typeIdMin3,
+				":requireRec3" => $requireRec3,
+				":typeIdRec4" => $typeIdRec4,
+				":requireRec4" => $requireRec4,
+				":typeIdRec5" => $typeIdRec5,
+				":requireRec5" => $requireRec5,
+				":typeIdRec6" => $typeIdRec6,
+				":requireRec6" => $requireRec6,
+				":typeIdRec7" => $typeIdRec7,
+				":requireRec7" => $requireRec7,
+				
 				
 			]);
 		}

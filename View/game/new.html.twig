@@ -121,7 +121,7 @@
                             <div class="mb-3">
                                 <label for="editor" class="form-label">Plateforme</label>
                                 <div class="border-button mb-3">
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select name="platform" class="form-select" aria-label="Default select example">
                                         <option selected>Choisissez une plateforme</option>
                                         {% for platform in platforms %}
                                         <option value="{{ platform.id }}">{{ platform.name }}</option>
@@ -147,31 +147,41 @@
                                 <input name="youtube" type="text" class="form-control" id="youtubeLink" aria-describedby="" placeholder="Lien Youtube">
                             </div>
                         </div>
-                        {% for i in 0..1 %}
                         <div class="mb-3">
-                            <label for="{{ "image"~i }}" class="form-label">Image</label>
+                            <label for="image4" class="form-label">Image miniature Youtube</label>
+                            <div class="border-button mb-3">
+                                <input name="image4" class="form-control" type="file" id="image3">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image2" class="form-label">Logo</label>
+                            <div class="border-button">
+                                <input name="image5" class="form-control" type="file" id="image2">
+                            </div>
+                        </div>                 
+                        {% for i in 0..0 %}
+                        <div class="mb-3">
+                            {% if (i == 0) %}
+                            <label for="{{ "image"~i }}" class="form-label">Image principale</label>
+                            {% endif %}
+                            {% if (i > 0) %}
+                            <label for="{{ "image"~i }}" class="form-label">Image secondaire</label>
+                            {% endif %}
                             <div class="border-button">
                                 <input name="{{ "image"~i }}" class="form-control" type="file" id="{{ "image"~i }}">
                             </div>
                         </div>
-                        {% endfor %}
-                        <div class="mb-3">
-                            <label for="image2" class="form-label">Logo</label>
-                            <div class="border-button">
-                                <input name="image2" class="form-control" type="file" id="image2">
-                            </div>
-                        </div>
+                        {% endfor %}       
                     </div>
                     <div class="col-6">
+                        {% for i in 1..3 %}
                         <div class="mb-3">
-                            <label for="image3" class="form-label">Image miniature Youtube</label>
-                            <div class="border-button mb-3">
-                                <input name="image3" class="form-control" type="file" id="image3">
-                            </div>
-                        </div>
-                        {% for i in 4..5 %}
-                        <div class="mb-3">
-                            <label for="{{ "image"~i }}" class="form-label">Image</label>
+                            {% if (i == 0) %}
+                            <label for="{{ "image"~i }}" class="form-label">Image principale</label>
+                            {% endif %}
+                            {% if (i > 0) %}
+                            <label for="{{ "image"~i }}" class="form-label">Image secondaire</label>
+                            {% endif %}
                             <div class="border-button">
                                 <input name="{{ "image"~i }}" class="form-control" type="file" id="{{ "image"~i }}">
                             </div>
@@ -223,11 +233,13 @@
                 </div>
                 <div class="row">
                     <div class="col-6">
+                        {% for i, type in types %}
                         <div class="mb-3">
-                            <label for="requirement0" class="form-label">Système d'xploitation minimum</label>
+                            <input name="{{"typeIdMin"~i}}" type="hidden" value="{{type.id}}">
+                            <label for="{{"requireMin"~i}}" class="form-label">{{type.name}} minimum</label>
                             <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez un ystème d'xploitation minimum</option>
+                                <select name="{{"requireMin"~i}}" class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez un {{type.name}} minimum</option>
                                     {% for requirement in requirements %}
                                     <option value="{{ requirement.id }}">{{ requirement.name }}</option>
                                     {% else %}
@@ -236,104 +248,16 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="requirement1" class="form-label">Processeur Intel minimum</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez un processeur minimum</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirement2" class="form-label">Processeur AMD minimum</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez un processeur minimum</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirement3" class="form-label">Mémoire vive minimum</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une mémoire vive minimum</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirement4" class="form-label">Stockage minimum</label>
-                            <div class="border-button mb-3">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez un stockage minimum</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirement5" class="form-label">DirectX minimum</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez un DirectX minimum</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirement6" class="form-label">Carte graphique NVIDIA minimum</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une carte graphique minimum</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirement7" class="form-label">Carte graphique AMD minimum</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une carte graphique minimum</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                     <div class="col-6">
+                        {% for i, type in types %}
                         <div class="mb-3">
-                            <label for="requirement8" class="form-label">Système d'xploitation recommandé</label>
+                            <input name="{{"typeIdRec"~i}}" type="hidden" value="{{type.id}}">
+                            <label for="{{"requireRec"~i}}" class="form-label">{{type.name}} recommandé</label>
                             <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez un ystème d'xploitation recommandé</option>
+                                <select name="{{"requireRec"~i}}" class="form-select" aria-label="Default select example">
+                                    <option selected>Choisissez un {{type.name}} recommandé</option>
                                     {% for requirement in requirements %}
                                     <option value="{{ requirement.id }}">{{ requirement.name }}</option>
                                     {% else %}
@@ -342,97 +266,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="requirement9" class="form-label">Processeur Intel recommandé</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez un processeur recommandé</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirement10" class="form-label">Processeur AMD recommandé</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez un processeur recommandé</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirement11" class="form-label">Mémoire vive recommandé</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une mémoire vive recommandé</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirement12" class="form-label">Stockage recommandé</label>
-                            <div class="border-button mb-3">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez un stockage recommandé</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirement13" class="form-label">DirectX recommandé</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez un DirectX recommandé</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirement14" class="form-label">Carte graphique NVIDIA recommandé</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une carte graphique recommandé</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirement15" class="form-label">Carte graphique AMD recommandé</label>
-                            <div class="border-button">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Choisissez une carte graphique recommandé</option>
-                                    {% for requirement in requirements %}
-                                    <option value="{{ requirement.id }}">{{ requirement.name }}</option>
-                                    {% else %}
-                                    <option>Aucune configuration trouver en base de donnée</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="d-flex align-items-center mb-3">
