@@ -153,47 +153,118 @@ class Game {
      */
     public function getGamesList() {
     $sqlQuery = 'SELECT
-    G.id,
-    G.name,
-    G.releaseDate,
-    G.addDate,
-    G.hook,
-    G.price,
-    E.name as editorName,
-    D.name as developperName,
-    I0.name as image0,
-    I5.name as image5
-FROM game G
-LEFT JOIN editor E on G.id_editor = E.id
-LEFT JOIN developper D on G.id_developper = D.id
-LEFT JOIN image I0 on I0.id_game = G.id AND I0.orderImg = 0
-LEFT JOIN image I5 on I5.id_game = G.id and I5.orderImg = 5;
-';
+        G.id,
+        G.name,
+        G.releaseDate,
+        G.addDate,
+        G.hook,
+        G.price,
+        E.name as editorName,
+        D.name as developperName,
+        I0.name as image0,
+        I5.name as image5
+    FROM game G
+    LEFT JOIN editor E on G.id_editor = E.id
+    LEFT JOIN developper D on G.id_developper = D.id
+    LEFT JOIN image I0 on I0.id_game = G.id AND I0.orderImg = 0
+    LEFT JOIN image I5 on I5.id_game = G.id and I5.orderImg = 5
+    ORDER BY RAND()';
+
+/*     $sqlQuery = 'SELECT
+        G.id,
+        G.name,
+        G.releaseDate,
+        G.youtubeLink,
+        G.addDate,
+        G.hook,
+        G.price,
+        E.name as editorName,
+        D.name as developperName,
+        P.name as pegiName,
+    	P.img as pegiImg,
+        I0.name as image0,
+        I1.name as image1,
+        I2.name as image2,
+        I3.name as image3,
+        I4.name as image4,
+        I5.name as image5,
+        PT0.title as title0,
+        PA0.paragraph as para0,
+        PT1.title as title1,
+        PA1.paragraph as para1,
+        PT2.title as title2,
+        PA2.paragraph as para2,
+        PT3.title as title3,
+        PA3.paragraph as para3,
+        PT4.title as title4,
+        PA4.paragraph as para4,
+        PT5.title as title5,
+        PA5.paragraph as para5,
+        PT6.title as title6,
+        PA6.paragraph as para6,
+        PT7.title as title7,
+        PA7.paragraph as para7
+    FROM game G
+    LEFT JOIN editor E on G.id_editor = E.id
+    LEFT JOIN developper D on G.id_developper = D.id
+    LEFt JOIN pegi P on G.id_pegi = P.id
+    LEFT JOIN image I0 on I0.id_game = G.id AND I0.orderImg = 0
+    LEFT JOIN image I1 on I1.id_game = G.id AND I1.orderImg = 1
+    LEFT JOIN image I2 on I2.id_game = G.id AND I2.orderImg = 2
+    LEFT JOIN image I3 on I3.id_game = G.id AND I3.orderImg = 3
+    LEFT JOIN image I4 on I4.id_game = G.id AND I4.orderImg = 4
+    LEFT JOIN image I5 on I5.id_game = G.id and I5.orderImg = 5
+    LEFT JOIN paragraph PT0 ON PT0.id_game = G.id AND PT0.orderParagraph = 0
+    LEFT JOIN paragraph PA0 ON PA0.id_game = G.id AND PA0.orderParagraph = 0
+    LEFT JOIN paragraph PT1 ON PT1.id_game = G.id AND PT1.orderParagraph = 1
+    LEFT JOIN paragraph PA1 ON PA1.id_game = G.id AND PA1.orderParagraph = 1
+    LEFT JOIN paragraph PT2 ON PT2.id_game = G.id AND PT2.orderParagraph = 2
+    LEFT JOIN paragraph PA2 ON PA2.id_game = G.id AND PA2.orderParagraph = 2
+    LEFT JOIN paragraph PT3 ON PT3.id_game = G.id AND PT3.orderParagraph = 3
+    LEFT JOIN paragraph PA3 ON PA3.id_game = G.id AND PA3.orderParagraph = 3
+    LEFT JOIN paragraph PT4 ON PT4.id_game = G.id AND PT4.orderParagraph = 4
+    LEFT JOIN paragraph PA4 ON PA4.id_game = G.id AND PA4.orderParagraph = 4
+    LEFT JOIN paragraph PT5 ON PT5.id_game = G.id AND PT5.orderParagraph = 5
+    LEFT JOIN paragraph PA5 ON PA5.id_game = G.id AND PA5.orderParagraph = 5
+    LEFT JOIN paragraph PT6 ON PT6.id_game = G.id AND PT6.orderParagraph = 6
+    LEFT JOIN paragraph PA6 ON PA6.id_game = G.id AND PA6.orderParagraph = 6
+    LEFT JOIN paragraph PT7 ON PT7.id_game = G.id AND PT7.orderParagraph = 7
+    LEFT JOIN paragraph PA7 ON PA7.id_game = G.id AND PA7.orderParagraph = 7
+	Where G.id = 1';
+
+    $sqlQuery2 = 'SELECT 
+        P.name as platformName
+    FROM platform_game PG
+    INNER JOIN platform P on P.id = PG.id_platform
+    WHERE PG.id_game = 1;
+    '; */
+
         try {
-            $games = $this->dbc->selectAll($sqlQuery);
+            $game = $this->dbc->selectAll($sqlQuery);
+            //$game2 = $this->dbc->selectAll($sqlQuery2);
 
         } catch(\Exception $e) {
             throw new \Exception($e);
         };
 
         /* echo '<pre>';
-            print_r($games);
+            print_r($game);
+            print_r($game2);
         echo '<pre>';
-        exit;  */
+        exit; */  
 
-        return $games;
+        return $game;
+        //return $game2;
 
         
     }
-
-     
 
     /**
      * @param $dbc
      * @param $id
      * @return false|string
      */
-    public function getGameById($dbc, $id) {
+    public function getGameById($id) {
         //$sqlQuery = 'SELECT id, name FROM game WHERE id = :id';
         $sqlQuery = 'SELECT
         G.id,
@@ -257,8 +328,7 @@ LEFT JOIN image I5 on I5.id_game = G.id and I5.orderImg = 5;
 	Where g.id = :id;';
         $bindParam = array('id' => $id);
         $gameById = $dbc->select($sqlQuery, $bindParam);
-        $gameByIdJson = json_encode($gameById);
-        return $gameByIdJson;
+        return $gameById;
     }
 
     /**
@@ -305,4 +375,20 @@ LEFT JOIN image I5 on I5.id_game = G.id and I5.orderImg = 5;
         $gameJson = json_encode($user);
         return $gameJson;
     }
+
+
+    function array_flatten($array) { 
+        if (!is_array($array)) { 
+          return false; 
+        } 
+        $result = array(); 
+        foreach ($array as $key => $value) { 
+          if (is_array($value)) { 
+            $result = array_merge($result, array_flatten($value)); 
+          } else { 
+            $result = array_merge($result, array($key => $value));
+          } 
+        } 
+        return $result; 
+      }
 }

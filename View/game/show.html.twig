@@ -4,8 +4,6 @@
 <! -- //////////////////////////////MAIN START//////////////////////////////////////// -->
     <main class="container white-page">
         {% for game in games|slice(0,1) %}
-        
-
         <h1 class="t-game2">{{game.name}}</h1>
         <div class="row">
             <div class="col-lg-9"> 
@@ -212,8 +210,12 @@
                             <span class="left-card-game">
                                 Plateforme
                             </span>
-                            <span class="iconify" data-icon="ant-design:windows-filled" style="color: white;">
-                            </span>
+                            {% for platform in platforms %}
+                            <span>{{ platform.0.platformName }}</span>
+                            {% else %}
+                            <span>pete les couilles !</span>
+                            {% endfor %}
+                            {# <span class="iconify" data-icon="ant-design:windows-filled" style="color: white;"></span> #}
                         </div>
                     </div>
                 </div>

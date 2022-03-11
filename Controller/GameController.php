@@ -7,7 +7,7 @@
     use Aurelien\Nebula\Database;
     use Aurelien\Nebula\Game;
     use Aurelien\Nebula\Image;
-
+    
 
     try {
         if ($_SERVER["REQUEST_METHOD"] === "POST"):

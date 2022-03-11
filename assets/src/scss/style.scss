@@ -55,13 +55,20 @@ main {
                 border-radius: 20px;
                 background: $gradient-43deg;
                 padding: 5px;
-                color: $white;
             }
 
-            div.card-game {
-                background-color: $background;
-                border-radius: 20px;
-                padding: 10px;
+            a {
+                text-decoration: none;
+                color: #7E7E7E;
+
+                &:hover {
+                    color: $white;
+                }
+                div.card-game {
+                    background-color: $background;
+                    border-radius: 20px;
+                    padding: 10px;
+                }
             }
         }
 
