@@ -152,25 +152,10 @@ class Game {
      * @return false|string
      */
     public function getGamesList() {
-    $sqlQuery = 'SELECT
-        G.id,
-        G.name,
-        G.releaseDate,
-        G.addDate,
-        G.hook,
-        G.price,
-        E.name as editorName,
-        D.name as developperName,
-        I0.name as image0,
-        I5.name as image5
-    FROM game G
-    LEFT JOIN editor E on G.id_editor = E.id
-    LEFT JOIN developper D on G.id_developper = D.id
-    LEFT JOIN image I0 on I0.id_game = G.id AND I0.orderImg = 0
-    LEFT JOIN image I5 on I5.id_game = G.id and I5.orderImg = 5
-    ORDER BY RAND()';
+    $sqlQuery = 'SELECT G.id, G.name, G.releaseDate, G.addDate, G.hook, G.price, E.name as editorName, D.name as developperName, I0.name as image0, I5.name as image5
+    FROM game G LEFT JOIN editor E on G.id_editor = E.id LEFT JOIN developper D on G.id_developper = D.id LEFT JOIN image I0 on I0.id_game = G.id AND I0.orderImg = 0 LEFT JOIN image I5 on I5.id_game = G.id and I5.orderImg = 5 ORDER BY RAND()';
 
-/*     $sqlQuery = 'SELECT
+    /* $sqlQueryGame = 'SELECT
         G.id,
         G.name,
         G.releaseDate,
@@ -232,16 +217,25 @@ class Game {
     LEFT JOIN paragraph PA7 ON PA7.id_game = G.id AND PA7.orderParagraph = 7
 	Where G.id = 1';
 
-    $sqlQuery2 = 'SELECT 
+    $sqlQueryPlatform = 'SELECT 
         P.name as platformName
     FROM platform_game PG
     INNER JOIN platform P on P.id = PG.id_platform
     WHERE PG.id_game = 1;
-    '; */
+    ';
+
+    $sqlQueryCategory = 'SELECT C.name as CategoryName FROM category_game CG INNER JOIN category C on C.id = CG.id_category WHERE CG.id_game = 1; ';
+
+    $sqlQueryLanguage = 'SELECT L.name as LanguageName, LG.isAudio FROM language_game LG INNER JOIN language L on L.id = LG.id_language WHERE LG.id_game = 1;';
+
+    $sqlQueryRequirement ='SELECT T.name as TypeName, R.name as RequirementName, TRG.minimum, TRG.recomandation FROM type_requirement_game TRG INNER JOIN type T on T.id = TRG.id_type INNER JOIN requirement R on R.id = TRG.id_requirement WHERE TRG.id_game = 1; '; */
 
         try {
             $game = $this->dbc->selectAll($sqlQuery);
-            //$game2 = $this->dbc->selectAll($sqlQuery2);
+            /* $platform = $this->dbc->selectAll($sqlQueryPlatform);
+            $category = $this->dbc->selectAll($sqlQueryCategory);
+            $language = $this->dbc->selectAll($sqlQueryLanguage);
+            $requirement = $this->dbc->selectAll($sqlQueryRequirement); */
 
         } catch(\Exception $e) {
             throw new \Exception($e);
@@ -249,14 +243,18 @@ class Game {
 
         /* echo '<pre>';
             print_r($game);
-            print_r($game2);
+            print_r($platform);
+            print_r($category);
+            print_r($language);
+            print_r($requirement);
         echo '<pre>';
-        exit; */  
+        exit; */   
 
         return $game;
-        //return $game2;
-
-        
+        /* return $platform;
+        return $category;
+        return $language;
+        return $requirement;        */ 
     }
 
     /**
@@ -265,11 +263,11 @@ class Game {
      * @return false|string
      */
     public function getGameById($id) {
-        //$sqlQuery = 'SELECT id, name FROM game WHERE id = :id';
-        $sqlQuery = 'SELECT
+        $sqlQueryGame = 'SELECT
         G.id,
         G.name,
         G.releaseDate,
+        G.youtubeLink,
         G.addDate,
         G.hook,
         G.price,
@@ -325,10 +323,46 @@ class Game {
     LEFT JOIN paragraph PA6 ON PA6.id_game = G.id AND PA6.orderParagraph = 6
     LEFT JOIN paragraph PT7 ON PT7.id_game = G.id AND PT7.orderParagraph = 7
     LEFT JOIN paragraph PA7 ON PA7.id_game = G.id AND PA7.orderParagraph = 7
-	Where g.id = :id;';
-        $bindParam = array('id' => $id);
-        $gameById = $dbc->select($sqlQuery, $bindParam);
-        return $gameById;
+	Where G.id = :id';
+
+    $sqlQueryPlatform = 'SELECT 
+        P.name as platformName
+    FROM platform_game PG
+    INNER JOIN platform P on P.id = PG.id_platform
+    WHERE PG.id_game = :id;
+    ';
+
+    $sqlQueryCategory = 'SELECT C.name as CategoryName FROM category_game CG INNER JOIN category C on C.id = CG.id_category WHERE CG.id_game = :id; ';
+
+    $sqlQueryLanguage = 'SELECT L.name as LanguageName, LG.isAudio FROM language_game LG INNER JOIN language L on L.id = LG.id_language WHERE LG.id_game = :id;';
+
+    $sqlQueryRequirement ='SELECT T.name as TypeName, R.name as RequirementName, TRG.minimum, TRG.recomandation FROM type_requirement_game TRG INNER JOIN type T on T.id = TRG.id_type INNER JOIN requirement R on R.id = TRG.id_requirement WHERE TRG.id_game = :id; ';
+
+        try {
+            $game = $this->dbc->select($sqlQuery);
+            $platform = $this->dbc->select($sqlQueryPlatform);
+            $category = $this->dbc->select($sqlQueryCategory);
+            $language = $this->dbc->select($sqlQueryLanguage);
+            $requirement = $this->dbc->select($sqlQueryRequirement);
+
+        } catch(\Exception $e) {
+            throw new \Exception($e);
+        };
+
+        /* echo '<pre>';
+            print_r($game);
+            print_r($platform);
+            print_r($category);
+            print_r($language);
+            print_r($requirement);
+        echo '<pre>';
+        exit;   */
+
+        return $game;
+        return $platform;
+        return $category;
+        return $language;
+        return $requirement;    
     }
 
     /**
@@ -343,8 +377,7 @@ class Game {
         $sqlQuery = 'INSERT INTO game SET id = :id, name = :name, releaseDate = :releaseDate, price = :price, hook = :hook, youtubeLink = :youtubeLink,addDate = :addDate,';
         $bindParam = array('id' => $id, 'name' => $name, 'releaseDate' => $releaseDate, 'price' => $price, 'hook' => $hook, 'youtubeLink' => $youtubeLink,'addDate' => $addDate);
         $game = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $gameJson = json_encode($game);
-        return $gameJson;
+        return $game;
     }
 
     /**
@@ -359,8 +392,7 @@ class Game {
         $sqlQuery = 'UPDATE game SET id = :id, name = :name, releaseDate = :releaseDate, price = :price, hook = :hook, youtubeLink = :youtubeLink, addDate = :addDate,';
         $bindParam = array('id' => $id, 'name' => $name, 'releaseDate' => $releaseDate, 'price' => $price, 'hook' => $hook, 'youtubeLink' => $youtubeLink, 'addDate' => $addDate);
         $game = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $gameJson = json_encode($game);
-        return $gameJson;
+        return $game;
     }
 
     /**
@@ -372,23 +404,6 @@ class Game {
         $sqlQuery = "DELETE FROM game WHERE game.id = $id";
         $bindParam = array('id' => $id);
         $game = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $gameJson = json_encode($user);
-        return $gameJson;
+        return $game;
     }
-
-
-    function array_flatten($array) { 
-        if (!is_array($array)) { 
-          return false; 
-        } 
-        $result = array(); 
-        foreach ($array as $key => $value) { 
-          if (is_array($value)) { 
-            $result = array_merge($result, array_flatten($value)); 
-          } else { 
-            $result = array_merge($result, array($key => $value));
-          } 
-        } 
-        return $result; 
-      }
 }

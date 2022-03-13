@@ -114,8 +114,7 @@ class Paragraph {
         $sqlQuery = 'SELECT * FROM paragraph WHERE id = :id';
         $bindParam = array('id' => $id);
         $paragraphById = $dbc->select($sqlQuery, $bindParam);
-        $paragraphByIdJson = json_encode($paragraphById);
-        return $paragraphByIdJson;
+        return $paragraphById;
     }
 
     /**
@@ -128,8 +127,7 @@ class Paragraph {
         $sqlQuery = 'INSERT INTO paragraph SET id = :id, title = :title, paragraph = :paragraph, id_game = :idGame';
         $bindParam = array('id' => $id, 'title' => $title, 'idGame' => $idGame);
         $paragraph = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $paragraphJson = json_encode($paragraph);
-        return $paragraphJson;
+        return $paragraph;
     }
 
     /**
@@ -142,8 +140,7 @@ class Paragraph {
         $sqlQuery = 'UPDATE paragraph SET id = :id, title = :title, paragraph = :paragraph';
         $bindParam = array('id' => $id, 'title' => $title);
         $paragraph = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $paragraphJson = json_encode($paragraph);
-        return $paragraphJson;
+        return $paragraph;
     }
 
     /**
@@ -155,8 +152,7 @@ class Paragraph {
         $sqlQuery = "DELETE FROM paragraph WHERE paragraph.id = $id";
         $bindParam = array('id' => $id);
         $paragraph = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $paragraphJson = json_encode($paragraph);
-        return $paragraphJson;
+        return $paragraph;
     }
 
 }

@@ -97,8 +97,7 @@ class Pegi {
         $sqlQuery = 'SELECT * FROM pegi WHERE id = :id';
         $bindParam = array('id' => $id);
         $pegiById = $dbc->select($sqlQuery, $bindParam);
-        $pegiByIdJson = json_encode($pegiById);
-        return $pegiByIdJson;
+        return $pegiById;
     }
 
     /**
@@ -112,8 +111,7 @@ class Pegi {
         $sqlQuery = 'INSERT INTO pegi SET id = :id, name = :name, img = :img';
         $bindParam = array('id' => $id, 'name' => $name, 'img' => $img);
         $pegi = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $pegiJson = json_encode($pegi);
-        return $pegiJson;
+        return $pegi;
     }
 
     /**
@@ -127,8 +125,7 @@ class Pegi {
         $sqlQuery = 'UPDATE pegi SET id = :id, name = :name, img = :img';
         $bindParam = array('id' => $id, 'name' => $name, 'img' => $img);
         $pegi = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $pegiJson = json_encode($pegi);
-        return $pegiJson;
+        return $pegi;
     }
 
     /**
@@ -140,8 +137,7 @@ class Pegi {
         $sqlQuery = "DELETE FROM pegi WHERE pegi.id = $id";
         $bindParam = array('id' => $id);
         $pegi = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $pegiJson = json_encode($pegi);
-        return $pegiJson;
+        return $pegi;
     }
 
 }

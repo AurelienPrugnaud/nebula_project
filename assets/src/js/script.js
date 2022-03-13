@@ -106,8 +106,7 @@ if (typeof slide[0] === 'undefined') {
       }
     });
   })();
+
 }
-
-
 
 ////////////////COLLAPSE GAME PAGE END //////////////////////////

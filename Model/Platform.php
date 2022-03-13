@@ -69,6 +69,20 @@ class Platform {
         return $platforms;
     }
 
+    public function getPlatformsGameList() {
+        $sqlQuery = 'SELECT 
+        P.name as platformName
+    FROM platform_game PG
+    INNER JOIN platform P on P.id = PG.id_platform
+    WHERE PG.id_game = 1';
+        try {
+            $platform = $this ->dbc->selectAll($sqlQuery);
+        } catch(\Exception $e) {
+            throw new \Exception($e);
+        };
+        return $platform;
+    }
+
     /**
      * @param $this->dbc
      * @param $id
@@ -78,8 +92,7 @@ class Platform {
         $sqlQuery = 'SELECT * FROM platform WHERE id = :id';
         $bindParam = array('id' => $id);
         $platformById = $this->dbc->select($sqlQuery, $bindParam);
-        $platformByIdJson = json_encode($platformById);
-        return $platform;
+        return $platformById;
     }
 
     /**
@@ -92,7 +105,6 @@ class Platform {
         $sqlQuery = 'INSERT INTO platform SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
         $platform = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $platformJson = json_encode($platform);
         return $platform;
     }
 
@@ -106,7 +118,6 @@ class Platform {
         $sqlQuery = 'UPDATE platform SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
         $platform = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $platformJson = json_encode($platform);
         return $platform;
     }
 
@@ -119,7 +130,6 @@ class Platform {
         $sqlQuery = "DELETE FROM platform WHERE platform.id = $id";
         $bindParam = array('id' => $id);
         $platform = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $platformJson = json_encode($platform);
         return $platform;
     }
 

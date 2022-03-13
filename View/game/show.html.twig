@@ -3,7 +3,7 @@
 {% block content %}
 <! -- //////////////////////////////MAIN START//////////////////////////////////////// -->
     <main class="container white-page">
-        {% for game in games|slice(0,1) %}
+        {% for game in games %}
         <h1 class="t-game2">{{game.name}}</h1>
         <div class="row">
             <div class="col-lg-9"> 
@@ -41,7 +41,6 @@
                                 </p>
                                 {% endif %} 
                             {% endfor %}
-
                         <div id="content" class="content">
                             {% for paragraph in paragraphs|slice(3, 5) %}                             
                             {% if paragraph.id_game in game.id %}
@@ -52,7 +51,6 @@
                                 {% endif %} 
                             {% endfor %}
                         </div>
-
                         <div class="d-flex justify-content-center">
                             <div class="border-button-game-page">
                                 <button id="buttonCollapse" class="button-game-page collapsible">
@@ -69,58 +67,28 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <div class="me-3">
-                            <h3 class="t-description">Configuration Minimum</h3>
-                            <p class="p.description">
-                                Système d'exploitation<br>
-                                Windows 10 64 bits
-                            </p>
-                            <p class="p.description">
-                                Processeur<br>
-                                Intel i5-2500k (4 cœurs 3,3 GHz) ou AMD Ryzen 3 1200 (4 cœurs 3,1 GHz)
-                            </p>
-                            <p class="p.description">
-                                Mémoire vive<br>
-                                8 Go DDR
-                            </p>
-                            <p class="p.description">
-                                Stockage<br>
-                                70 Go HDD (SSD recommandé)
-                            </p>
-                            <p class="p.description">
-                                DirectX<br>
-                                DirectX 11 (niveau de fonctionnalité 11_1)
-                            </p>
-                            <p class="p.description">
-                                Carte graphique<br>
-                                NVIDIA GTX 960 (4 Go) ou AMD R9 290X (4 Go)
-                            </p>
+                            <h3 class="t-description mb-2">Configuration Minimum</h3>
+                                {% for requirements in requirementsGame %}
+                                {% if requirements.minimum == 1 %}
+                                <p class="p.description">
+                                    {{requirements.typeName}}
+                                    <br>
+                                    {{requirements.requirementName}}
+                                </p>
+                                {% endif %}
+                                {% endfor %}
                         </div>
                         <div>
                             <h3 class="t-description">Configuration recommandée</h3>
-                            <p class="p.description">
-                                Système d'exploitation<br>
-                                Windows 10 64 bits
-                            </p>
-                            <p class="p.description">
-                                Processeur<br>
-                                Intel i5-6600k (4 cœurs 3,5 GHz) ou AMD Ryzen 5 2400 G (4 cœurs 3,6 GHz)
-                            </p>
-                            <p class="p.description">
-                                Mémoire vive<br>
-                                8 Go DDR
-                            </p>
-                            <p class="p.description">
-                                Stockage<br>
-                                70 Go SSD
-                            </p>
-                            <p class="p.description">
-                                DirectX<br>
-                                DirectX 11 (niveau de fonctionnalité 11_1)
-                            </p>
-                            <p class="p.description">
-                                Carte graphique<br>
-                                NVIDIA GTX 1060 (6 Go) ou AMD RX 570 (4 Go)
-                            </p>
+                            {% for requirements in requirementsGame %}
+                                {% if requirements.minimum == 0 %}
+                                <p class="p.description">
+                                    {{requirements.typeName}}
+                                    <br>
+                                    {{requirements.requirementName}}
+                                </p>
+                                {% endif %}
+                                {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -130,18 +98,24 @@
                         <span></span>
                     </div>
                     <p>
-                        AUDIO : anglais, français, allemand, italien, japonais, polonais, portugais,
-                        portugais
-                        (Brésil),
-                        russe, espagnol (Espagne), espagnol (Amérique latine)
+                        <span>Audio :</span>
+                        {% for languages in languagesGame %}
+                        {% if languages.isAudio == 1 %}
+                        <span> {{ languages.languageName }},</span>
+                        {% endif %}
+                        {% else %}
+                        Pas de langue audio trouvée en base de données
+                        {% endfor %}
                     </p>
                     <p>
-                        TEXTE : anglais, néerlandais, français, allemand, italien, japonais, coréen,
-                        polonais,
-                        portugais,
-                        portugais (Brésil), russe, espagnol (Espagne), espagnol (Amérique latine), turc,
-                        chinois
-                        traditionnel, hongrois, tchèque, grec
+                        <span>Texte :</span>
+                        {% for languages in languagesGame %}
+                        {% if languages.isAudio == 0 %}
+                        <span> {{ languages.languageName }},</span>
+                        {% endif %}
+                        {% else %}
+                        Pas de langue textuelle trouvée en base de données
+                        {% endfor %}
                     </p>
                 </div>
             </div>
@@ -155,18 +129,9 @@
                             Genre
                         </span>
                         <div class="d-flex justify-content-between mb-2">
-                            <span class="me-2">
-                                Aventure
-                            </span>
-                            <span class="me-2">
-                                Jeu de rôle
-                            </span>
-                            <span class="me-2">
-                                Action
-                            </span>
-                            <span class="me-2">
-                                Solo
-                            </span>
+                            {% for category in categoriesGame %}
+                                <span class="me-2">{{category.categoryName}}</span>
+                            {% endfor %}
                         </div>
                         <p>
                             {{ game.price|replace({'.' : ','}) }} €
@@ -210,12 +175,13 @@
                             <span class="left-card-game">
                                 Plateforme
                             </span>
-                            {% for platform in platforms %}
-                            <span>{{ platform.0.platformName }}</span>
+                            {% for platform in platformsGame %}
+                                {% if platform.platformName == 'Windows' %}
+                                    <span class="iconify" data-icon="ant-design:windows-filled" style="color: white;"></span>
+                                {% endif %}
                             {% else %}
-                            <span>pete les couilles !</span>
+                                <span>Pas de plateforme trouvée en base de données</span>
                             {% endfor %}
-                            {# <span class="iconify" data-icon="ant-design:windows-filled" style="color: white;"></span> #}
                         </div>
                     </div>
                 </div>

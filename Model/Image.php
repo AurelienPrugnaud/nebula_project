@@ -96,8 +96,7 @@ class Image {
         $sqlQuery = 'SELECT * FROM image WHERE id = :id';
         $bindParam = array('id' => $id);
         $ImageById = $dbc->select($sqlQuery, $bindParam);
-        $ImageByIdJson = json_encode($ImageById);
-        return $ImageByIdJson;
+        return $ImageById;
     }
 
     /**
@@ -110,8 +109,7 @@ class Image {
         $sqlQuery = 'INSERT INTO image SET id = :id, name = :name, id_game = :idGame';
         $bindParam = array('id' => $id, 'name' => $name, 'idGame' => $idGame);
         $Image = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $ImageJson = json_encode($Image);
-        return $ImageJson;
+        return $Image;
     }
 
     /**
@@ -124,8 +122,7 @@ class Image {
         $sqlQuery = 'UPDATE image SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
         $Image = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $ImageJson = json_encode($Image);
-        return $ImageJson;
+        return $Image;
     }
 
     /**
@@ -137,8 +134,7 @@ class Image {
         $sqlQuery = "DELETE FROM image WHERE image.id = $id";
         $bindParam = array('id' => $id);
         $Image = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $ImageJson = json_encode($Image);
-        return $ImageJson;
+        return $Image;
     }
 
 }

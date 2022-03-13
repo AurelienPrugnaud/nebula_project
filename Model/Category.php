@@ -17,10 +17,7 @@ class Category {
      */
     public $name;
 
-    /**
-     * @param int $id
-     * @param string $name
-     */
+
     public function __construct() {
         $this->dbc = new Database();
     }
@@ -69,6 +66,16 @@ class Category {
         return $categories;
     }
 
+    public function getCategoriesGameList() {
+        $sqlQuery = 'SELECT C.name as categoryName FROM category_game CG INNER JOIN category C on C.id = CG.id_category WHERE CG.id_game = 1; ';
+        try {
+            $categories = $this ->dbc->selectAll($sqlQuery);
+        } catch(\Exception $e) {
+            throw new \Exception($e);
+        };
+        return $categories;
+    }
+
     /**
      * @param $this->dbc
      * @param $id
@@ -78,8 +85,7 @@ class Category {
         $sqlQuery = 'SELECT * FROM category WHERE id = :id';
         $bindParam = array('id' => $id);
         $categoryById = $this->dbc->select($sqlQuery, $bindParam);
-        $categoryByIdJson = json_encode($categoryById);
-        return $category;
+        return $categoryById;
     }
 
     /**
@@ -92,7 +98,6 @@ class Category {
         $sqlQuery = 'INSERT INTO category SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
         $category = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $categoryJson = json_encode($category);
         return $category;
     }
 
@@ -106,7 +111,6 @@ class Category {
         $sqlQuery = 'UPDATE category SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
         $category = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $categoryJson = json_encode($category);
         return $category;
     }
 
@@ -119,7 +123,6 @@ class Category {
         $sqlQuery = "DELETE FROM category WHERE category.id = $id";
         $bindParam = array('id' => $id);
         $category = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $categoryJson = json_encode($category);
         return $category;
     }
 

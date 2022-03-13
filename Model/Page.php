@@ -97,7 +97,6 @@ class Page {
         $sqlQuery = 'SELECT * FROM page ORDER BY id';
         $statement = $dbc->query($sqlQuery);
         $pages = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $pagesJson = json_encode($pages);
         return $pages;
     }
 
@@ -110,7 +109,6 @@ class Page {
         $sqlQuery = 'SELECT * FROM page WHERE id = :id';
         $bindParam = array('id' => $id);
         $pageById = $dbc->select($sqlQuery, $bindParam);
-        $pageByIdJson = json_encode($pageById);
         return $pageById;
     }
 
@@ -126,8 +124,7 @@ class Page {
         $sqlQuery = 'INSERT INTO page SET id = :id, title = :title, template = :template, url = :url';
         $bindParam = array('id' => $id, 'title' => $title, 'template' => $template, 'url' => $url);
         $page = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $pageJson = json_encode($page);
-        return $pageJson;
+        return $page;
     }
 
     /**
@@ -142,8 +139,7 @@ class Page {
         $sqlQuery = 'UPDATE page SET id = :id, title = :title, template = :template, url = :url';
         $bindParam = array('id' => $id, 'title' => $title, 'template' => $template, 'url' => $url);
         $page = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $pageJson = json_encode($page);
-        return $pageJson;
+        return $page;
     }
 
     /**
@@ -155,8 +151,7 @@ class Page {
         $sqlQuery = "DELETE FROM page WHERE page.id = $id";
         $bindParam = array('id' => $id);
         $page = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $pageJson = json_encode($page);
-        return $pageJson;
+        return $page;
     }
 
 }

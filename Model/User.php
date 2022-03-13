@@ -1,6 +1,7 @@
 <?php
 namespace Aurelien\Nebula;
 use Aurelien\Nebula\Controller\UserController;
+use Aurelien\Nebula\Database;
 
 /**
  *
@@ -55,8 +56,8 @@ class User {
      * @param int $cityCode
      * @param string $password
      */
-    public function __construct($email = '', $firstname = '', $lastname = '', $adress1 = '', $adress2 = '', $city = '', $state = '', $cityCode = '', $password = '') {
-
+    public function __construct() {
+        $this->dbc = new Database;
     }
 
     /**
@@ -189,7 +190,7 @@ class User {
      * @param $dbc
      * @return false|string
      */
-    public static function getUsersList($dbc) {
+    public static function getUsersList() {
         $sqlQuery = 'SELECT * FROM user ORDER BY lastname';
         $statement = $dbc->query($sqlQuery);
         $users = $statement->fetchAll(PDO::FETCH_ASSOC);

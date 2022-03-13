@@ -170,7 +170,7 @@
             $gameDirectory = preg_replace('/\s+/', '_' ,strtolower($_POST["title"]));
 
             if (!is_dir('../assets/public/img/games/'.$gameDirectory)) {
-                mkdir('../assets/public/img/games/'.$gameDirectory, 0777, true);
+                mkdir('../assets/public/img/games/'.$gameDirectory, 0755, true);
             } else {
                 throw new \Exception("Le dossier du jeu est déjà créer.");
                 
@@ -302,7 +302,7 @@
             );
             
         else :
-            echo "coucou";
+            echo "";
         endif;
     }
     catch(\Exception $e) {

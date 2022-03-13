@@ -17,32 +17,6 @@ use \Aurelien\Nebula\Type;
 
 class PageController
 {
-
-    public function array_flatten($array)
-    {
-        if (!is_array($array))
-        {
-            return false;
-        }
-        $result = array();
-        foreach ($array as $key => $value)
-        {
-            if (is_array($value))
-            {
-                $result = array_merge($result, array_flatten($value));
-            }
-            else
-            {
-                $result = array_merge($result, array($key => $value));
-            }
-        }
-        return $result;
-        /* echo '<pre>';
-            print_r($result);
-        echo '<pre>';
-        exit;   */
-    }
-
     public function __construct(string $file, array $data)
     {
         $this->file = $file;
@@ -56,9 +30,8 @@ class PageController
         $this->editor = new Editor();
         $this->editors = $this->editor->getEditorsList();
         $this->platform = new Platform();
-        $this->platforms = $this->array_flatten($this->platform);
-
-        // $this->platforms = $this->platform->getPlatformsList();
+        $this->platforms = $this->platform->getPlatformsList();
+        $this->platformGame = new Platform();
         $this->pegi = new Pegi;
         $this->pegis = $this->pegi->getPegisList();
         $this->requirement = new Requirement;
@@ -71,6 +44,13 @@ class PageController
         $this->paragraphs = $this->paragraph->getParagraphsList();
         $this->type = new Type;
         $this->types = $this->type->getTypesList();
+        $this->platformsGame = $this->platformGame->getPlatformsGameList();
+        $this->categoryGame = new Category();
+        $this->categoriesGame = $this->categoryGame->getCategoriesGameList();
+        $this->requirementGame = new Requirement();
+        $this->requirementsGame = $this->requirementGame->getRequirementsGameList();
+        $this->languageGame = new Language();
+        $this->languagesGame = $this->languageGame->getLanguagesGameList();
         $this->get_data();
         $this->data = array_merge($this->data, $data);
         $this->render($file, $this->data);
@@ -95,7 +75,11 @@ class PageController
             'languages' => $this->languages,
             'images' => $this->images,
             'paragraphs' => $this->paragraphs,
-            'types' => $this->types
+            'types' => $this->types,
+            'platformsGame' => $this->platformsGame,
+            'categoriesGame' => $this->categoriesGame,
+            'requirementsGame' => $this->requirementsGame,
+            'languagesGame' => $this->languagesGame
         ];
 
         return $this->data;

@@ -69,6 +69,16 @@ class Requirement {
         return $requirements;
     }
 
+    public function getRequirementsGameList() {
+        $sqlQuery = 'SELECT T.name as typeName, R.name as requirementName, TRG.minimum, TRG.recomandation FROM type_requirement_game TRG INNER JOIN type T on T.id = TRG.id_type INNER JOIN requirement R on R.id = TRG.id_requirement WHERE TRG.id_game = 1; ';
+        try {
+            $requirements = $this ->dbc->selectAll($sqlQuery);
+        } catch(\Exception $e) {
+            throw new \Exception($e);
+        };
+        return $requirements;
+    }
+
     /**
      * @param $dbc
      * @param $id
@@ -78,8 +88,7 @@ class Requirement {
         $sqlQuery = 'SELECT * FROM requirement WHERE id = :id';
         $bindParam = array('id' => $id);
         $requirementById = $dbc->select($sqlQuery, $bindParam);
-        $requirementByIdJson = json_encode($requirementById);
-        return $requirementByIdJson;
+        return $requirementById;
     }
 
     /**
@@ -92,8 +101,7 @@ class Requirement {
         $sqlQuery = 'INSERT INTO requirement SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
         $requirement = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $requirementJson = json_encode($requirement);
-        return $requirementJson;
+        return $requirement;
     }
 
     /**
@@ -106,8 +114,7 @@ class Requirement {
         $sqlQuery = 'UPDATE requirement SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
         $requirement = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $requirementJson = json_encode($requirement);
-        return $requirementJson;
+        return $requirement;
     }
 
     /**
@@ -119,8 +126,7 @@ class Requirement {
         $sqlQuery = "DELETE FROM requirement WHERE requirement.id = $id";
         $bindParam = array('id' => $id);
         $requirement = $dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $requirementJson = json_encode($requirement);
-        return $requirementJson;
+        return $requirement;
     }
 
 }

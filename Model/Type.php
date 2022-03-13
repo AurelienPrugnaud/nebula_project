@@ -78,8 +78,7 @@ class Type {
         $sqlQuery = 'SELECT * FROM type WHERE id = :id';
         $bindParam = array('id' => $id);
         $typeById = $this->dbc->select($sqlQuery, $bindParam);
-        $typeByIdJson = json_encode($typeById);
-        return $type;
+        return $typeById;
     }
 
     /**
@@ -92,7 +91,6 @@ class Type {
         $sqlQuery = 'INSERT INTO type SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
         $type = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $typeJson = json_encode($type);
         return $type;
     }
 
@@ -106,7 +104,6 @@ class Type {
         $sqlQuery = 'UPDATE type SET id = :id, name = :name';
         $bindParam = array('id' => $id, 'name' => $name);
         $type = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $typeJson = json_encode($type);
         return $type;
     }
 
@@ -119,7 +116,6 @@ class Type {
         $sqlQuery = "DELETE FROM type WHERE type.id = $id";
         $bindParam = array('id' => $id);
         $type = $this->dbc->updateOrDeleteOrAdd($sqlQuery, $bindParam);
-        $typeJson = json_encode($type);
         return $type;
     }
 
