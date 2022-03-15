@@ -8,12 +8,7 @@
         <div class="row">
             <div class="col-lg-9"> 
                 <div class="section">
-                    <iframe id="iframe" class="active mb-4"  width="100%" height="543"
-                        src="{{game.youtubeLink}}" title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                    <iframe id="frame" class="active mb-4" width="100%" height="543" src="{{game.youtubeLink}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <img id="img-game" class="img-game mb-4 disable" src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image0}}" alt="god of war">
                     <div class="d-flex align-items-center justify-content-between section">
                         <img id="img-game-mini1" class="img-game-mini1" src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image4}}" alt="">
@@ -32,24 +27,40 @@
                         <div class="d-flex align-items-center">
                             <h2 class="t-gamePage">{{game.name}}</h2>
                             <span></span>
-                        </div>                        
-                        {% for paragraph in paragraphs|slice(0, 3) %}                             
-                            {% if paragraph.id_game in game.id %}
-                                <h3 class="t-description">{{ paragraph.title}}</h3>
-                                <p class="description2">
-                                    {{ paragraph.paragraph }}
-                                </p>
-                                {% endif %} 
-                            {% endfor %}
+                        </div>
+                        <div>
+                            <h3 class="t-description">{{game.title0}}</h3>
+                            <p class="description2">{{game.para0}}</p>
+                        </div>             
+                        <div>
+                            <h3 class="t-description">{{game.title1}}</h3>
+                            <p class="description2">{{game.para1}}</p>
+                        </div>  
+                        <div>
+                            <h3 class="t-description">{{game.title2}}</h3>
+                            <p class="description2">{{game.para2}}</p>
+                        </div> 
                         <div id="content" class="content">
-                            {% for paragraph in paragraphs|slice(3, 5) %}                             
-                            {% if paragraph.id_game in game.id %}
-                                <h3 class="t-description">{{ paragraph.title}}</h3>
-                                <p class="description2">
-                                    {{ paragraph.paragraph }}
-                                </p>
-                                {% endif %} 
-                            {% endfor %}
+                            <div>
+                                <h3 class="t-description">{{game.title3}}</h3>
+                                <p class="description2">{{game.para3}}</p>
+                            </div> 
+                            <div>
+                                <h3 class="t-description">{{game.title4}}</h3>
+                                <p class="description2">{{game.para4}}</p>
+                            </div> 
+                            <div>
+                                <h3 class="t-description">{{game.title5}}</h3>
+                                <p class="description2">{{game.para5}}</p>
+                            </div> 
+                            <div>
+                                <h3 class="t-description">{{game.title6}}</h3>
+                                <p class="description2">{{game.para6}}</p>
+                            </div> 
+                            <div>
+                                <h3 class="t-description">{{game.title7}}</h3>
+                                <p class="description2">{{game.para7}}</p>
+                            </div> 
                         </div>
                         <div class="d-flex justify-content-center">
                             <div class="border-button-game-page">
@@ -175,13 +186,21 @@
                             <span class="left-card-game">
                                 Plateforme
                             </span>
+                            <div>
                             {% for platform in platformsGame %}
                                 {% if platform.platformName == 'Windows' %}
                                     <span class="iconify" data-icon="ant-design:windows-filled" style="color: white;"></span>
                                 {% endif %}
+                                {% if platform.platformName == 'Playstation 5' %}
+                                    <span class="iconify" data-icon="simple-icons:playstation5" data-width="40" style="color: white;"></span>
+                                {% endif %}
+                                {% if platform.platformName == 'Xbox Series' %}
+                                    <span class="iconify" data-icon="bi:xbox" style="color: white;"></span>
+                                {% endif %}
                             {% else %}
                                 <span>Pas de plateforme trouvée en base de données</span>
                             {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>

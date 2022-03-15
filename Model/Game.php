@@ -152,10 +152,9 @@ class Game {
      * @return false|string
      */
     public function getGamesList() {
-    $sqlQuery = 'SELECT G.id, G.name, G.releaseDate, G.addDate, G.hook, G.price, E.name as editorName, D.name as developperName, I0.name as image0, I5.name as image5
-    FROM game G LEFT JOIN editor E on G.id_editor = E.id LEFT JOIN developper D on G.id_developper = D.id LEFT JOIN image I0 on I0.id_game = G.id AND I0.orderImg = 0 LEFT JOIN image I5 on I5.id_game = G.id and I5.orderImg = 5 ORDER BY RAND()';
+    $sqlQuery = 'SELECT G.id, G.name, G.releaseDate, G.addDate, G.hook, G.price, E.name as editorName, D.name as developperName, I0.name as image0, I5.name as image5 FROM game G LEFT JOIN editor E on G.id_editor = E.id LEFT JOIN developper D on G.id_developper = D.id LEFT JOIN image I0 on I0.id_game = G.id AND I0.orderImg = 0 LEFT JOIN image I5 on I5.id_game = G.id and I5.orderImg = 5 ORDER BY RAND()';
 
-    /* $sqlQueryGame = 'SELECT
+    $sqlQueryGame = 'SELECT
         G.id,
         G.name,
         G.releaseDate,
@@ -228,14 +227,15 @@ class Game {
 
     $sqlQueryLanguage = 'SELECT L.name as LanguageName, LG.isAudio FROM language_game LG INNER JOIN language L on L.id = LG.id_language WHERE LG.id_game = 1;';
 
-    $sqlQueryRequirement ='SELECT T.name as TypeName, R.name as RequirementName, TRG.minimum, TRG.recomandation FROM type_requirement_game TRG INNER JOIN type T on T.id = TRG.id_type INNER JOIN requirement R on R.id = TRG.id_requirement WHERE TRG.id_game = 1; '; */
+    $sqlQueryRequirement ='SELECT T.name as TypeName, R.name as RequirementName, TRG.minimum, TRG.recomandation FROM type_requirement_game TRG INNER JOIN type T on T.id = TRG.id_type INNER JOIN requirement R on R.id = TRG.id_requirement WHERE TRG.id_game = 1; ';
 
         try {
-            $game = $this->dbc->selectAll($sqlQuery);
-            /* $platform = $this->dbc->selectAll($sqlQueryPlatform);
+            $allGame = $this->dbc->selectAll($sqlQuery);
+            $game = $this->dbc->selectAll($sqlQueryGame);
+            $platform = $this->dbc->selectAll($sqlQueryPlatform);
             $category = $this->dbc->selectAll($sqlQueryCategory);
             $language = $this->dbc->selectAll($sqlQueryLanguage);
-            $requirement = $this->dbc->selectAll($sqlQueryRequirement); */
+            $requirement = $this->dbc->selectAll($sqlQueryRequirement);
 
         } catch(\Exception $e) {
             throw new \Exception($e);
@@ -250,11 +250,12 @@ class Game {
         echo '<pre>';
         exit; */   
 
+        return $allGame;
         return $game;
-        /* return $platform;
+        return $platform;
         return $category;
         return $language;
-        return $requirement;        */ 
+        return $requirement; 
     }
 
     /**
