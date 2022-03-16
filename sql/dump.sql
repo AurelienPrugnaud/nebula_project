@@ -256,7 +256,10 @@ CREATE TABLE `page` (
   `title` varchar(25) NOT NULL,
   `template` varchar(25) NOT NULL,
   `url` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
+  `id_game` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_game` (`id_game`),
+  CONSTRAINT `page_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `game` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -266,7 +269,7 @@ CREATE TABLE `page` (
 
 LOCK TABLES `page` WRITE;
 /*!40000 ALTER TABLE `page` DISABLE KEYS */;
-INSERT INTO `page` VALUES (1,'Acceuil','home/home','/'),(2,'Jeu','game/show','/game'),(3,'Connexion','security/login','/login'),(4,'Profil','user/user','/profil'),(5,'Création de compte','registration/registration','/register'),(6,'Panier','cart/cart','/cart'),(7,'Contact','contact/contact','/contact'),(8,'Bibliothèque','library/library','/library'),(9,'Nouveau jeu','game/new','/new'),(10,'Modifier un jeu','game/modify','/modify'),(11,'Liste des jeux','game/index','/list'),(12,'Liste des utilisateurs','user/index','/users');
+INSERT INTO `page` VALUES (1,'Acceuil','home/home','/', null),(2,'Jeu','game/show','/game', null),(3,'Connexion','security/login','/login', null),(4,'Profil','user/user','/profil', null),(5,'Création de compte','registration/registration','/register', null),(6,'Panier','cart/cart','/cart', null),(7,'Contact','contact/contact','/contact', null),(8,'Bibliothèque','library/library','/library', null),(9,'Nouveau jeu','game/new','/new', null),(10,'Modifier un jeu','game/modify','/modify', null),(11,'Liste des jeux','game/index','/list', null),(12,'Liste des utilisateurs','user/index','/users', null), (13, 'Jeu', 'game/show', '/game/god_of_war', 1);
 /*!40000 ALTER TABLE `page` ENABLE KEYS */;
 UNLOCK TABLES;
 

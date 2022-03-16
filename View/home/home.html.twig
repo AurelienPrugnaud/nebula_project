@@ -44,7 +44,7 @@
                         <div class="row">
                             {% for game in games|slice(0, 2) %}
                             <div class="border-card-hover col-lg-6 col-md-12">
-                                <a href="">
+                                <a href="/game/{{game.name|lower|replace({' ' : '_'})}}">
                                 <div class="card-game">
                                     <img class="img-discoveries" src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image0}}" alt="{{game.name}}">
                                     <h2 class="t-game">{{game.name}}</h2>
@@ -74,7 +74,7 @@
                                         {% for game in games|slice(0, 5) %}
                                         {% if date(game.releaseDate) < date() %}
                                         <div class="border-card-hover">
-                                            <a href="">
+                                            <a href="/game/{{game.name|lower|replace({' ' : '_'})}}">
                                             <div class="d-flex align-items-center card-game">
                                                 <img class="img-midsection me-3" src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image0}}" alt="{{game.name}}"
                                                     alt="god of war">
@@ -110,7 +110,7 @@
                                                 {% for game in games|slice(0, 5) %}
                                                 {% if date(game.releaseDate) < date() %}
                                                 <div class="border-card-hover">
-                                                    <a href="">
+                                                    <a href="/game/{{game.name|lower|replace({' ' : '_'})}}">
                                                     <div class="d-flex align-items-center card-game">
                                                         <img class="img-midsection me-3"
                                                             src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image0}}" alt="{{game.name}}"
@@ -147,7 +147,7 @@
                                                         {% for game in games %}
                                                         {% if date(game.releaseDate) > date() %}
                                                         <div class="border-card-hover">
-                                                            <a href="">
+                                                            <a href="/game/{{game.name|lower|replace({' ' : '_'})}}">
                                                             <div class="d-flex align-items-center card-game">
                                                                 <img class="img-midsection me-3"
                                                                     src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image0}}" alt="{{game.name}}"
@@ -185,7 +185,7 @@
                                         <div class="row">
                                             {% for game in games|slice(0, 2) %}
                                             <div class="border-card-hover col-lg-6 col-md-12">
-                                                <a href="">
+                                                <a href="/game/{{game.name|lower|replace({' ' : '_'})}}">
                                                 <div class="card-game">
                                                     <img class="img-discoveries"
                                                         src="{{'/assets/public/img/games/'~game.name|lower|replace({' ' : '_'})~'/'~game.image0}}" alt="{{game.name}}"

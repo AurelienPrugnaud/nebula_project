@@ -19,7 +19,11 @@
 
             foreach ($pages as $page) {
                 if ($_SERVER['REQUEST_URI'] == $page['url']) {
-                    $page = new \Aurelien\Nebula\Controller\PageController($page['template'] . ".html.twig", ['title' => $page['title']]);
+                    if ($page['id_game'] != null) {
+                        new \Aurelien\Nebula\Controller\GamePageController($page['template'] . ".html.twig", ['title' => $page['title']]);
+                    } else {
+                        new \Aurelien\Nebula\Controller\PageController($page['template'] . ".html.twig", ['title' => $page['title']]);
+                    }
                 }
             }
         }
